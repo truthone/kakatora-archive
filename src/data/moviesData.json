@@ -1,23 +1,39 @@
 {
   "featuredMovie": {
     "id": "featured1",
-    "title": "매트릭스",
+    "title": "다우렌의결혼",
     "description": "컴퓨터 프로그래머가 깨어나 기계에 의해 지배되는 디스토피아 미래에서 반란을 이끕니다.",
-    "backdrop": "https://example.com/matrix_backdrop.jpg"
+    "backdrop": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg",
+    "poster": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg",
+    "year": "1999",
+    "rating": "8.7",
+    "duration": "2h 16min",
+    "cast": ["키아누 리브스", "로렌스 피시번", "캐리-앤 모스"],
+    "genres": ["액션", "SF"]
   },
   "trending": [
     {
       "id": "trend1",
       "title": "스트레인저 씽즈",
-      "poster": "https://example.com/stranger_things_poster.jpg"
+      "poster": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg"
     },
     {
       "id": "trend2",
       "title": "브리저튼",
-      "poster": "https://example.com/bridgerton_poster.jpg"
+      "poster": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg"
     }
   ],
   "tvSeries": [
+    {
+      "id": "tv1",
+      "title": "왕좌의 게임",
+      "poster": "https://example.com/got_poster.jpg"
+    },
+    {
+      "id": "tv2",
+      "title": "브레이킹 배드",
+      "poster": "https://example.com/breaking_bad_poster.jpg"
+    },
     {
       "id": "tv1",
       "title": "왕좌의 게임",

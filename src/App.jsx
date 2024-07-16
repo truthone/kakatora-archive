@@ -1,22 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Theme } from '@radix-ui/themes';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import MovieRow from './components/MovieRow';
-import Footer from './components/Footer';
-import moviesData from './data/moviesData.json'
 import '@radix-ui/themes/styles.css';
+import Header from './components/Header';
+import Home from './components/Home';
+import MovieDetail from './components/MovieDetail';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <Theme appearance="dark" accentColor="red">
-      <Header />
-      <Hero movie={moviesData.featuredMovie} />
-      <MovieRow title="트렌딩 영화" movies={moviesData.trending} />
-      <MovieRow title="인기 TV 시리즈" movies={moviesData.tvSeries} />
-      <MovieRow title="액션 영화" movies={moviesData.action} />
-      <Footer />
-    </Theme>
+    <Router>
+      <Theme appearance="dark" accentColor="crimson" radius="large" p={{ sm: '6', lg: '9' }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+        </Routes>
+        <Footer />
+      </Theme>
+    </Router>
   );
 }
 
