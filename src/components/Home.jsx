@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './Hero';
 import MovieRow from './MovieRow';
 import moviesData from '../data/moviesData.json';
-import { Container } from '@radix-ui/themes';
+import { Container, Separator } from '@radix-ui/themes';
 
 function Home() {
   return (

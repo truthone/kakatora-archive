@@ -7,7 +7,7 @@ import MovieRow from './MovieRow';
 import YouTubeRow from './YoutubeRow';
 
 function MovieDetail() {
-  const playlistId = process.env.REACT_APP_PLAYLIST_ID;
+  const playlistId = 'PLWeRTK7abiXgWIDw-fNcAp-UiPoXFeLPR';
   const { id } = useParams();
   const allMovies = [
     moviesData.featuredMovie,
