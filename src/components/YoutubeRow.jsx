@@ -1,41 +1,47 @@
-import React, { useState, useEffect } from 'react';
 import { Box, Heading, Flex, AspectRatio, Card, Text, Container } from '@radix-ui/themes';
+import useYouTubeVideos from '../hooks/useYouTubeVideos'
 
-const apiKey = process.env.REACT_APP_API_KEY;
-const playlistId = process.env.REACT_APP_PLAYLIST_ID;
+function YouTubeRow({ movieTitle,  playlistId}) {
+  const videos = useYouTubeVideos(playlistId);
 
-function YouTubeRow({ movieTitle }) {
-  const [videos, setVideos] = useState([]);
+  const openYouTubeVideo = (videoId) => {
+    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    window.open(youtubeUrl, '_blank');
+  };
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        // const response = await fetch(
-        //   `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
-        //     movieTitle
-        //   )}&type=video&maxResults=10&key=${apiKey}`
-        // );
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=10&key=${apiKey}`
-        );
-        const data = await response.json();
-        console.log(data)
-        setVideos(data.items);
-      } catch (error) {
-        console.error('Error fetching YouTube videos:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     try {
+  //       // const response = await fetch(
+  //       //   `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+  //       //     movieTitle
+  //       //   )}&type=video&maxResults=10&key=${apiKey}`
+  //       // );
+  //       const response = await fetch(
+  //         `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=10&key=${apiKey}`
+  //       );
+  //       const data = await response.json();
+  //       console.log(data)
+  //       setVideos(data.items);
+  //     } catch (error) {
+  //       console.error('Error fetching YouTube videos:', error);
+  //     }
+  //   };
 
-    fetchVideos();
-  }, [movieTitle]);
-
+  //   fetchVideos();
+  // }, [movieTitle]);
+  
   return (
     <Box my="6">
       <Container>
         <Heading size="6" mb="4">관련 동영상</Heading>
         <Flex gap="3" style={{ overflowX: 'auto' }}>
-          {videos.map((video) => (
-            <Card key={video.id.videoId} style={{ width: '250px', flexShrink: 0 }}>
+          {videos?.map((video) => (
+            <Card 
+              key={video.id.videoId} 
+              style={{ width: '250px', flexShrink: 0, pointer: 'cursor' }} 
+              onClick={() => openYouTubeVideo(video.snippet.resourceId.videoId)}
+            >
               <AspectRatio ratio={16/9}>
                 <img 
                   src={video.snippet.thumbnails.medium.url} 

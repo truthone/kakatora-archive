@@ -6,7 +6,7 @@ function Header() {
   return (
     <Container style={{margin: '0 20px'}}>
       <Flex justify="between" align="center" py="4">
-        <Text size="5" weight="bold">OTT Logo</Text>
+        <Text size="5" weight="bold">JU.CHIVE</Text>
         <Flex gap="6" display={{ initial: 'none', md: 'flex' }}>
           <Text as="a" href="#" size="2">홈</Text>
           <Text as="a" href="#" size="2">TV 프로그램</Text>

@@ -7,6 +7,7 @@ import MovieRow from './MovieRow';
 import YouTubeRow from './YoutubeRow';
 
 function MovieDetail() {
+  const playlistId = process.env.REACT_APP_PLAYLIST_ID;
   const { id } = useParams();
   const allMovies = [
     moviesData.featuredMovie,
@@ -53,7 +54,7 @@ function MovieDetail() {
       <Separator orientation="horizontal" size="4" />
       <MovieRow title="트렌딩 영화" movies={moviesData.trending} />
       <Separator orientation="horizontal" size="4" />
-      <YouTubeRow movieTitle="다우렌의 결혼" />
+      <YouTubeRow movieTitle="다우렌의 결혼" playlistId={playlistId}/>
     </Container>
   );
 }
