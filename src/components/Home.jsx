@@ -1,16 +1,21 @@
 import React from 'react';
 import Hero from './Hero';
-import MovieRow from './MovieRow';
 import moviesData from '../data/moviesData.json';
-import { Container, Separator } from '@radix-ui/themes';
+import filmoData from '../data/filmoData.json'
+import { Container, Separator, Flex, Card } from '@radix-ui/themes';
+import FilmoSection from './FilmoSection';
+import TwitterEmbed from './TwitterEmbed';
 
 function Home() {
   return (
     <Container>
       <Hero movie={moviesData.featuredMovie} />
-      <MovieRow title="트렌딩 영화" movies={moviesData.trending} />
-      <MovieRow title="인기 TV 시리즈" movies={moviesData.tvSeries} />
-      <MovieRow title="액션 영화" movies={moviesData.action} />
+      <Flex>
+        <Card style={{ width: '300px', flexShrink: 0 }}><TwitterEmbed  /></Card>
+        <Card style={{ width: '300px', flexShrink: 0 }}><TwitterEmbed  /></Card>
+      </Flex>
+      <Separator orientation="horizontal" size="4" />
+      <FilmoSection data={filmoData.drama_appearances} />
     </Container>
   );
 }
