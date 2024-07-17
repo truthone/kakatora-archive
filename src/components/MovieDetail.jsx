@@ -4,6 +4,7 @@ import { Box, Flex, Heading, Text, Button, Card, Badge, Container, Separator } f
 import { PlayIcon, PlusIcon, StarFilledIcon } from '@radix-ui/react-icons';
 import moviesData from '../data/moviesData.json';
 import MovieRow from './MovieRow';
+import YouTubeRow from './YoutubeRow';
 
 function MovieDetail() {
   const { id } = useParams();
@@ -51,6 +52,8 @@ function MovieDetail() {
       </Box>
       <Separator orientation="horizontal" size="4" />
       <MovieRow title="트렌딩 영화" movies={moviesData.trending} />
+      <Separator orientation="horizontal" size="4" />
+      <YouTubeRow movieTitle="다우렌의 결혼" />
     </Container>
   );
 }
