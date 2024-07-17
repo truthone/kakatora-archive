@@ -1,0 +1,518 @@
+{
+  "drama_appearances": [
+    {
+      "year": 2013,
+      "dramas": [
+        {
+          "broadcaster": "KBS2",
+          "title": "드라마 스페셜 - 내 친구는 아직 살아있다",
+          "role": "최지현",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2013_1.jpg"
+        },
+        {
+          "broadcaster": "KBS2",
+          "title": "드라마 스페셜 - 끈질긴 기쁨",
+          "role": "동수",
+          "note": "",
+          "imgUrl": "https://example.com/drama2013_2.jpg"
+        },
+        {
+          "broadcaster": "MBC",
+          "title": "납자가 사랑할 때",
+          "role": "한태상",
+          "note": "송승헌 아역",
+          "imgUrl": "https://example.com/drama2013_3.jpg"
+        },
+        {
+          "broadcaster": "NAVER TV",
+          "title": "출중한 여자",
+          "role": "램퍼 JS",
+          "note": "웹드라마 · 조연",
+          "imgUrl": "https://example.com/drama2013_4.jpg"
+        },
+        {
+          "broadcaster": "네이버TV",
+          "title": "썸남썸녀",
+          "role": "남자 4호",
+          "note": "",
+          "imgUrl": "https://example.com/drama2013_5.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2014,
+      "dramas": [
+        {
+          "broadcaster": "KBS2",
+          "title": "골든 크로스",
+          "role": "오창희",
+          "note": "",
+          "imgUrl": "https://example.com/drama2014_1.jpg"
+        },
+        {
+          "broadcaster": "tvN",
+          "title": "고교처세왕",
+          "role": "지대한",
+          "note": "조연",
+          "imgUrl": "https://example.com/drama2014_2.jpg"
+        },
+        {
+          "broadcaster": "KBS2",
+          "title": "아이언맨",
+          "role": "주홍주",
+          "note": "",
+          "imgUrl": "https://example.com/drama2014_3.jpg"
+        },
+        {
+          "broadcaster": "EBS",
+          "title": "슬슬한 그대",
+          "role": "성태",
+          "note": "5부작 · 주연",
+          "imgUrl": "https://example.com/drama2014_4.jpg"
+        },
+        {
+          "broadcaster": "SBS",
+          "title": "피노키오",
+          "role": "안찬수",
+          "note": "조연",
+          "imgUrl": "https://example.com/drama2014_5.jpg"
+        },
+        {
+          "broadcaster": "KBS2",
+          "title": "드라마 스페셜 - 가만히 있어라",
+          "role": "양준식",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2014_6.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2015,
+      "dramas": [
+        {
+          "broadcaster": "tvN",
+          "title": "식샤를 합시다 2",
+          "role": "이주승",
+          "note": "",
+          "imgUrl": "https://example.com/drama2015_1.jpg"
+        },
+        {
+          "broadcaster": "KBS2",
+          "title": "프로듀사",
+          "role": "FD",
+          "note": "조연",
+          "imgUrl": "https://example.com/drama2015_2.jpg"
+        },
+        {
+          "broadcaster": "SBS",
+          "title": "너를 사랑한 시간",
+          "role": "오대복",
+          "note": "",
+          "imgUrl": "https://example.com/drama2015_3.jpg"
+        },
+        {
+          "broadcaster": "NAVER TV",
+          "title": "9초-영원의 시간",
+          "role": "유찬",
+          "note": "웹드라마 · 주연",
+          "imgUrl": "https://example.com/drama2015_4.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2016,
+      "dramas": [
+        {
+          "broadcaster": "KBS2",
+          "title": "KBS 드라마 스페셜 - 동정없는 세상",
+          "role": "차준호",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2016_1.jpg"
+        },
+        {
+          "broadcaster": "OCN",
+          "title": "보이스",
+          "role": "황경일",
+          "note": "4회, 5회, 6회 특별출연",
+          "imgUrl": "https://example.com/drama2016_2.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "dramas": [
+        {
+          "broadcaster": "NAVER TV",
+          "title": "아이돌 관한대행",
+          "role": "나고야 선배",
+          "note": "특별출연",
+          "imgUrl": "https://example.com/drama2017_1.jpg"
+        },
+        {
+          "broadcaster": "SBS",
+          "title": "조작",
+          "role": "윤선우",
+          "note": "",
+          "imgUrl": "https://example.com/drama2017_2.jpg"
+        },
+        {
+          "broadcaster": "tvN",
+          "title": "드라마 스테이지 - 박대리의 은밀한사생활",
+          "role": "박종혁",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2017_3.jpg"
+        },
+        {
+          "broadcaster": "NAVER TV",
+          "title": "진정하세요",
+          "role": "민태용",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2017_4.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "dramas": [
+        {
+          "broadcaster": "tvN",
+          "title": "식샤를 합시다 3",
+          "role": "안찬수",
+          "note": "특별출연",
+          "imgUrl": "https://example.com/drama2018_1.jpg"
+        },
+        {
+          "broadcaster": "YouTube",
+          "title": "탑매니지먼트",
+          "role": "엘제이",
+          "note": "조연",
+          "imgUrl": "https://example.com/drama2018_2.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "dramas": [
+        {
+          "broadcaster": "KBS2",
+          "title": "닥터 프리즈너",
+          "role": "김석우",
+          "note": "특별출연",
+          "imgUrl": "https://example.com/drama2019_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "dramas": [
+        {
+          "broadcaster": "tvND",
+          "title": "너와 나의 그랑토피아",
+          "role": "조봉규",
+          "note": "주연",
+          "imgUrl": "https://example.com/drama2021_1.jpg"
+        },
+        {
+          "broadcaster": "tvN",
+          "title": "해피니스",
+          "role": "앤드류",
+          "note": "조연",
+          "imgUrl": "https://example.com/drama2021_2.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "dramas": [
+        {
+          "broadcaster": "NETFLIX",
+          "title": "택배기사",
+          "role": "무솔모",
+          "note": "",
+          "imgUrl": "https://example.com/drama2023_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": "2023년~2024년",
+      "dramas": [
+        {
+          "broadcaster": "ENA",
+          "title": "모래에도 꽃이 핀다",
+          "role": "조석희",
+          "note": "",
+          "imgUrl": "https://example.com/drama2023_2024_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "dramas": [
+        {
+          "broadcaster": "넥스트엔터테인먼트월드",
+          "title": "타이코메트리",
+          "role": "강지우",
+          "note": "웹드라마",
+          "imgUrl": "https://example.com/drama2024_1.jpg"
+        }
+      ]
+    }
+  ],
+  "musical_performances": [
+    {
+      "year": 2010,
+      "title": "낫장",
+      "role": "소년 한영진",
+      "note": "",
+      "imgUrl": "https://example.com/musical2010_1.jpg"
+    },
+    {
+      "year": 2018,
+      "title": "킬롤로지",
+      "role": "데이비",
+      "note": "",
+      "imgUrl": "https://example.com/musical2018_1.jpg"
+    },
+    {
+      "year": 2019,
+      "title": "킬롤로지",
+      "role": "데이비",
+      "note": "",
+      "imgUrl": "https://example.com/musical2019_1.jpg"
+    },
+    {
+      "year": 2020,
+      "title": "아들",
+      "role": "니콜라",
+      "note": "",
+      "imgUrl": "https://example.com/musical2020_1.jpg"
+    },
+    {
+      "year": 2021,
+      "title": "빈센트 리버",
+      "role": "데이비",
+      "note": "",
+      "imgUrl": "https://example.com/musical2021_1.jpg"
+    },
+    {
+      "year": 2022,
+      "title": "빈센트 리버",
+      "role": "데이비",
+      "note": "",
+      "imgUrl": "https://example.com/musical2022_1.jpg"
+    },
+    {
+      "year": 2023,
+      "title": "데메랜드",
+      "role": "마르틴 · 패데리코",
+      "note": "",
+      "imgUrl": "https://example.com/musical2023_1.jpg"
+    }
+  ],
+  "tv_appearances": [
+    {
+      "year": 2016,
+      "appearances": [
+        {
+          "date": "9월 16일",
+          "broadcaster": "KBS 2",
+          "program": "노래싸움 - 승부",
+          "role": "게스트",
+          "note": "추석특집 파일럿",
+          "imgUrl": "https://example.com/tv2016_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "appearances": [
+        {
+          "date": "7월 17일~10월 2일",
+          "broadcaster": "MBC every1",
+          "program": "시골경찰",
+          "role": "고정출연",
+          "note": "with 신현준, 오대환, 최민용",
+          "imgUrl": "https://example.com/tv2017_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "appearances": [
+        {
+          "date": "12월 13일",
+          "broadcaster": "SBS Plus",
+          "program": "걷는 재미에 빠지다! 두발라이프",
+          "role": "게스트",
+          "note": "with 김기범, 연제욱, 구성환",
+          "imgUrl": "https://example.com/tv2018_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "appearances": [
+        {
+          "date": "1월 17일",
+          "broadcaster": "SBS Plus",
+          "program": "걷는 재미에 빠지다! 두발라이프",
+          "role": "게스트",
+          "note": "with 김기범, 연제욱, 구성환",
+          "imgUrl": "https://example.com/tv2019_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "appearances": [
+        {
+          "date": "12월 24일",
+          "broadcaster": "MBC",
+          "program": "나 혼자 산다",
+          "role": "게스트",
+          "note": "with 구성환, 장동윤",
+          "imgUrl": "https://example.com/tv2021_1.jpg"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "appearances": [
+        {
+          "date": "1월 28일",
+          "note": "스튜디오 촬영",
+          "imgUrl": "https://example.com/tv2022_1.jpg"
+        },
+        {
+          "date": "2월 11일",
+          "note": "월동 준비",
+          "imgUrl": "https://example.com/tv2022_2.jpg"
+        },
+        {
+          "date": "5월 6일",
+          "program": "나 혼자 산다",
+          "note": "with 구성환",
+          "imgUrl": "https://example.com/tv2022_3.jpg"
+        },
+        {
+          "date": "5월 13일",
+          "role": "게스트",
+          "imgUrl": "https://example.com/tv2022_4.jpg"
+        },
+        {
+          "date": "7월 8일",
+          "broadcaster": "MBC",
+          "note": "스튜디오 촬영",
+          "imgUrl": "https://example.com/tv2022_5.jpg"
+        },
+        {
+          "date": "7월 22일",
+          "note": "with 구성환",
+          "imgUrl": "https://example.com/tv2022_6.jpg"
+        },
+        {
+          "date": "8월 3일",
+          "program": "라디오 스타",
+          "note": "779회",
+          "imgUrl": "https://example.com/tv2022_7.jpg"
+        },
+        {
+          "date": "9월 29일",
+          "program": "심야괴담회",
+          "note": "64회",
+          "imgUrl": "https://example.com/tv2022_8.jpg"
+        },
+        {
+          "date": "10월 14일",
+          "program": "나 혼자 산다",
+          "role": "고정",
+          "note": "with 우미화, 강승호, 김현진"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "appearances": [
+        {
+          "date": "1월 6일",
+          "note": "방송연예대상 비하인드"
+        },
+        {
+          "date": "1월 20일, 27일",
+          "note": "기러기 단합대회"
+        },
+        {
+          "date": "2월 17일",
+          "note": "with 마더즈"
+        },
+        {
+          "date": "3월 17일"
+        },
+        {
+          "date": "3월 24일",
+          "note": "스튜디오 촬영"
+        },
+        {
+          "date": "4월 7일",
+          "broadcaster": "MBC",
+          "program": "나 혼자 산다",
+          "role": "고정"
+        },
+        {
+          "date": "4월 14일",
+          "note": "with 구성환"
+        },
+        {
+          "date": "5월 12일, 19일",
+          "note": "무지개 10주년 몽골 여행"
+        },
+        {
+          "date": "5월 26일",
+          "note": "with 천우희"
+        },
+        {
+          "date": "7월 7일",
+          "note": "대학로"
+        },
+        {
+          "date": "9월 15일",
+          "note": "미스터리 코쿤"
+        },
+        {
+          "date": "10월 27일",
+          "note": "부코채"
+        },
+        {
+          "date": "4월 25일",
+          "broadcaster": "JTBC",
+          "program": "듣고 보니 그럴싸",
+          "role": "게스트",
+          "note": "6화"
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "appearances": [
+        {
+          "date": "2월 5일 ~",
+          "broadcaster": "tvN",
+          "program": "줄서는 식당2",
+          "role": "고정"
+        },
+        {
+          "date": "2월 9일",
+          "note": "with 조부모님"
+        },
+        {
+          "date": "4월 12일",
+          "broadcaster": "MBC",
+          "program": "나 혼자 산다",
+          "role": "고정",
+          "note": "with 구성환"
+        }
+      ]
+    }
+  ]
+}
