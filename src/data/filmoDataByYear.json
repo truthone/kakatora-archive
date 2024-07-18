@@ -120,10 +120,10 @@
           },
           {
             "broadcaster": "MBC",
-            "title": "납자가 사랑할 때",
+            "title": "남자가 사랑할 때",
             "role": "한태상",
             "note": "송승헌 아역",
-            "imgUrl": "/images/납자가 사랑할 때.jpg"
+            "imgUrl": "/images/남자가 사랑할 때.jpg"
           },
           {
             "broadcaster": "NAVER TV",
@@ -192,13 +192,6 @@
             "role": "안찬수",
             "note": "조연",
             "imgUrl": "/images/피노키오.jpg"
-          },
-          {
-            "broadcaster": "KBS2",
-            "title": "드라마 스페셜 - 가만히 있으라",
-            "role": "양준식",
-            "note": "주연",
-            "imgUrl": "/images/드라마 스페셜 - 가만히 있으라.jpg"
           }
         ]
       },
@@ -225,6 +218,13 @@
             "role": "이주승",
             "note": "",
             "imgUrl": "/images/식샤를 합시다 2.jpg"
+          },
+          {
+            "broadcaster": "KBS2",
+            "title": "드라마 스페셜 - 가만히 있으라",
+            "role": "양준식",
+            "note": "주연",
+            "imgUrl": "/images/드라마 스페셜 - 가만히 있으라.jpg"
           },
           {
             "broadcaster": "KBS2",
@@ -266,20 +266,13 @@
             "role": "차준호",
             "note": "주연",
             "imgUrl": "/images/드라마 스페셜 - 동정없는 세상.jpg"
-          },
-          {
-            "broadcaster": "OCN",
-            "title": "보이스 시즌1",
-            "role": "황경일",
-            "note": "4회, 5회, 6회 특별출연",
-            "imgUrl": "/images/보이스 시즌1.jpg"
           }
         ],
         "tv_appearances": [
           {
             "date": "9월 16일",
             "broadcaster": "KBS 2",
-            "program": "노래싸움 - 승부",
+            "title": "노래싸움 - 승부",
             "role": "게스트",
             "note": "추석특집 파일럿",
             "imgUrl": "/images/노래싸움 - 승부.jpg"
@@ -290,11 +283,18 @@
         "year": 2017,
         "dramas": [
           {
+            "broadcaster": "OCN",
+            "title": "보이스 시즌1",
+            "role": "황경일",
+            "note": "4회, 5회, 6회 특별출연",
+            "imgUrl": "/images/보이스 시즌1.jpg"
+          },
+          {
             "broadcaster": "NAVER TV",
-            "title": "아이돌 관한대행",
+            "title": "아이돌 권한대행",
             "role": "나고야 선배",
             "note": "특별출연",
-            "imgUrl": "/images/아이돌 관한대행.jpg"
+            "imgUrl": "/images/아이돌 권한대행.jpg"
           },
           {
             "broadcaster": "SBS",
@@ -309,20 +309,13 @@
             "role": "박종혁",
             "note": "주연",
             "imgUrl": "/images/드라마 스테이지 - 박대리의 은밀한 사생활.jpg"
-          },
-          {
-            "broadcaster": "NAVER TV",
-            "title": "진정하세요",
-            "role": "민태용",
-            "note": "주연",
-            "imgUrl": "/images/진정하세요.jpg"
           }
         ],
         "tv_appearances": [
           {
             "date": "7월 17일~10월 2일",
             "broadcaster": "MBC every1",
-            "program": "시골경찰",
+            "title": "시골경찰",
             "role": "고정출연",
             "note": "with 신현준, 오대환, 최민용",
             "imgUrl": "/images/시골경찰.jpg"
@@ -345,16 +338,21 @@
             "role": "엘제이",
             "note": "조연",
             "imgUrl": "/images/탑매니지먼트.jpg"
+          },           {
+            "broadcaster": "NAVER TV",
+            "title": "진정하세요",
+            "role": "민태용",
+            "note": "주연",
+            "imgUrl": "/images/진정하세요.jpg"
           }
         ],
-        "tv_appearances": [
+        "musicals": [
           {
-            "date": "12월 13일",
-            "broadcaster": "SBS Plus",
-            "program": "걷는 재미에 빠지다! 두발라이프",
-            "role": "게스트",
-            "note": "with 김기범, 연제욱, 구성환",
-            "imgUrl": "/images/걷는 재미에 빠지다! 두발라이프.jpg"
+            "year": 2018,
+            "title": "킬롤로지",
+            "role": "데이비",
+            "note": "",
+            "imgUrl": "/images/킬롤로지_2018.jpg"
           }
         ]
       },
@@ -379,12 +377,22 @@
         ],
         "tv_appearances": [
           {
-            "date": "1월 17일",
+            "date": "12월 13일",
             "broadcaster": "SBS Plus",
-            "program": "걷는 재미에 빠지다! 두발라이프",
+            "title": "두발 라이프",
             "role": "게스트",
             "note": "with 김기범, 연제욱, 구성환",
-            "imgUrl": "/images/걷는 재미에 빠지다! 두발라이프.jpg"
+            "imgUrl": "/images/두발 라이프.jpg"
+          }
+        ],
+
+        "musicals": [
+          {
+            "year": 2019,
+            "title": "킬롤로지",
+            "role": "데이비",
+            "note": "",
+            "imgUrl": "/images/킬롤로지_2019.jpg"
           }
         ]
       },
@@ -409,6 +417,14 @@
             "imgUrl": "/images/돛대.jpg"
           }
         ],
+        "musicals": [
+          {
+            "title": "빈센트 리버",
+            "role": "데이비",
+            "note": "",
+            "imgUrl": "/images/빈센트 리버_2021.jpg"
+          }
+        ],
         "dramas": [
           {
             "broadcaster": "tvND",
@@ -429,7 +445,7 @@
           {
             "date": "12월 24일",
             "broadcaster": "MBC",
-            "program": "나 혼자 산다",
+            "title": "나 혼자 산다",
             "role": "게스트",
             "note": "with 구성환, 장동윤",
             "imgUrl": "/images/나 혼자 산다.jpg"
@@ -440,81 +456,32 @@
         "year": 2022,
         "movies": [
           {
-            "title": "미지의 세계 시즌 투 에피 원[3]",
-            "role": "",
+            "title": "미지의 세계 시즌 투 에피 원",
+            "role": "정임",
             "note": "주연",
-            "imgUrl": "/images/미지의 세계 시즌 투 에피 원[3].jpg"
-          },
-          {
-            "title": "시민덕희",
-            "role": "경철",
-            "note": "조연",
-            "imgUrl": "/images/시민덕희.jpg"
+            "imgUrl": "/images/미지의 세계 시즌 투 에피 원.jpg"
           }
         ],
         "tv_appearances": [
           {
-            "date": "1월 28일",
+            "date": "10월 14일",
             "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "게스트",
-            "note": "스튜디오 촬영",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "2월 11일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "게스트",
-            "note": "월동 준비",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "5월 6일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "note": "with 구성환",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "5월 13일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "7월 8일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "note": "스튜디오 촬영",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "7월 22일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "note": "with 구성환",
+            "title": "나 혼자 산다",
+            "role": "고정",
+            "note": "강릉 여행",
             "imgUrl": "/images/나 혼자 산다.jpg"
           },
           {
             "date": "8월 3일",
-            "program": "라디오 스타",
+            "title": "라디오 스타",
             "note": "779회",
-            "imgUrl": "/images/라디오 스타.jpg"
+            "imgUrl": "/images/라디오스타.jpg"
           },
           {
             "date": "9월 29일",
-            "program": "심야괴담회",
+            "title": "심야괴담회",
             "note": "64회",
             "imgUrl": "/images/심야괴담회.jpg"
-          },
-          {
-            "date": "10월 14일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "강릉 여행",
-            "imgUrl": "/images/나 혼자 산다.jpg"
           }
         ],
         "musicals": [
@@ -535,109 +502,28 @@
             "role": "무솔모",
             "note": "",
             "imgUrl": "/images/택배기사.jpg"
+          },
+          {
+            "broadcaster": "ENA",
+            "title": "모래에도 꽃이 핀다",
+            "role": "조석희",
+            "note": "",
+            "imgUrl": "/images/모래에도 꽃이 핀다.jpg"
           }
         ],
         "tv_appearances": [
           {
             "date": "1월 6일",
             "broadcaster": "MBC",
-            "program": "나 혼자 산다",
+            "title": "나 혼자 산다",
             "role": "고정",
             "note": "방송연예대상 비하인드",
             "imgUrl": "/images/나 혼자 산다.jpg"
           },
           {
-            "date": "1월 20일, 27일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "기라인 단합대회",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "2월 17일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "with 마더즈",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "3월 17일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "3월 24일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "스튜디오 촬영",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "4월 7일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "4월 14일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "with 구성환",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "5월 12일, 19일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "무지개 10주년 몽골 여행",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "5월 26일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "여사친 with 천우희",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "7월 7일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "대학로",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "9월 15일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "미스터리 서클 with 기안",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
-            "date": "10월 27일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "부국제",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
             "date": "4월 25일",
             "broadcaster": "JTBC",
-            "program": "듣고 보니 그럴싸",
+            "title": "듣고 보니 그럴싸",
             "role": "게스트",
             "note": "6화",
             "imgUrl": "/images/듣고 보니 그럴싸.jpg"
@@ -655,6 +541,12 @@
       {
         "year": 2024,
         "movies": [
+          {
+            "title": "시민덕희",
+            "role": "경철",
+            "note": "조연",
+            "imgUrl": "/images/시민덕희.jpg"
+          },
           {
             "title": "다우렌의 결혼",
             "role": "승주",
@@ -675,22 +567,14 @@
           {
             "date": "2월 5일 ~ 5월 27일",
             "broadcaster": "tvN",
-            "program": "줄서는 식당2",
+            "title": "줄서는 식당2",
             "role": "고정",
             "imgUrl": "/images/줄서는 식당2.jpg"
           },
           {
-            "date": "2월 9일",
-            "broadcaster": "MBC",
-            "program": "나 혼자 산다",
-            "role": "고정",
-            "note": "with 조부모님",
-            "imgUrl": "/images/나 혼자 산다.jpg"
-          },
-          {
             "date": "4월 12일",
             "broadcaster": "MBC",
-            "program": "나 혼자 산다",
+            "title": "나 혼자 산다",
             "role": "고정",
             "note": "with 구성환",
             "imgUrl": "/images/나 혼자 산다.jpg"
