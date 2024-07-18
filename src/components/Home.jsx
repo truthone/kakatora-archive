@@ -12,7 +12,6 @@ function Home() {
       <Hero movie={moviesData.featuredMovie} />
       <Flex>
         <Card style={{ width: '300px', flexShrink: 0 }}><TwitterEmbed  /></Card>
-        <Card style={{ width: '300px', flexShrink: 0 }}><TwitterEmbed  /></Card>
       </Flex>
       <Separator orientation="horizontal" size="4" />
       <FilmoSection data={filmoData.drama_appearances} />

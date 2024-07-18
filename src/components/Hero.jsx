@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Heading, Text, Button, Flex, Container, Skeleton } from '@radix-ui/themes';
-import { PlayIcon, InfoCircledIcon } from '@radix-ui/react-icons';
+import { PlayIcon, InfoCircledIcon, HeartFilledIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import heroImg from '../img/hero.jpg'
 
 function Hero({ movie }) {
@@ -27,14 +27,14 @@ function Hero({ movie }) {
         >
           <Heading size={{ initial: '7', md: '9' }} mb="2">{movie.title}</Heading>
           <Text size={{ initial: '3', md: '4' }} mb="2">{movie.description}</Text>
-          <Flex gap="4" >
+          <Flex gap="4" my="3" >
             <Button size={{ initial: '2', md: '3' }} variant="solid">
-              <PlayIcon />
-              재생
+              <InstagramLogoIcon />
+              인스타그램
             </Button>
             <Button size={{ initial: '2', md: '3' }} variant="solid" onClick={handleDetailClick}>
-              <InfoCircledIcon />
-              상세 정보
+              <HeartFilledIcon />
+              공식 카페
             </Button>
           </Flex>
         </Box>
