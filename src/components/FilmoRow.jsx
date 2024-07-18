@@ -22,7 +22,7 @@ function FilmoRow({ title, contents }) {
               />
             </AspectRatio>
             <Box p='2'>
-              <Text size="1" style={{ whiteSpace: 'break-spaces' }}>
+              <Text size="2" style={{ whiteSpace: 'break-spaces' }}>
                 {content.title}
               </Text>
             </Box>
