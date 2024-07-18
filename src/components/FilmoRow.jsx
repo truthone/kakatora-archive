@@ -10,7 +10,7 @@ function FilmoRow({ title, contents }) {
           <Card key={id} style={{ width: '180px', flexShrink: 0 }}>
             <AspectRatio ratio={2/3} style={{padding: '0'}}>
               <img 
-                src={`${process.env.PUBLIC_URL}/images/${content.title}.jpg`} 
+                src={`${process.env.PUBLIC_URL}${content.imgUrl}`} 
                 alt={content.title} 
                 style={{ 
                   objectFit: 'cover', 

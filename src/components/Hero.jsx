@@ -12,11 +12,13 @@ function Hero({ movie }) {
 
   return (
     <Box position="relative" height={{ initial: '70vh' }}>
-        <img 
+        <Skeleton style={{borderRadius: '0'}}>
+          <img 
           src={heroImg} 
           alt={movie.title} 
           style={{ objectFit: 'cover', width: '100%', height: '100%' }} 
-        />
+          />
+        </Skeleton>
       <Container>
         <Box 
           position="absolute" 
