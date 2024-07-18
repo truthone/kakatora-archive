@@ -48,7 +48,7 @@ const TwitterEmbed = ({ tweetId }) => {
 
   return (
     <div ref={tweetRef}>
-      <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="ko" dir="ltr">240707 <a href="https://twitter.com/hashtag/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98%EA%B2%B0%ED%98%BC?src=hash&amp;ref_src=twsrc%5Etfw">#다우렌의결혼</a> gv 부산 <a href="https://twitter.com/hashtag/%EC%9D%B4%EC%A3%BC%EC%8A%B9?src=hash&amp;ref_src=twsrc%5Etfw">#이주승</a> <a href="https://t.co/vTWdUzQl8a">pic.twitter.com/vTWdUzQl8a</a></p>&mdash; 주르딩딩 (@ju___h_i__) <a href="https://twitter.com/ju___h_i__/status/1809950949714391317?ref_src=twsrc%5Etfw">July 7, 2024</a></blockquote>
+      <blockquote class="twitter-tweet" data-dnt="true"><p lang="ko" dir="ltr">240707 <a href="https://twitter.com/hashtag/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98%EA%B2%B0%ED%98%BC?src=hash&amp;ref_src=twsrc%5Etfw">#다우렌의결혼</a> gv 부산 <a href="https://twitter.com/hashtag/%EC%9D%B4%EC%A3%BC%EC%8A%B9?src=hash&amp;ref_src=twsrc%5Etfw">#이주승</a> <a href="https://t.co/vTWdUzQl8a">pic.twitter.com/vTWdUzQl8a</a></p>&mdash; 주르딩딩 (@ju___h_i__) <a href="https://twitter.com/ju___h_i__/status/1809950949714391317?ref_src=twsrc%5Etfw">July 7, 2024</a></blockquote>
     </div>
   );
 };

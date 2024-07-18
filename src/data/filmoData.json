@@ -1,264 +1,264 @@
 {
-  "drama_appearances": [
-    {
-      "year": 2013,
-      "dramas": [
-        {
-          "broadcaster": "KBS2",
-          "title": "드라마 스페셜 - 내 친구는 아직 살아있다",
-          "role": "최지현",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2013_1.jpg"
-        },
-        {
-          "broadcaster": "KBS2",
-          "title": "드라마 스페셜 - 끈질긴 기쁨",
-          "role": "동수",
-          "note": "",
-          "imgUrl": "https://example.com/drama2013_2.jpg"
-        },
-        {
-          "broadcaster": "MBC",
-          "title": "납자가 사랑할 때",
-          "role": "한태상",
-          "note": "송승헌 아역",
-          "imgUrl": "https://example.com/drama2013_3.jpg"
-        },
-        {
-          "broadcaster": "NAVER TV",
-          "title": "출중한 여자",
-          "role": "램퍼 JS",
-          "note": "웹드라마 · 조연",
-          "imgUrl": "https://example.com/drama2013_4.jpg"
-        },
-        {
-          "broadcaster": "네이버TV",
-          "title": "썸남썸녀",
-          "role": "남자 4호",
-          "note": "",
-          "imgUrl": "https://example.com/drama2013_5.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2014,
-      "dramas": [
-        {
-          "broadcaster": "KBS2",
-          "title": "골든 크로스",
-          "role": "오창희",
-          "note": "",
-          "imgUrl": "https://example.com/drama2014_1.jpg"
-        },
-        {
-          "broadcaster": "tvN",
-          "title": "고교처세왕",
-          "role": "지대한",
-          "note": "조연",
-          "imgUrl": "https://example.com/drama2014_2.jpg"
-        },
-        {
-          "broadcaster": "KBS2",
-          "title": "아이언맨",
-          "role": "주홍주",
-          "note": "",
-          "imgUrl": "https://example.com/drama2014_3.jpg"
-        },
-        {
-          "broadcaster": "EBS",
-          "title": "슬슬한 그대",
-          "role": "성태",
-          "note": "5부작 · 주연",
-          "imgUrl": "https://example.com/drama2014_4.jpg"
-        },
-        {
-          "broadcaster": "SBS",
-          "title": "피노키오",
-          "role": "안찬수",
-          "note": "조연",
-          "imgUrl": "https://example.com/drama2014_5.jpg"
-        },
-        {
-          "broadcaster": "KBS2",
-          "title": "드라마 스페셜 - 가만히 있어라",
-          "role": "양준식",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2014_6.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2015,
-      "dramas": [
-        {
-          "broadcaster": "tvN",
-          "title": "식샤를 합시다 2",
-          "role": "이주승",
-          "note": "",
-          "imgUrl": "https://example.com/drama2015_1.jpg"
-        },
-        {
-          "broadcaster": "KBS2",
-          "title": "프로듀사",
-          "role": "FD",
-          "note": "조연",
-          "imgUrl": "https://example.com/drama2015_2.jpg"
-        },
-        {
-          "broadcaster": "SBS",
-          "title": "너를 사랑한 시간",
-          "role": "오대복",
-          "note": "",
-          "imgUrl": "https://example.com/drama2015_3.jpg"
-        },
-        {
-          "broadcaster": "NAVER TV",
-          "title": "9초-영원의 시간",
-          "role": "유찬",
-          "note": "웹드라마 · 주연",
-          "imgUrl": "https://example.com/drama2015_4.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2016,
-      "dramas": [
-        {
-          "broadcaster": "KBS2",
-          "title": "KBS 드라마 스페셜 - 동정없는 세상",
-          "role": "차준호",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2016_1.jpg"
-        },
-        {
-          "broadcaster": "OCN",
-          "title": "보이스",
-          "role": "황경일",
-          "note": "4회, 5회, 6회 특별출연",
-          "imgUrl": "https://example.com/drama2016_2.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2017,
-      "dramas": [
-        {
-          "broadcaster": "NAVER TV",
-          "title": "아이돌 관한대행",
-          "role": "나고야 선배",
-          "note": "특별출연",
-          "imgUrl": "https://example.com/drama2017_1.jpg"
-        },
-        {
-          "broadcaster": "SBS",
-          "title": "조작",
-          "role": "윤선우",
-          "note": "",
-          "imgUrl": "https://example.com/drama2017_2.jpg"
-        },
-        {
-          "broadcaster": "tvN",
-          "title": "드라마 스테이지 - 박대리의 은밀한사생활",
-          "role": "박종혁",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2017_3.jpg"
-        },
-        {
-          "broadcaster": "NAVER TV",
-          "title": "진정하세요",
-          "role": "민태용",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2017_4.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2018,
-      "dramas": [
-        {
-          "broadcaster": "tvN",
-          "title": "식샤를 합시다 3",
-          "role": "안찬수",
-          "note": "특별출연",
-          "imgUrl": "https://example.com/drama2018_1.jpg"
-        },
-        {
-          "broadcaster": "YouTube",
-          "title": "탑매니지먼트",
-          "role": "엘제이",
-          "note": "조연",
-          "imgUrl": "https://example.com/drama2018_2.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2019,
-      "dramas": [
-        {
-          "broadcaster": "KBS2",
-          "title": "닥터 프리즈너",
-          "role": "김석우",
-          "note": "특별출연",
-          "imgUrl": "https://example.com/drama2019_1.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2021,
-      "dramas": [
-        {
-          "broadcaster": "tvND",
-          "title": "너와 나의 그랑토피아",
-          "role": "조봉규",
-          "note": "주연",
-          "imgUrl": "https://example.com/drama2021_1.jpg"
-        },
-        {
-          "broadcaster": "tvN",
-          "title": "해피니스",
-          "role": "앤드류",
-          "note": "조연",
-          "imgUrl": "https://example.com/drama2021_2.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2023,
-      "dramas": [
-        {
-          "broadcaster": "NETFLIX",
-          "title": "택배기사",
-          "role": "무솔모",
-          "note": "",
-          "imgUrl": "https://example.com/drama2023_1.jpg"
-        }
-      ]
-    },
-    {
-      "year": "2023년~2024년",
-      "dramas": [
-        {
-          "broadcaster": "ENA",
-          "title": "모래에도 꽃이 핀다",
-          "role": "조석희",
-          "note": "",
-          "imgUrl": "https://example.com/drama2023_2024_1.jpg"
-        }
-      ]
-    },
-    {
-      "year": 2024,
-      "dramas": [
-        {
-          "broadcaster": "넥스트엔터테인먼트월드",
-          "title": "타이코메트리",
-          "role": "강지우",
-          "note": "웹드라마",
-          "imgUrl": "https://example.com/drama2024_1.jpg"
-        }
-      ]
-    }
-  ],
+    "drama_appearances": [
+      {
+        "year": 2013,
+        "dramas": [
+          {
+            "broadcaster": "KBS2",
+            "title": "드라마 스페셜 - 내 친구는 아직 살아있다",
+            "role": "최지현",
+            "note": "주연",
+            "imgUrl": "/images/드라마 스페셜 - 내 친구는 아직 살아있다.jpg"
+          },
+          {
+            "broadcaster": "KBS2",
+            "title": "드라마 스페셜 - 끈질긴 기쁨",
+            "role": "동수",
+            "note": "",
+            "imgUrl": "/images/드라마 스페셜 - 끈질긴 기쁨.jpg"
+          },
+          {
+            "broadcaster": "MBC",
+            "title": "납자가 사랑할 때",
+            "role": "한태상",
+            "note": "송승헌 아역",
+            "imgUrl": "/images/납자가 사랑할 때.jpg"
+          },
+          {
+            "broadcaster": "NAVER TV",
+            "title": "출중한 여자",
+            "role": "램퍼 JS",
+            "note": "웹드라마 · 조연",
+            "imgUrl": "/images/출중한 여자.jpg"
+          },
+          {
+            "broadcaster": "네이버TV",
+            "title": "썸남썸녀",
+            "role": "남자 4호",
+            "note": "",
+            "imgUrl": "/images/썸남썸녀.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2014,
+        "dramas": [
+          {
+            "broadcaster": "KBS2",
+            "title": "골든 크로스",
+            "role": "오창희",
+            "note": "",
+            "imgUrl": "/images/골든 크로스.jpg"
+          },
+          {
+            "broadcaster": "tvN",
+            "title": "고교처세왕",
+            "role": "지대한",
+            "note": "조연",
+            "imgUrl": "/images/고교처세왕.jpg"
+          },
+          {
+            "broadcaster": "KBS2",
+            "title": "아이언맨",
+            "role": "주홍주",
+            "note": "",
+            "imgUrl": "/images/아이언맨.jpg"
+          },
+          {
+            "broadcaster": "EBS",
+            "title": "슴슴한 그대",
+            "role": "성태",
+            "note": "5부작 · 주연",
+            "imgUrl": "/images/슴슴한 그대.jpg"
+          },
+          {
+            "broadcaster": "SBS",
+            "title": "피노키오",
+            "role": "안찬수",
+            "note": "조연",
+            "imgUrl": "/images/피노키오.jpg"
+          },
+          {
+            "broadcaster": "KBS2",
+            "title": "드라마 스페셜 - 가만히 있으라",
+            "role": "양준식",
+            "note": "주연",
+            "imgUrl": "/images/드라마 스페셜 - 가만히 있으라.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2015,
+        "dramas": [
+          {
+            "broadcaster": "tvN",
+            "title": "식샤를 합시다 2",
+            "role": "이주승",
+            "note": "",
+            "imgUrl": "/images/식샤를 합시다 2.jpg"
+          },
+          {
+            "broadcaster": "KBS2",
+            "title": "프로듀사",
+            "role": "FD",
+            "note": "조연",
+            "imgUrl": "/images/프로듀사.jpg"
+          },
+          {
+            "broadcaster": "SBS",
+            "title": "너를 사랑한 시간",
+            "role": "오대복",
+            "note": "",
+            "imgUrl": "/images/너를 사랑한 시간.jpg"
+          },
+          {
+            "broadcaster": "NAVER TV",
+            "title": "9초-영원의 시간",
+            "role": "유찬",
+            "note": "웹드라마 · 주연",
+            "imgUrl": "/images/9초-영원의 시간.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2016,
+        "dramas": [
+          {
+            "broadcaster": "KBS2",
+            "title": "드라마 스페셜 - 동정없는 세상",
+            "role": "차준호",
+            "note": "주연",
+            "imgUrl": "/images/드라마 스페셜 - 동정없는 세상.jpg"
+          },
+          {
+            "broadcaster": "OCN",
+            "title": "보이스 시즌1",
+            "role": "황경일",
+            "note": "4회, 5회, 6회 특별출연",
+            "imgUrl": "/images/보이스 시즌1.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2017,
+        "dramas": [
+          {
+            "broadcaster": "NAVER TV",
+            "title": "아이돌 관한대행",
+            "role": "나고야 선배",
+            "note": "특별출연",
+            "imgUrl": "/images/아이돌 관한대행.jpg"
+          },
+          {
+            "broadcaster": "SBS",
+            "title": "조작",
+            "role": "윤선우",
+            "note": "",
+            "imgUrl": "/images/조작.jpg"
+          },
+          {
+            "broadcaster": "tvN",
+            "title": "드라마 스테이지 - 박대리의 은밀한 사생활",
+            "role": "박종혁",
+            "note": "주연",
+            "imgUrl": "/images/드라마 스테이지 - 박대리의 은밀한 사생활.jpg"
+          },
+          {
+            "broadcaster": "NAVER TV",
+            "title": "진정하세요",
+            "role": "민태용",
+            "note": "주연",
+            "imgUrl": "/images/진정하세요.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2018,
+        "dramas": [
+          {
+            "broadcaster": "tvN",
+            "title": "식샤를 합시다 3",
+            "role": "안찬수",
+            "note": "특별출연",
+            "imgUrl": "/images/식샤를 합시다 3.jpg"
+          },
+          {
+            "broadcaster": "YouTube",
+            "title": "탑매니지먼트",
+            "role": "엘제이",
+            "note": "조연",
+            "imgUrl": "/images/탑매니지먼트.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2019,
+        "dramas": [
+          {
+            "broadcaster": "KBS2",
+            "title": "닥터 프리즈너",
+            "role": "김석우",
+            "note": "특별출연",
+            "imgUrl": "/images/닥터 프리즈너.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2021,
+        "dramas": [
+          {
+            "broadcaster": "tvND",
+            "title": "너와 나의 그랑토피아",
+            "role": "조봉규",
+            "note": "주연",
+            "imgUrl": "/images/너와 나의 그랑토피아.jpg"
+          },
+          {
+            "broadcaster": "tvN",
+            "title": "해피니스",
+            "role": "앤드류",
+            "note": "조연",
+            "imgUrl": "/images/해피니스.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "dramas": [
+          {
+            "broadcaster": "NETFLIX",
+            "title": "택배기사",
+            "role": "무솔모",
+            "note": "",
+            "imgUrl": "/images/택배기사.jpg"
+          }
+        ]
+      },
+      {
+        "year": "2023년~2024년",
+        "dramas": [
+          {
+            "broadcaster": "ENA",
+            "title": "모래에도 꽃이 핀다",
+            "role": "조석희",
+            "note": "",
+            "imgUrl": "/images/모래에도 꽃이 핀다.jpg"
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "dramas": [
+          {
+            "broadcaster": "넥스트엔터테인먼트월드",
+            "title": "타이코메트리",
+            "role": "강지우",
+            "note": "웹드라마",
+            "imgUrl": "/images/타이코메트리.jpg"
+          }
+        ]
+      }
+    ],  
   "musical_performances": [
     {
       "year": 2010,
