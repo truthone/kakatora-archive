@@ -23,11 +23,11 @@ export const actorData = {
   ];
   
   export const ottWorksData = [
-    { id: 1, title: "이태원 클라쓰", ott: "netflix", image: "https://example.com/itaewon-class.jpg" },
-    { id: 2, title: "킹덤", ott: "netflix", image: "https://example.com/kingdom.jpg" },
-    { id: 3, title: "미스터 션샤인", ott: "watcha", image: "https://example.com/mr-sunshine.jpg" },
-    { id: 4, title: "복수가 돌아왔다", ott: "wavve", image: "https://example.com/revenge.jpg" },
-    { id: 5, title: "만달로리안", ott: "disney", image: "https://example.com/mandalorian.jpg" },
+    { id: 1, title: "이태원 클라쓰", ott: ['watcha', 'netflix'], image: "https://example.com/itaewon-class.jpg" },
+    { id: 2, title: "킹덤", ott: ['netflix'], image: "https://example.com/kingdom.jpg" },
+    { id: 3, title: "미스터 션샤인", ott: ['watcha'], image: "https://example.com/mr-sunshine.jpg" },
+    { id: 4, title: "복수가 돌아왔다", ott: ['wavve'], image: "https://example.com/revenge.jpg" },
+    { id: 5, title: "만달로리안", ott: ['disney'], image: "https://example.com/mandalorian.jpg" },
   ];
   
   export const specialFeatureData = {
