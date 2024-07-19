@@ -52,7 +52,6 @@ function Header() {
         <Dialog.Content style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '250px', padding: '16px', backgroundColor: 'var(--gray-1)' }}>
           <Flex direction="column" gap="4">
             <Flex justify="between" align="center">
-              <Heading size="4">메뉴</Heading>
               <Button variant="ghost" size="1" onClick={() => setIsSidebarOpen(false)}>
                 <Cross1Icon />
               </Button>

@@ -1,14 +1,36 @@
 import React from 'react';
-import { Box, Heading, Separator } from '@radix-ui/themes';
+import { Box, Heading } from '@radix-ui/themes';
 import FilmoRow from './FilmoRow';
+import styled from 'styled-components';
+import useStickyHeader from '../hooks/useStickyHeader';
+
+const FilmoRowContainer = styled(Box)`
+  position: relative;
+  margin-bottom: 20px; /* 로우 간의 간격 */
+`;
+
+const StickyHeading = styled(Heading)`
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background: white; /* 백그라운드 색상 */
+  z-index: 1; /* 헤더가 컨텐츠 위에 있도록 */
+  border-bottom: 1px solid #ccc; /* 아래쪽 경계선 */
+  transition: background-color 0.3s;
+
+  &.active {
+    background-color: lightgray; /* 활성화된 헤더의 백그라운드 색상 변경 */
+  }
+`;
 
 function FilmoSection({ data }) {
+  const [headerRef, isSticky] = useStickyHeader();
+
   return (
-    <Box>
+    <FilmoRowContainer>
       {data.map((yearData, index) => (
         <Box key={index} mt="6">
-          <Heading size="7" mb="4">{yearData?.year}</Heading>
-          <Separator orientation="horizontal" size="4" my="4"/>
+          <StickyHeading ref={headerRef} className={isSticky ? 'active' : ''} size="7" mb="4">{yearData?.year}</StickyHeading>
           {yearData?.movies && yearData.movies.length > 0 && (
             <FilmoRow title="영화" contents={yearData?.movies} />
           )}
@@ -23,7 +45,7 @@ function FilmoSection({ data }) {
           )}
         </Box>
       ))}
-    </Box>
+    </FilmoRowContainer>
   );
 }
 
