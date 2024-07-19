@@ -12,14 +12,10 @@ const FilmoRowContainer = styled(Box)`
 const StickyHeading = styled(Heading)`
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 0;
+  top: 55px;
   z-index: 1; /* 헤더가 컨텐츠 위에 있도록 */
-  border-bottom: 1px solid #ccc; /* 아래쪽 경계선 */
-  transition: background-color 0.3s;
-
-  &.active {
-    background-color: lightgray; /* 활성화된 헤더의 백그라운드 색상 변경 */
-  }
+  background-color: var(--gray-1);
+  padding: 10px 20px;
 `;
 
 function FilmoSection({ data }) {
@@ -29,7 +25,7 @@ function FilmoSection({ data }) {
     <FilmoRowContainer>
       {data.map((yearData, index) => (
         <Box key={index} mt="6">
-          <StickyHeading ref={headerRef} className={isSticky ? 'active' : ''} size="7" mb="4">{yearData?.year}</StickyHeading>
+          <StickyHeading ref={headerRef} className={isSticky ? 'active' : ''} size="6" p="4" mb="4">{yearData?.year}</StickyHeading>
           {yearData?.movies && yearData.movies.length > 0 && (
             <FilmoRow title="영화" contents={yearData?.movies} />
           )}
