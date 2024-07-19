@@ -1,11 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { Tabs, Box, Flex, Heading, Text, Avatar, Table } from '@radix-ui/themes';
 import { actorData } from './dummyData';
 
 function ActorProfile() {
-  const { id } = useParams();
-  // 실제로는 id를 사용해 데이터를 불러와야 하지만, 여기서는 더미 데이터를 사용합니다.
   const actor = actorData;
 
   return (
