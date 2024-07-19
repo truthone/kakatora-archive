@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Heading, Text, Button, Flex, Container, Skeleton } from '@radix-ui/themes';
-import { PlayIcon, InfoCircledIcon, HeartFilledIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
+import { HeartFilledIcon, InstagramLogoIcon } from '@radix-ui/react-icons';
 import heroImg from '../img/hero.jpg'
 
 function Hero({ movie }) {
