@@ -41,8 +41,8 @@ function Header() {
             ))}
           </Flex>
           <Box display={{ md: 'none' }}>
-            <Button variant="ghost" size="2" onClick={() => setIsSidebarOpen(true)}>
-              <HamburgerMenuIcon />
+            <Button variant="ghost" size="4" onClick={() => setIsSidebarOpen(true)}>
+              <HamburgerMenuIcon style={{ transform: 'scale(2.0)' }}/>
             </Button>
           </Box>
         </Flex>

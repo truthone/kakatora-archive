@@ -8,9 +8,9 @@ import MovieDetail from './components/MovieDetail';
 import Footer from './components/Footer';
 import ActorProfile from './components/ActorProfile';
 import TasteChartGenerator from './components/TasteChartGenerator';
-import OttWorksList from './components/OttWorksList';
 import SpecialFeature from './components/SpecialFeature'
 import FilmoDetail from './components/FilmoDetail';
+import FilmoFilter from './components/FilmoFilter';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           <Route path="/filmo/:id" element={<FilmoDetail />} />
           <Route path="/profile" element={<ActorProfile />} />
           <Route path="/taste-chart" element={<TasteChartGenerator />} />
-          <Route path="/ott-recommendation" element={<OttWorksList />} />
+          <Route path="/ott-recommendation" element={<FilmoFilter />} />
           <Route path="/recommended" element={<SpecialFeature />} />
         </Routes>
         <Footer />
