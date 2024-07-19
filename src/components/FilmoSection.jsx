@@ -13,7 +13,6 @@ const StickyHeading = styled(Heading)`
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background: white; /* 백그라운드 색상 */
   z-index: 1; /* 헤더가 컨텐츠 위에 있도록 */
   border-bottom: 1px solid #ccc; /* 아래쪽 경계선 */
   transition: background-color 0.3s;
