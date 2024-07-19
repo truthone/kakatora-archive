@@ -10,10 +10,15 @@ const useStickyHeader = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
-          setIsSticky(!entry.isIntersecting);
+          if (entry.target === currentRef) {
+            setIsSticky(!entry.isIntersecting);
+          }
         });
       },
-      { threshold: [0, 1] }
+      {
+        threshold: [0],
+        rootMargin: '-1px 0px 0px 0px'
+      }
     );
 
     if (currentRef) {
