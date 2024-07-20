@@ -14,10 +14,25 @@ import FilmoFilter from './components/FilmoFilter';
 import FilmoAll from './components/FilmoAll';
 
 function App() {
+  useEffect(() => {
+    ReactGA.initialize('UA-000000-01'); // 여기에 귀하의 추적 ID를 넣으세요
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+  const RouteTracker = () => {
+    const location = useLocation();
+  
+    useEffect(() => {
+      ReactGA.pageview(location.pathname + location.search);
+    }, [location]);
+  
+    return null;
+  };
   return (
     <Router>
       <Theme appearance="dark" accentColor="crimson" radius="large" p={{ sm: '6', lg: '9' }}>
         <Header />
+        <RouteTracker />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
