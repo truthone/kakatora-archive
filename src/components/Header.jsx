@@ -8,11 +8,8 @@ function Header() {
   const navigate = useNavigate();
 
   const menuItems = [
-    { text: '프로필', path: '/profile' },
     { text: '필모그래피', path: '/filmography' },
-    { text: 'OTT 뭘 봐야할까?', path: '/ott-recommendation' },
-    { text: '추천 컨텐츠', path: '/recommended' },
-    { text: '취향표 만들기', path: '/taste-chart' },
+    { text: '사이트별 출연작', path: '/ott-recommendation' }
   ];
 
   const handleNavigate = (path) => {

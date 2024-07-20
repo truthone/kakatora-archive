@@ -11,6 +11,7 @@ import TasteChartGenerator from './components/TasteChartGenerator';
 import SpecialFeature from './components/SpecialFeature'
 import FilmoDetail from './components/FilmoDetail';
 import FilmoFilter from './components/FilmoFilter';
+import FilmoAll from './components/FilmoAll';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/taste-chart" element={<TasteChartGenerator />} />
           <Route path="/ott-recommendation" element={<FilmoFilter />} />
           <Route path="/recommended" element={<SpecialFeature />} />
+          <Route path="/filmography" element={<FilmoAll />} />
         </Routes>
         <Footer />
       </Theme>

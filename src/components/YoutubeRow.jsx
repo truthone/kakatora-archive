@@ -1,7 +1,7 @@
 import { Box, Heading, Flex, AspectRatio, Card, Text, Container } from '@radix-ui/themes';
 import useYouTubeVideos from '../hooks/useYouTubeVideos'
 
-function YouTubeRow({ movieTitle,  playlistId}) {
+function YouTubeRow({ SectionTitle, playlistId }) {
   const videos = useYouTubeVideos(playlistId);
 
   const openYouTubeVideo = (videoId) => {
@@ -9,37 +9,27 @@ function YouTubeRow({ movieTitle,  playlistId}) {
     window.open(youtubeUrl, '_blank');
   };
 
-  // useEffect(() => {
-  //   const fetchVideos = async () => {
-  //     try {
-  //       // const response = await fetch(
-  //       //   `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
-  //       //     movieTitle
-  //       //   )}&type=video&maxResults=10&key=${apiKey}`
-  //       // );
-  //       const response = await fetch(
-  //         `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=10&key=${apiKey}`
-  //       );
-  //       const data = await response.json();
-  //       console.log(data)
-  //       setVideos(data.items);
-  //     } catch (error) {
-  //       console.error('Error fetching YouTube videos:', error);
-  //     }
-  //   };
+  // 유효한 비디오 데이터만 필터링
+  const validVideos = videos?.filter(video => 
+    video?.snippet && 
+    video.snippet.resourceId?.videoId &&
+    video.snippet.thumbnails?.medium?.url &&
+    video.snippet.title
+  ) || [];
 
-  //   fetchVideos();
-  // }, [movieTitle]);
-  
+  if (validVideos.length === 0) {
+    return null; // 유효한 비디오가 없으면 아무것도 렌더링하지 않음
+  }
+
   return (
     <Box my="6">
       <Container>
-        <Heading size="6" mb="4">관련 동영상</Heading>
+        <Heading size="6" mb="4">{SectionTitle}</Heading>
         <Flex gap="3" style={{ overflowX: 'auto' }}>
-          {videos?.map((video) => (
+          {validVideos.map((video) => (
             <Card 
-              key={video.id.videoId} 
-              style={{ width: '250px', flexShrink: 0, pointer: 'cursor' }} 
+              key={video.snippet.resourceId.videoId} 
+              style={{ width: '250px', flexShrink: 0, cursor: 'pointer' }} 
               onClick={() => openYouTubeVideo(video.snippet.resourceId.videoId)}
             >
               <AspectRatio ratio={16/9}>
