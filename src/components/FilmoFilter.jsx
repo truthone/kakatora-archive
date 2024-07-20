@@ -44,8 +44,8 @@ function FilmoFilter() {
     <Container>
       <Theme appearance="dark" accentColor="crimson" grayColor="slate" radius="medium" scaling="100%">
         <Box p="4" style={{minHeight: "80vh", margin: "auto 0"}}>
-          <Heading size="6" mb="4">필모그래피 필터</Heading>
-          <Flex gap="2" wrap="wrap" mb="4">
+          <Heading size="6" mb="4"></Heading>
+          <Flex gap="2" wrap="wrap" mb="4" style={{alignItems:"center"}}>
             {otts.map(ott => (
               <Button 
                 key={ott} 
@@ -60,19 +60,9 @@ function FilmoFilter() {
             {filteredData.map(content => (
               <Box 
                 key={content.id}
-                style={{
-                  width: 'calc(33.333% - 16px)',
-                  maxWidth: '180px', minWidth: '40%',   
-                  '@media (max-width: 768px)': {
-                    width: 'calc(50% - 12px)',
-                  },
-                  '@media (max-width: 480px)': {
-                    width: '100%',
-                  },
-                }}
               >
                 <Card 
-                  style={{ width: '100%', cursor: 'pointer' }}
+                  style={{ maxWidth: '180px', minWidth: '100px%', width: '180px', cursor: 'pointer' }}
                   onClick={() => handleCardClick(content)}
                 >
                   <AspectRatio ratio={2/3}>

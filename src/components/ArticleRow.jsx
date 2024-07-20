@@ -2,13 +2,14 @@ import React from 'react';
 import { Card, Box, Heading, Text, Flex } from '@radix-ui/themes';
 import LinkPreview from 'react-link-preview'
 
+
 function ArticleRow({ article }) {
-  const fallbackImage = '/path/to/default-image.jpg'; // 기본 이미지 경로
+  const fallbackImage = '../img/hero.jpg'; // 기본 이미지 경로
 
   return (
     <Card size="2" style={{ marginBottom: '1rem' }}>
       <LinkPreview 
-        url={article.url}
+        url={'https://news.nate.com/view/20240720n00380'}
         width="100%"
         fallback={
           <Flex>
