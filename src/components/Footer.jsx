@@ -6,11 +6,11 @@ function Footer() {
     <Box py="6" style={{ backgroundColor: 'var(--color-panel-solid)' }}>
       <Container>
         <Flex direction="column" align="center" gap="2">
-          <Text size="2" color="gray">© 2024 OTT Demo. All rights reserved.</Text>
+          <Text size="2" color="gray">© 2024 HBD ju-seung</Text>
           <Flex gap="4" wrap="wrap" justify="center">
-            <Text as="a" href="#" size="1" color="gray">이용약관</Text>
-            <Text as="a" href="#" size="1" color="gray">개인정보 처리방침</Text>
-            <Text as="a" href="#" size="1" color="gray">고객 센터</Text>
+            <Text as="a" href="#" size="1" color="gray"></Text>
+            <Text as="a" href="#" size="1" color="gray"></Text>
+            <Text as="a" href="#" size="1" color="gray"></Text>
           </Flex>
         </Flex>
       </Container>
