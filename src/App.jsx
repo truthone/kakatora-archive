@@ -17,7 +17,7 @@ import FilmoAll from './components/FilmoAll';
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize('UA-000000-01'); // 여기에 귀하의 추적 ID를 넣으세요
+    ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID); // 여기에 귀하의 추적 ID를 넣으세요
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
