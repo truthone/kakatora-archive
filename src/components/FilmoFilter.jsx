@@ -41,7 +41,7 @@ function FilmoFilter() {
     navigate(`/filmo/${content.id}`);
   };
 
-  const otts = ['tving', 'watcha', 'wavve', 'netflix', '네이버시리즈', '유투브 프리미엄', '유투브', '카카오TV'];
+  const otts = ['tving', 'watcha', 'wavve', 'netflix', '네이버시리즈','유투브', '카카오TV'];
 
   return (
     <Container>
