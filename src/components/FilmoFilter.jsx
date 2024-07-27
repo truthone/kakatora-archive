@@ -46,18 +46,19 @@ function FilmoFilter() {
   return (
     <Container>
       <Theme appearance="dark" accentColor="crimson" grayColor="slate" radius="medium" scaling="100%">
-        <Box p="4" style={{minHeight: "80vh", margin: "auto 0"}}>
+        <Box p="1" style={{minHeight: "80vh", margin: "auto 0"}}>
           <Heading size="6" mb="4"></Heading>
-          <Flex direction="column" gap="4" mb="4">
-            <TextField.Root placeholder="작품 검색" 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{maxWidth: "30vw"}}>
-              <TextField.Slot>
-                <MagnifyingGlassIcon height="16" width="16" />
-              </TextField.Slot>
-            </TextField.Root>
-            <Flex gap="2" wrap="wrap" style={{alignItems:"center"}}>
+          <Flex direction="column" gap="4" mb="4" ml="2" mr="2" style={{alignItems:"center"}}>
+            <Box width={{initial: "100%", xs:"70%"}}>
+              <TextField.Root placeholder="작품 검색" 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}>
+                <TextField.Slot>
+                  <MagnifyingGlassIcon height="16" width="16" />
+                </TextField.Slot>
+              </TextField.Root>
+            </Box>
+            <Flex gap="2" wrap="wrap" justify="center" style={{alignItems:"center"}}>
               {otts.map(ott => (
                 <Button 
                   key={ott} 
@@ -69,11 +70,11 @@ function FilmoFilter() {
               ))}
             </Flex>
           </Flex>
-          <Flex direction="row" wrap="wrap" gap="3" justify="start" style={{width: "100%"}}>
+          <Flex direction="row" wrap="wrap" gap="3" justify="center" style={{width: "100%"}}>
             {filteredData.map(content => (
-              <Box key={content.id}>
+              <Box key={content.id} width={{initial: '45%', xs: '180px'}}>
                 <Card 
-                  style={{ maxWidth: '180px', minWidth: '100px%', width: '180px', cursor: 'pointer' }}
+                  style={{ cursor: 'pointer' }}
                   onClick={() => handleCardClick(content)}
                 >
                   <AspectRatio ratio={2/3}>
@@ -89,7 +90,7 @@ function FilmoFilter() {
                       }}
                     />
                   </AspectRatio>
-                  <Box p='2'>
+                  <Box>
                     <Text size="2" style={{ whiteSpace: 'break-spaces' }}>
                       {content.title}
                     </Text>
