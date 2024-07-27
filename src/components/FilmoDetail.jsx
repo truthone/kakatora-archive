@@ -34,7 +34,7 @@ function FilmoDetail() {
           <Text as="p" size="4" mb="2">역할: {filmo.role}</Text>
           {filmo.note && <Text as="p" size="4" mb="2">비고: {filmo.note}</Text>}
           {filmo.broadcaster && <Text as="p" size="4" mb="2">방송사: {filmo.broadcaster}</Text>}
-          {filmo.year && <Text as="p" size="4" mb="2">년도: {filmo.year}</Text>}
+          {filmo.year && <Text as="p" size="4" mb="2">연도: {filmo.year}</Text>}
           {filmo.ott && ( 
             <Flex align="center" gap="2" mb="4">
               <Text as="p" size="3">시청 가능한 곳:</Text>
