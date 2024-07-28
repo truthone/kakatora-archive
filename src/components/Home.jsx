@@ -10,8 +10,10 @@ import FilmoByCategory from './FilmoByCategory';
 function Home() {
   const playlistId = 'PLWeRTK7abiXgWIDw-fNcAp-UiPoXFeLPR';
   return (
-    <Container>
-      <Hero movie={moviesData.featuredMovie} />
+    <>
+    <Hero movie={moviesData.featuredMovie} />
+    <Container mx="3">
+      
       {/* <Flex>
         <Card style={{ width: '300px', flexShrink: 0 }}><TwitterEmbed  /></Card>
       </Flex> */}
@@ -21,6 +23,7 @@ function Home() {
       <Separator orientation="horizontal" size="4" />
       <FilmoByCategory />
     </Container>
+    </>
   );
 }
 

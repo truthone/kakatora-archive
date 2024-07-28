@@ -45,7 +45,7 @@ function FilmoByCategory() {
           <Heading size="6" mb="4">
             {getCategoryTitle(category)}
           </Heading>
-          <Flex mx="5" gap="3" style={{ overflowX: 'auto' }}>
+          <Flex align="stretch" mx="5" gap="3" style={{ overflowX: 'auto' }}>
             {allData[category]?.map((item) => (
               <Card 
                 key={item.id} 

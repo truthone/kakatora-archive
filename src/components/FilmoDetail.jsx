@@ -1,10 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Flex, Heading, Text, AspectRatio, Separator } from '@radix-ui/themes';
+import { Box, Flex, Heading, Text, AspectRatio, Separator, Card } from '@radix-ui/themes';
 import ArticleRow from './ArticleRow';
 import filmoDataByYear from '../data/filmoDataByYear.json';
+import liveAloneDetailData from '../data/liveAloneData.json';
 import OttLogo from './OttLogo';
+import styled from 'styled-components';
+import EpisodeRow from './EpisodeRow';
 
+const FilmoRowContainer = styled(Box)`
+  position: relative;
+  margin-bottom: 20px; /* 로우 간의 간격 */
+`;
 
 function FilmoDetail() {
   const { id } = useParams();
@@ -47,8 +54,23 @@ function FilmoDetail() {
 
       <Separator size="4" my="4" />
 
+      {filmo.title === "나 혼자 산다" && (
+        <FilmoRowContainer>
+        {
+          liveAloneDetailData?.map((yearData, index) => (
+            <Box key={index} mt="6">
+              <Heading size="6" p="4" mb="4">{yearData?.year}</Heading>
+              {yearData?.episode && yearData.episode.length > 0 && (
+                <EpisodeRow title="" contents={yearData?.episode} />
+              )}
+            </Box>
+        ))}
+        </FilmoRowContainer>
+      )}
+
       {filmo.articles && filmo.articles.length > 0 && (
         <Box>
+          <Separator size="4" my="4" />
           <Heading size="6" mb="2">관련 기사</Heading>
           {filmo.articles.map((article, index) => (
             <ArticleRow key={index} article={article} />

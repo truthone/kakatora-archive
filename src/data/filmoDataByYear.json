@@ -612,7 +612,6 @@
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "게스트, 427회",
-          "note": "솔로 크리스마스 with 구성환, 장동윤",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2021
@@ -636,11 +635,10 @@
       "tv_appearances": [
         {
           "id": "tv_2022_1",
-          "date": "2월 11일, 5월 6일, 5월 13일, 07월 22일, 10월 14일",
+          "date": "2월 11일, 5월 6일, 5월 13일, 7월 22일, 10월 14일",
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "겨울 나기, 주도인 클럽1, 주도인 클럽2, 카자흐스탄 귀국, 강릉 여행",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2022
@@ -744,7 +742,6 @@
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "방송연예대상 비하인드, 기라인 단합대회 1 기라인 단합대회 2, 군산 여행 with 엄마즈, 미스터리 클럽, 이사 with 구성환, 나혼산 10주년 몽골여행, 여사친 with 천우희, 테베랜드 연극 연습, 부산국제영화제",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2023
@@ -824,7 +821,6 @@
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "방송연예대상 비하인드, 조부모님댁 방문, 비수기 with 구성환, 베트남 배달 with 친형",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2024

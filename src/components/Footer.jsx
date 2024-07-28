@@ -3,7 +3,7 @@ import { Box, Text, Flex, Container } from '@radix-ui/themes';
 
 function Footer() {
   return (
-    <Box py="6" style={{ backgroundColor: 'var(--color-panel-solid)' }}>
+    <Box mt="9" py="5" style={{ backgroundColor: 'var(--color-panel-solid)' }}>
       <Container>
         <Flex direction="column" align="center" gap="2">
           <Text size="2" color="gray">© 2024 HBD ju-seung</Text>

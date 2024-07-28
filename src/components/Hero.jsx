@@ -23,7 +23,7 @@ function Hero({ movie }) {
   };
 
   return (
-    <Box position="relative" height={{ initial: '70vh' }}>
+    <Box position="relative" height={{ initial: '70vh', md: 'auto' }}>
         <Skeleton style={{borderRadius: '0'}}>
           <img 
           src={heroImg} 
