@@ -37,16 +37,16 @@ function Header() {
               </Button>
             ))}
           </Flex>
-          <Box display={{ md: 'none' }}>
+          <Flex justify="center" align="center" display={{ md: 'none' }}>
             <Button variant="ghost" size="4" onClick={() => setIsSidebarOpen(true)}>
               <HamburgerMenuIcon style={{ transform: 'scale(2.0)' }}/>
             </Button>
-          </Box>
+          </Flex>
         </Flex>
       </Box>
 
       <Dialog.Root open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
-        <Dialog.Content style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '250px', padding: '16px', backgroundColor: 'var(--gray-1)' }}>
+        <Dialog.Content style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '200px', padding: '16px', backgroundColor: 'var(--gray-1)', borderRadius: "10px 0 0 10px" }}>
           <Flex direction="column" gap="4">
             <Flex justify="between" align="center">
               <Button variant="ghost" size="1" onClick={() => setIsSidebarOpen(false)}>

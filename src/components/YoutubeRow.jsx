@@ -25,7 +25,7 @@ function YouTubeRow({ SectionTitle, playlistId }) {
     <Box my="6">
       <Container>
         <Heading size="6" mb="4">{SectionTitle}</Heading>
-        <Flex px="5" gap="3" style={{ overflowX: 'auto' }}>
+        <Flex px="4" gap="3" style={{ overflowX: 'auto' }}>
           {validVideos.map((video) => (
             <Card 
               key={video.snippet.resourceId.videoId} 

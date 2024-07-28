@@ -88,7 +88,7 @@ function FilmoFilter() {
               </Flex>           
             </Flex>     
           </Box>
-          <Box p="1" my="auto" mx="0" ref={contentRef} style={{height: "fit-content"}}>
+          <Box p="1" my="auto" mx="0" ref={contentRef} style={{height: "fit-content", minHeight: "70vh"}}>
             <Flex direction="row" wrap="wrap" gap="3" justify="center" style={{width: "100%"}}>
               {filteredData.map(content => (
                 <Box key={content.id} width={{initial: '45%', xs: '180px'}}>
@@ -109,13 +109,12 @@ function FilmoFilter() {
                         }}
                       />
                     </AspectRatio>
-                    <Box>
+                    <Flex mt="2" gap="1" direction="column">
                       <Text size="2" style={{ whiteSpace: 'break-spaces' }}>
                         {content.title}
                       </Text>
-                      <Separator orientation="horizontal" style={{ margin: '4px 0' }} />
-                      {content.year && <Text size="2">{content.year}</Text>}
-                    </Box>
+                      {content.year && <><Separator orientation="horizontal" style={{ margin: '4px 0' }} /><Text size="2">{content.year}</Text></>}
+                    </Flex>
                   </Card>
                 </Box>
               ))}
