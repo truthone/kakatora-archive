@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Theme, Flex, Button, Heading, Text, Card, Box, AspectRatio, Container, Separator, TextField } from '@radix-ui/themes';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import '@radix-ui/themes/styles.css';
@@ -9,6 +9,14 @@ function FilmoFilter() {
   const [filteredData, setFilteredData] = useState([]);
   const [selectedOtts, setSelectedOtts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [filteredData]);
 
   useEffect(() => {
     filterData();
@@ -33,6 +41,9 @@ function FilmoFilter() {
     setSelectedOtts(prev => 
       prev.includes(ott) ? prev.filter(o => o !== ott) : [...prev, ott]
     );
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
   };
 
   const navigate = useNavigate();
@@ -46,62 +57,70 @@ function FilmoFilter() {
   return (
     <Container>
       <Theme appearance="dark" accentColor="crimson" grayColor="slate" radius="medium" scaling="100%">
-        <Box p="1" style={{minHeight: "80vh", margin: "auto 0"}}>
-          <Heading size="6" mb="4"></Heading>
-          <Flex direction="column" gap="4" mb="4" ml="2" mr="2" style={{alignItems:"center"}}>
-            <Box width={{initial: "100%", xs:"70%"}}>
-              <TextField.Root placeholder="작품 검색" 
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}>
-                <TextField.Slot>
-                  <MagnifyingGlassIcon height="16" width="16" />
-                </TextField.Slot>
-              </TextField.Root>
-            </Box>
-            <Flex gap="2" wrap="wrap" justify="center" style={{alignItems:"center"}}>
-              {otts.map(ott => (
-                <Button 
-                  key={ott} 
-                  onClick={() => toggleOtt(ott)}
-                  variant={selectedOtts.includes(ott) ? 'solid' : 'outline'}
-                >
-                  {ott}
-                </Button>
+          <Box style={{
+            position: 'sticky',
+            top: "50px",
+            zIndex: 1,
+            backgroundColor: 'var(--color-background)',
+            paddingTop: 'var(--space-3)',
+            paddingBottom: 'var(--space-3)',
+          }}>
+            <Flex direction="column" gap="4" my="4" mx="2" style={{alignItems:"center"}}>
+              <Box width={{initial: "100%", xs:"70%"}}>
+                <TextField.Root placeholder="작품 검색" 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}>
+                  <TextField.Slot>
+                    <MagnifyingGlassIcon height="16" width="16" />
+                  </TextField.Slot>
+                </TextField.Root>
+              </Box>
+              <Flex gap="2" wrap="wrap" justify="center" style={{alignItems:"center"}}>
+                {otts.map(ott => (
+                  <Button 
+                    key={ott} 
+                    onClick={() => toggleOtt(ott)}
+                    variant={selectedOtts.includes(ott) ? 'solid' : 'outline'}
+                  >
+                    {ott}
+                  </Button>
+                ))}
+              </Flex>           
+            </Flex>     
+          </Box>
+          <Box p="1" my="auto" mx="0" ref={contentRef} style={{height: "fit-content"}}>
+            <Flex direction="row" wrap="wrap" gap="3" justify="center" style={{width: "100%"}}>
+              {filteredData.map(content => (
+                <Box key={content.id} width={{initial: '45%', xs: '180px'}}>
+                  <Card 
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => handleCardClick(content)}
+                  >
+                    <AspectRatio ratio={2/3}>
+                      <img 
+                        src={`${process.env.PUBLIC_URL}${content.imgUrl}`} 
+                        alt={content.title} 
+                        style={{ 
+                          objectFit: 'cover', 
+                          width: '100%', 
+                          height: '100%',
+                          borderTopLeftRadius: 'var(--radius-2)',
+                          borderTopRightRadius: 'var(--radius-2)'
+                        }}
+                      />
+                    </AspectRatio>
+                    <Box>
+                      <Text size="2" style={{ whiteSpace: 'break-spaces' }}>
+                        {content.title}
+                      </Text>
+                      <Separator orientation="horizontal" style={{ margin: '4px 0' }} />
+                      {content.year && <Text size="2">{content.year}</Text>}
+                    </Box>
+                  </Card>
+                </Box>
               ))}
             </Flex>
-          </Flex>
-          <Flex direction="row" wrap="wrap" gap="3" justify="center" style={{width: "100%"}}>
-            {filteredData.map(content => (
-              <Box key={content.id} width={{initial: '45%', xs: '180px'}}>
-                <Card 
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => handleCardClick(content)}
-                >
-                  <AspectRatio ratio={2/3}>
-                    <img 
-                      src={`${process.env.PUBLIC_URL}${content.imgUrl}`} 
-                      alt={content.title} 
-                      style={{ 
-                        objectFit: 'cover', 
-                        width: '100%', 
-                        height: '100%',
-                        borderTopLeftRadius: 'var(--radius-2)',
-                        borderTopRightRadius: 'var(--radius-2)'
-                      }}
-                    />
-                  </AspectRatio>
-                  <Box>
-                    <Text size="2" style={{ whiteSpace: 'break-spaces' }}>
-                      {content.title}
-                    </Text>
-                    <Separator orientation="horizontal" style={{ margin: '4px 0' }} />
-                    {content.year && <Text size="2">{content.year}</Text>}
-                  </Box>
-                </Card>
-              </Box>
-            ))}
-          </Flex>
-        </Box>
+          </Box>
       </Theme>
     </Container>
   );
