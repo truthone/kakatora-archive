@@ -546,7 +546,7 @@
           "role": "",
           "note": "감독, 각본",
           "imgUrl": "/images/혈안.jpeg",
-          "year": 2021
+          "year": 2020
         }
       ],
       "musicals": [
@@ -611,8 +611,8 @@
           "date": "12월 24일",
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
-          "role": "게스트",
-          "note": "with 구성환, 장동윤",
+          "role": "게스트, 427회",
+          "note": "솔로 크리스마스 with 구성환, 장동윤",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2021
@@ -636,11 +636,11 @@
       "tv_appearances": [
         {
           "id": "tv_2022_1",
-          "date": "10월 14일",
+          "date": "2월 11일, 5월 6일, 5월 13일, 07월 22일, 10월 14일",
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "강릉 여행",
+          "note": "겨울 나기, 주도인 클럽1, 주도인 클럽2, 카자흐스탄 귀국, 강릉 여행",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2022
@@ -687,6 +687,24 @@
     {
       "id": "year_2023",
       "year": 2023,
+      "movies": [
+        {
+          "id": "movie_2023_1",
+          "title": "파미르",
+          "role": "성철",
+          "note": "주연",
+          "imgUrl": "/images/파미르.jpg",
+          "year": 2023
+        },
+        {
+          "id": "movie_2023_2",
+          "title": "301호 모텔 살인사건",
+          "role": "민철",
+          "note": "주연",
+          "imgUrl": "/images/301호 모텔 살인사건.jpg",
+          "year": 2023
+        }
+      ],
       "dramas": [
         {
           "id": "drama_2023_1",
@@ -722,11 +740,11 @@
       "tv_appearances": [
         {
           "id": "tv_2023_1",
-          "date": "1월 6일",
+          "date": "1월 6일, 1월 20일, 1월 27일, 2월 17일, 4월 14일, 5월 12일/19일/26일, 7월 7일, 9월 15일, 10월 27일",
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "방송연예대상 비하인드",
+          "note": "방송연예대상 비하인드, 기라인 단합대회 1 기라인 단합대회 2, 군산 여행 with 엄마즈, 미스터리 클럽, 이사 with 구성환, 나혼산 10주년 몽골여행, 여사친 with 천우희, 테베랜드 연극 연습, 부산국제영화제",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2023
@@ -802,11 +820,11 @@
         },
         {
           "id": "tv_2024_2",
-          "date": "4월 12일",
+          "date": "1월 5일, 2월 9일, 4월 12일, 7월 19일",
           "broadcaster": "MBC",
           "title": "나 혼자 산다",
           "role": "고정",
-          "note": "with 구성환",
+          "note": "방송연예대상 비하인드, 조부모님댁 방문, 비수기 with 구성환, 베트남 배달 with 친형",
           "imgUrl": "/images/나 혼자 산다.jpg",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2024
@@ -816,7 +834,7 @@
           "date": "1월 2일",
           "broadcaster": "sbs",
           "title": "강심장vs",
-          "role": "게스트",
+          "role": "게스트, 5회",
           "imgUrl": "/images/강심장vs.jpeg",
           "ott": ["wavve"],
           "year": 2024
@@ -826,7 +844,7 @@
           "date": "4월 11일",
           "broadcaster": "채널 S",
           "title": "다시갈지도",
-          "role": "게스트",
+          "role": "게스트, 104회",
           "imgUrl": "/images/다시갈지도.webp",
           "ott": ["wavve","netflix","tving"],
           "year": 2024
