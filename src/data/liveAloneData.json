@@ -1,23 +1,24 @@
 [
-  { "year" : 2024,
-    "episode":[
+  {
+    "year": 2024,
+    "episode": [
       {
-        "date": "1월 5일",
+        "date": "7월 19일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "방송연예대상 비하인드",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 527
+        "note": "베트남 배달 with 친형",
+        "imgUrl": "/images/ep_live_alone/555.png",
+        "ep": 555
       },
       {
-        "date": "2월 9일",
+        "date": "5월 31일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "조부모님댁 방문",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 532
+        "note": "패널 참석",
+        "imgUrl": "/images/ep_live_alone/548.png",
+        "ep": 548
       },
       {
         "date": "4월 12일",
@@ -25,17 +26,35 @@
         "title": "나 혼자 산다",
         "role": "고정",
         "note": "비수기 with 구성환",
-        "imgUrl": "/images/나 혼자 산다.jpg",
+        "imgUrl": "/images/ep_live_alone/541.png",
         "ep": 541
       },
       {
-        "date": "7월 19일",
+        "date": "2월 9일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "베트남 배달 with 친형",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 555
+        "note": "조부모님댁 방문",
+        "imgUrl": "/images/ep_live_alone/532.png",
+        "ep": 532
+      },
+      {
+        "date": "2월 2일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "/images/ep_live_alone/531.png",
+        "ep": 531
+      },
+      {
+        "date": "1월 5일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "방송연예대상 비하인드",
+        "imgUrl": "/images/ep_live_alone/527.png",
+        "ep": 527
       }
     ]
   },
@@ -43,67 +62,22 @@
     "year": 2023,
     "episode": [
       {
-        "date": "1월 6일",
+        "date": "10월 27일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "방송연예대상 비하인드",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep" :477
+        "note": "부산국제영화제",
+        "imgUrl": "/images/ep_live_alone/518.png",
+        "ep": 518
       },
       {
-        "date": "1월 20일, 27일",
+        "date": "9월 15일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "기라인 단합대회1",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep" :479
-      },
-      {
-        "date": "1월 27일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "기라인 단합대회2",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep" :480
-      },
-      {
-        "date": "2월 17일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "군산 여행 with 마더즈",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 483
-      },
-      {
-        "date": "4월 14일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "이사 with 구성환",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 490
-      },
-      {
-        "date": "5월 12일, 19일, 26일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "무지개 10주년 몽골 여행",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": "494~496"
-      },
-      {
-        "date": "5월 26일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "여사친 with 천우희",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": "496-2"
+        "note": "미스터리 크루 with 기안",
+        "imgUrl": "/images/ep_live_alone/512.png",
+        "ep": 512
       },
       {
         "date": "7월 7일",
@@ -111,26 +85,71 @@
         "title": "나 혼자 산다",
         "role": "고정",
         "note": "연극 테베랜드 연습",
-        "imgUrl": "/images/나 혼자 산다.jpg",
+        "imgUrl": "/images/ep_live_alone/502.png",
         "ep": 502
       },
       {
-        "date": "9월 15일",
+        "date": "5월 26일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "미스터리 서클 with 기안",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 512
+        "note": "여사친 with 천우희",
+        "imgUrl": "/images/ep_live_alone/496-2.png",
+        "ep": "496-2"
       },
       {
-        "date": "10월 27일",
+        "date": "5월 12일, 19일, 26일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "부산국제영화제",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 518
+        "note": "무지개 10주년 몽골 여행",
+        "imgUrl": "/images/ep_live_alone/494~496.png",
+        "ep": "494~496"
+      },
+      {
+        "date": "4월 14일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "이사 with 구성환",
+        "imgUrl": "/images/ep_live_alone/490.png",
+        "ep": 490
+      },
+      {
+        "date": "2월 17일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "군산 여행 with 마더즈",
+        "imgUrl": "/images/ep_live_alone/483.png",
+        "ep": 483
+      },
+      {
+        "date": "1월 27일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "기라인 단합대회2",
+        "imgUrl": "/images/ep_live_alone/480.png",
+        "ep": 480
+      },
+      {
+        "date": "1월 20일, 27일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "기라인 단합대회1",
+        "imgUrl": "/images/ep_live_alone/479.png",
+        "ep": 479
+      },
+      {
+        "date": "1월 6일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "방송연예대상 비하인드",
+        "imgUrl": "/images/ep_live_alone/477.png",
+        "ep": 477
       }
     ]
   },
@@ -138,13 +157,45 @@
     "year": 2022,
     "episode": [
       {
-        "date": "1월 28일",
+        "date": "10월 14일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
-        "role": "게스트",
+        "role": "고정",
+        "note": "강릉 여행",
+        "imgUrl": "/images/ep_live_alone/467.png",
+        "ep": 467
+      },
+      {
+        "date": "7월 22일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "note": "카자흐스탄 귀국",
+        "imgUrl": "/images/ep_live_alone/455.png",
+        "ep": 455
+      },
+      {
+        "date": "7월 8일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
         "note": "패널 참석",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 431
+        "imgUrl": "/images/ep_live_alone/453.png",
+        "ep": 453
+      },
+      {
+        "date": "5월 13일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "note": "주도인 클럽2",
+        "imgUrl": "/images/ep_live_alone/445.png",
+        "ep": 445
+      },
+      {
+        "date": "5월 6일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "note": "주도인 클럽1",
+        "imgUrl": "/images/ep_live_alone/444.png",
+        "ep": 444
       },
       {
         "date": "2월 11일",
@@ -152,49 +203,17 @@
         "title": "나 혼자 산다",
         "role": "게스트",
         "note": "월동 준비",
-        "imgUrl": "/images/나 혼자 산다.jpg",
+        "imgUrl": "/images/ep_live_alone/433.png",
         "ep": 433
       },
       {
-        "date": "5월 6일",
+        "date": "1월 28일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
-        "note": "주도인 클럽1",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 444
-      },
-      {
-        "date": "5월 13일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "note": "주도인 클럽2",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 445
-      },
-      {
-        "date": "7월 8일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
+        "role": "게스트",
         "note": "패널 참석",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 453
-      },
-      {
-        "date": "7월 22일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "note": "카자흐스탄 귀국",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 455
-      },
-      {
-        "date": "10월 14일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "강릉 여행",
-        "imgUrl": "/images/나 혼자 산다.jpg",
-        "ep": 467
+        "imgUrl": "/images/ep_live_alone/431.png",
+        "ep": 431
       }
     ]
   },
@@ -207,7 +226,7 @@
         "title": "나 혼자 산다",
         "role": "게스트",
         "note": "솔로 크리스마스 with 구성환, 장동윤",
-        "imgUrl": "/images/나 혼자 산다.jpg",
+        "imgUrl": "/images/ep_live_alone/427.png",
         "ep": 427
       }
     ]
