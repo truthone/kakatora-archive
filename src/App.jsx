@@ -14,6 +14,7 @@ import SpecialFeature from './components/SpecialFeature'
 import FilmoDetail from './components/FilmoDetail';
 import FilmoFilter from './components/FilmoFilter';
 import FilmoAll from './components/FilmoAll';
+import EpisodeList from './components/EpisodeList';
 
 function App() {
   useEffect(() => {
@@ -39,11 +40,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/filmo/:id" element={<FilmoDetail />} />
+          <Route path="/liveAlone/ep/:ep" element={<EpisodeList />} />
           <Route path="/profile" element={<ActorProfile />} />
           <Route path="/taste-chart" element={<TasteChartGenerator />} />
           <Route path="/ott-recommendation" element={<FilmoFilter />} />
           <Route path="/recommended" element={<SpecialFeature />} />
           <Route path="/filmography" element={<FilmoAll />} />
+          <Route path="/liveAlone" element={<EpisodeList />} />
         </Routes>
         <Footer />
       </Theme>

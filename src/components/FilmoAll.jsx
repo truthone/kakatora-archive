@@ -1,6 +1,4 @@
 import React from 'react';
-import Hero from './Hero';
-import moviesData from '../data/moviesData.json';
 import filmoDataByYear from '../data/filmoDataByYear.json'
 import { Container } from '@radix-ui/themes';
 import FilmoSection from './FilmoSection';
