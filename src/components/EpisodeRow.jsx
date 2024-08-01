@@ -6,7 +6,7 @@ function EpisodeRow({ title, contents }) {
   const navigate = useNavigate();
 
   const handleCardClick = (content) => {
-    navigate(`/filmo/${content.id}`);
+    navigate(`/liveAlone/ep/${content.ep}`);
   };
 
   return (
@@ -33,10 +33,8 @@ function EpisodeRow({ title, contents }) {
                 />
               </AspectRatio>
               <Flex p='2' direction="column" wrap="wrap">
-              <Text weight="medium" size="3">{content.date} | {content.ep}회 </Text>
-                <Text weight="bold" size="3" wrap="pretty">
-                  {content.note}
-                </Text> 
+                <Text weight="medium" size="3">{content.date} | {content.ep}회 </Text>
+                <Text weight="bold" size="3" wrap="pretty">{content.note}</Text> 
               </Flex>
             </Card>
           </Box>
