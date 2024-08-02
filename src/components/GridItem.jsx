@@ -1,8 +1,9 @@
-import React from 'react';
+import React , { memo }  from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import styled from 'styled-components';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { AspectRatio, Box, Text, Flex, Skeleton, Button } from '@radix-ui/themes';
+import { useNormalizedImage } from '../hooks/useNormalizedImage'
 
 const Overlay = styled(Dialog.Overlay)`
   background-color: rgba(0, 0, 0, 0.8);
@@ -59,16 +60,20 @@ const CloseButton = styled(Button)`
   }
 `;
 
-const GridItem = ({ image, episode, index, formattedTitle }) => (
-  <Dialog.Root>
+
+const GridItem = memo(({ image, episode, index, formattedTitle }) => {
+  const { src, title } = useNormalizedImage(episode.ep, image);
+  
+  return (
+    <Dialog.Root>
     <Dialog.Trigger asChild>
       <Flex direction="column" p="2" align="center" style={{cursor: 'pointer', border: "solid 0.5px #808080", borderRadius: "5px", justifyContent: "space-around"}}>
         <AspectRatio ratio={1 / 1}>
         <Skeleton loading="true" width="200" height="200">
           <img
-            src={`${process.env.PUBLIC_URL}/images/filmo_liveAlone/${episode.ep}/${image}`}
+            src={`${process.env.PUBLIC_URL}${src}`}
             alt={`Episode ${episode.ep} - Image ${index + 1}`}
-            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            style={{ objectFit: 'cover', width: '100%', height: 'auto' }}
             loading="lazy"
           />
         </Skeleton>
@@ -100,6 +105,7 @@ const GridItem = ({ image, episode, index, formattedTitle }) => (
       </Content>
     </Dialog.Portal>
   </Dialog.Root>
-);
+  )
+})
 
 export default GridItem;
