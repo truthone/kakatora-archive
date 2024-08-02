@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Flex, Heading, Text, AspectRatio, Separator, Section } from '@radix-ui/themes';
 import liveAloneDetailData from '../data/liveAloneData.json';
-import styled from 'styled-components';
 
 function EpisodeDetail() {
   const { ep } = useParams();
@@ -34,39 +33,5 @@ function EpisodeDetail() {
     </Box>
   );
 }
-
-const EpisodeSection = ({ episode }) => {
-  const images = imageList[episode.ep] || [];
-  return (
-    <Section size="2">
-      <Flex direction="column" gap="2">
-        <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="4" border="">
-          {images.map((image, index) => (
-            <Box align="center" style={{border: "solid 1px #ffffff", shadow: 'var(--shadow-3);'}}>
-              <AspectRatio key={index} ratio={1 / 1}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/filmo_liveAlone/${episode.ep}/${image}`}
-                  alt={`Episode ${episode.ep} - Image ${index + 1}`}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '4px' }}
-                />
-              </AspectRatio>
-              <Text size="1">{image}</Text>
-            </Box>
-          ))}
-        </Grid>
-      </Flex>
-    </Section>
-  );
-};
-
-const EpisodeList = () => (
-  <Flex direction="column" gap="4">
-    {episodesData.flatMap(year => 
-      year.episode.map(episode => (
-        <EpisodeSection key={episode.id} episode={episode} />
-      ))
-    )}
-  </Flex>
-);
 
 export default EpisodeDetail;
