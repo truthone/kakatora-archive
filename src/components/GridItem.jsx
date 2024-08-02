@@ -59,7 +59,7 @@ const CloseButton = styled(Button)`
   }
 `;
 
-const GridItem = ({ image, episode, index, formatImageTitle }) => (
+const GridItem = ({ image, episode, index, formattedTitle }) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
       <Flex direction="column" p="2" align="center" style={{cursor: 'pointer', border: "solid 0.5px #808080", borderRadius: "5px", justifyContent: "space-around"}}>
@@ -75,7 +75,7 @@ const GridItem = ({ image, episode, index, formatImageTitle }) => (
         </AspectRatio>
         <Flex m="2" style={{justifyContent:"center", alignItems: "center"}}>
           <Text as="div" size={{initial: '1', lg: '3'}} align="center" style={{wordBreak:"keep-all", wordWrap: "break-word"}}>
-            {formatImageTitle(image)}
+            {formattedTitle}
           </Text>
         </Flex>
       </Flex>
