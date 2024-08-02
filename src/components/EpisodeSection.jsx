@@ -4,6 +4,7 @@ import episodesData from '../data/liveAloneData.json';
 import imageList from '../data/imageList.json';
 import useStickyHeader from '../hooks/useStickyHeader';
 import styled from 'styled-components';
+import GridItem from './GridItem';
 
 const formatImageTitle = (filename) => {
   // '.png' 제거
@@ -22,11 +23,11 @@ const StickyHeading = styled(Box)`
   background-color: var(--gray-1);
   padding: 20px 0;
 `;
-const EpisodeSection = ({ episode }) => {
+const EpisodeList = ({ episode }) => {
   const [headerRef, isSticky] = useStickyHeader();
   const images = imageList[episode.ep] || [];
   return (
-    <Container px="5" py="3" width={{initial: '100%', md: '800px'}}>
+    <Container px="5" py="3" width={{initial: '100%', lg: '1200px'}}>
       <Flex direction="column" gap="3">
         <StickyHeading size="3" ref={headerRef} className={isSticky ? 'active' : ''} wrap="balance">
           <Text as="div" size="3" weight="bold">{episode.ep}회 | {episode.date}</Text>
@@ -34,17 +35,7 @@ const EpisodeSection = ({ episode }) => {
         </StickyHeading>
         <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="3" border="">
           {images.map((image, index) => (
-            <Box p="2" style={{border: "solid 1px #808080"}}>
-              <AspectRatio key={index} ratio={1 / 1}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/filmo_liveAlone/${episode.ep}/${image}`}
-                  alt={`Episode ${episode.ep} - Image ${index + 1}`}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                  loading="lazy"
-                />
-              </AspectRatio>
-              <Text height="100%" as="div" size="2" align="center" m="2">{formatImageTitle(image)}</Text>
-            </Box>
+            <GridItem image={image} episode={episode} index={index} formatImageTitle={formatImageTitle}/>
           ))}
         </Grid>
       </Flex>
@@ -52,14 +43,14 @@ const EpisodeSection = ({ episode }) => {
   );
 };
 
-const EpisodeList = () => (
+const EpisodeSection = () => (
   <Flex direction="column" gap="4">
     {episodesData.flatMap(year => 
       year.episode.map(episode => (
-        <EpisodeSection key={episode.id} episode={episode} />
+        <EpisodeList key={episode.id} episode={episode} />
       ))
     )}
   </Flex>
 );
 
-export default EpisodeList;
+export default EpisodeSection;
