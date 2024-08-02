@@ -94,7 +94,7 @@ const GridItem = ({ image, episode, index, formatImageTitle }) => (
           <img
             src={`${process.env.PUBLIC_URL}/images/filmo_liveAlone/${episode.ep}/${image}`}
             alt={`Episode ${episode.ep} - Image ${index + 1}`}
-            style={{ width: '100%', height: 'auto', maxHeight: '70vh', objectFit: 'contain' }}
+            style={{ minWidth: '200px', width: '100%', height: 'auto', maxHeight: '70vh', objectFit: 'contain' }}
           />
         </Skeleton>
       </Content>
