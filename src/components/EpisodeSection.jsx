@@ -35,7 +35,7 @@ const EpisodeList = ({ episode }) => {
         </StickyHeading>
         <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="3" border="">
           {images.map((image, index) => (
-            <GridItem image={encodeURIComponent(image)} episode={episode} index={index} formattedTitle={formatImageTitle(image)}/>
+            <GridItem image={image} episode={episode} index={index} formattedTitle={formatImageTitle(image)}/>
           ))}
         </Grid>
       </Flex>
