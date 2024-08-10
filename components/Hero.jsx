@@ -9,7 +9,7 @@ import Image from 'next/image';
 function Hero({ movie }) {
   const router = useRouter();
   const handleDetailClick = () => {
-    navigate(`/movie/${movie.id}`);
+    router.push(`/movie/${movie.id}`);
   };
 
   const handleInstagramClick = () => {

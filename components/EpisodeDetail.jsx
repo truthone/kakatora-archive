@@ -1,7 +1,8 @@
+'use client'
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Flex, Heading, Text, AspectRatio, Separator, Section } from '@radix-ui/themes';
-import liveAloneDetailData from '../data/liveAloneData.json';
+import liveAloneDetailData from '../data/liveAloneDetailData.json'
 import Image from 'next/image';
 import EpisodeSection from './EpisodeSection';
 
@@ -9,6 +10,8 @@ function EpisodeDetail() {
   const { ep } = useParams();
 
   const data = liveAloneDetailData.flatMap(year => year.episode).find(episode => episode.ep == ep)
+
+  console.log(data)
 
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   
@@ -18,7 +21,7 @@ function EpisodeDetail() {
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
             <Image 
-              src={`/${data.imgUrl}`} 
+              src={encodeURI(data.imgUrl)} 
               alt={data.note} 
               style={{objectFit: 'cover'}}
               fill

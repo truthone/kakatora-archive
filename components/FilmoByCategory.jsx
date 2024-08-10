@@ -57,7 +57,7 @@ function FilmoByCategory() {
               >
                 <AspectRatio ratio={2/3}>
                   <Image 
-                    src={item.imgUrl} 
+                    src={encodeURI(item.imgUrl)} 
                     alt={item.title}
                     style={{objectFit: 'cover'}}
                     fill

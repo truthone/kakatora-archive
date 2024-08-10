@@ -1,10 +1,9 @@
 'use client'
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { Box, Flex, Heading, Text, AspectRatio, Separator, Section } from '@radix-ui/themes';
 import ArticleRow from './ArticleRow';
 import filmoDataByYear from '../data/filmoDataByYear.json';
-import liveAloneDetailData from '../data/liveAloneData.json';
+import liveAloneDetailData from '../data/liveAloneDetailData.json';
 import OttLogo from './OttLogo';
 import styled from 'styled-components';
 import EpisodeRow from './EpisodeRow';
@@ -16,14 +15,12 @@ const FilmoRowContainer = styled(Box)`
   flexBasis: '60%' 
 `;
 
-function FilmoDetail() {
-  const { id } = useParams();
+function FilmoDetail({ id }) {
 
   // filmoDataByYear에서 해당 id를 가진 작품 찾기
   const filmo = filmoDataByYear.filmo_data_by_year.flatMap(year => 
     [...(year.movies || []), ...(year.dramas || []), ...(year.musicals || []), ...(year.tv_appearances || [])]
   ).find(item => item.id === id);
-
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
   return (
@@ -32,7 +29,7 @@ function FilmoDetail() {
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
             <Image 
-              src={`/${filmo.imgUrl}`} 
+              src={filmo.imgUrl} 
               alt={filmo.title} 
               style={{objectFit: 'cover'}}
               fill

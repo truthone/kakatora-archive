@@ -11,7 +11,8 @@ function Header() {
 
   const menuItems = [
     { text: '필모그래피', path: '/filmography' },
-    { text: '사이트별 출연작', path: '/ott-filter' }
+    { text: '사이트별 출연작', path: '/filmo-by-ott' },
+    { text: '나혼산 짤 모음집', path: '/liveAlone'}
   ];
 
   const handleNavigate = (path) => {
@@ -31,7 +32,7 @@ function Header() {
     >
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">
-          <Heading size="5" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>JU.CHIVE</Heading>
+          <Heading size="5" onClick={() => router.push(`/`)} style={{ cursor: 'pointer' }}>JU.CHIVE</Heading>
           <Flex gap="6" display={{ initial: 'none', md: 'flex' }}>
             {menuItems.map((item, index) => (
               <Button key={index} variant="ghost" style={{cursor: 'pointer'}} onClick={() => handleNavigate(item.path)} size="2">

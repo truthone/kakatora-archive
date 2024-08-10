@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Box, Heading, Flex, AspectRatio, Card, Text } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
@@ -7,7 +8,7 @@ function EpisodeRow({ title, contents }) {
   const router = useRouter();
 
   const handleCardClick = (content) => {
-    navigate(`/liveAlone/ep/${content.ep}`);
+    router.push(`/liveAlone/${content.ep}`);
   };
 
   return (
@@ -23,7 +24,7 @@ function EpisodeRow({ title, contents }) {
             >
               <AspectRatio ratio={3/2} style={{padding: '0'}}>
                 <Image 
-                  src={`/${content.imgUrl}`} 
+                  src={encodeURI(content.imgUrl)} 
                   alt={`${content.title}${content.note}`}
                   fill
                   style={{ 

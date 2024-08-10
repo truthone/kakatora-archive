@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { Card, Text, Flex, Grid, AspectRatio, Heading, Box, Section, Container } from '@radix-ui/themes';
-import episodesData from '../data/liveAloneData.json';
+import episodesData from '../data/liveAloneDetailData.json';
 import imageList from '../data/imageList.json';
 import useStickyHeader from '../hooks/useStickyHeader';
 import styled from 'styled-components';

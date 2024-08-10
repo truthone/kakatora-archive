@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { Theme, Flex, Button, Heading, Text, Card, Box, AspectRatio, Container, Separator, TextField } from '@radix-ui/themes';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
@@ -50,7 +51,7 @@ function FilmoFilter() {
   const router = useRouter();
 
   const handleCardClick = (content) => {
-    navigate(`/filmo/${content.id}`);
+    router.push(`/filmo/${content.id}`);
   };
 
   const otts = ['tving', 'watcha', 'wavve', 'netflix', '네이버시리즈','유투브', '카카오TV'];
@@ -99,7 +100,7 @@ function FilmoFilter() {
                   >
                     <AspectRatio ratio={2/3}>
                       <Image 
-                        src={`/${content.imgUrl}`} 
+                        src={encodeURI(content.imgUrl)} 
                         alt={content.title}
                         fill
                         style={{ 

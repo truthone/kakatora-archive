@@ -4,11 +4,11 @@ import { Box, Heading, Flex, AspectRatio, Card, Text } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
-function FilmoRow({ title, contents }) {
+function  FilmoRow({ title, contents }) {
   const router = useRouter();
 
   const handleCardClick = (content) => {
-    navigate(`/filmo/${content.id}`);
+    router.push(`/filmo/${content.id}`);
   };
 
   return (
@@ -23,7 +23,7 @@ function FilmoRow({ title, contents }) {
           >
             <AspectRatio ratio={2/3} style={{padding: '0'}}>
               <Image 
-                src={`/${content.imgUrl}`} 
+                src={encodeURI(content.imgUrl)} 
                 alt={content.title} 
                 fill
                 style={{ 
