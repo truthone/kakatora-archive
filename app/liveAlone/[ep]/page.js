@@ -15,8 +15,8 @@ export default function LiveAlonePage({ params }) {
   
   return (
     <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '0 auto', minHeight: '80vh' }}>
-      <Flex direction="row" gap="4">
-        <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
+      <Flex direction={{initial: 'column', xs: 'row'}} gap="4">
+        <Box style={{ flex: '2 1 50%', maxWidth: '600px', minWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
             <Image 
               src={encodeURI(data.imgUrl)} 
@@ -27,7 +27,7 @@ export default function LiveAlonePage({ params }) {
           </AspectRatio>
         </Box>
         
-        <Box style={{ flexBasis: '60%' }}>
+        <Box style={{ flex: '1 2 40%', minWidth: '200px' }}>
           <Heading size="6" mb="2">{data.ep}{data.note}</Heading>
           {data.date && <Text as="p" size="4" mb="2">{data.date}</Text>}
         </Box>
