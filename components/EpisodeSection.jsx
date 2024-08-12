@@ -5,17 +5,8 @@ import episodesData from '../data/liveAloneDetailData.json';
 import imageList from '../data/imageList.json';
 import useStickyHeader from '../hooks/useStickyHeader';
 import styled from 'styled-components';
-import GridItem from './GridItem';
+import GridImageItem from './GridImageItem';
 
-const formatImageTitle = (filename) => {
-  // '.png' 제거
-  let title = filename.replace('.png', '');
-  
-  // 언더스코어나 대시를 공백으로 변경 (선택사항)
-  title = title.replace(/[_]/g, ' ');
-  
-  return title;
-};
 const StickyHeading = styled(Box)`
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -26,7 +17,7 @@ const StickyHeading = styled(Box)`
 `;
 const EpisodeList = ({ episode }) => {
   const [headerRef, isSticky] = useStickyHeader();
-  const images = imageList[episode.ep] || [];
+  const imagesObj = imageList[episode.ep] || [];
   return (
     <Container px="5" py="3" width={{initial: '100%', lg: '1200px'}}>
       <Flex direction="column" gap="3">
@@ -35,8 +26,8 @@ const EpisodeList = ({ episode }) => {
           <Text as="div" size="3" weight="bold">{episode.note}</Text>
         </StickyHeading>
         <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="3" border="">
-          {images.map((image, index) => (
-            <GridItem key={index} image={image} episode={episode} index={index} formattedTitle={formatImageTitle(image)}/>
+          {imagesObj.map((obj, index) => (
+            <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
           ))}
         </Grid>
       </Flex>

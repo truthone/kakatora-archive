@@ -14,7 +14,7 @@ function EpisodeRow({ title, contents }) {
   return (
     <Box>
       <Heading size="6" mb="4">{title}</Heading>
-      <Flex my="4" direction={{initial: "column", xs: "row"}} wrap="wrap" gap="3" width="100%" justify="start">
+      <Flex my="4" p="0" direction={{initial: "column", xs: "row"}} wrap="wrap" gap="3" width="100%" justify="start">
         {contents.map((content, id) => (
           <Box key={id} width={{initial: "100%", xs: "280px"}}>
             <Card 

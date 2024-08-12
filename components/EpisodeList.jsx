@@ -11,8 +11,6 @@ function EpisodeDetail() {
 
   const data = liveAloneDetailData.flatMap(year => year.episode).find(episode => episode.ep == ep)
 
-  console.log(data)
-
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   
   return (

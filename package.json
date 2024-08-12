@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn generate-image-list && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-image-list": "node scripts/generateImageMetadata.js"
+    "generate-image-list": "node scripts/generateImageList.js"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
