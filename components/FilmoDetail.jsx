@@ -26,7 +26,7 @@ function FilmoDetail({ id }) {
   return (
     <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', width: '100%', minHeight: '80vh' }}>
       <Flex direction="row" gap="4" justify="start">
-        <Box style={{ flex: '1 2 60%', maxWidth: '800px' }}>
+        <Box style={{ flex: '1 1 30%', maxWidth: '300px' }}>
           <AspectRatio ratio={2 / 3}>
             <Image 
               src={filmo.imgUrl} 
@@ -37,7 +37,7 @@ function FilmoDetail({ id }) {
           </AspectRatio>
         </Box>
         
-        <Box style={{ flex: '1 2 40%' }}>
+        <Box style={{ flex: '1 1 40%' }}>
           <Heading size="6" mb="2">{filmo.title}</Heading>
           <Text as="p" size="4" mb="2">역할: {filmo.role}</Text>
           {filmo.note && <Text as="p" size="4" mb="2">비고: {filmo.note}</Text>}

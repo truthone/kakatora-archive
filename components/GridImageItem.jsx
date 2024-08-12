@@ -26,16 +26,10 @@ const Content = styled(Dialog.Content)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  @media screen and (max-width: 768px) {
-    width: 80vw;
-  }
-  @media screen and (max-width: 1200px) {
-    width: 70vw;
-  } 
-  width: 60vw;
+  min-width: 200px;
   max-width: 1200px;
-  min-height: 200px;
-  padding: 30px 20px;
+  min-height: 50px;
+  padding: 50px 20px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 
   @keyframes contentShow {
@@ -67,11 +61,16 @@ const CloseButton = styled(Button)`
 
 export default function GridImageItem({ filename, episode, index, title }) {
   const [aspectRatio, setAspectRatio] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
   const containerRef = useRef(null);
 
   function handleImgHeight(img){
     const { naturalWidth, naturalHeight } = img;
     setAspectRatio( naturalHeight / naturalWidth);
+    setHeight(naturalHeight);
+    setWidth(naturalWidth)
+    console.log(naturalWidth, naturalHeight)
   }
 
   return (
@@ -100,27 +99,33 @@ export default function GridImageItem({ filename, episode, index, title }) {
         <Overlay />
         <Content
           ref={containerRef} 
-          style={{height: aspectRatio ? `${containerRef.current?.offsetWidth * aspectRatio}px` : '60vh'}}>
+          style={{
+            width: aspectRatio ? `${width}px` : '150px',
+            height: aspectRatio ? `${height}px` : '20vh'}}>
           <Dialog.Close asChild>
             <CloseButton aria-label="Close">
               <Cross2Icon width="100%" height="100%"/>
             </CloseButton>
           </Dialog.Close>
-          <div
+          <Box
             style={{
               position: 'relative', 
               width: 'inherit', 
-              height: 'inherit'
+              height: 'inherit',
+              marign: 'auto'
               }}>
             <Image
               src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
               alt={`Episode ${episode.ep} - Image ${index + 1}`}
               fill
               style={{objectFit: 'contain'}}
-              sizes={'(max-width: 768px) 70vw, (max-width: 1200px) 60vw, 50vw'}
-              onLoadingComplete={(img)=>handleImgHeight(img)}
+              sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 40vw'}
+              loading="eager"
+              onLoadingComplete={(img)=>{
+                console.log(img.naturalHeight)
+                handleImgHeight(img)}}
             />
-          </div>
+          </Box>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

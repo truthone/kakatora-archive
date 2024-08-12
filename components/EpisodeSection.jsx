@@ -25,7 +25,7 @@ const EpisodeList = ({ episode }) => {
           <Text as="div" size="3" weight="bold">{episode.ep}회 | {episode.date}</Text>
           <Text as="div" size="3" weight="bold">{episode.note}</Text>
         </StickyHeading>
-        <Grid columns={{ initial: '2', sm: '3', md: '4' }} gap="3" border="">
+        <Grid columns={{ initial: '1', sm: '3', md: '4' }} gap="3" border="">
           {imagesObj.map((obj, index) => (
             <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
           ))}
