@@ -24,9 +24,9 @@ function FilmoDetail({ id }) {
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
   return (
-    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', width: '100%', minHeight: '80vh' }}>
+    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '0 auto', minHeight: '80vh' }}>
       <Flex direction="row" gap="4" justify="start">
-        <Box style={{ flex: '1 1 30%', maxWidth: '300px' }}>
+        <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
             <Image 
               src={filmo.imgUrl} 
@@ -37,7 +37,7 @@ function FilmoDetail({ id }) {
           </AspectRatio>
         </Box>
         
-        <Box style={{ flex: '1 1 40%' }}>
+        <Box style={{ flexBasis: '60%' }}>
           <Heading size="6" mb="2">{filmo.title}</Heading>
           <Text as="p" size="4" mb="2">역할: {filmo.role}</Text>
           {filmo.note && <Text as="p" size="4" mb="2">비고: {filmo.note}</Text>}
