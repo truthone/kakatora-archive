@@ -19,7 +19,7 @@ function EpisodeDetail() {
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
             <Image 
-              src={encodeURI(data.imgUrl)} 
+              src={data.imgUrl} 
               alt={data.note} 
               style={{objectFit: 'cover'}}
               fill
