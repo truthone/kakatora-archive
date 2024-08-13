@@ -24,8 +24,7 @@ function FilmoDetail({ id }) {
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
   return (
-
-    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '0 auto', minHeight: '80vh' }}>
+    <Box className="filmo-detail" style={{ maxWidth: '1200px', margin: '12px auto' }}>
       <Flex direction="row" gap="4" justify="start">
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
@@ -54,20 +53,6 @@ function FilmoDetail({ id }) {
       </Flex>
 
       <Separator size="4" my="4" />
-
-      {filmo.title === "나 혼자 산다" && (
-        <Box>
-        {
-          liveAloneDetailData?.map((yearData, index) => (
-            <Box key={index} mt="6">
-              <Heading size="6" p="4" mb="4">{yearData?.year}</Heading>
-              {yearData?.episode && yearData.episode.length > 0 && (
-                <EpisodeRow title="" contents={yearData?.episode} />
-              )}
-            </Box>
-        ))}
-        </Box>
-      )}
     </Box>
   );
 }

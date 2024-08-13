@@ -6,7 +6,7 @@ import liveAloneDetailData from '../data/liveAloneDetailData.json'
 import Image from 'next/image';
 import EpisodeSection from './EpisodeSection';
 
-function EpisodeDetail() {
+export default function EpisodeList() {
   const { ep } = useParams();
 
   const data = liveAloneDetailData.flatMap(year => year.episode).find(episode => episode.ep == ep)
@@ -37,5 +37,3 @@ function EpisodeDetail() {
     </Box>
   );
 }
-
-export default EpisodeDetail;

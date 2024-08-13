@@ -6,7 +6,7 @@ import liveAloneDetailData from '../../../data/liveAloneDetailData.json'
 import Image from 'next/image';
 import EpisodeSection from '../../../components/EpisodeSection'
 
-export default function LiveAlonePage({ params }) {
+export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
 
   const data = liveAloneDetailData.flatMap(year => year.episode).find(episode => episode.ep == ep)
@@ -14,7 +14,7 @@ export default function LiveAlonePage({ params }) {
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   
   return (
-    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '0 auto', minHeight: '80vh' }}>
+    <Box className="filmo-detail" style={{ maxWidth: '1200px', margin: '0 auto' }}>
       <Flex direction={{initial: 'column', xs: 'row'}} gap="4">
         <Box style={{ flex: '2 1 50%', maxWidth: '600px', minWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
@@ -32,8 +32,7 @@ export default function LiveAlonePage({ params }) {
           {data.date && <Text as="p" size="4" mb="2">{data.date}</Text>}
         </Box>
       </Flex>
-      <EpisodeSection />
-      <Separator size="4" my="4" />
+      <EpisodeSection year={data.year} episodesData={data} />
     </Box>
   );
 }

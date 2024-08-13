@@ -4,15 +4,11 @@ import { Box, Heading, Flex, AspectRatio, Card, Text } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
-function  FilmoRow({ title, contents }) {
+export default function ContentsRowList({ title, contents, ratio }) {
   const router = useRouter();
 
-  const handleCardClick = (content) => {
-    if (content.url) {
-      router.push(`${content.url}`);
-    } else {
-      router.push(`/filmography/${content.id}`)
-    }
+  const handleCardClick = (url) => {
+    router.push(`${url}`);
   };
 
   return (
@@ -22,10 +18,10 @@ function  FilmoRow({ title, contents }) {
         {contents.map((content, id) => (
           <Card 
             key={id} 
-            style={{ width: '180px', flexShrink: 0, cursor: 'pointer' }}
-            onClick={() => handleCardClick(content)}
+            style={{ width: '200px', flexShrink: 0, cursor: 'pointer' }}
+            onClick={() => handleCardClick(content.url)}
           >
-            <AspectRatio ratio={2/3} style={{padding: '0'}}>
+            <AspectRatio ratio={ratio} style={{padding: '0'}}>
               <Image 
                 src={content.imgUrl} 
                 alt={content.title} 
@@ -48,5 +44,3 @@ function  FilmoRow({ title, contents }) {
     </Box>
   );
 }
-
-export default FilmoRow;
