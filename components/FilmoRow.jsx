@@ -23,7 +23,7 @@ function  FilmoRow({ title, contents }) {
           >
             <AspectRatio ratio={2/3} style={{padding: '0'}}>
               <Image 
-                src={encodeURI(content.imgUrl)} 
+                src={content.imgUrl} 
                 alt={content.title} 
                 fill
                 style={{ 

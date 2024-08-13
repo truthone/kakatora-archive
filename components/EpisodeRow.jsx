@@ -24,7 +24,7 @@ function EpisodeRow({ title, contents }) {
             >
               <AspectRatio ratio={3/2} style={{padding: '0'}}>
                 <Image 
-                  src={encodeURI(content.imgUrl)} 
+                  src={content.imgUrl} 
                   alt={`${content.title}${content.note}`}
                   fill
                   style={{ 

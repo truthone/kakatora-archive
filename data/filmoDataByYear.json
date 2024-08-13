@@ -56,7 +56,7 @@
           "title": "간증",
           "role": "윤경호",
           "note": "주연",
-          "imgUrl": "/images/confession-jpg",
+          "imgUrl": "/images/confession.jpg",
           "ott": ["watcha","네이버시리즈"],
           "year": 2010
         }
@@ -81,7 +81,7 @@
           "title": "평범한 날들",
           "role": "이수혁",
           "note": "주연",
-          "imgUrl": "/images/ordinary-day.jpg",
+          "imgUrl": "/images/ordinary-days.jpg",
           "ott": ["tving", "watcha", "네이버시리즈"],
           "year": 2011
         }
@@ -120,7 +120,7 @@
           "title": "작별들",
           "role": "용규",
           "note": "주연",
-          "imgUrl": "/images/작별들.jpg",
+          "imgUrl": "/images/farewell.jpg",
           "ott": ["유투브"],
           "year": 2013
         }
@@ -236,7 +236,7 @@
           "title": "슴슴한 그대",
           "role": "성태",
           "note": "5부작 · 주연",
-          "imgUrl": "/images/seum-seum-han.jpg.jpg",
+          "imgUrl": "/images/seum-seum-han.jpg",
           "ott": ["유투브"],
           "year": 2014
         },
@@ -280,7 +280,7 @@
           "title": "소셜포비아",
           "role": "하용민",
           "note": "주연",
-          "imgUrl": "/images/social-phobia.jpg",
+          "imgUrl": "/images/social-phobia.webp",
           "year": 2015
         }
       ],
@@ -331,7 +331,7 @@
           "title": "9초-영원의 시간",
           "role": "유찬",
           "note": "웹드라마 · 주연",
-          "imgUrl": "/images/eternal",
+          "imgUrl": "/images/eternal.jpg",
           "year": 2015
         }
       ]

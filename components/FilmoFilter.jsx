@@ -100,7 +100,7 @@ function FilmoFilter() {
                   >
                     <AspectRatio ratio={2/3}>
                       <Image 
-                        src={encodeURI(content.imgUrl)} 
+                        src={content.imgUrl} 
                         alt={content.title}
                         fill
                         style={{ 

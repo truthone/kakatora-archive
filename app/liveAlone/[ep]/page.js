@@ -19,7 +19,7 @@ export default function LiveAlonePage({ params }) {
         <Box style={{ flex: '2 1 50%', maxWidth: '600px', minWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
             <Image 
-              src={encodeURI(data.imgUrl)} 
+              src={data.imgUrl} 
               alt={data.note} 
               style={{objectFit: 'cover'}}
               fill
