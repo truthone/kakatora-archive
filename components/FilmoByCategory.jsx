@@ -10,7 +10,11 @@ function FilmoByCategory() {
   const router = useRouter();
 
   const handleCardClick = (content) => {
-    router.push(`/filmo/${content.id}`);
+    if (content.url) {
+      router.push(`${content.url}`);
+    } else {
+      router.push(`/filmography/${content.id}`)
+    }
   };
 
   // 모든 연도의 데이터를 하나의 배열로 합치고 역순으로 정렬합니다

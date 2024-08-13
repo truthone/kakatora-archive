@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <StyledComponentsRegistry>
             <Theme appearance="dark" accentColor="crimson" radius="large" p={{ sm: '6', lg: '9' }}>
               <Header />
-                {children}
+                  {children}
               <Footer />
             </Theme>
           </StyledComponentsRegistry>

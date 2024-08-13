@@ -51,7 +51,7 @@ function FilmoFilter() {
   const router = useRouter();
 
   const handleCardClick = (content) => {
-    router.push(`/filmo/${content.id}`);
+    router.push(`/filmography/${content.id}`);
   };
 
   const otts = ['tving', 'watcha', 'wavve', 'netflix', '네이버시리즈','유투브', '카카오TV'];

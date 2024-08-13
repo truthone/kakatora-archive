@@ -10,7 +10,8 @@
         "role": "고정",
         "note": "베트남 배달 with 친형",
         "imgUrl": "/images/tv-liveAlone/555/555-3.png",
-        "ep": 555
+        "ep": 555,
+        "year": 2024
       },
       {
         "id": "240531-548",
@@ -20,7 +21,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/548/548-2.png",
-        "ep": 548
+        "ep": 548,
+        "year": 2024
       },
       {
         "id": "240412-541",
@@ -30,7 +32,8 @@
         "role": "고정",
         "note": "비수기 with 구성환",
         "imgUrl": "/images/tv-liveAlone/541/541-2.png",
-        "ep": 541
+        "ep": 541,
+        "year": 2024
       },
       {
         "id": "240209-532",
@@ -40,7 +43,8 @@
         "role": "고정",
         "note": "조부모님댁 방문",
         "imgUrl": "/images/tv-liveAlone/532/532-2.png",
-        "ep": 532
+        "ep": 532,
+        "year": 2024
       },
       {
         "id": "240202-531",
@@ -50,7 +54,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/531/531-2.png",
-        "ep": 531
+        "ep": 531,
+        "year": 2024
       },
       {
         "id": "240105-527",
@@ -60,7 +65,8 @@
         "role": "고정",
         "note": "방송연예대상 비하인드",
         "imgUrl": "/images/tv-liveAlone/527/527-2.png",
-        "ep": 527
+        "ep": 527,
+        "year": 2024
       }
     ]
   },
@@ -75,7 +81,8 @@
         "role": "고정",
         "note": "부산국제영화제",
         "imgUrl": "/images/tv-liveAlone/518/518-6.png",
-        "ep": 518
+        "ep": 518,
+        "year": 2023
       },
       {
         "id": "230915-512",
@@ -85,7 +92,8 @@
         "role": "고정",
         "note": "미스터리 크루 with 기안",
         "imgUrl": "/images/tv-liveAlone/512/512-2.png",
-        "ep": 512
+        "ep": 512,
+        "year": 2023
       },
       {
         "id": "230901-510",
@@ -95,7 +103,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/510/510-main.png",
-        "ep": 510
+        "ep": 510,
+        "year": 2023
       },
       {
         "id": "230707-502",
@@ -105,7 +114,8 @@
         "role": "고정",
         "note": "연극 테베랜드 연습",
         "imgUrl": "/images/tv-liveAlone/502/502-3.png",
-        "ep": 502
+        "ep": 502,
+        "year": 2023
       },
       {
         "id": "230526-496-2",
@@ -115,7 +125,8 @@
         "role": "고정",
         "note": "여사친 with 천우희",
         "imgUrl": "/images/tv-liveAlone/496-2/496-2-6.png",
-        "ep": "496-2"
+        "ep": "496-2",
+        "year": 2023
       },
       {
         "id": "230512-494-496",
@@ -125,7 +136,8 @@
         "role": "고정",
         "note": "무지개 10주년 몽골 여행",
         "imgUrl": "/images/tv-liveAlone/494-496/494~496-10.png",
-        "ep": "494-496"
+        "ep": "494-496",
+        "year": 2023
       },
       {
         "id": "230414-490",
@@ -135,7 +147,8 @@
         "role": "고정",
         "note": "이사 with 구성환",
         "imgUrl": "/images/tv-liveAlone/490/490-6.png",
-        "ep": 490
+        "ep": 490,
+        "year": 2023
       },
       {
         "id": "230317-486",
@@ -145,7 +158,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/486/486-1.png",
-        "ep": 486
+        "ep": 486,
+        "year": 2023
       },
       {
         "id": "230217-483",
@@ -155,7 +169,8 @@
         "role": "고정",
         "note": "군산 여행 with 마더즈",
         "imgUrl": "/images/tv-liveAlone/483/483-1.png",
-        "ep": 483
+        "ep": 483,
+        "year": 2023
       },
       {
         "id": "230203-481",
@@ -165,7 +180,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/481/481-4.png",
-        "ep": 481
+        "ep": 481,
+        "year": 2023
       },
       {
         "id": "230127-480",
@@ -175,7 +191,8 @@
         "role": "고정",
         "note": "기라인 단합대회2",
         "imgUrl": "/images/tv-liveAlone/480/480-1.png",
-        "ep": 480
+        "ep": 480,
+        "year": 2023
       },
       {
         "id": "230120-479",
@@ -185,7 +202,8 @@
         "role": "고정",
         "note": "기라인 단합대회1",
         "imgUrl": "/images/tv-liveAlone/479/479-1.png",
-        "ep": 479
+        "ep": 479,
+        "year": 2023
       },
       {
         "id": "230106-477",
@@ -195,7 +213,8 @@
         "role": "고정",
         "note": "방송연예대상 비하인드",
         "imgUrl": "/images/tv-liveAlone/477/477-2.png",
-        "ep": 477
+        "ep": 477,
+        "year": 2023
       }
     ]
   },
@@ -210,7 +229,8 @@
         "role": "고정",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/472/472-1.png",
-        "ep": 472
+        "ep": 472,
+        "year": 2022
       },
       {
         "id": "221014-467",
@@ -220,7 +240,8 @@
         "role": "고정",
         "note": "강릉 여행",
         "imgUrl": "/images/tv-liveAlone/467/467-2.png",
-        "ep": 467
+        "ep": 467,
+        "year": 2022
       },
       {
         "id": "220722-455",
@@ -229,7 +250,8 @@
         "title": "나 혼자 산다",
         "note": "카자흐스탄 귀국",
         "imgUrl": "/images/tv-liveAlone/455/455-3.png",
-        "ep": 455
+        "ep": 455,
+        "year": 2022
       },
       {
         "id": "220708-453",
@@ -238,7 +260,8 @@
         "title": "나 혼자 산다",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/453/453-3.png",
-        "ep": 453
+        "ep": 453,
+        "year": 2022
       },
       {
         "id": "220513-445",
@@ -247,7 +270,8 @@
         "title": "나 혼자 산다",
         "note": "주도인 클럽2",
         "imgUrl": "/images/tv-liveAlone/445/445-1.png",
-        "ep": 445
+        "ep": 445,
+        "year": 2022
       },
       {
         "id": "220506-444",
@@ -256,7 +280,8 @@
         "title": "나 혼자 산다",
         "note": "주도인 클럽1",
         "imgUrl": "/images/tv-liveAlone/444/444-1.png",
-        "ep": 444
+        "ep": 444,
+        "year": 2022
       },
       {
         "id": "220211-433",
@@ -266,7 +291,8 @@
         "role": "게스트",
         "note": "월동 준비",
         "imgUrl": "/images/tv-liveAlone/433/433-6.png",
-        "ep": 433
+        "ep": 433,
+        "year": 2022
       },
       {
         "id": "220202-seol-special",
@@ -276,7 +302,8 @@
         "role": "게스트",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/seol-special/seol-special-main.png",
-        "ep": "설특집"
+        "ep": "설특집",
+        "year": 2022
       },
       {
         "id": "220128-431",
@@ -286,7 +313,8 @@
         "role": "게스트",
         "note": "패널 참석",
         "imgUrl": "/images/tv-liveAlone/431/431-3.png",
-        "ep": 431
+        "ep": 431,
+        "year": 2022
       }
     ]
   },
@@ -301,7 +329,8 @@
         "role": "게스트",
         "note": "솔로 크리스마스 with 구성환, 장동윤",
         "imgUrl": "/images/tv-liveAlone/427/427-8.png",
-        "ep": 427
+        "ep": 427,
+        "year": 2021
       }
     ]
   }

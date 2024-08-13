@@ -7,7 +7,7 @@
         {
           "id": "movie_2008_1",
           "title": "청계천의 개",
-          "role": "어린 민수",
+          "role": "거지 소년",
           "note": "조연",
           "imgUrl": "/images/chung-gye-cheon-ui-gae.jpg",
           "ott": ["wavve", "네이버시리즈"],
@@ -613,6 +613,7 @@
           "title": "나 혼자 산다",
           "role": "게스트, 427회",
           "imgUrl": "/images/live-alone.jpg",
+          "url": "/liveAlone",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2021
         }
@@ -640,6 +641,7 @@
           "title": "나 혼자 산다",
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
+          "url": "/liveAlone",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2022
         },
@@ -743,6 +745,7 @@
           "title": "나 혼자 산다",
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
+          "url": "/liveAlone",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2023
         },
@@ -822,6 +825,7 @@
           "title": "나 혼자 산다",
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
+          "url": "/liveAlone",
           "ott": ["watcha", "wavve", "네이버시리즈"],
           "year": 2024
         },
