@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const imageDirectory = path.join(__dirname, '../public/images/filmo_liveAlone');
-const outputFile = path.join(__dirname, '../src/data/imageMetadata.json');
+const imageDirectory = path.join(__dirname, '../public/images/tv-liveAlone');
+const outputFile = path.join(__dirname, '../data/imageMetadata.json');
 
 const generateMetadata = () => {
   const metadata = {};
@@ -23,7 +23,7 @@ const generateMetadata = () => {
             normalizedName: normalizedKey,
             size: fileStats.size,
             modifiedDate: fileStats.mtime,
-            path: `images/live_alone/${folder}/${file}`
+            path: `images/tv-liveAlone/${folder}/${file}`
           };
         });
     }
