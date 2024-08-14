@@ -28,7 +28,7 @@ const EpisodeList = ({ episode, hasHeader }) => {
             </StickyHeading>
           : <></>
         }
-        <Grid columns={{ initial: '1', sm: '3', md: '4' }} gap="3" border="">
+        <Grid columns={{ initial: '1', xs:'2', sm: '3', md: '4' }} gap="3" border="">
           {imagesObj.map((obj, index) => (
             <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
           ))}
@@ -55,18 +55,20 @@ const EpisodeSection = ({ year, episodesData }) => {
 
   return (
     <Flex direction="column" gap="4">
-      {filteredEpisodes.map(data => (
-        <Flex key={data.year} direction="column" gap="4">
-          { 
-            !Array.isArray(data) ? <EpisodeList key={data.id} episode={data} /> 
-            : (
-                data.episode.map(episode => (
-                  <EpisodeList key={episode.id} episode={episode} />
-                ))
-              )  
-          }
-        </Flex>
-      ))}
+        { filteredEpisodes.map(data => (
+            <Flex key={data.year} direction="column" gap="4">
+              { 
+                  Object.hasOwn(data, "episode") ? 
+                  (
+                    data.episode.map(episode => (
+                      <EpisodeList key={episode.id} episode={episode} />
+                    ))
+                   )             
+                  :  <EpisodeList key={data.id} episode={data} /> 
+              }
+            </Flex>
+          ))
+        }
     </Flex>
   );
 };

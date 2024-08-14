@@ -12,7 +12,7 @@ export default function LiveAloneAllCapturesPage(){
   
   return (
     <Box>
-      <Heading as="h1">나혼산 짤 모음</Heading>
+      <Heading as="h1" m="6">나혼산 짤 모음</Heading>
       <Box style={{maxWidth: '1200px', margin: '0 auto'}}>
         <EpisodeSection episodesData={liveAloneDetailData}/>
       </Box>
