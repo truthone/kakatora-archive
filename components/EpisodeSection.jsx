@@ -63,8 +63,8 @@ const EpisodeSection = ({ year, episodesData }) => {
                     data.episode.map(episode => (
                       <EpisodeList key={episode.id} episode={episode} />
                     ))
-                   )             
-                  :  <EpisodeList key={data.id} episode={data} /> 
+                  )             
+                  : <EpisodeList key={data.id} episode={data} /> 
               }
             </Flex>
           ))

@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Heading, Flex, Card, Text, Container, AspectRatio } from '@radix-ui/themes';
 import useYoutubeSearch from '../hooks/useYoutubeSearch'
 import Image from 'next/image';
+import { decode } from 'html-entities';
 
 const openYouTubeVideo = (videoId) => {
   const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
@@ -37,14 +38,14 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
             >
               <AspectRatio ratio={16/9}>
                 <Image
-                  src={video.snippet.thumbnails.medium.url} 
+                  src={video.snippet.thumbnails.high.url} 
                   alt={video.snippet.title} 
                   fill
                   style={{objectFit: 'cover'}}
                 />
               </AspectRatio>
               <Box p="2">
-                <Text size="2" weight="bold">{video.snippet.title}</Text>
+                <Text size="2" weight="bold">{decode(video.snippet.title)}</Text>
               </Box>
             </Card>
           ))}
