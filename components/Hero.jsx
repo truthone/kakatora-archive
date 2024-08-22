@@ -32,6 +32,7 @@ function Hero({ movie }) {
           alt={movie.title} 
           style={{objectFit: 'cover'}}
           fill
+          priority={true}
           />
         </Skeleton>
       <Container>
