@@ -8,6 +8,7 @@ import OttLogo from './OttLogo';
 import styled from 'styled-components';
 import EpisodeRow from './EpisodeRow';
 import Image from 'next/image';
+import YouTubeByQueryRow from './YoutubeByQueryRow';
 
 const FilmoRowContainer = styled(Box)`
   position: relative;
@@ -24,7 +25,7 @@ function FilmoDetail({ id }) {
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
   return (
-    <Box className="filmo-detail" style={{ maxWidth: '1200px', margin: '12px auto' }}>
+    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '12px auto' }}>
       <Flex direction="row" gap="4" justify="start">
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
@@ -37,22 +38,20 @@ function FilmoDetail({ id }) {
           </AspectRatio>
         </Box>
         <Box style={{ flexBasis: '60%' }}>
-          <Heading size="6" mb="2">{filmo.title}</Heading>
-          <Text as="p" size="4" mb="2">역할: {filmo.role}</Text>
-          {filmo.note && <Text as="p" size="4" mb="2">비고: {filmo.note}</Text>}
-          {filmo.broadcaster && <Text as="p" size="4" mb="2">방송사: {filmo.broadcaster}</Text>}
-          {filmo.year && <Text as="p" size="4" mb="2">연도: {filmo.year}</Text>}
-          {filmo.ott && ( 
-            <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
-              <Text as="p" size="3">시청 가능한 곳:</Text>
-              {filmo.ott.map((ottName) => (
-              <OttLogo key={ottName} ott={ottName} />
+          <Heading size="6" mb="2">{filmo?.title}</Heading>
+          <Text as="p" size="4" mb="2">역할: {filmo?.note}{filmo.role && filmo.note && <>,</>}{filmo?.role}</Text>
+          {filmo.broadcaster && <Text as="p" size="4" mb="2">방송사: {filmo?.broadcaster}</Text>}
+          <Text as="p" size="4" mb="2">연도: {filmo?.year}</Text>
+          <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
+            <Text as="p" size="3">시청 가능한 곳:</Text>
+              {filmo.ott?.map((ottName) => (
+                <OttLogo key={ottName} ott={ottName} />
               ))}
-            </Flex>)}
+            </Flex>
         </Box>
       </Flex>
-
       <Separator size="4" my="4" />
+      <YouTubeByQueryRow SectionTitle={"관련 영상"} query={`이주승 ${filmo?.title}`} />
     </Box>
   );
 }
