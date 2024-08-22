@@ -60,16 +60,12 @@ const CloseButton = styled(Button)`
 
 
 export default function GridImageItem({ filename, episode, index, title }) {
-  const [aspectRatio, setAspectRatio] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [width, setWidth] = useState(0);
+  const [naturalHeight, setHeight] = useState(0);
   const containerRef = useRef(null);
 
   function handleImgHeight(img){
     const { naturalWidth, naturalHeight } = img;
-    setAspectRatio( naturalHeight / naturalWidth);
     setHeight(naturalHeight);
-    setWidth(naturalWidth)
     console.log(naturalWidth, naturalHeight)
   }
 
@@ -100,8 +96,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
         <Content
           ref={containerRef} 
           style={{
-            width: aspectRatio ? `${width}px` : '150px',
-            height: aspectRatio ? `${height}px` : '20vh'}}>
+            height: naturalHeight ? `${naturalHeight}px` : '20vh'}}>
           <Dialog.Close asChild>
             <CloseButton aria-label="Close">
               <Cross2Icon width="100%" height="100%"/>
@@ -114,17 +109,18 @@ export default function GridImageItem({ filename, episode, index, title }) {
               height: 'inherit',
               marign: 'auto'
               }}>
-            <Image
-              src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
-              alt={`Episode ${episode.ep} - Image ${index + 1}`}
-              fill
-              style={{objectFit: 'contain'}}
-              sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 40vw'}
-              loading="eager"
-              onLoadingComplete={(img)=>{
-                console.log(img.naturalHeight)
-                handleImgHeight(img)}}
-            />
+              <Skeleton laoding={true}>
+              <Image
+                src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
+                alt={`Episode ${episode.ep} - Image ${index + 1}`}
+                fill
+                style={{objectFit: 'contain'}}
+                sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 20vw'}
+                onLoadingComplete={(img)=>{
+                  console.log(img.naturalHeight)
+                  handleImgHeight(img)}}
+              />
+              </Skeleton>
           </Box>
         </Content>
       </Dialog.Portal>
