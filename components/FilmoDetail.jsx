@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { Box, Flex, Heading, Text, AspectRatio, Separator, Section } from '@radix-ui/themes';
+import { Box, Flex, Heading, Text, AspectRatio, Separator, Tabs, Section } from '@radix-ui/themes';
 import ArticleRow from './ArticleRow';
 import filmoDataByYear from '../data/filmoDataByYear.json';
 import liveAloneDetailData from '../data/liveAloneDetailData.json';
@@ -42,15 +42,35 @@ function FilmoDetail({ id }) {
           <Text as="p" size="4" mb="2">역할: {filmo?.note}{filmo.role && filmo.note && <>,</>}{filmo?.role}</Text>
           {filmo.broadcaster && <Text as="p" size="4" mb="2">방송사: {filmo?.broadcaster}</Text>}
           <Text as="p" size="4" mb="2">연도: {filmo?.year}</Text>
-          <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
-            <Text as="p" size="3">시청 가능한 곳:</Text>
-              {filmo.ott?.map((ottName) => (
-                <OttLogo key={ottName} ott={ottName} />
-              ))}
-            </Flex>
         </Box>
       </Flex>
       <Separator size="4" my="4" />
+      <Box>
+          <Heading size="6" mb="4">시청 가능한 곳</Heading>
+          <Tabs.Root defaultValue="subscribe">
+            <Tabs.List size="5" justify="center">
+              <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
+              <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
+            </Tabs.List>
+            <Box pt="3">
+              <Tabs.Content value="subscribe">
+                <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
+                  {filmo.ott_subscribe?.map((ottName) => (
+                    <OttLogo key={ottName} ott={ottName} />
+                  ))} 
+                </Flex>   
+              </Tabs.Content>
+              <Tabs.Content value="purchase">
+                <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
+                  {filmo.ott_purchase?.map((ottName) => (
+                    <OttLogo key={ottName} ott={ottName} />
+                  ))}
+                </Flex>
+              </Tabs.Content>
+            </Box>
+          </Tabs.Root>
+        </Box>
+      
       <YouTubeByQueryRow SectionTitle={"관련 영상"} query={`이주승 ${filmo?.title}`} />
     </Box>
   );
