@@ -6,7 +6,6 @@ import EpisodeSection from '../../../components/EpisodeSection'
 
 export default function LiveAloneAllCapturesPage(){
   const data = liveAloneDetailData.flatMap(year => year.episode);
-  console.log(data)
 
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   

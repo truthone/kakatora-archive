@@ -67,7 +67,6 @@ export default function GridImageItem({ filename, episode, index, title }) {
     const { naturalWidth, naturalHeight } = img;
     setNaturalWidth(naturalWidth);
     setNaturalHeight(naturalHeight);
-    console.log(img)
   }
 
   return (
@@ -109,8 +108,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
           <Box
             style={{
               position: 'relative',
-              width: naturalWidth ? `${naturalWidth}px` : '50vw', 
-              height: naturalHeight ? `${naturalHeight}px` : '50vh',  
+              width: naturalWidth ? `${naturalWidth}px` : '20vw', 
+              height: naturalHeight ? `${naturalHeight}px` : '20vh',  
               maxWidth: "70vw",
               maxHeight: "70vh",
               margin: 'auto'
@@ -126,7 +125,6 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 quality={100}
                 sizes={'70vw'}
                 onLoadingComplete={(img)=>{
-                  console.log(img.naturalWidth)
                   handleImgHeight(img)}}
               />
             </Skeleton>
