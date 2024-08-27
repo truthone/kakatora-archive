@@ -12,7 +12,6 @@ const useYouTubeVideos = (playlistId) => {
         `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=10&key=${API_KEY}`
       );
       const data = await response.json();
-      console.log(data)
       setVideos(data.items);
     };
 

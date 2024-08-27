@@ -35,5 +35,3 @@ const generateMetadata = () => {
 const imageMetadata = generateMetadata();
 
 fs.writeFileSync(outputFile, JSON.stringify(imageMetadata, null, 2));
-
-console.log('Image metadata generated successfully.');

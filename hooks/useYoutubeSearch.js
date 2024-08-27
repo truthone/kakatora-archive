@@ -28,7 +28,6 @@ const useYouTubeSearch = (query) => {
 
     fetchYouTubeVideos();
   }, [query]);
-  console.log(isLoading)
   return { videos, isLoading, error };
 };
 
