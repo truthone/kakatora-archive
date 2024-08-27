@@ -27,7 +27,6 @@ const Content = styled(Dialog.Content)`
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 200px;
-  max-width: 1200px;
   min-height: 50px;
   padding: 50px 20px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -68,7 +67,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
     const { naturalWidth, naturalHeight } = img;
     setNaturalWidth(naturalWidth);
     setNaturalHeight(naturalHeight);
-    console.log(naturalWidth, naturalHeight)
+    console.log(img)
   }
 
   return (
@@ -82,6 +81,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{objectFit: 'cover'}}
                 fill
+                quality={100}
                 sizes="200px"
               />
             </Skeleton>
@@ -98,10 +98,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
         <Content
           ref={containerRef} 
           style={{
-            width: naturalWidth ? `${naturalWidth*1.5}px` : '20vw', 
-            height: naturalHeight ? `${naturalHeight*1.5}px` : '20vh',
-            maxWidth: "95%",
-            maxHeight: "80%"
+            
             }}
             >
           <Dialog.Close asChild>
@@ -111,18 +108,23 @@ export default function GridImageItem({ filename, episode, index, title }) {
           </Dialog.Close>
           <Box
             style={{
-              position: 'relative', 
-              width: 'inherit', 
-              height: 'inherit',
+              position: 'relative',
+              width: naturalWidth ? `${naturalWidth}px` : '50vw', 
+              height: naturalHeight ? `${naturalHeight}px` : '50vh',  
+              maxWidth: "70vw",
+              maxHeight: "70vh",
               margin: 'auto'
             }}>
             <Skeleton loading={true}>
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
+                style={{
+                  objectFit: 'contain'
+                  }}
                 fill
-                style={{objectFit: 'contain'}}
-                sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 30vw'}
+                quality={100}
+                sizes={'70vw'}
                 onLoadingComplete={(img)=>{
                   console.log(img.naturalWidth)
                   handleImgHeight(img)}}
