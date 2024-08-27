@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.ytimg.com', 'img.youtube.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.youtube.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.ytimg.com',
+        port: '',
+      },
+    ],
   },
 };
 

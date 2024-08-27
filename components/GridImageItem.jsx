@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useRef } from 'react';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import * as Dialog from '@radix-ui/react-dialog';
 import styled from 'styled-components';
 import { Cross2Icon } from '@radix-ui/react-icons';
@@ -95,11 +96,11 @@ export default function GridImageItem({ filename, episode, index, title }) {
       <Dialog.Portal>
         <Overlay />
         <Content
-          ref={containerRef} 
-          style={{
-            
-            }}
-            >
+          ref={containerRef}
+          aria-describedby={undefined}
+          >
+          <VisuallyHidden.Root asChild><Dialog.Title></Dialog.Title>
+          </VisuallyHidden.Root>
           <Dialog.Close asChild>
             <CloseButton aria-label="Close">
               <Cross2Icon width="100%" height="100%"/>
@@ -108,8 +109,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
           <Box
             style={{
               position: 'relative',
-              width: naturalWidth ? `${naturalWidth}px` : '20vw', 
-              height: naturalHeight ? `${naturalHeight}px` : '20vh',  
+              width: `${naturalWidth}px`, 
+              height: `${naturalHeight}px`,
               maxWidth: "70vw",
               maxHeight: "70vh",
               margin: 'auto'

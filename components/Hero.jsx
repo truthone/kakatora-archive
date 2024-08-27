@@ -33,6 +33,7 @@ function Hero({ movie }) {
         style={{objectFit: 'cover'}}
         fill
         priority={true}
+        quality={100}
         />
       </Skeleton>
       <Box 
