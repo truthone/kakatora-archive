@@ -1,7 +1,12 @@
-import FilmoAll from '../../components/FilmoAll'
+import React from 'react';
+import filmoDataByYear from '../../data/filmoDataByYear.json'
+import FilmoSection from '../../components/FilmoSection'
+import { Container } from '@radix-ui/themes';
 
 export default function FilmographyPage() {
   return (
-    <FilmoAll />
+    <Container p="4">
+      <FilmoSection data={filmoDataByYear.filmo_data_by_year} />
+    </Container>
   )
 }

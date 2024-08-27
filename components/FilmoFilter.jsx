@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import { Theme, Flex, Button, Heading, Text, Card, Box, AspectRatio, Container, Separator, TextField } from '@radix-ui/themes';
+import { Theme, Flex, Button, Heading, Text, Card, Box, AspectRatio, Container, Separator, TextField, Section } from '@radix-ui/themes';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import '@radix-ui/themes/styles.css';
 import filmoData from '../data/filmoDataByYear.json';
@@ -61,7 +61,7 @@ function FilmoFilter() {
   const otts = ['tving', 'watcha', 'wavve', 'netflix', '네이버시리즈','유투브', '카카오TV'];
 
   return (
-    <Container>
+    <Section size="1">
       <Theme appearance="dark" accentColor="crimson" grayColor="slate" radius="medium" scaling="100%">
           <Box style={{
             position: 'sticky',
@@ -126,7 +126,7 @@ function FilmoFilter() {
             </Flex>
           </Box>
       </Theme>
-    </Container>
+    </Section>
   );
 }
 

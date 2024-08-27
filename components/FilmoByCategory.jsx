@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Container, Heading, Box, Flex, Card, AspectRatio, Text, Separator } from '@radix-ui/themes';
+import { Container, Heading, Box, Flex, Card, AspectRatio, Text, Separator,Section } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import filmoData from '../data/filmoDataByYear.json'
@@ -46,7 +46,7 @@ function FilmoByCategory() {
   };
 
   return (
-    <Container>
+    <Section size="1">
       {categories.map((category) => (
         <Box key={category} my="6">
           <Heading size="6" mb="4">
@@ -77,7 +77,7 @@ function FilmoByCategory() {
           </Flex>
         </Box>
       ))}
-    </Container>
+    </Section>
   );
 }
 

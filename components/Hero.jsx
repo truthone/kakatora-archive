@@ -26,41 +26,39 @@ function Hero({ movie }) {
 
   return (
     <Box position="relative" width="100%" height={{ initial: '70vh', md: '60vh' }}>
-        <Skeleton style={{borderRadius: '0'}}>
-          <Image 
-          src={heroImg} 
-          alt={movie.title} 
-          style={{objectFit: 'cover'}}
-          fill
-          priority={true}
-          />
-        </Skeleton>
-      <Container>
-        <Box 
-          position="absolute" 
-          bottom={{ initial: '10px', md: '70px' }}
-          left={{ initial: '20px', md: '50px' }}
-          right={{ initial: '20px', md: 'auto' }}
-          maxWidth={{ initial: 'auto', md: '500px' }}
-        >
-          <Heading size={{ initial: '7', md: '9' }} mb="1">{movie.title}</Heading>
-          <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
-          <Flex gap="2" direction="row" wrap="wrap" mt="5">
-            <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleInstagramClick}>
-              <InstagramLogoIcon />
-              인스타그램
-            </Button>
-            <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleCafeClick}>
-              <HeartFilledIcon />
-              공식 카페
-            </Button>
-            <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleTwitterClick}>
-              <TwitterLogoIcon />
-              공식 카페 트위터
-            </Button>
-          </Flex>
-        </Box>
-      </Container>
+      <Skeleton style={{borderRadius: '0'}}>
+        <Image 
+        src={heroImg} 
+        alt={movie.title} 
+        style={{objectFit: 'cover'}}
+        fill
+        priority={true}
+        />
+      </Skeleton>
+      <Box 
+        position="absolute" 
+        bottom={{ initial: '10px', md: '70px' }}
+        left={{ initial: '20px', md: '50px' }}
+        right={{ initial: '20px', md: 'auto' }}
+        maxWidth={{ initial: 'auto', md: '500px' }}
+      >
+        <Heading size={{ initial: '7', md: '9' }} mb="1">{movie.title}</Heading>
+        <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
+        <Flex gap="2" direction="row" wrap="wrap" mt="5">
+          <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleInstagramClick}>
+            <InstagramLogoIcon />
+            인스타그램
+          </Button>
+          <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleCafeClick}>
+            <HeartFilledIcon />
+            공식 카페
+          </Button>
+          <Button size={{ initial: '2', xs: '3' }} variant="solid" style={{cursor: 'pointer'}} onClick={handleTwitterClick}>
+            <TwitterLogoIcon />
+            공식 카페 트위터
+          </Button>
+        </Flex>
+      </Box>
     </Box>
   );
 }

@@ -60,12 +60,14 @@ const CloseButton = styled(Button)`
 
 
 export default function GridImageItem({ filename, episode, index, title }) {
-  const [naturalHeight, setHeight] = useState(0);
+  const [naturalWidth, setNaturalWidth] = useState(null);
+  const [naturalHeight, setNaturalHeight] = useState(null);
   const containerRef = useRef(null);
 
   function handleImgHeight(img){
     const { naturalWidth, naturalHeight } = img;
-    setHeight(naturalHeight);
+    setNaturalWidth(naturalWidth);
+    setNaturalHeight(naturalHeight);
     console.log(naturalWidth, naturalHeight)
   }
 
@@ -96,7 +98,12 @@ export default function GridImageItem({ filename, episode, index, title }) {
         <Content
           ref={containerRef} 
           style={{
-            height: naturalHeight ? `${naturalHeight}px` : '20vh'}}>
+            width: naturalWidth ? `${naturalWidth*1.5}px` : '20vw', 
+            height: naturalHeight ? `${naturalHeight*1.5}px` : '20vh',
+            maxWidth: "95%",
+            maxHeight: "80%"
+            }}
+            >
           <Dialog.Close asChild>
             <CloseButton aria-label="Close">
               <Cross2Icon width="100%" height="100%"/>
@@ -107,20 +114,20 @@ export default function GridImageItem({ filename, episode, index, title }) {
               position: 'relative', 
               width: 'inherit', 
               height: 'inherit',
-              marign: 'auto'
-              }}>
-              <Skeleton laoding={true}>
+              margin: 'auto'
+            }}>
+            <Skeleton loading={true}>
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 fill
                 style={{objectFit: 'contain'}}
-                sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 20vw'}
+                sizes={'(max-width: 768px) 60vw, (max-width: 1200px) 50vw, 30vw'}
                 onLoadingComplete={(img)=>{
-                  console.log(img.naturalHeight)
+                  console.log(img.naturalWidth)
                   handleImgHeight(img)}}
               />
-              </Skeleton>
+            </Skeleton>
           </Box>
         </Content>
       </Dialog.Portal>

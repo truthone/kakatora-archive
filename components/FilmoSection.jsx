@@ -1,14 +1,9 @@
 'use client'
 import React from 'react';
-import { Box, Heading } from '@radix-ui/themes';
+import { Box, Heading, Section } from '@radix-ui/themes';
 import FilmoRow from './FilmoRow';
 import styled from 'styled-components';
 import useStickyHeader from '../hooks/useStickyHeader';
-
-const FilmoRowContainer = styled(Box)`
-  position: relative;
-  margin-bottom: 20px; /* 로우 간의 간격 */
-`;
 
 const StickyHeading = styled(Heading)`
   position: -webkit-sticky; /* Safari */
@@ -23,10 +18,10 @@ function FilmoSection({ data }) {
   const [headerRef, isSticky] = useStickyHeader();
 
   return (
-    <FilmoRowContainer>
+    <Section size="1">
       {data.map((yearData, index) => (
         <Box key={index} mt="6">
-          <StickyHeading ref={headerRef} className={isSticky ? 'active' : ''} size="6" p="4" mb="4">{yearData?.year}</StickyHeading>
+          <StickyHeading color="crimson" ref={headerRef} className={isSticky ? 'active' : ''} size="7" p="4" mb="4">{yearData?.year}</StickyHeading>
           {yearData?.movies && yearData.movies.length > 0 && (
             <FilmoRow title="영화" contents={yearData?.movies} />
           )}
@@ -41,7 +36,7 @@ function FilmoSection({ data }) {
           )}
         </Box>
       ))}
-    </FilmoRowContainer>
+    </Section>
   );
 }
 
