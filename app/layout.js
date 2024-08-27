@@ -16,9 +16,14 @@ export default function RootLayout({ children }) {
         <Suspense fallback={<div>Loading...</div>}>
           <ReactGAWrapper GA_MEASUREMENT_ID={GA_MEASUREMENT_ID}>
           <StyledComponentsRegistry>
-            <Theme appearance="dark" accentColor="crimson" radius="large" p={{ sm: '6', lg: '9' }}>
+            <Theme 
+              appearance="dark" 
+              accentColor="crimson" 
+              radius="large" 
+              p={{ sm: '6', lg: '9' }}
+              >
               <Header />
-                  {children}
+                {children}
               <Footer />
             </Theme>
           </StyledComponentsRegistry>

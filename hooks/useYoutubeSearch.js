@@ -4,7 +4,7 @@ const useYouTubeSearch = (query) => {
   const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY; 
 
   const [videos, setVideos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const useYouTubeSearch = (query) => {
 
     fetchYouTubeVideos();
   }, [query]);
-  console.log(videos)
+  console.log(isLoading)
   return { videos, isLoading, error };
 };
 

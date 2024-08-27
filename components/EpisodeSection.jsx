@@ -18,23 +18,21 @@ const EpisodeList = ({ episode, hasHeader }) => {
   const [headerRef, isSticky] = useStickyHeader();
   const imagesObj = imageList[episode.ep] || [];
   return (
-    <Container px="5" py="3" width={{initial: '100%', lg: '1200px'}}>
-      <Flex direction="column" gap="3">
-        { 
-          hasHeader ? 
-            <StickyHeading size="3" ref={headerRef} className={isSticky ? 'active' : ''} wrap="balance">
-              <Text as="div" size="3" weight="bold">{episode.ep}회 | {episode.date}</Text>
-              <Text as="div" size="3" weight="bold">{episode.note}</Text>
-            </StickyHeading>
-          : <></>
-        }
-        <Grid columns={{ initial: '1', xs:'2', sm: '3', md: '4' }} gap="3" border="">
-          {imagesObj.map((obj, index) => (
-            <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
-          ))}
-        </Grid>
-      </Flex>
-    </Container>
+    <Flex direction="column" gap="3">
+      { 
+        hasHeader ? 
+          <StickyHeading size="3" ref={headerRef} className={isSticky ? 'active' : ''} wrap="balance">
+            <Text as="div" size="3" weight="bold">{episode.ep}회 | {episode.date}</Text>
+            <Text as="div" size="3" weight="bold">{episode.note}</Text>
+          </StickyHeading>
+        : <></>
+      }
+      <Grid columns={{ initial: '1', xs:'2', sm: '3', md: '4' }} gap="3" border="">
+        {imagesObj.map((obj, index) => (
+          <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
+        ))}
+      </Grid>
+    </Flex>
   );
 };
 
@@ -54,22 +52,24 @@ const EpisodeSection = ({ year, episodesData }) => {
   }
 
   return (
-    <Flex direction="column" gap="4">
-        { filteredEpisodes.map(data => (
-            <Flex key={data.year} direction="column" gap="4">
-              { 
-                  Object.hasOwn(data, "episode") ? 
-                  (
-                    data.episode.map(episode => (
-                      <EpisodeList key={episode.id} episode={episode} />
-                    ))
-                  )             
-                  : <EpisodeList key={data.id} episode={data} /> 
-              }
-            </Flex>
-          ))
-        }
-    </Flex>
+    <Section size="1">
+      <Flex direction="column" gap="4">
+          { filteredEpisodes.map(data => (
+              <Flex key={data.year} direction="column" gap="4">
+                { 
+                    Object.hasOwn(data, "episode") ? 
+                    (
+                      data.episode.map(episode => (
+                        <EpisodeList key={episode.id} episode={episode} />
+                      ))
+                    )             
+                    : <EpisodeList key={data.id} episode={data} /> 
+                }
+              </Flex>
+            ))
+          }
+      </Flex>
+    </Section>
   );
 };
 

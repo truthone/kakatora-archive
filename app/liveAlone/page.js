@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Flex, Heading, Text, AspectRatio, Separator, Section } from '@radix-ui/themes';
+import { Box, Flex, Heading, Text, AspectRatio, Separator, Section, Container } from '@radix-ui/themes';
 import liveAloneDetailData from '../../data/liveAloneDetailData.json'
 import EpisodeRow from '../../components/EpisodeRow';
 import FilmoDetail from '../../components/FilmoDetail';
@@ -13,9 +13,9 @@ export default function LiveAloneEpisodeDetailPage() {
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   
   return (
-    <Box>
+    <Container p="4">
       <FilmoDetail id={DETAIL_ID} />
-      <Box style={{maxWidth: '1200px', margin: '0 auto'}}>
+      <Section size="1">
         {
           liveAloneDetailData?.map((yearData, index) => (
             <Box key={index} mt="6">
@@ -25,7 +25,7 @@ export default function LiveAloneEpisodeDetailPage() {
               )}
             </Box>
         ))}
-      </Box>
-    </Box>
+      </Section>
+    </Container>
   );
 }

@@ -1,20 +1,11 @@
 'use client'
 import React from 'react';
 import { Box, Flex, Heading, Text, AspectRatio, Separator, Tabs, Section } from '@radix-ui/themes';
-import ArticleRow from './ArticleRow';
 import filmoDataByYear from '../data/filmoDataByYear.json';
-import liveAloneDetailData from '../data/liveAloneDetailData.json';
 import OttLogo from './OttLogo';
 import styled from 'styled-components';
-import EpisodeRow from './EpisodeRow';
 import Image from 'next/image';
 import YouTubeByQueryRow from './YoutubeByQueryRow';
-
-const FilmoRowContainer = styled(Box)`
-  position: relative;
-  margin-bottom: 20px; /* 로우 간의 간격 */
-  flexBasis: '60%' 
-`;
 
 function FilmoDetail({ id }) {
 
@@ -25,7 +16,7 @@ function FilmoDetail({ id }) {
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
   return (
-    <Box className="filmo-detail" p="4" style={{ maxWidth: '1200px', margin: '12px auto' }}>
+    <Section size="1" className="filmo-detail">
       <Flex direction="row" gap="4" justify="start">
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
@@ -45,34 +36,33 @@ function FilmoDetail({ id }) {
         </Box>
       </Flex>
       <Separator size="4" my="4" />
-      <Box>
-          <Heading size="6" mb="4">시청 가능한 곳</Heading>
-          <Tabs.Root defaultValue="subscribe">
-            <Tabs.List size="5" justify="center">
-              <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
-              <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
-            </Tabs.List>
-            <Box pt="3">
-              <Tabs.Content value="subscribe">
-                <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
-                  {filmo.ott_subscribe?.map((ottName) => (
-                    <OttLogo key={ottName} ott={ottName} />
-                  ))} 
-                </Flex>   
-              </Tabs.Content>
-              <Tabs.Content value="purchase">
-                <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
-                  {filmo.ott_purchase?.map((ottName) => (
-                    <OttLogo key={ottName} ott={ottName} />
-                  ))}
-                </Flex>
-              </Tabs.Content>
-            </Box>
-          </Tabs.Root>
-        </Box>
-      
+      <Section size="1">
+        <Heading size="6" mb="4">시청 가능한 곳</Heading>
+        <Tabs.Root defaultValue="subscribe">
+          <Tabs.List size="2">
+            <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
+            <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
+          </Tabs.List>
+          <Box pt="3">
+            <Tabs.Content value="subscribe">
+              <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
+                {filmo.ott_subscribe?.map((ottName) => (
+                  <OttLogo key={ottName} ott={ottName} />
+                ))} 
+              </Flex>   
+            </Tabs.Content>
+            <Tabs.Content value="purchase">
+              <Flex display="box" justify="start" align="start" wrap="wrap" gap="2" mb="4">
+                {filmo.ott_purchase?.map((ottName) => (
+                  <OttLogo key={ottName} ott={ottName} />
+                ))}
+              </Flex>
+            </Tabs.Content>
+          </Box>
+        </Tabs.Root>
+      </Section>
       <YouTubeByQueryRow SectionTitle={"관련 영상"} query={`이주승 ${filmo?.title}`} />
-    </Box>
+    </Section>
   );
 }
 
