@@ -3,6 +3,28 @@
     "year": 2024,
     "episode": [
       {
+        "id": "240906-562",
+        "date": "9월 13일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "경주 여행2 with 코쿤, 전현무",
+        "imgUrl": "/images/tv-liveAlone/562/main.png",
+        "ep": 562,
+        "year": 2024
+      },
+      {
+        "id": "240906-561",
+        "date": "9월 6일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "경주 여행1 with 코쿤, 전현무",
+        "imgUrl": "/images/tv-liveAlone/561/main.png",
+        "ep": 561,
+        "year": 2024
+      },
+      {
         "id": "240719-555",
         "date": "7월 19일",
         "broadcaster": "MBC",
@@ -134,9 +156,9 @@
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "무지개 10주년 몽골 여행",
-        "imgUrl": "/images/tv-liveAlone/494-496/494~496-10.png",
-        "ep": "494-496",
+        "note": "무지개 10주년 몽골 여행 1~3",
+        "imgUrl": "/images/tv-liveAlone/494~496/494~496-10.png",
+        "ep": "494~496",
         "year": 2023
       },
       {
@@ -184,25 +206,14 @@
         "year": 2023
       },
       {
-        "id": "230127-480",
-        "date": "1월 27일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "기라인 단합대회2",
-        "imgUrl": "/images/tv-liveAlone/480/480-1.png",
-        "ep": 480,
-        "year": 2023
-      },
-      {
-        "id": "230120-479",
+        "id": "230127-479~480",
         "date": "1월 20일, 27일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
         "role": "고정",
-        "note": "기라인 단합대회1",
-        "imgUrl": "/images/tv-liveAlone/479/479-1.png",
-        "ep": 479,
+        "note": "기라인 단합대회 1,2",
+        "imgUrl": "/images/tv-liveAlone/479~480/479-1.png",
+        "ep": "479~480",
         "year": 2023
       },
       {
@@ -264,23 +275,13 @@
         "year": 2022
       },
       {
-        "id": "220513-445",
-        "date": "5월 13일",
+        "id": "220513-444~445",
+        "date": "5월 6일, 13일",
         "broadcaster": "MBC",
         "title": "나 혼자 산다",
-        "note": "주도인 클럽2",
+        "note": "주도인 클럽 1,2",
         "imgUrl": "/images/tv-liveAlone/445/445-1.png",
-        "ep": 445,
-        "year": 2022
-      },
-      {
-        "id": "220506-444",
-        "date": "5월 6일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "note": "주도인 클럽1",
-        "imgUrl": "/images/tv-liveAlone/444/444-1.png",
-        "ep": 444,
+        "ep": "444~445",
         "year": 2022
       },
       {
