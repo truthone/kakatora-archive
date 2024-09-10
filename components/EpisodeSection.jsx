@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import React from 'react';
-import { Card, Text, Flex, Grid, AspectRatio, Heading, Box, Section, Container } from '@radix-ui/themes';
+import { Text, Flex, Grid, Box, Section } from '@radix-ui/themes';
 import imageList from '../data/imageList.json';
 import useStickyHeader from '../hooks/useStickyHeader';
 import styled from 'styled-components';
@@ -17,21 +17,55 @@ const StickyHeading = styled(Box)`
 const EpisodeList = ({ episode, hasHeader }) => {
   const [headerRef, isSticky] = useStickyHeader();
   const imagesObj = imageList[episode.ep] || [];
+
   return (
     <Flex direction="column" gap="3">
-      { 
-        hasHeader ? 
-          <StickyHeading size="3" ref={headerRef} className={isSticky ? 'active' : ''} wrap="balance">
-            <Text as="div" size="3" weight="bold">{episode.ep}회 | {episode.date}</Text>
-            <Text as="div" size="3" weight="bold">{episode.note}</Text>
-          </StickyHeading>
-        : <></>
-      }
-      <Grid columns={{ initial: '1', xs:'2', sm: '3', md: '4' }} gap="3" border="">
-        {imagesObj.map((obj, index) => (
-          <GridImageItem key={index} filename={obj.filename} episode={episode} index={index} title={obj.title}/>
-        ))}
-      </Grid>
+      {hasHeader ? (
+        <StickyHeading
+          size="3"
+          ref={headerRef}
+          className={isSticky ? 'active' : ''}
+          wrap="balance"
+        >
+          <Text as="div" size="3" weight="bold">
+            {episode.ep}회 | {episode.date}
+          </Text>
+          <Text as="div" size="3" weight="bold">
+            {episode.note}
+          </Text>
+        </StickyHeading>
+      ) : (
+        <></>
+      )}
+      {imagesObj.length != 0 ? (
+        <Grid
+          columns={{ initial: '1', xs: '2', sm: '3', md: '4' }}
+          gap="3"
+          border=""
+        >
+          {imagesObj.map((obj, index) => (
+            <GridImageItem
+              key={index}
+              filename={obj.filename}
+              episode={episode}
+              index={index}
+              title={obj.title}
+            />
+          ))}
+        </Grid>
+      ) : (
+        <Flex
+          justify="center"
+          align="center"
+          style={{
+            width: '100%',
+            height: '50vh',
+            background: 'var(--gray-3)',
+          }}
+        >
+          컨텐츠를 준비중이에요.
+        </Flex>
+      )}
     </Flex>
   );
 };
@@ -44,30 +78,35 @@ const EpisodeSection = ({ year, episodesData }) => {
 
   // year로 필터링
   const filteredEpisodes = year
-    ? episodesArray.filter(episode => episode && episode.year === parseInt(year))
+    ? episodesArray.filter(
+        (episode) => episode && episode.year === parseInt(year)
+      )
     : episodesArray;
 
   if (filteredEpisodes.length === 0) {
-    return <Box>{year ? `${year}년도의 에피소드를 찾을 수 없습니다.` : '에피소드를 찾을 수 없습니다.'}</Box>;
+    return (
+      <Box>
+        {year
+          ? `${year}년도의 에피소드를 찾을 수 없습니다.`
+          : '에피소드를 찾을 수 없습니다.'}
+      </Box>
+    );
   }
 
   return (
     <Section size="1">
       <Flex direction="column" gap="4">
-          { filteredEpisodes.map(data => (
-              <Flex key={data.year} direction="column" gap="4">
-                { 
-                    Object.hasOwn(data, "episode") ? 
-                    (
-                      data.episode.map(episode => (
-                        <EpisodeList key={episode.id} episode={episode} />
-                      ))
-                    )             
-                    : <EpisodeList key={data.id} episode={data} /> 
-                }
-              </Flex>
-            ))
-          }
+        {filteredEpisodes.map((data) => (
+          <Flex key={data.year} direction="column" gap="4">
+            {Object.hasOwn(data, 'episode') ? (
+              data.episode.map((episode) => (
+                <EpisodeList key={episode.id} episode={episode} />
+              ))
+            ) : (
+              <EpisodeList key={data.id} episode={data} />
+            )}
+          </Flex>
+        ))}
       </Flex>
     </Section>
   );
