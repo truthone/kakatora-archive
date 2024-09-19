@@ -4,6 +4,7 @@ import { Box, Flex, Heading, Text, AspectRatio, Container, Section } from '@radi
 import liveAloneDetailData from '../../../data/liveAloneDetailData.json'
 import Image from 'next/image';
 import EpisodeSection from '../../../components/EpisodeSection'
+import ImageFallback from '../../../components/ImageFallback'
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
@@ -17,7 +18,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
     <Container p="4" className="filmo-detail">
       <Section size="1">
         <Flex direction={{initial: 'column', xs: 'row'}} gap="4">
-          <Box style={{ flex: '2 1 50%', maxWidth: '600px', minWidth: '200px' }}>
+          <Box style={{ flex: '2 1 50%', maxWidth: '600px', minWidth: '200px', maxHeight: '400px' }}>
             <AspectRatio ratio={3 / 2}>
               {!imageError ? (
                 <Image 
@@ -28,9 +29,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
                   onError={() => setImageError(true)}
                 />
               ) : (
-                <Flex justify="center" align="center" style={{width: '100%', height: '100%', background: 'var(--gray-3)'}}>
-                  이미지를 추가할 예정이에요.
-                </Flex>
+                <ImageFallback />
               )}
             </AspectRatio>
           </Box>

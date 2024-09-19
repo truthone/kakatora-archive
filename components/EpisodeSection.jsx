@@ -3,17 +3,10 @@ import React from 'react';
 import { Text, Flex, Grid, Box, Section } from '@radix-ui/themes';
 import imageList from '../data/imageList.json';
 import useStickyHeader from '../hooks/useStickyHeader';
-import styled from 'styled-components';
 import GridImageItem from './GridImageItem';
+import ContentFallback from './ContentFallback';
+import StickyHead from './StickyHead';
 
-const StickyHeading = styled(Box)`
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 55px;
-  z-index: 1;
-  background-color: var(--gray-1);
-  padding: 20px 0;
-`;
 const EpisodeList = ({ episode, hasHeader }) => {
   const [headerRef, isSticky] = useStickyHeader();
   const imagesObj = imageList[episode.ep] || [];
@@ -21,19 +14,14 @@ const EpisodeList = ({ episode, hasHeader }) => {
   return (
     <Flex direction="column" gap="3">
       {hasHeader ? (
-        <StickyHeading
-          size="3"
-          ref={headerRef}
-          className={isSticky ? 'active' : ''}
-          wrap="balance"
-        >
+        <StickyHead size="3" ref={headerRef}>
           <Text as="div" size="3" weight="bold">
             {episode.ep}회 | {episode.date}
           </Text>
           <Text as="div" size="3" weight="bold">
             {episode.note}
           </Text>
-        </StickyHeading>
+        </StickyHead>
       ) : (
         <></>
       )}
@@ -54,17 +42,7 @@ const EpisodeList = ({ episode, hasHeader }) => {
           ))}
         </Grid>
       ) : (
-        <Flex
-          justify="center"
-          align="center"
-          style={{
-            width: '100%',
-            height: '50vh',
-            background: 'var(--gray-3)',
-          }}
-        >
-          컨텐츠를 준비중이에요.
-        </Flex>
+        <ContentFallback />
       )}
     </Flex>
   );
