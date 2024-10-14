@@ -11,6 +11,7 @@ import {
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import ScrollArrowWrapper from './ScrollArrowWrapper';
+import { decode } from 'html-entities';
 
 function YouTubeRow({ SectionTitle, videos }) {
   const openYouTubeVideo = (videoId) => {
@@ -46,7 +47,7 @@ function YouTubeRow({ SectionTitle, videos }) {
             >
               <AspectRatio ratio={16 / 9}>
                 <Image
-                  src={video.snippet.thumbnails.medium.url}
+                  src={video.snippet.thumbnails.high.url}
                   alt={video.snippet.title}
                   fill
                   style={{ objectFit: 'cover' }}
@@ -55,7 +56,7 @@ function YouTubeRow({ SectionTitle, videos }) {
               <Box p="2">
                 <Text
                   as="p"
-                  size="3"
+                  size="2"
                   weight="bold"
                   style={{
                     overflow: 'hidden',
