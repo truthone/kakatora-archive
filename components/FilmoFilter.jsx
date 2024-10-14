@@ -4,15 +4,13 @@ import {
   Theme,
   Flex,
   Button,
-  Heading,
-  Text,
-  Card,
   Box,
   AspectRatio,
-  Container,
-  Separator,
   TextField,
   Section,
+  Card,
+  Separator,
+  Text,
 } from '@radix-ui/themes';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import '@radix-ui/themes/styles.css';
@@ -48,7 +46,13 @@ function FilmoFilter() {
       (work) =>
         (selectedOtts.length === 0 ||
           (work.ott_subscribe &&
-            work.ott_subscribe.some((ott) => selectedOtts.includes(ott)))) &&
+            work.ott_subscribe.some((ott) =>
+              selectedOtts.some(
+                (selectedOtt) =>
+                  ott.toLowerCase().includes(selectedOtt.toLowerCase()) ||
+                  selectedOtt.toLowerCase().includes(ott.toLowerCase())
+              )
+            ))) &&
         (searchTerm === '' ||
           work.title.toLowerCase().includes(searchTerm.toLowerCase()))
     );
