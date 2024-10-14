@@ -16,10 +16,11 @@ function StickyHead({ forwardedRef, stickyState, children }) {
     <StickyHeading
       ref={forwardedRef}
       className={stickyState ? 'active' : ''}
-      size="6"
+      size="7"
       p="4"
       mb="4"
       wrap="balance"
+      color="crimson"
     >
       {children}
     </StickyHeading>
