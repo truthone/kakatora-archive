@@ -68,7 +68,7 @@ function YouTubeRow({ SectionTitle, videos }) {
                     maxHeight: '2.4em', // lineHeight * 2
                   }}
                 >
-                  {video.snippet.title}
+                  {decode(video.snippet.title)}
                 </Text>
               </Box>
             </Card>
