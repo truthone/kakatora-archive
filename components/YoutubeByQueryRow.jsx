@@ -63,8 +63,21 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
                 />
               </AspectRatio>
               <Box p="2">
-                <Text size="2" weight="bold">
-                  {decode(video.snippet.title)}
+                <Text
+                  as="p"
+                  size="2   "
+                  weight="bold"
+                  style={{
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitLineClamp: '2',
+                    WebkitBoxOrient: 'vertical',
+                    lineHeight: '1.2em',
+                    maxHeight: '2.4em', // lineHeight * 2
+                  }}
+                >
+                  {video.snippet.title}
                 </Text>
               </Box>
             </Card>
