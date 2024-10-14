@@ -65,7 +65,7 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
               <Box p="2">
                 <Text
                   as="p"
-                  size="2   "
+                  size="2"
                   weight="bold"
                   style={{
                     overflow: 'hidden',
@@ -77,7 +77,7 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
                     maxHeight: '2.4em', // lineHeight * 2
                   }}
                 >
-                  {video.snippet.title}
+                  {decode(video.snippet.title)}
                 </Text>
               </Box>
             </Card>
