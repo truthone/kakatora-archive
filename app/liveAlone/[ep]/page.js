@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Text, AspectRatio, Container, Section } from '@radix-ui/themes';
+import { Box, Flex, Heading, Text, AspectRatio, Container, Section, Separator } from '@radix-ui/themes';
 import liveAloneDetailData from '../../../data/liveAloneDetailData.json'
 import Image from 'next/image';
 import EpisodeSection from '../../../components/EpisodeSection'
 import ImageFallback from '../../../components/ImageFallback'
+import Carousel from '../../../components/Carousel'
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
@@ -40,6 +41,8 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           </Box>
         </Flex>
       </Section>
+      <Carousel data={data} prefix={`/images/tv-liveAlone/${data.ep}/`}/>
+      <Separator />
       <EpisodeSection year={data.year} episodesData={data} />
     </Container>
   );
