@@ -164,6 +164,7 @@ function FilmoFilter() {
                 <Card
                   style={{ cursor: 'pointer' }}
                   onClick={() => handleCardClick(content)}
+                  className="item"
                 >
                   <AspectRatio ratio={2 / 3}>
                     <Image

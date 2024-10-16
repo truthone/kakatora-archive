@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import { Box, Heading, Flex, AspectRatio, Card, Text } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
@@ -13,29 +13,44 @@ function EpisodeRow({ title, contents }) {
 
   return (
     <Box>
-      <Heading size="6" mb="4">{title}</Heading>
-      <Flex my="4" p="0" direction={{initial: "column", xs: "row"}} wrap="wrap" gap="3" width="100%" justify="start">
+      <Heading size="6" mb="4">
+        {title}
+      </Heading>
+      <Flex
+        my="4"
+        p="0"
+        direction={{ initial: 'column', xs: 'row' }}
+        wrap="wrap"
+        gap="3"
+        width="100%"
+        justify="start"
+      >
         {contents.map((content, id) => (
-          <Box key={id} width={{initial: "100%", xs: "280px"}}>
-            <Card 
+          <Box key={id} width={{ initial: '100%', xs: '280px' }}>
+            <Card
               key={id}
-              style={{ flexShrink: 0, cursor: 'pointer'}}
+              style={{ flexShrink: 0, cursor: 'pointer' }}
               onClick={() => handleCardClick(content)}
+              className="item"
             >
-              <AspectRatio ratio={3/2} style={{padding: '0'}}>
-                <Image 
-                  src={content.imgUrl} 
+              <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
+                <Image
+                  src={content.imgUrl}
                   alt={`${content.title}${content.note}`}
                   fill
-                  style={{ 
+                  style={{
                     borderRadius: 'var(--radius-2)',
-                    objectFit: 'cover'
+                    objectFit: 'cover',
                   }}
                 />
               </AspectRatio>
-              <Flex p='2' direction="column" wrap="wrap">
-                <Text weight="medium" size="3">{content.date} | {content.ep}회 </Text>
-                <Text weight="bold" size="3" wrap="pretty">{content.note}</Text> 
+              <Flex p="2" direction="column" wrap="wrap">
+                <Text weight="medium" size="3">
+                  {content.date} | {content.ep}회{' '}
+                </Text>
+                <Text weight="bold" size="3" wrap="pretty">
+                  {content.note}
+                </Text>
               </Flex>
             </Card>
           </Box>
