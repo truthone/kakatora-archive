@@ -18,7 +18,7 @@ function FilmoRow({ title, contents }) {
 
   return (
     <Box my="4">
-      <Heading size="6" mb="4" ml="6">
+      <Heading size="6" ml="6">
         {title}
       </Heading>
       <ScrollArrowWrapper itemWidth={180} gap={12}>
