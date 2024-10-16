@@ -53,6 +53,7 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
               key={video.id.videoId}
               style={{ width: '300px', flexShrink: 0, cursor: 'pointer' }}
               onClick={() => openYouTubeVideo(video.id.videoId)}
+              className="item"
             >
               <AspectRatio ratio={16 / 9}>
                 <Image

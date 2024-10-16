@@ -1,3 +1,14 @@
 body {
   margin: 0px;
 }
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item {
+  transition:
+    transform 0.2s ease-in-out,
+    -webkit-transform 0.2s ease-in-out;
+  margin-top: 10px;
+}

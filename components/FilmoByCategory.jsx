@@ -75,6 +75,7 @@ function FilmoByCategory() {
                   key={item.id}
                   style={{ width: '200px', flexShrink: 0, cursor: 'pointer' }}
                   onClick={() => handleCardClick(item)}
+                  className="item"
                 >
                   <AspectRatio ratio={2 / 3}>
                     <Image

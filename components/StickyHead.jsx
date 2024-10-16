@@ -6,7 +6,7 @@ const StickyHeading = styled(Heading)`
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 55px;
-  z-index: 1;
+  z-index: 100;
   background-color: var(--gray-1);
   padding: 20px 0;
 `;

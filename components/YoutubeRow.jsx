@@ -44,6 +44,7 @@ function YouTubeRow({ SectionTitle, videos }) {
               key={video.snippet.resourceId.videoId}
               style={{ width: '300px', flexShrink: 0, cursor: 'pointer' }}
               onClick={() => openYouTubeVideo(video.snippet.resourceId.videoId)}
+              className="item"
             >
               <AspectRatio ratio={16 / 9}>
                 <Image
