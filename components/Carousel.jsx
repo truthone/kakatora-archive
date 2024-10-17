@@ -1,35 +1,61 @@
 'use client';
-import React, { useState } from 'react';
-import { Card, AspectRatio, IconButton } from '@radix-ui/themes';
+import React, { useState, useRef, useEffect } from 'react';
+import { Card, AspectRatio, IconButton, Section, Flex } from '@radix-ui/themes';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import imageList from '../data/liveAloneStylingImageList.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
-const CarouselContainer = styled.div`
+const CarouselContainer = styled(Section)`
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  @media (min-width: 520px) {
+    overflow: visible;
+  }
 `;
 
-const CarouselContent = styled.div`
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+const CarouselContent = styled(Flex)`
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  & > * {
+    scroll-snap-align: center;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 520px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    justify-content: flex-start;
+  }
 `;
 
 const CarouselItem = styled.div`
   flex: 0 0 100%;
-  transition: opacity 0.5s ease-in-out;
+  opacity: ${(props) => (props.index === 0 ? 1 : 0.7)};
+  transition: ${(props) =>
+    props.isFirstRender ? 'none' : 'opacity 0.5s ease-in-out'};
+
   ${(props) =>
     props.active &&
     css`
       opacity: 1;
     `}
-  ${(props) =>
-    !props.active &&
-    css`
-      opacity: 0.7;
-    `}
+
+  @media (min-width: 520px) {
+    opacity: 1;
+    transition: none;
+    flex: 0 0 auto;
+  }
 `;
 
 const CarouselButton = styled(IconButton)`
@@ -52,8 +78,10 @@ const CarouselButton = styled(IconButton)`
     css`
       right: 10px;
     `}
-  
   &:disabled {
+    display: none;
+  }
+  @media (min-width: 520px) {
     display: none;
   }
 `;
@@ -61,24 +89,53 @@ const CarouselButton = styled(IconButton)`
 const Carousel = ({ data, prefix }) => {
   const imagesObj = imageList[data.ep] || [];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFirstRender, setIsFirstRender] = useState(true);
+  const carouselRef = useRef(null);
 
   const nextSlide = () => {
+    setIsFirstRender(false);
     setCurrentIndex((prevIndex) =>
-      prevIndex === imagesObj.length - 1 ? 0 : prevIndex + 1
+      prevIndex === imagesObj.length - 1 ? imagesObj.length - 1 : prevIndex + 1
     );
+    carouselRef.current.scrollBy({
+      left: carouselRef.current.offsetWidth,
+      behavior: 'smooth',
+    });
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? imagesObj.length - 1 : prevIndex - 1
-    );
+    setIsFirstRender(false);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
+    carouselRef.current.scrollBy({
+      left: -carouselRef.current.offsetWidth,
+      behavior: 'smooth',
+    });
   };
+
+  useEffect(() => {
+    const carouselNode = carouselRef.current;
+    if (!carouselNode) return;
+
+    const handleScroll = () => {
+      const slideWidth = carouselNode.offsetWidth;
+      const scrollLeft = carouselNode.scrollLeft;
+      const index = Math.round(scrollLeft / slideWidth);
+      setCurrentIndex(index);
+      setIsFirstRender(false);
+    };
+
+    carouselNode.addEventListener('scroll', handleScroll);
+
+    return () => {
+      carouselNode.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const isFirstSlide = currentIndex === 0;
   const isLastSlide = currentIndex === imagesObj.length - 1;
 
   return (
-    <CarouselContainer>
+    <CarouselContainer size="1">
       <CarouselButton
         position="prev"
         onClick={prevSlide}
@@ -86,15 +143,18 @@ const Carousel = ({ data, prefix }) => {
       >
         <ChevronLeftIcon width="20" height="20" />
       </CarouselButton>
-      <CarouselContent
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
+      <CarouselContent ref={carouselRef} direction="row" gap="10px">
         {imagesObj?.map((content, index) => (
-          <CarouselItem key={index} active={index === currentIndex}>
+          <CarouselItem
+            key={index}
+            active={index === currentIndex}
+            index={index}
+            isFirstRender={isFirstRender}
+          >
             <Card
               style={{
-                maxWidth: '500px',
-                width: '240px',
+                maxWidth: '350px',
+                width: '100%',
                 flexShrink: 0,
                 cursor: 'pointer',
                 margin: '0 auto',
