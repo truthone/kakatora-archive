@@ -42,7 +42,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         </Flex>
       </Section>
       <Carousel data={data} prefix={`/images/tv-liveAlone/${data.ep}/`}/>
-      <Separator />
+      <Separator orientation="horizontal" size="4" />
       <EpisodeSection year={data.year} episodesData={data} />
     </Container>
   );
