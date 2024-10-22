@@ -26,7 +26,7 @@ const CarouselContent = styled(Flex)`
     scroll-snap-align: center;
   }
 
-  &::-webkit-scrollbar {
+  &::WebkitScrollbar {
     display: none;
   }
 

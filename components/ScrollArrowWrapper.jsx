@@ -131,7 +131,7 @@ const ScrollArrowWrapper = ({ children, itemWidth, gap }) => {
           overflowX: 'auto',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          '&::-webkit-scrollbar': {
+          '&::WebkitScrollbar': {
             display: 'none',
           },
         }}
