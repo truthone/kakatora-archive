@@ -1,0 +1,13 @@
+[
+    {
+      "title": "Article 1",
+      "link": "https://example.com/article1",
+      "image": "https://example.com/image1.jpg"
+    },
+    {
+      "title": "Article 2",
+      "link": "https://example.com/article2",
+      "image": "https://example.com/image2.jpg"
+    }
+  ]
+  

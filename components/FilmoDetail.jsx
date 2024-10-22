@@ -6,6 +6,7 @@ import OttLogo from './OttLogo';
 import styled from 'styled-components';
 import Image from 'next/image';
 import YouTubeByQueryRow from './YoutubeByQueryRow';
+import ArticleSection from './ArticleSection';
 
 function FilmoDetail({ id }) {
 
@@ -61,6 +62,7 @@ function FilmoDetail({ id }) {
           </Box>
         </Tabs.Root>
       </Section>
+      <ArticleSection />
       <YouTubeByQueryRow SectionTitle={"관련 영상"} query={`이주승 ${filmo?.title}`} />
     </Section>
   );
