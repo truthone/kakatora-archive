@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: '**.ytimg.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'image.cine21.com',
+        port: '',
+      },
     ],
   },
 };

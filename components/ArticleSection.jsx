@@ -1,48 +1,68 @@
 // ArticleSection.js
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Box, Card, Inset, Text, Link } from '@radix-ui/themes';
+import { Box, Card, Inset, Text, Link, Flex, AspectRatio, Heading, Section } from '@radix-ui/themes';
 import Image from 'next/image';
 import articleData from '../data/articleData.json';  // 로컬 JSON 파일을 가져옴
 
 const ArticleSection = () => {
-    const [articles, setArticles] = useState([]);
+    const [contents, setContent] = useState([]);
 
     useEffect(() => {
-        setArticles(articleData);  // 로컬 JSON 데이터를 상태에 설정
+        setContent(articleData);  // 로컬 JSON 데이터를 상태에 설정
     }, []);
 
     return (
-        <SectionWrapper>
-            <h2>Related Articles</h2>
-            {/* <ArticleList>
-                {articles.map((article, index) => (
-                    <Box maxWidth="240px" key={index}>
-                        <Card size="2" style={{ width: "100%", height: "140px" }}>
+        <Section>
+            <Heading size="6" mb="4">
+                관련 포스트
+            </Heading>
+            <Flex
+                my="4"
+                p="0"
+                direction="column"
+                wrap="wrap"
+                gap="3"
+                width="100%"
+                justify="center"
+            >
+                {contents.map((content, id) => (
+                    <Box key={id} width={{ initial: '100%', xs: '280px' }}>
+                        <Card
+                            key={id}
+                        >
                             <Inset clip="padding-box" side="top" pb="current">
-                                <ImageWrapper>
+                                <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
                                     <Image
-                                        src={article.image}
-                                        alt={article.title}
-                                        width={240}  // 고정된 가로 크기
-                                        height={140} // 고정된 세로 크기
+                                        src={content.imgUrl}
+                                        alt={`${content.title}`}
+                                        fill
                                         style={{
-                                            objectFit: "cover",
-                                            backgroundColor: "var(--gray-5)"
+                                            objectFit: 'cover',
                                         }}
                                     />
-                                </ImageWrapper>
+                                </AspectRatio>
                             </Inset>
-                            <Text as="p" size="3">
-                                {article.title}
-                            </Text>
-                            <Link>{article.link}</Link>
+                            <Flex p="2" direction="column" wrap="wrap">
+                                <Text weight="bold" size="4" mb="3">
+                                    {content.title}
+                                </Text>
+                                <Text weight="light" size="2" style={{
+                                    overflow: 'hidden',
+                                    display: '-webkit-box',
+                                    WebkitLineClamp: 2, // 두 줄까지만 보여주기
+                                    WebkitBoxOrient: 'vertical',
+                                    textOverflow: 'ellipsis'
+                                }}>
+                                    {content.desc}
+                                </Text>
+                            </Flex>
                         </Card>
                     </Box>
-                ))}
-            </ArticleList> */}
-        </SectionWrapper>
-
+                ))
+                }
+            </Flex >
+        </Section >
     );
 };
 
@@ -51,4 +71,3 @@ const SectionWrapper = styled.section`
   margin: 40px 0;
 `;
 export default ArticleSection;
-ㅊ
