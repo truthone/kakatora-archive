@@ -1,20 +1,13 @@
-'use client';
 import React from 'react';
 import { Box, Heading, Section } from '@radix-ui/themes';
 import FilmoRow from './FilmoRow';
-import StickyHead from '../components/StickyHead';
-import useStickyHeader from '../hooks/useStickyHeader';
 
 function FilmoSection({ data }) {
-  const [headerRef, isSticky] = useStickyHeader();
-
   return (
     <Section size="1">
       {data.map((yearData, index) => (
         <Box key={index} mt="6">
-          <StickyHead ref={headerRef} stickyState={isSticky}>
-            {yearData?.year}
-          </StickyHead>
+          <Heading>{yearData?.year}</Heading>
           {yearData?.movies && yearData.movies.length > 0 && (
             <FilmoRow title="영화" contents={yearData?.movies} />
           )}
