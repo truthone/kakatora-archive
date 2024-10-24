@@ -78,6 +78,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
   const [naturalWidth, setNaturalWidth] = useState(null);
   const [naturalHeight, setNaturalHeight] = useState(null);
   const containerRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
   function handleImgHeight(img) {
     const { naturalWidth, naturalHeight } = img;
@@ -99,9 +100,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
           }}
           className="item"
           variant="surface"
-        >
-          <AspectRatio ratio={1 / 1}>
-            <Skeleton loading="true" width="200" height="200">
+        ><Skeleton loading={false}>
+            <AspectRatio ratio={1 / 1}>
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
@@ -109,13 +109,9 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 fill
                 quality={100}
                 sizes="200px"
-                onContextMenu={(e) => {
-                  e.stopPropagation();  // 이벤트가 부모에게 전달되지 않도록 방지
-                  return true; // 기본 동작 허용
-                }}
               />
-            </Skeleton>
-          </AspectRatio>
+            </AspectRatio>
+          </Skeleton>
           <Flex
             m="2"
             style={{ justifyContent: 'center', alignItems: 'center' }}
@@ -146,17 +142,18 @@ export default function GridImageItem({ filename, episode, index, title }) {
               <Cross2Icon width="100%" height="100%" />
             </CloseButton>
           </Dialog.Close>
-          <Box
-            style={{
-              position: 'relative',
-              width: `${naturalWidth}px`,
-              height: `${naturalHeight}px`,
-              maxWidth: '70vw',
-              maxHeight: '70vh',
-              margin: 'auto',
-            }}
-          >
-            <Skeleton loading={true}>
+          <Skeleton loading={loading} width="70vw" height="30vh" maxWidth="1200px" maxHeight="500px">
+            <Box
+              style={{
+                position: 'relative',
+                width: `${naturalWidth}px`,
+                height: `${naturalHeight}px`,
+                maxWidth: '70vw',
+                maxHeight: '70vh',
+                margin: 'auto',
+              }}
+            >
+
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
@@ -168,10 +165,16 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 sizes={'70vw'}
                 onLoadingComplete={(img) => {
                   handleImgHeight(img);
+                  setLoading(false);
+                }}
+                
+                onContextMenu={(e) => {
+                  e.stopPropagation();  // 이벤트가 부모에게 전달되지 않도록 방지
+                  return true; // 기본 동작 허용
                 }}
               />
-            </Skeleton>
-          </Box>
+            </Box>
+          </Skeleton>
         </Content>
       </Dialog.Portal>
     </Dialog.Root>
