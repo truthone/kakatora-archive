@@ -86,7 +86,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
   }
 
   return (
-    <Dialog.Root>
+    <Dialog.Root onContextMenu={(e) => e.stopPropagation()}>
       <Dialog.Trigger asChild>
         <Card
           display="flex"
@@ -109,6 +109,10 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 fill
                 quality={100}
                 sizes="200px"
+                onContextMenu={(e) => {
+                  e.stopPropagation();  // 이벤트가 부모에게 전달되지 않도록 방지
+                  return true; // 기본 동작 허용
+                }}
               />
             </Skeleton>
           </AspectRatio>
