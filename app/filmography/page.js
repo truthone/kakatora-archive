@@ -15,6 +15,7 @@ export default function FilmographyPage() {
       return isYearMatch && isCategoryMatch;
     });
     setFilteredData(filtered);
+    console.log('filtered', filtered)
   };
 
   return (

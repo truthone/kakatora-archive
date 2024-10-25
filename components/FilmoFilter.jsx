@@ -1,17 +1,18 @@
 'use client'
 import React, { useState } from 'react';
-import { Box, Flex, Select, RadioGroup } from '@radix-ui/themes';
+import { Box, Flex, Text, Select, Checkbox } from '@radix-ui/themes';
 
 export default function FilmoFilter({ onFilterChange }) {
     const [selectedYear, setSelectedYear] = useState('전체');
     const [selectedCategories, setSelectedCategories] = useState(['영화', '드라마', '연극', '예능']);
 
-    const years = ['전체', '2008', '2009', '2010', '2024']; // 연도 목록
-    const categories = ['영화', '드라마', '연극', '예능']; // 카테고리 목록
+    const years = ['전체', 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
+    const categories = ['영화', '드라마', '연극', '예능'];
 
     const handleYearChange = (value) => {
-        setSelectedYear(value);
-        onFilterChange(value, selectedCategories);
+        const numericYear = value === '전체' ? '전체' : Number(value);
+        setSelectedYear(numericYear);
+        onFilterChange(numericYear, selectedCategories);
     };
 
     const handleCategoryChange = (category) => {
@@ -26,7 +27,7 @@ export default function FilmoFilter({ onFilterChange }) {
     return (
         <Box>
             {/* 연도 Select */}
-            <Select.Root size="3" defaultValue={selectedYear} onValueChange={handleYearChange}>
+            <Select.Root value={selectedYear} onValueChange={handleYearChange}>
                 <Select.Trigger />
                 <Select.Content>
                     {years.map((year) => (
@@ -36,16 +37,20 @@ export default function FilmoFilter({ onFilterChange }) {
                     ))}
                 </Select.Content>
             </Select.Root>
-            {/* 카테고리 Radio Group */}
-            <RadioGroup.Root defaultValue="영화" name="카테고리">
-                <Flex direction="row" gap="2">
-                    {categories.map((category) => (
-                        <RadioGroup.Item key={category} value={category} checked={selectedCategories.includes(category)} onChange={() => handleCategoryChange(category)}>
-                            {category}
-                        </RadioGroup.Item>
-                    ))}
-                </Flex>
-            </RadioGroup.Root>
+
+            {/* 카테고리 Checkbox */}
+            <Flex direction="column" gap="2" mt="4">
+                {categories.map((category) => (
+                    <Flex key={category} align="center">
+                        <Checkbox
+                            checked={selectedCategories.includes(category)}
+                            onCheckedChange={() => handleCategoryChange(category)}
+                        >
+                        </Checkbox>
+                        <Text>{category}</Text>
+                    </Flex>
+                ))}
+            </Flex>
         </Box>
     );
 }
