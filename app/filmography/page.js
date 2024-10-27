@@ -12,7 +12,7 @@ export default function FilmographyPage() {
     let filteredResults = [];
     
     filmoDataByYear.filmo_data_by_year.forEach((data) => {
-      const isYearMatch = year === '전체' || data.year === year;
+      const isYearMatch = year === '모든 연도' || data.year === year;
     
       let filteredItemsByCategory = {};
       
@@ -34,13 +34,11 @@ export default function FilmographyPage() {
     });
     
     setFilteredData(filteredResults);
-    console.log(filteredResults);
   };
   
   return (
     <Container p="4">
       <FilmoFilter onFilterChange={handleFilterChange} />
-      {console.log(filteredData)}
       <FilmoSection data={filteredData} />
     </Container>
   )
