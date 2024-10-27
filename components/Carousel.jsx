@@ -26,7 +26,7 @@ const CarouselContent = styled(Flex)`
     scroll-snap-align: center;
   }
 
-  &::WebkitScrollbar {
+  &::webkitscrollbar {
     display: none;
   }
 
@@ -165,6 +165,7 @@ const Carousel = ({ data, prefix }) => {
                   src={`${prefix}${content.filename}`}
                   alt={content.title}
                   fill
+                  sizes={'(max-width: 768px) 100vw, 30vw'}
                   style={{
                     borderTopLeftRadius: 'var(--radius-2)',
                     borderTopRightRadius: 'var(--radius-2)',

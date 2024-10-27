@@ -100,15 +100,16 @@ export default function GridImageItem({ filename, episode, index, title }) {
           }}
           className="item"
           variant="surface"
-        ><Skeleton loading={false}>
+        >
+          <Skeleton loading={false}>
             <AspectRatio ratio={1 / 1}>
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{ objectFit: 'cover' }}
                 fill
+                sizes={'(max-width: 768px) 100vw, 30vw'}
                 quality={100}
-                sizes="200px"
               />
             </AspectRatio>
           </Skeleton>
@@ -142,7 +143,13 @@ export default function GridImageItem({ filename, episode, index, title }) {
               <Cross2Icon width="100%" height="100%" />
             </CloseButton>
           </Dialog.Close>
-          <Skeleton loading={loading} width="70vw" height="30vh" maxWidth="1200px" maxHeight="500px">
+          <Skeleton
+            loading={loading}
+            width="70vw"
+            height="30vh"
+            maxWidth="1200px"
+            maxHeight="500px"
+          >
             <Box
               style={{
                 position: 'relative',
@@ -153,7 +160,6 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 margin: 'auto',
               }}
             >
-
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
@@ -167,9 +173,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
                   handleImgHeight(img);
                   setLoading(false);
                 }}
-                
                 onContextMenu={(e) => {
-                  e.stopPropagation();  // 이벤트가 부모에게 전달되지 않도록 방지
+                  e.stopPropagation(); // 이벤트가 부모에게 전달되지 않도록 방지
                   return true; // 기본 동작 허용
                 }}
               />

@@ -1,6 +1,14 @@
 'use client';
 import React from 'react';
-import { Box, Heading, Flex, AspectRatio, Card, Text, Inset } from '@radix-ui/themes';
+import {
+  Box,
+  Heading,
+  Flex,
+  AspectRatio,
+  Card,
+  Text,
+  Inset,
+} from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -32,17 +40,20 @@ function EpisodeRow({ title, contents }) {
               style={{ flexShrink: 0, cursor: 'pointer' }}
               onClick={() => handleCardClick(content)}
               className="item"
-            ><Inset clip="padding-box" side="top" pb="current">
+            >
+              <Inset clip="padding-box" side="top" pb="current">
                 <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
                   <Image
                     src={content.imgUrl}
                     alt={`${content.title}${content.note}`}
                     fill
+                    sizes={'(max-width: 768px) 100vw, 30vw'}
                     style={{
                       objectFit: 'cover',
                     }}
                   />
-                </AspectRatio></Inset>
+                </AspectRatio>
+              </Inset>
               <Flex p="2" direction="column" wrap="wrap">
                 <Text weight="medium" size="3">
                   {content.date} | {content.ep}회{' '}

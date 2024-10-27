@@ -22,11 +22,16 @@ function FilmoRow({ title, contents }) {
         {title}
       </Heading>
       <ScrollArrowWrapper itemWidth={180} gap={12}>
-        <Flex gap="3" px="6" py="3" alignItems="flex-start">
+        <Flex gap="3" px="6" py="3" style={{ alignItems: 'flex-start' }}>
           {contents.map((content, id) => (
             <Card
               key={id}
-              style={{ width: '180px', flexShrink: 0, cursor: 'pointer' }}
+              style={{
+                width: '180px',
+                height: 'fit-content',
+                flexShrink: 0,
+                cursor: 'pointer',
+              }}
               onClick={() => handleCardClick(content)}
               className="item"
             >
@@ -35,6 +40,7 @@ function FilmoRow({ title, contents }) {
                   src={content.imgUrl}
                   alt={content.title}
                   fill
+                  sizes={'(max-width: 768px) 100vw, 30vw'}
                   style={{
                     borderTopLeftRadius: 'var(--radius-2)',
                     borderTopRightRadius: 'var(--radius-2)',

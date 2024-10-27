@@ -171,6 +171,7 @@ function FilmoFilterByOTT() {
                       src={content.imgUrl}
                       alt={content.title}
                       fill
+                      sizes={'(max-width: 768px) 100vw, 30vw'}
                       style={{
                         borderTopLeftRadius: 'var(--radius-2)',
                         borderTopRightRadius: 'var(--radius-2)',

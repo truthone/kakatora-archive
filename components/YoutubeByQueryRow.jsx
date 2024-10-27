@@ -60,6 +60,7 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
                   src={video.snippet.thumbnails.high.url}
                   alt={video.snippet.title}
                   fill
+                  sizes={'30vw'}
                   style={{ objectFit: 'cover' }}
                 />
               </AspectRatio>
