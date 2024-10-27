@@ -8,7 +8,19 @@ body {
 
 .item {
   transition:
-    transform 0.2s ease-in-out,
-    -webkit-transform 0.2s ease-in-out;
+    transform 0.4s ease-in-out,
+    -webkit-transform 0.4s ease-in-out;
   margin-top: 10px;
+}
+
+.radix-themes {
+  --cursor-button: pointer !important;
+  --cursor-checkbox: pointer !important;
+  --cursor-disabled: default !important;
+  --cursor-link: pointer !important;
+  --cursor-menu-item: pointer !important;
+  --cursor-radio: pointer !important;
+  --cursor-slider-thumb: grab !important;
+  --cursor-slider-thumb-active: grabbing !important;
+  --cursor-switch: pointer !important;
 }
