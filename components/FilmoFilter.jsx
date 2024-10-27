@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Box, Flex, Text, Select, Checkbox } from '@radix-ui/themes';
+import { Flex, Text, Select, Checkbox } from '@radix-ui/themes';
+import { throttle } from 'lodash';
 
 export default function FilmoFilter({ onFilterChange }) {
   const [selectedYear, setSelectedYear] = useState('모든 연도');
@@ -34,9 +35,9 @@ export default function FilmoFilter({ onFilterChange }) {
   ];
   const categories = ['영화', '드라마', '연극', '예능'];
 
-  const handleYearChange = (value) => {
+  const handleYearChange = throttle((value) => {
     setSelectedYear(value === '모든 연도' ? '모든 연도' : value);
-  };
+  }, 2000);
 
   const handleCategoryChange = (category) => {
     const categoryMap = {
