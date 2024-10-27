@@ -82,6 +82,7 @@ function FilmoByCategory() {
                       src={item.imgUrl}
                       alt={item.title}
                       style={{ objectFit: 'cover' }}
+                      sizes={'(max-width: 768px) 100vw, 30vw'}
                       fill
                     />
                   </AspectRatio>

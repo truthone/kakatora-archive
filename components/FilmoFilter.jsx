@@ -95,10 +95,10 @@ export default function FilmoFilter({ onFilterChange }) {
         </Select.Content>
       </Select.Root>
 
-      <Flex direction="row" gap="3" align="center">
+      <Flex direction="row" gap="4" align="center">
         {categories.map((category) => (
           <Text key={category} as="label" cursor="pointer">
-            <Flex gap="2">
+            <Flex gap="2" align="center">
               <Checkbox
                 key={category}
                 checked={selectedCategories.includes(category)}

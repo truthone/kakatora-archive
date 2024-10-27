@@ -37,6 +37,7 @@ const ArticleSection = () => {
                                         src={content.imgUrl}
                                         alt={`${content.title}`}
                                         fill
+                                        sizes={'100vw'}
                                         style={{
                                             objectFit: 'cover',
                                         }}

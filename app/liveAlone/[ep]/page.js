@@ -27,6 +27,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
                   alt={data.note} 
                   style={{objectFit: 'cover'}}
                   fill
+                  sizes={'100vw'}
                   onError={() => setImageError(true)}
                 />
               ) : (
