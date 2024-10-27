@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Heading, Flex, AspectRatio, Card, Text } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
@@ -7,8 +7,21 @@ import ScrollArrowWrapper from './ScrollArrowWrapper';
 
 function FilmoRow({ title, contents }) {
   const router = useRouter();
+  const [isClickable, setIsClickable] = useState(false);
+
+  useEffect(() => {
+    // 2초 후에 클릭 가능하도록 설정
+    const timer = setTimeout(() => {
+      setIsClickable(true);
+    }, 500);
+
+    // 타이머 정리
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCardClick = (content) => {
+    if (!isClickable) return;
+
     if (content.url) {
       router.push(`${content.url}`);
     } else {
