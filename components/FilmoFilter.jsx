@@ -12,7 +12,7 @@ export default function FilmoFilter({ onFilterChange }) {
   ]);
 
   const years = [
-    '전체',
+    '모든 연도',
     2007,
     2008,
     2009,
@@ -35,7 +35,7 @@ export default function FilmoFilter({ onFilterChange }) {
   const categories = ['영화', '드라마', '연극', '예능'];
 
   const handleYearChange = (value) => {
-    setSelectedYear(value === '전체' ? '전체' : value);
+    setSelectedYear(value === '모든 연도' ? '모든 연도' : value);
   };
 
   const handleCategoryChange = (category) => {
@@ -67,31 +67,46 @@ export default function FilmoFilter({ onFilterChange }) {
   }, [selectedYear, selectedCategories]);
 
   return (
-    <Box>
+    <Flex
+      direction={{ initial: 'column', xs: 'row' }}
+      gap="2"
+      position="sticky"
+      top="50px"
+      width="100%"
+      py="20px"
+      style={{
+        zIndex: '10',
+        backgroundColor: 'var(--gray-1)',
+      }}
+      align={{ initial: 'start', xs: 'center' }}
+    >
       <Select.Root value={selectedYear} onValueChange={handleYearChange}>
-        <Select.Trigger>
-          <Text>{selectedYear}</Text>
-        </Select.Trigger>
-        <Select.Content>
+        <Select.Trigger
+          style={{ marginRight: '5px', minWidth: '60px', cursor: 'pointer' }}
+        />
+        <Select.Content position="popper" sideOffset={5}>
           {years.map((year) => (
-            <Select.Item key={year} value={year}>
-              {year}
+            <Select.Item key={year} value={year} style={{ cursor: 'pointer' }}>
+              <Text size="3">{year}</Text>
             </Select.Item>
           ))}
         </Select.Content>
       </Select.Root>
 
-      <Flex direction="column" gap="2" mt="4">
+      <Flex direction="row" gap="3" align="center">
         {categories.map((category) => (
-          <Flex key={category} align="center">
-            <Checkbox
-              checked={selectedCategories.includes(category)}
-              onCheckedChange={() => handleCategoryChange(category)}
-            ></Checkbox>
-            <Text>{category}</Text>
-          </Flex>
+          <Text as="label" cursor="pointer">
+            <Flex gap="2">
+              <Checkbox
+                key={category}
+                checked={selectedCategories.includes(category)}
+                onCheckedChange={() => handleCategoryChange(category)}
+              />
+              {category}
+            </Flex>
+          </Text>
         ))}
       </Flex>
-    </Box>
+    </Flex>
   );
 }
