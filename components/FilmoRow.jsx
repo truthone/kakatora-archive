@@ -22,7 +22,7 @@ function FilmoRow({ title, contents }) {
         {title}
       </Heading>
       <ScrollArrowWrapper itemWidth={180} gap={12}>
-        <Flex gap="3" px="6" py="3">
+        <Flex gap="3" px="6" py="3" alignItems="flex-start">
           {contents.map((content, id) => (
             <Card
               key={id}

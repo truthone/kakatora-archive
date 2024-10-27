@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Flex, Text, Select, Checkbox } from '@radix-ui/themes';
 
 export default function FilmoFilter({ onFilterChange }) {
-  const [selectedYear, setSelectedYear] = useState('전체');
+  const [selectedYear, setSelectedYear] = useState('모든 연도');
   const [selectedCategories, setSelectedCategories] = useState([
     '영화',
     '드라마',
@@ -83,7 +83,9 @@ export default function FilmoFilter({ onFilterChange }) {
       <Select.Root value={selectedYear} onValueChange={handleYearChange}>
         <Select.Trigger
           style={{ marginRight: '5px', minWidth: '60px', cursor: 'pointer' }}
-        />
+        >
+          {selectedYear}
+        </Select.Trigger>
         <Select.Content position="popper" sideOffset={5}>
           {years.map((year) => (
             <Select.Item key={year} value={year} style={{ cursor: 'pointer' }}>
@@ -95,7 +97,7 @@ export default function FilmoFilter({ onFilterChange }) {
 
       <Flex direction="row" gap="3" align="center">
         {categories.map((category) => (
-          <Text as="label" cursor="pointer">
+          <Text key={category} as="label" cursor="pointer">
             <Flex gap="2">
               <Checkbox
                 key={category}
