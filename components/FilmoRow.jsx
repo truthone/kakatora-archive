@@ -10,12 +10,10 @@ function FilmoRow({ title, contents }) {
   const [isClickable, setIsClickable] = useState(false);
 
   useEffect(() => {
-    // 2초 후에 클릭 가능하도록 설정
     const timer = setTimeout(() => {
       setIsClickable(true);
-    }, 500);
+    }, 2000);
 
-    // 타이머 정리
     return () => clearTimeout(timer);
   }, []);
 
