@@ -8,7 +8,6 @@ import ScrollArrowWrapper from './ScrollArrowWrapper';
 function FilmoRow({ title, contents, isClickable }) {
   const router = useRouter();
   const handleCardClick = (content) => {
-
     if (!isClickable) {
       return;
     }
@@ -21,17 +20,14 @@ function FilmoRow({ title, contents, isClickable }) {
 
   return (
     <Box my="4">
-      <Heading size="6">
-        {title}
-      </Heading>
+      <Heading size="6">{title}</Heading>
       <ScrollArrowWrapper itemWidth={180} gap={12}>
-        <Flex gap="3" px="6" py="3" style={{ alignItems: 'flex-start' }}>
+        <Flex gap="3" py="3" style={{ alignItems: 'flex-start' }}>
           {contents.map((content, id) => (
             <Card
               key={id}
               style={{
                 width: '180px',
-                height: 'fit-content',
                 flexShrink: 0,
                 cursor: 'pointer',
               }}
