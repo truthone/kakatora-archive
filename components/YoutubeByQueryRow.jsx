@@ -47,11 +47,12 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
         {SectionTitle}
       </Heading>
       <ScrollArrowWrapper itemWidth={300} gap={12}>
-        <Flex px="4" gap="3">
+        <Flex gap="3">
           {validVideos.map((video) => (
             <Card
               key={video.id.videoId}
               style={{ width: '300px', flexShrink: 0, cursor: 'pointer' }}
+              my="3"
               onClick={() => openYouTubeVideo(video.id.videoId)}
               className="item"
             >

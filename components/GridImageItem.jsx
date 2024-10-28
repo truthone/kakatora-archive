@@ -93,6 +93,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
           display="flex"
           direction="column"
           align="center"
+          width="50vw"
+          maxWidth="fit-content"
           style={{
             cursor: 'pointer',
             justifyContent: 'space-around',
@@ -145,8 +147,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
           </Dialog.Close>
           <Skeleton
             loading={loading}
-            width="70vw"
-            height="30vh"
+            width={{ xl: '70vw', initial: '50vw' }}
+            height="50vh"
             maxWidth="1200px"
             maxHeight="500px"
           >
