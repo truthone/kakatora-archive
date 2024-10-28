@@ -5,21 +5,13 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import ScrollArrowWrapper from './ScrollArrowWrapper';
 
-function FilmoRow({ title, contents }) {
+function FilmoRow({ title, contents, isClickable }) {
   const router = useRouter();
-  const [isClickable, setIsClickable] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsClickable(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleCardClick = (content) => {
-    if (!isClickable) return;
 
+    if (!isClickable) {
+      return;
+    }
     if (content.url) {
       router.push(`${content.url}`);
     } else {
