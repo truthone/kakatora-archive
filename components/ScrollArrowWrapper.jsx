@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, IconButton } from '@radix-ui/themes';
+import { Box, IconButton, ScrollArea } from '@radix-ui/themes';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
 const ScrollArrowWrapper = ({ children, itemWidth, gap }) => {
@@ -61,6 +61,7 @@ const ScrollArrowWrapper = ({ children, itemWidth, gap }) => {
       position="relative"
       onMouseEnter={() => setShowButtons(true)}
       onMouseLeave={() => setShowButtons(false)}
+      height="fit-content"
     >
       {showButtons && canScrollLeft && (
         <Box
@@ -124,20 +125,15 @@ const ScrollArrowWrapper = ({ children, itemWidth, gap }) => {
           </IconButton>
         </Box>
       )}
-      <Box
+      <ScrollArea
         ref={scrollContainerRef}
         onScroll={checkScrollPosition}
-        style={{
-          overflowX: 'auto',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          '&::WebkitScrollbar': {
-            display: 'none',
-          },
-        }}
+        size="1"
+        type="auto"
+        scrollbars="horizontal"
       >
         {children}
-      </Box>
+      </ScrollArea>
     </Box>
   );
 };
