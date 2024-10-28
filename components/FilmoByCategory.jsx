@@ -69,7 +69,7 @@ function FilmoByCategory() {
             {getCategoryTitle(category)}
           </Heading>
           <ScrollArrowWrapper itemWidth={200} gap={12}>
-            <Flex gap="3" style={{ padding: '0 16px' }}>
+            <Flex gap="3" py="3">
               {allData[category]?.map((item) => (
                 <Card
                   key={item.id}
