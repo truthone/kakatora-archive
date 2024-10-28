@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Flex, Button, Heading, Dialog, Box } from '@radix-ui/themes';
 import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
 
@@ -67,6 +68,7 @@ function Header() {
 
       <Dialog.Root open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
         <Dialog.Content
+          aria-describedby={undefined}
           style={{
             position: 'fixed',
             top: 0,
@@ -78,6 +80,9 @@ function Header() {
             borderRadius: '10px 0 0 10px',
           }}
         >
+          <VisuallyHidden.Root asChild>
+            <Dialog.Title></Dialog.Title>
+          </VisuallyHidden.Root>
           <Flex direction="column" gap="4">
             <Flex justify="between" align="center">
               <Button
