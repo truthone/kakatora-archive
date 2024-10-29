@@ -34,10 +34,10 @@ function EpisodeRow({ title, contents }) {
         justify="start"
       >
         {contents.map((content, id) => (
-          <Box key={id} width={{ initial: '100%', xs: '280px' }}>
+          <Box key={id} width={{ initial: '100%', sm: '30%', md:'24%' }}>
             <Card
               key={id}
-              style={{ flexShrink: 0, cursor: 'pointer' }}
+              style={{ cursor: 'pointer' }}
               onClick={() => handleCardClick(content)}
               className="item"
             >

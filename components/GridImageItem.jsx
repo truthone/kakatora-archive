@@ -78,7 +78,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
   const [naturalWidth, setNaturalWidth] = useState(null);
   const [naturalHeight, setNaturalHeight] = useState(null);
   const containerRef = useRef(null);
-  const [loading, setLoading] = useState(true);
+  const [dialogImageLoading, setDialogImageLoading] = useState(true);
+  const [gridImageLoading, setGridImageLoading] = useState(true);
 
   function handleImgHeight(img) {
     const { naturalWidth, naturalHeight } = img;
@@ -103,15 +104,18 @@ export default function GridImageItem({ filename, episode, index, title }) {
           className="item"
           variant="surface"
         >
-          <Skeleton loading={false}>
+          <Skeleton loading={gridImageLoading}>
             <AspectRatio ratio={1 / 1}>
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 fill
-                sizes={'(max-width: 768px) 100vw, 30vw'}
+                sizes={'(max-width: 768px) 100vw, 50vw'}
                 quality={100}
+                onLoadingComplete={(img) => {
+                  setGridImageLoading(false);
+                }}
               />
             </AspectRatio>
           </Skeleton>
@@ -146,9 +150,9 @@ export default function GridImageItem({ filename, episode, index, title }) {
             </CloseButton>
           </Dialog.Close>
           <Skeleton
-            loading={loading}
+            loading={dialogImageLoading}
             width={{ xl: '70vw', initial: '50vw' }}
-            height="50vh"
+            height="30vh"
             maxWidth="1200px"
             maxHeight="500px"
           >
@@ -159,7 +163,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 height: `${naturalHeight}px`,
                 maxWidth: '70vw',
                 maxHeight: '70vh',
-                margin: 'auto',
+                margin: '20px auto',
               }}
             >
               <Image
@@ -173,11 +177,11 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 sizes={'(max-width:768px) 70vw, 100vw'}
                 onLoadingComplete={(img) => {
                   handleImgHeight(img);
-                  setLoading(false);
+                  setDialogImageLoading(false);
                 }}
                 onContextMenu={(e) => {
-                  e.stopPropagation(); // 이벤트가 부모에게 전달되지 않도록 방지
-                  return true; // 기본 동작 허용
+                  e.stopPropagation(); 
+                  return true; 
                 }}
               />
             </Box>

@@ -62,7 +62,6 @@ const CarouselButton = styled(IconButton)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 10px;
@@ -140,6 +139,7 @@ const Carousel = ({ data, prefix }) => {
         position="prev"
         onClick={prevSlide}
         disabled={isFirstSlide}
+        variant="soft"
       >
         <ChevronLeftIcon width="20" height="20" />
       </CarouselButton>
