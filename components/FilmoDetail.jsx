@@ -12,7 +12,7 @@ import {
 } from '@radix-ui/themes';
 import filmoDataByYear from '../data/filmoDataByYear.json';
 import OttLogo from './OttLogo';
-import styled from 'styled-components';
+import BlurBackgroundComponent from '../components/BlurBackgroundComponent';
 import Image from 'next/image';
 import YouTubeByQueryRow from './YoutubeByQueryRow';
 import ArticleSection from './ArticleSection';
@@ -31,7 +31,9 @@ function FilmoDetail({ id }) {
 
   return (
     <Section size="1" className="filmo-detail">
-      <Flex direction="row" gap="4" justify="start">
+      <Box>
+        <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
+        <Flex direction="row" gap="4" justify="start">
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={2 / 3}>
             <Image
@@ -62,6 +64,7 @@ function FilmoDetail({ id }) {
           </Text>
         </Box>
       </Flex>
+      </Box>
       <Separator size="4" my="4" />
       <Section size="1">
         <Heading size="6" mb="4">
