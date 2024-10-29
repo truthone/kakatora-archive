@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
-import { Flex, Button, Heading, Dialog, Box } from '@radix-ui/themes';
+import { Flex, Button, Heading, Dialog, Box, Text } from '@radix-ui/themes';
 import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
 
 function Header() {
@@ -84,25 +84,15 @@ function Header() {
             <Dialog.Title></Dialog.Title>
           </VisuallyHidden.Root>
           <Flex direction="column" gap="4">
-            <Flex justify="between" align="center">
-              <Button
-                variant="ghost"
-                size="1"
-                onClick={() => setIsSidebarOpen(false)}
-                style={{ cursor: 'pointer' }}
-              >
-                <Cross1Icon />
-              </Button>
-            </Flex>
             {menuItems.map((item, index) => (
               <Button
                 key={index}
                 variant="ghost"
                 onClick={() => handleNavigate(item.path)}
-                size="2"
+                size="3"
                 style={{ justifyContent: 'flex-start', cursor: 'pointer' }}
               >
-                {item.text}
+                <Text weight="bold">{item.text}</Text>
               </Button>
             ))}
           </Flex>

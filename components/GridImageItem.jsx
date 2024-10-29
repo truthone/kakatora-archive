@@ -108,7 +108,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
               <Image
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 fill
                 sizes={'(max-width: 768px) 100vw, 30vw'}
                 quality={100}
@@ -170,7 +170,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 }}
                 fill
                 quality={100}
-                sizes={'70vw'}
+                sizes={'(max-width:768px) 70vw, 100vw'}
                 onLoadingComplete={(img) => {
                   handleImgHeight(img);
                   setLoading(false);
