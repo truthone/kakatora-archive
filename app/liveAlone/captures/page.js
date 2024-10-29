@@ -11,7 +11,7 @@ export default function LiveAloneAllCapturesPage(){
   
   return (
     <Container p="4">
-      <Section>
+      <Section size="1">
         <Heading as="h1" m="2">나혼산 짤 모음</Heading>
           <EpisodeSection episodesData={liveAloneDetailData}/>
       </Section>
