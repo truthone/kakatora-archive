@@ -49,14 +49,15 @@ function Hero({ movie }) {
       position="relative"
       width="100%"
       height={{ initial: '70vh', md: '60vh' }}
+      minHeight="500px"
     >
       <Skeleton style={{ borderRadius: '0' }}>
         <Image
           src={heroImg}
           alt={movie.title}
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
           fill
-          sizes={'100vw'}
+          sizes={'(max-width: 600px) 150vw,120vw'}
           priority={true}
           quality={100}
         />
