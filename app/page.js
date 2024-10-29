@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <>
       <Hero movie={moviesData.featuredMovie} />
-      <Container mx="3">
+      <Container ml="3">
         <Section size="1">
           <YouTubeRow SectionTitle="다우렌의 결혼" videos={youtubeData[0]} />
           <YouTubeRow SectionTitle="재밌는거 몰아보기" videos={youtubeData[1]} />
