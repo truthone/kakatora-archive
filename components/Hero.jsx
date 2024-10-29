@@ -50,6 +50,7 @@ function Hero({ movie }) {
       width="100%"
       height={{ initial: '70vh', md: '60vh' }}
       minHeight="500px"
+      className="gradient-from-bottom"
     >
       <Skeleton style={{ borderRadius: '0' }}>
         <Image
@@ -68,6 +69,7 @@ function Hero({ movie }) {
         left={{ initial: '20px', md: '50px' }}
         right={{ initial: '20px', md: 'auto' }}
         maxWidth={{ initial: 'auto', md: '500px' }}
+        style={{zIndex: '1'}}
       >
         <Heading size={{ initial: '7', md: '9' }} mb="1">
           {movie.title}
