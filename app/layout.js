@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
               appearance="dark"
               accentColor="crimson" 
               radius="large" 
-              p={{ sm: '6', lg: '9' }}
+              p={{ sm: '2', lg: '9' }}
               m={{initial: '1', xs:'3'}}
               >
               <Header />
