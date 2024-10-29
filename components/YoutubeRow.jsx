@@ -37,7 +37,7 @@ function YouTubeRow({ SectionTitle, videos }) {
       <Heading size="6" mb="2">
         {SectionTitle}
       </Heading>
-      <Box px="6">
+      <Box pl="6">
         <ScrollArrowWrapper itemWidth={300} gap={12}>
           <Flex gap="3">
             {validVideos.map((video) => (

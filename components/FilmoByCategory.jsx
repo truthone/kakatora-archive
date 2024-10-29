@@ -68,7 +68,8 @@ function FilmoByCategory() {
           <Heading size="6">
             {getCategoryTitle(category)}
           </Heading>
-          <ScrollArrowWrapper itemWidth={200} gap={12}>
+          <Box ml="6">
+            <ScrollArrowWrapper itemWidth={200} gap={12}>
             <Flex gap="3" py="3">
               {allData[category]?.map((item) => (
                 <Card
@@ -103,7 +104,8 @@ function FilmoByCategory() {
                 </Card>
               ))}
             </Flex>
-          </ScrollArrowWrapper>
+            </ScrollArrowWrapper>
+          </Box>
         </Box>
       ))}
     </Section>
