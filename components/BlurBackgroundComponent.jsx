@@ -40,7 +40,7 @@ const BlurBackgroundComponent = ({ imageUrl }) => {
 
   return (
       <BlurBackgroundImageWrapper>
-        <Image src={imageUrl} alt="Background Image" layout="fill" objectFit="cover" />
+        <Image src={imageUrl} alt="Background Image" layout="fill" objectFit="cover" objectPositipn="top 10%"/>
       </BlurBackgroundImageWrapper>
     
   );
