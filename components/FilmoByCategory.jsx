@@ -64,8 +64,8 @@ function FilmoByCategory() {
   return (
     <Section size="1">
       {categories.map((category) => (
-        <Box key={category} my="6">
-          <Heading size="6" mb="4">
+        <Box key={category} my="7">
+          <Heading size="6">
             {getCategoryTitle(category)}
           </Heading>
           <ScrollArrowWrapper itemWidth={200} gap={12}>

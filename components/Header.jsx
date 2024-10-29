@@ -83,7 +83,7 @@ function Header() {
           <VisuallyHidden.Root asChild>
             <Dialog.Title></Dialog.Title>
           </VisuallyHidden.Root>
-          <Flex direction="column" gap="4">
+          <Flex direction="column" gap="4" my="8">
             {menuItems.map((item, index) => (
               <Button
                 key={index}
