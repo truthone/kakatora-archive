@@ -3,57 +3,6 @@
     "id": "featured1",
     "title": "Lee, Ju-Seung",
     "description": "배우 이주승 아카이브 공간을 소개합니다.",
-    "backdrop": "../../img/hero.jpg",
-    "year": "1999",
-    "rating": "8.7",
-    "duration": "2h 16min",
-    "cast": ["키아누 리브스", "로렌스 피시번", "캐리-앤 모스"],
-    "genres": ["액션", "SF"]
-  },
-  "trending": [
-    {
-      "id": "trend1",
-      "title": "스트레인저 씽즈",
-      "poster": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg"
-    },
-    {
-      "id": "trend2",
-      "title": "브리저튼",
-      "poster": "https://siff.kr/wp-content/uploads/2023/11/%EB%8B%A4%EC%9A%B0%EB%A0%8C%EC%9D%98-%EA%B2%B0%ED%98%BC_%EC%8A%A4%ED%8B%B8%EB%A9%94%EC%9D%B8.jpg"
-    }
-  ],
-  "tvSeries": [
-    {
-      "id": "tv1",
-      "title": "왕좌의 게임",
-      "poster": "https://example.com/got_poster.jpg"
-    },
-    {
-      "id": "tv2",
-      "title": "브레이킹 배드",
-      "poster": "https://example.com/breaking_bad_poster.jpg"
-    },
-    {
-      "id": "tv1",
-      "title": "왕좌의 게임",
-      "poster": "https://example.com/got_poster.jpg"
-    },
-    {
-      "id": "tv2",
-      "title": "브레이킹 배드",
-      "poster": "https://example.com/breaking_bad_poster.jpg"
-    }
-  ],
-  "action": [
-    {
-      "id": "action1",
-      "title": "존 윅",
-      "poster": "https://example.com/john_wick_poster.jpg"
-    },
-    {
-      "id": "action2",
-      "title": "미션 임파서블",
-      "poster": "https://example.com/mission_impossible_poster.jpg"
-    }
-  ]
+    "backdrop": "../../img/hero.jpg"
+  }
 }
