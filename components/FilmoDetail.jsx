@@ -10,6 +10,7 @@ import {
   Tabs,
   Section,
 } from '@radix-ui/themes';
+import styled from 'styled-components';
 import filmoDataByYear from '../data/filmoDataByYear.json';
 import OttLogo from './OttLogo';
 import BlurBackgroundComponent from '../components/BlurBackgroundComponent';
@@ -29,42 +30,50 @@ function FilmoDetail({ id }) {
     .find((item) => item.id === id);
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
+  const BlurContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+`;
+
   return (
     <Section size="1" className="filmo-detail">
-      <Box>
-        <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
-        <Flex direction="row" gap="4" justify="start">
-        <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
-          <AspectRatio ratio={2 / 3}>
-            <Image
-              src={filmo.imgUrl}
-              alt={filmo.title}
-              style={{ objectFit: 'cover' }}
-              sizes={'(max-width: 768px) 100vw, 30vw'}
-              fill
-            />
-          </AspectRatio>
-        </Box>
-        <Box style={{ flexBasis: '60%' }}>
-          <Heading size="6" mb="2">
-            {filmo?.title}
-          </Heading>
-          <Text as="p" size="4" mb="2">
-            역할: {filmo?.note}
-            {filmo.role && filmo.note && <>,</>}
-            {filmo?.role}
-          </Text>
-          {filmo.broadcaster && (
+      <BlurContainer>
+        <Flex direction="row" gap="4" justify="start" position="relative" p="4">
+          <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
+          <Box style={{ flexBasis: '30%', maxWidth: '200px',  zIndex: "1"}} p={{lg:"6"}}>
+            <AspectRatio ratio={2 / 3}>
+              <Image
+                src={filmo.imgUrl}
+                alt={filmo.title}
+                style={{ objectFit: 'cover' }}
+                sizes={'(max-width: 768px) 100vw, 30vw'}
+                fill
+                objectPosition='center'
+              />
+            </AspectRatio>
+          </Box>
+          <Box style={{ flexBasis: '60%' }}>
+            <Heading size="6" mb="2">
+              {filmo?.title}
+            </Heading>
             <Text as="p" size="4" mb="2">
-              방송사: {filmo?.broadcaster}
+              역할: {filmo?.note}
+              {filmo.role && filmo.note && <>,</>}
+              {filmo?.role}
             </Text>
-          )}
-          <Text as="p" size="4" mb="2">
-            연도: {filmo?.year}
-          </Text>
-        </Box>
-      </Flex>
-      </Box>
+            {filmo.broadcaster && (
+              <Text as="p" size="4" mb="2">
+                방송사: {filmo?.broadcaster}
+              </Text>
+            )}
+            <Text as="p" size="4" mb="2">
+              연도: {filmo?.year}
+            </Text>
+          </Box>
+        </Flex>
+      </BlurContainer>
       <Separator size="4" my="4" />
       <Section size="1">
         <Heading size="6" mb="4">
