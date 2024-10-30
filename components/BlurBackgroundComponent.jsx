@@ -19,7 +19,8 @@ const BlurBackgroundImageWrapper = styled.div`
     bottom: -10rem;
     left: -10rem;
     right: -10rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0)
+    // background-color: rgba(0, 0, 0, 0.5);
   }
 
   &::after {
