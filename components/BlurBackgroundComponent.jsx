@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-
+import FallbackComponent from '../components/FallbackComponent';
 const BlurBackgroundImageWrapper = styled.div`
    position: absolute;
   top: 0;
@@ -36,19 +36,31 @@ const BlurBackgroundImageWrapper = styled.div`
 `;
 
 const BlurBackgroundComponent = ({ imageUrl }) => {
+  const [imgSrc, setImgSrc] = useState(imageUrl);
+  const [isError, setIsError] = useState(false);
+
   useEffect(() => {
-    console.log('imageUrl:', imageUrl);
+    setImgSrc(imageUrl);
+    setIsError(false);
   }, [imageUrl]);
+
+  const handleImageError = () => {
+    setIsError(true);
+  };
 
   return (
     <BlurBackgroundImageWrapper>
-      <Image
-        src={imageUrl}
-        alt="Background Image"
-        layout="fill"
-        objectFit="cover"
-        objectPositipn="top 10%"
-      />
+      {isError ? (
+        <FallbackComponent toggleMark={true} />
+      ) : (
+        <Image
+          src={imgSrc}
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          onError={handleImageError}
+        />
+      )}
     </BlurBackgroundImageWrapper>
   );
 };
