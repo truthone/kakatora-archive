@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Heading,
@@ -11,6 +11,7 @@ import {
 } from '@radix-ui/themes';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import FallbackComponent from '../components/FallbackComponent';
 
 function EpisodeRow({ title, contents }) {
   const router = useRouter();
@@ -34,7 +35,7 @@ function EpisodeRow({ title, contents }) {
         justify="start"
       >
         {contents.map((content, id) => (
-          <Box key={id} width={{ initial: '100%', sm: '30%', md:'24%' }}>
+          <Box key={id} width={{ initial: '100%', sm: '30%', md: '24%' }}>
             <Card
               key={id}
               style={{ cursor: 'pointer' }}
@@ -43,14 +44,10 @@ function EpisodeRow({ title, contents }) {
             >
               <Inset clip="padding-box" side="top" pb="current">
                 <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
-                  <Image
+                  <ImageWithFallback
                     src={content.imgUrl}
                     alt={`${content.title}${content.note}`}
-                    fill
-                    sizes={'(max-width: 768px) 100vw, 30vw'}
-                    style={{
-                      objectFit: 'cover',
-                    }}
+                    fallbackMessage=""
                   />
                 </AspectRatio>
               </Inset>
@@ -69,5 +66,32 @@ function EpisodeRow({ title, contents }) {
     </Box>
   );
 }
+
+const ImageWithFallback = ({ src, alt, fallbackMessage }) => {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    setImgSrc(src);
+    setIsError(false);
+  }, [src]);
+
+  const handleImageError = () => {
+    setIsError(true);
+  };
+
+  return isError ? (
+    <FallbackComponent toggleMark={true} message={fallbackMessage} />
+  ) : (
+    <Image
+      src={imgSrc}
+      alt={alt}
+      fill
+      sizes={'(max-width: 768px) 100vw, 30vw'}
+      style={{ objectFit: 'cover' }}
+      onError={handleImageError}
+    />
+  );
+};
 
 export default EpisodeRow;
