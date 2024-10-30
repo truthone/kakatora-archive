@@ -40,9 +40,9 @@ function FilmoDetail({ id }) {
   return (
     <Section size="1" className="filmo-detail">
       <BlurContainer>
-        <Flex direction="row" gap="4" justify="start" position="relative" p="4">
+        <Flex direction="row" gap="4" justify="start" position="relative" p={{lg:"6"}}>
           <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
-          <Box style={{ flexBasis: '30%', maxWidth: '200px',  zIndex: "1"}} p={{lg:"6"}}>
+          <Box style={{ flexBasis: '30%', maxWidth: '200px',  zIndex: "1"}}>
             <AspectRatio ratio={2 / 3}>
               <Image
                 src={filmo.imgUrl}
@@ -50,12 +50,11 @@ function FilmoDetail({ id }) {
                 style={{ objectFit: 'cover' }}
                 sizes={'(max-width: 768px) 100vw, 30vw'}
                 fill
-                objectPosition='center'
               />
             </AspectRatio>
           </Box>
           <Box style={{ flexBasis: '60%' }}>
-            <Heading size="6" mb="2">
+            <Heading size={{sm: "8", initial: "6"}} mb="2">
               {filmo?.title}
             </Heading>
             <Text as="p" size="4" mb="2">
