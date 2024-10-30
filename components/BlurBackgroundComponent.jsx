@@ -3,34 +3,35 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 const BlurBackgroundImageWrapper = styled.div`
-  position: absolute;
+   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  filter: blur(15px);
+  z-index: -2;
+  filter: blur(20px);
   overflow: hidden;
 
-    &::before {
+  &::before {
     content: '';
     position: absolute;
-    top: -10rem;
-    bottom: -10rem;
-    left: -10rem;
-    right: -10rem;
-    background-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0)
-    // background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: linear-gradient(#000000e6 0%, #000a 10%, #0005 20%, #0000002c 40%, #00000018 50%, #0000 100%);
+    z-index: 1;
   }
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: -1rem;
-    right: -1rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 25rem;
-    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+    background:linear-gradient(#0000 0%,#00000018 55%, #0000002c 60%, #0005 80%, #000a 90%, #000000e6 100%);
+    z-index: 1;
   }
 `;
 
@@ -40,10 +41,15 @@ const BlurBackgroundComponent = ({ imageUrl }) => {
   }, [imageUrl]);
 
   return (
-      <BlurBackgroundImageWrapper>
-        <Image src={imageUrl} alt="Background Image" layout="fill" objectFit="cover" objectPositipn="top 10%"/>
-      </BlurBackgroundImageWrapper>
-    
+    <BlurBackgroundImageWrapper>
+      <Image
+        src={imageUrl}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        objectPositipn="top 10%"
+      />
+    </BlurBackgroundImageWrapper>
   );
 };
 
