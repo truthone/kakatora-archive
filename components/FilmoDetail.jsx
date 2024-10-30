@@ -38,11 +38,11 @@ function FilmoDetail({ id }) {
 `;
 
   return (
-    <Section size="1" className="filmo-detail">
+    <Section size="1"  className="filmo-detail">
       <BlurContainer>
-        <Flex direction="row" gap="4" justify="start" position="relative" p={{lg:"6"}}>
+        <Flex direction="row" gap="4" justify="start" position="relative" p={{initial: "1", xs:"6"}}>
           <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
-          <Box style={{ flexBasis: '30%', maxWidth: '200px',  zIndex: "1"}}>
+          <Box style={{ flexBasis: '30%', maxWidth: '300px',  zIndex: "1"}}>
             <AspectRatio ratio={2 / 3}>
               <Image
                 src={filmo.imgUrl}
@@ -115,7 +115,9 @@ function FilmoDetail({ id }) {
           </Box>
         </Tabs.Root>
       </Section>
+      <Separator size="4" my="4" />
       <ArticleSection />
+      <Separator size="4" my="4" />
       <YouTubeByQueryRow
         SectionTitle={'관련 영상'}
         query={`이주승 ${filmo?.title}`}
