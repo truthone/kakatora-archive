@@ -18,6 +18,13 @@ import Image from 'next/image';
 import YouTubeByQueryRow from './YoutubeByQueryRow';
 import ArticleSection from './ArticleSection';
 
+const BlurContainer = styled.div`
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+`;
+
 function FilmoDetail({ id }) {
   // filmoDataByYear에서 해당 id를 가진 작품 찾기
   const filmo = filmoDataByYear.filmo_data_by_year
@@ -30,31 +37,30 @@ function FilmoDetail({ id }) {
     .find((item) => item.id === id);
   if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
 
-  const BlurContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: auto;
-  width: 100%;
-`;
-
   return (
-    <Section size="1"  className="filmo-detail">
+    <Section p="0" className="filmo-detail">
       <BlurContainer>
-        <Flex direction="row" gap="4" justify="start" position="relative" p={{initial: "1", xs:"6"}}>
-          <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
-          <Box style={{ flexBasis: '30%', maxWidth: '300px',  zIndex: "1"}}>
+        <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
+        <Flex
+          direction="row"
+          gap="4"
+          justify="start"
+          position="relative"
+          p={{ initial: '1', xs: '6' }}
+        >
+          <Box style={{ flexBasis: '30%', maxWidth: '300px', zIndex: '1' }}>
             <AspectRatio ratio={2 / 3}>
               <Image
+                fill
                 src={filmo.imgUrl}
                 alt={filmo.title}
                 style={{ objectFit: 'cover' }}
                 sizes={'(max-width: 768px) 100vw, 30vw'}
-                fill
               />
             </AspectRatio>
           </Box>
           <Box style={{ flexBasis: '60%' }}>
-            <Heading size={{sm: "8", initial: "6"}} mb="2">
+            <Heading size={{ sm: '8', initial: '6' }} mb="2">
               {filmo?.title}
             </Heading>
             <Text as="p" size="4" mb="2">
