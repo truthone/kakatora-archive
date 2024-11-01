@@ -15,7 +15,7 @@ import filmoDataByYear from '../data/filmoDataByYear.json';
 import OttLogo from './OttLogo';
 import BlurBackgroundComponent from '../components/BlurBackgroundComponent';
 import Image from 'next/image';
-import YouTubeByQueryRow from './YoutubeByQueryRow';
+import YoutubeRow from './YoutubeRow';
 import ArticleSection from './ArticleSection';
 
 const BlurContainer = styled(Box)`
@@ -81,56 +81,55 @@ function FilmoDetail({ id }) {
       </BlurContainer>
       {/* <Separator size="4" my="4" /> */}
       <Box p={{ initial: '4', xs: '8' }}>
-        <Section size="1">
-          <Heading size="6" mb="4">
-            시청 가능한 곳
-          </Heading>
-          <Tabs.Root defaultValue="subscribe">
-            <Tabs.List size="2">
-              <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
-              <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
-            </Tabs.List>
-            <Box pt="3">
-              <Tabs.Content value="subscribe">
-                <Flex
-                  display="box"
-                  justify="start"
-                  align="start"
-                  wrap="wrap"
-                  gap="2"
-                  mb="4"
-                >
-                  {filmo.ott_subscribe?.map((ottName) => (
-                    <OttLogo key={ottName} ott={ottName} />
-                  ))}
-                </Flex>
-              </Tabs.Content>
-              <Tabs.Content value="purchase">
-                <Flex
-                  display="box"
-                  justify="start"
-                  align="start"
-                  wrap="wrap"
-                  gap="2"
-                  mb="4"
-                >
-                  {filmo.ott_purchase?.map((ottName) => (
-                    <OttLogo key={ottName} ott={ottName} />
-                  ))}
-                </Flex>
-              </Tabs.Content>
-            </Box>
-          </Tabs.Root>
-        </Section>
-        <Separator size="4" my="4" />
+        {filmo.id.split('_')[0] !== 'musical' && (
+          <Section size="1">
+            <Heading size="6" mb="4">
+              시청 가능한 곳
+            </Heading>
+            <Tabs.Root defaultValue="subscribe">
+              <Tabs.List size="2">
+                <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
+                <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
+              </Tabs.List>
+              <Box pt="3">
+                <Tabs.Content value="subscribe">
+                  <Flex
+                    display="box"
+                    justify="start"
+                    align="start"
+                    wrap="wrap"
+                    gap="2"
+                    mb="4"
+                  >
+                    {filmo.ott_subscribe?.map((ottName) => (
+                      <OttLogo key={ottName} ott={ottName} />
+                    ))}
+                  </Flex>
+                </Tabs.Content>
+                <Tabs.Content value="purchase">
+                  <Flex
+                    display="box"
+                    justify="start"
+                    align="start"
+                    wrap="wrap"
+                    gap="2"
+                    mb="4"
+                  >
+                    {filmo.ott_purchase?.map((ottName) => (
+                      <OttLogo key={ottName} ott={ottName} />
+                    ))}
+                  </Flex>
+                </Tabs.Content>
+              </Box>
+            </Tabs.Root>
+            <Separator size="4" my="4" />
+          </Section>
+        )}
         <ArticleSection />
         <Separator size="4" my="4" />
       </Box>
       <Box pl={{ initial: '4', xs: '8' }}>
-        <YouTubeByQueryRow
-          SectionTitle={'관련 영상'}
-          query={`이주승 ${filmo?.title}`}
-        />
+        <YoutubeRow SectionTitle={'관련 영상'} playlistId={filmo.playlistId} />
       </Box>
     </Section>
   );

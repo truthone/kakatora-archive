@@ -10,9 +10,16 @@
           "role": "거지 소년",
           "note": "조연",
           "imgUrl": "/images/chung-gye-cheon-ui-gae.jpg",
-          "ott_subscribe": ["wavve", "네이버시리즈"],
-          "ott_purchase": ["wavve", "네이버시리즈"],
-          "year": 2008
+          "ott_subscribe": [
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2008,
+          "playlistId": ""
         }
       ]
     },
@@ -26,7 +33,8 @@
           "role": "주승",
           "note": "주연",
           "imgUrl": "/images/death-of-a-gay-teenager.jpg",
-          "year": 2009
+          "year": 2009,
+          "playlistId": ""
         },
         {
           "id": "movie_2009_2",
@@ -34,9 +42,15 @@
           "role": "노희준",
           "note": "주연",
           "imgUrl": "/images/members-of-the-funeral.jpg",
-          "ott_subscribe": ["watcha", "네이버시리즈"],
-          "ott_purchase": ["네이버시리즈"],
-          "year": 2009
+          "ott_subscribe": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "네이버시리즈"
+          ],
+          "year": 2009,
+          "playlistId": ""
         }
       ]
     },
@@ -50,9 +64,16 @@
           "role": "에피소드 (Episode) 1 - 청년",
           "note": "주연",
           "imgUrl": "/images/one-night-stand.jpg",
-          "ott_subscribe": ["watcha", "네이버시리즈"],
-          "ott_purchase": ["watcha", "네이버시리즈"],
-          "year": 2010
+          "ott_subscribe": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2010,
+          "playlistId": ""
         },
         {
           "id": "movie_2010_2",
@@ -60,9 +81,16 @@
           "role": "윤경호",
           "note": "주연",
           "imgUrl": "/images/confession.jpg",
-          "ott_subscribe": ["watcha","네이버시리즈"],
-          "ott_purchase": ["watcha","네이버시리즈"],
-          "year": 2010
+          "ott_subscribe": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2010,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -72,7 +100,8 @@
           "role": "소년 한영진",
           "note": "",
           "imgUrl": "/images/nat-zam.jpg",
-          "year": 2010
+          "year": 2010,
+          "playlistId": ""
         }
       ]
     },
@@ -86,9 +115,18 @@
           "role": "이수혁",
           "note": "주연",
           "imgUrl": "/images/ordinary-days.jpg",
-          "ott_subscribe": ["tving", "watcha", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "네이버시리즈"],
-          "year": 2011
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2011,
+          "playlistId": ""
         }
       ]
     },
@@ -102,9 +140,20 @@
           "role": "정순규",
           "note": "주연",
           "imgUrl": "/images/ufo.jpg",
-          "ott_subscribe": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "year": 2012
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2012,
+          "playlistId": ""
         }
       ]
     },
@@ -118,9 +167,20 @@
           "role": "성진호",
           "note": "주연",
           "imgUrl": "/images/sister.jpg",
-          "ott_subscribe": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "year": 2013
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2013,
+          "playlistId": ""
         },
         {
           "id": "movie_2013_2",
@@ -128,9 +188,14 @@
           "role": "용규",
           "note": "주연",
           "imgUrl": "/images/farewell.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2013
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2013,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -141,9 +206,14 @@
           "role": "최지현",
           "note": "주연",
           "imgUrl": "/images/my-friend-still-alive.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2013
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2013,
+          "playlistId": ""
         },
         {
           "id": "drama_2013_2",
@@ -152,9 +222,14 @@
           "role": "동수",
           "note": "",
           "imgUrl": "/images/kkun-jil-gin-ki-bbeum.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2013
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2013,
+          "playlistId": ""
         },
         {
           "id": "drama_2013_3",
@@ -163,9 +238,16 @@
           "role": "한태상",
           "note": "송승헌 아역",
           "imgUrl": "/images/when-man-love.jpg",
-          "ott_subscribe": ["wavve","네이버시리즈"],
-          "ott_purchase": ["wavve","네이버시리즈"],
-          "year": 2013
+          "ott_subscribe": [
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2013,
+          "playlistId": ""
         }
       ]
     },
@@ -179,9 +261,18 @@
           "role": "지용",
           "note": "조연",
           "imgUrl": "/images/futureless-things.webp",
-          "ott_subscribe": ["tving", "watcha", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "movie_2014_2",
@@ -189,9 +280,14 @@
           "role": "한솔",
           "note": "주연",
           "imgUrl": "/images/sabra.jpg",
-          "ott_subscribe": ["카카오TV"],
-          "ott_purchase": ["카카오TV"],
-          "year": 2014
+          "ott_subscribe": [
+            "카카오TV"
+          ],
+          "ott_purchase": [
+            "카카오TV"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "movie_2014_3",
@@ -199,9 +295,18 @@
           "role": "백민재",
           "note": "주연",
           "imgUrl": "/images/shuttlecock.jpg",
-          "ott_subscribe": ["tving", "watcha", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "movie_2014_4",
@@ -209,9 +314,16 @@
           "role": "조두식",
           "note": "조연",
           "imgUrl": "/images/broken.jpg",
-          "ott_subscribe": ["watcha", "네이버시리즈"],
-          "ott_purchase": ["watcha", "네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -222,9 +334,14 @@
           "role": "오창희",
           "note": "",
           "imgUrl": "/images/golden-cross.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2014
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_2",
@@ -233,9 +350,14 @@
           "role": "지대한",
           "note": "조연",
           "imgUrl": "/images/go-kyo-chu-seo-wang.jpg",
-          "ott_subscribe": ["네이버시리즈"],
-          "ott_purchase": ["네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_3",
@@ -244,9 +366,14 @@
           "role": "주홍주",
           "note": "",
           "imgUrl": "/images/ironman.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2014
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_4",
@@ -255,9 +382,14 @@
           "role": "성태",
           "note": "5부작 · 주연",
           "imgUrl": "/images/seum-seum-han.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2014
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_5",
@@ -266,9 +398,18 @@
           "role": "안찬수",
           "note": "조연",
           "imgUrl": "/images/pinocchio.jpg",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_6",
@@ -277,7 +418,8 @@
           "role": "랩퍼 JS",
           "note": "웹드라마 · 조연",
           "imgUrl": "/images/chul-jung-han-yeo-ja.jpg",
-          "year": 2014
+          "year": 2014,
+          "playlistId": ""
         },
         {
           "id": "drama_2014_7",
@@ -286,9 +428,14 @@
           "role": "남자 4호",
           "note": "",
           "imgUrl": "/images/ssum-nam-ssum-nye.jpg",
-          "ott_subscribe": ["네이버시리즈"],
-          "ott_purchase": ["네이버시리즈"],
-          "year": 2014
+          "ott_subscribe": [
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "네이버시리즈"
+          ],
+          "year": 2014,
+          "playlistId": ""
         }
       ]
     },
@@ -302,7 +449,8 @@
           "role": "하용민",
           "note": "주연",
           "imgUrl": "/images/social-phobia.webp",
-          "year": 2015
+          "year": 2015,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -313,9 +461,16 @@
           "role": "이주승",
           "note": "",
           "imgUrl": "/images/lets-eat2.jpg",
-          "ott_subscribe": ["tving", "네이버시리즈"],
-          "ott_purchase": ["tving", "네이버시리즈"],
-          "year": 2015
+          "ott_subscribe": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "year": 2015,
+          "playlistId": ""
         },
         {
           "id": "drama_2015_2",
@@ -324,9 +479,16 @@
           "role": "양준식",
           "note": "주연",
           "imgUrl": "/images/ga-man-hi.jpg",
-          "ott_subscribe": ["wavve", "유투브"],
-          "ott_purchase": ["wavve", "유투브"],
-          "year": 2015
+          "ott_subscribe": [
+            "wavve",
+            "유투브"
+          ],
+          "ott_purchase": [
+            "wavve",
+            "유투브"
+          ],
+          "year": 2015,
+          "playlistId": ""
         },
         {
           "id": "drama_2015_3",
@@ -335,9 +497,14 @@
           "role": "FD",
           "note": "조연",
           "imgUrl": "/images/producers.jpg",
-          "ott_subscribe": ["watcha"],
-          "ott_purchase": ["watcha"],
-          "year": 2015
+          "ott_subscribe": [
+            "watcha"
+          ],
+          "ott_purchase": [
+            "watcha"
+          ],
+          "year": 2015,
+          "playlistId": ""
         },
         {
           "id": "drama_2015_4",
@@ -346,9 +513,14 @@
           "role": "오대복",
           "note": "",
           "imgUrl": "/images/the-time-we-were-hot-in-love.jpg",
-          "ott_subscribe": ["네이버시리즈"],
-          "ott_purchase": ["네이버시리즈"],
-          "year": 2015
+          "ott_subscribe": [
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "네이버시리즈"
+          ],
+          "year": 2015,
+          "playlistId": ""
         },
         {
           "id": "drama_2015_5",
@@ -357,7 +529,8 @@
           "role": "유찬",
           "note": "웹드라마 · 주연",
           "imgUrl": "/images/eternal.jpg",
-          "year": 2015
+          "year": 2015,
+          "playlistId": ""
         }
       ]
     },
@@ -371,9 +544,20 @@
           "role": "최풍호",
           "note": "주연",
           "imgUrl": "/images/dae-gyul.jpg",
-          "ott_subscribe": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "year": 2016
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2016,
+          "playlistId": ""
         },
         {
           "id": "movie_2016_2",
@@ -381,9 +565,16 @@
           "role": "정우",
           "note": "더빙",
           "imgUrl": "/images/the-senior-class.jpg",
-          "ott_subscribe": ["netflix", "네이버시리즈"],
-          "ott_purchase": ["netflix", "네이버시리즈"],
-          "year": 2016
+          "ott_subscribe": [
+            "netflix",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "netflix",
+            "네이버시리즈"
+          ],
+          "year": 2016,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -394,9 +585,14 @@
           "role": "차준호",
           "note": "주연",
           "imgUrl": "/images/dong-jeong-ub-neun.jpg",
-          "ott_subscribe": ["watcha"],
-          "ott_purchase": ["watcha"],
-          "year": 2016
+          "ott_subscribe": [
+            "watcha"
+          ],
+          "ott_purchase": [
+            "watcha"
+          ],
+          "year": 2016,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -408,9 +604,14 @@
           "role": "게스트",
           "note": "추석특집 파일럿",
           "imgUrl": "/images/seung-bu.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2016
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2016,
+          "playlistId": ""
         }
       ]
     },
@@ -425,9 +626,14 @@
           "role": "황경일",
           "note": "4회, 5회, 6회 특별출연",
           "imgUrl": "/images/voice.jpg",
-          "ott_subscribe": ["네이버시리즈"],
-          "ott_purchase": ["네이버시리즈"],
-          "year": 2017
+          "ott_subscribe": [
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "네이버시리즈"
+          ],
+          "year": 2017,
+          "playlistId": ""
         },
         {
           "id": "drama_2017_2",
@@ -436,7 +642,8 @@
           "role": "나고야 선배",
           "note": "특별출연",
           "imgUrl": "/images/idol-kwan-han-dae-hang.jpg",
-          "year": 2017
+          "year": 2017,
+          "playlistId": ""
         },
         {
           "id": "drama_2017_3",
@@ -445,7 +652,8 @@
           "role": "윤선우",
           "note": "",
           "imgUrl": "/images/jo-jak.jpg",
-          "year": 2017
+          "year": 2017,
+          "playlistId": ""
         },
         {
           "id": "drama_2017_4",
@@ -454,9 +662,14 @@
           "role": "박종혁",
           "note": "주연",
           "imgUrl": "/images/park-dae-ri.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2017
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2017,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -468,9 +681,20 @@
           "role": "고정출연",
           "note": "with 신현준, 오대환, 최민용",
           "imgUrl": "/images/si-gol-gyung-chal.jpg",
-          "ott_subscribe": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["tving", "watcha", "wavve", "네이버시리즈"],
-          "year": 2017
+          "ott_subscribe": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2017,
+          "playlistId": ""
         }
       ]
     },
@@ -485,9 +709,16 @@
           "role": "안찬수",
           "note": "특별출연",
           "imgUrl": "/images/lets-eat3.jpg",
-          "ott_subscribe": ["tving", "네이버시리즈"],
-          "ott_purchase": ["tving", "네이버시리즈"],
-          "year": 2018
+          "ott_subscribe": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "year": 2018,
+          "playlistId": ""
         },
         {
           "id": "drama_2018_2",
@@ -496,9 +727,14 @@
           "role": "엘제이",
           "note": "조연",
           "imgUrl": "/images/top-management.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2018
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2018,
+          "playlistId": ""
         },
         {
           "id": "drama_2018_3",
@@ -507,9 +743,14 @@
           "role": "민태용",
           "note": "주연",
           "imgUrl": "/images/jin-jung-ha-seo-yo.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2018
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2018,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -519,7 +760,8 @@
           "role": "데이비",
           "note": "",
           "imgUrl": "/images/killology-2018.jpg",
-          "year": 2018
+          "year": 2018,
+          "playlistId": ""
         }
       ]
     },
@@ -533,7 +775,8 @@
           "role": "차승묵",
           "note": "주연",
           "imgUrl": "/images/young-hwa-ru.jpg",
-          "year": 2019
+          "year": 2019,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -544,9 +787,14 @@
           "role": "김석우",
           "note": "특별출연",
           "imgUrl": "/images/docter-prisoner.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2019
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2019,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -557,10 +805,15 @@
           "title": "두발 라이프",
           "role": "게스트",
           "note": "with 김기범, 연제욱, 구성환",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
           "imgUrl": "/images/doo-bal-life.jpg",
-          "year": 2019
+          "year": 2019,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -570,7 +823,8 @@
           "role": "데이비",
           "note": "",
           "imgUrl": "/images/killology-2019.jpg",
-          "year": 2019
+          "year": 2019,
+          "playlistId": ""
         }
       ]
     },
@@ -584,9 +838,14 @@
           "role": "",
           "note": "감독, 각본",
           "imgUrl": "/images/bloodshot-eyes.jpeg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2020
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2020,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -596,7 +855,8 @@
           "role": "니콜라",
           "note": "",
           "imgUrl": "/images/le-fils.jpg",
-          "year": 2020
+          "year": 2020,
+          "playlistId": ""
         }
       ]
     },
@@ -610,7 +870,8 @@
           "role": "은구",
           "note": "감독, 각본, 주연",
           "imgUrl": "/images/the-mast.jpg",
-          "year": 2021
+          "year": 2021,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -620,7 +881,8 @@
           "role": "데이비",
           "note": "",
           "imgUrl": "/images/vincent-river-2021.jpg",
-          "year": 2021
+          "year": 2021,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -631,9 +893,14 @@
           "role": "조봉규",
           "note": "주연",
           "imgUrl": "/images/grangtophia.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2021
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2021,
+          "playlistId": ""
         },
         {
           "id": "drama_2021_2",
@@ -642,9 +909,14 @@
           "role": "앤드류",
           "note": "조연",
           "imgUrl": "/images/happiness.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2021
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2021,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -656,9 +928,18 @@
           "role": "게스트, 427회",
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2021
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2021,
+          "playlistId": ""
         }
       ]
     },
@@ -672,9 +953,14 @@
           "role": "정임",
           "note": "주연",
           "imgUrl": "/images/season-two-ep-one.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2022
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2022,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -686,9 +972,18 @@
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2022
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2022,
+          "playlistId": ""
         },
         {
           "id": "tv_2022_2",
@@ -696,9 +991,14 @@
           "title": "라디오 스타",
           "note": "779회",
           "imgUrl": "/images/radiostar.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2022
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2022,
+          "playlistId": ""
         },
         {
           "id": "tv_2022_3",
@@ -706,9 +1006,14 @@
           "title": "심야괴담회",
           "note": "64회",
           "imgUrl": "/images/midnight-horror-story.jpg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2022
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2022,
+          "playlistId": ""
         },
         {
           "id": "tv_2022_4",
@@ -716,9 +1021,14 @@
           "title": "전체관람가+:숏버스터",
           "note": "16화",
           "imgUrl": "/images/shortburster.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2022
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2022,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -728,7 +1038,8 @@
           "role": "데이비",
           "note": "",
           "imgUrl": "/images/vincent-river-2022.jpg",
-          "year": 2022
+          "year": 2022,
+          "playlistId": ""
         }
       ]
     },
@@ -742,7 +1053,8 @@
           "role": "성철",
           "note": "주연",
           "imgUrl": "/images/parmir.jpg",
-          "year": 2023
+          "year": 2023,
+          "playlistId": ""
         },
         {
           "id": "movie_2023_2",
@@ -750,7 +1062,8 @@
           "role": "민철",
           "note": "주연",
           "imgUrl": "/images/the-guest.jpg",
-          "year": 2023
+          "year": 2023,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -761,9 +1074,14 @@
           "role": "무쓸모",
           "note": "",
           "imgUrl": "/images/black-night.jpg",
-          "ott_subscribe": ["netflix"],
-          "ott_purchase": ["netflix"],
-          "year": 2023
+          "ott_subscribe": [
+            "netflix"
+          ],
+          "ott_purchase": [
+            "netflix"
+          ],
+          "year": 2023,
+          "playlistId": ""
         },
         {
           "id": "drama_2023_2",
@@ -772,9 +1090,14 @@
           "role": "조석희",
           "note": "",
           "imgUrl": "/images/like-flowers-in-sand.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2023
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2023,
+          "playlistId": ""
         },
         {
           "id": "drama_2023_3",
@@ -783,9 +1106,14 @@
           "role": "",
           "note": "광고 웹드라마",
           "imgUrl": "/images/sa-i-job-eun.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2023
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2023,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -797,9 +1125,18 @@
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2023
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2023,
+          "playlistId": ""
         },
         {
           "id": "tv_2023_2",
@@ -809,9 +1146,14 @@
           "role": "게스트",
           "note": "6화",
           "imgUrl": "/images/radiotheater.jpg",
-          "ott_subscribe": ["tving"],
-          "ott_purchase": ["tving"],
-          "year": 2023
+          "ott_subscribe": [
+            "tving"
+          ],
+          "ott_purchase": [
+            "tving"
+          ],
+          "year": 2023,
+          "playlistId": ""
         }
       ],
       "musicals": [
@@ -821,7 +1163,8 @@
           "role": "마르틴 · 페데리코",
           "note": "",
           "imgUrl": "/images/tebas-land.jpg",
-          "year": 2023
+          "year": 2023,
+          "playlistId": ""
         }
       ]
     },
@@ -835,9 +1178,18 @@
           "role": "경철",
           "note": "조연",
           "imgUrl": "/images/citizen-of-a-kind.webp",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2024
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2024,
+          "playlistId": ""
         },
         {
           "id": "movie_2024_2",
@@ -845,9 +1197,18 @@
           "role": "승주",
           "note": "주연",
           "imgUrl": "/images/dauren-wedding.jpg",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2024
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2024,
+          "playlistId": ""
         }
       ],
       "dramas": [
@@ -858,9 +1219,14 @@
           "role": "강지우",
           "note": "주연, 광고 웹드라마",
           "imgUrl": "/images/tichometry.jpg",
-          "ott_subscribe": ["유투브"],
-          "ott_purchase": ["유투브"],
-          "year": 2024
+          "ott_subscribe": [
+            "유투브"
+          ],
+          "ott_purchase": [
+            "유투브"
+          ],
+          "year": 2024,
+          "playlistId": ""
         }
       ],
       "tv_appearances": [
@@ -871,9 +1237,16 @@
           "title": "줄서는 식당2",
           "role": "고정",
           "imgUrl": "/images/the-must-try-restaurants2.jpg",
-          "ott_subscribe": ["tving", "네이버시리즈"],
-          "ott_purchase": ["tving", "네이버시리즈"],
-          "year": 2024
+          "ott_subscribe": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "tving",
+            "네이버시리즈"
+          ],
+          "year": 2024,
+          "playlistId": ""
         },
         {
           "id": "tv_2024_2",
@@ -883,9 +1256,18 @@
           "role": "고정",
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
-          "ott_subscribe": ["watcha", "wavve", "네이버시리즈"],
-          "ott_purchase": ["watcha", "wavve", "네이버시리즈"],
-          "year": 2024
+          "ott_subscribe": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "ott_purchase": [
+            "watcha",
+            "wavve",
+            "네이버시리즈"
+          ],
+          "year": 2024,
+          "playlistId": ""
         },
         {
           "id": "tv_2024_3",
@@ -894,9 +1276,14 @@
           "title": "강심장vs",
           "role": "게스트, 5회",
           "imgUrl": "/images/kang-sim-jang.jpeg",
-          "ott_subscribe": ["wavve"],
-          "ott_purchase": ["wavve"],
-          "year": 2024
+          "ott_subscribe": [
+            "wavve"
+          ],
+          "ott_purchase": [
+            "wavve"
+          ],
+          "year": 2024,
+          "playlistId": ""
         },
         {
           "id": "tv_2024_4",
@@ -905,9 +1292,18 @@
           "title": "다시갈지도",
           "role": "게스트, 104회",
           "imgUrl": "/images/da-si-gal-ji-do.webp",
-          "ott_subscribe": ["wavve","netflix","tving"],
-          "ott_purchase": ["wavve","netflix","tving"],
-          "year": 2024
+          "ott_subscribe": [
+            "wavve",
+            "netflix",
+            "tving"
+          ],
+          "ott_purchase": [
+            "wavve",
+            "netflix",
+            "tving"
+          ],
+          "year": 2024,
+          "playlistId": ""
         }
       ]
     }
