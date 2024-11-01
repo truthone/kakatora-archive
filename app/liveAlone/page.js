@@ -16,9 +16,9 @@ export default function LiveAloneEpisodeDetailPage() {
   if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
   
   return (
-    <Container p="4">
+    <Container>
       <FilmoDetail id={DETAIL_ID} />
-      <Section size="1" p="0">
+      <Section p={{ initial: '4', xs: '8' }}>
         {
           liveAloneDetailData?.map((yearData, index) => (
             
