@@ -4,7 +4,7 @@ import {
   Section,
 } from '@radix-ui/themes';
 import { getYouTubeVideos } from '../lib/getYouTubeVideos';
-import { VideoListRow } from './VideoListRow'
+import VideoListRow from './VideoListRow';
 
 async function YouTubeRow({ SectionTitle, playlistId }) {
   const videos = await getYouTubeVideos(playlistId);
