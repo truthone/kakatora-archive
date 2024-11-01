@@ -117,7 +117,7 @@ function FilmoFilterByOTT() {
           >
             <Box width={{ initial: '100%', xs: '70%' }}>
               <TextField.Root
-                placeholder="작품 검색"
+                placeholder="콘텐츠를 검색해보세요"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               >

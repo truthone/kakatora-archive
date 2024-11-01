@@ -35,7 +35,7 @@ function FilmoDetail({ id }) {
       ...(year.tv_appearances || []),
     ])
     .find((item) => item.id === id);
-  if (!filmo) return <Box p="4">필모그래피를 찾을 수 없습니다.</Box>;
+  if (!filmo) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
 
   return (
     <Section p="0" className="filmo-detail">
@@ -48,7 +48,7 @@ function FilmoDetail({ id }) {
           position="relative"
           p={{ initial: '4', xs: '8' }}
         >
-          <Box style={{ flexBasis: '30%', maxWidth: '300px', zIndex: '1' }}>
+          <Box style={{ flexBasis: '50%', maxWidth: '300px', zIndex: '1' }}>
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
@@ -60,20 +60,20 @@ function FilmoDetail({ id }) {
             </AspectRatio>
           </Box>
           <Box style={{ flexBasis: '60%' }}>
-            <Heading size={{ sm: '8', initial: '6' }} mb="2">
+            <Heading size={{ xs: '9', initial: '6' }} mb="2">
               {filmo?.title}
             </Heading>
-            <Text as="p" size="4" mb="2">
+            <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
               역할: {filmo?.note}
               {filmo.role && filmo.note && <>,</>}
               {filmo?.role}
             </Text>
             {filmo.broadcaster && (
-              <Text as="p" size="4" mb="2">
+              <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
                 방송사: {filmo?.broadcaster}
               </Text>
             )}
-            <Text as="p" size="4" mb="2">
+            <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
               연도: {filmo?.year}
             </Text>
           </Box>
