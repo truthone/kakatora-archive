@@ -56,8 +56,9 @@ const BlurBackgroundComponent = ({ imageUrl }) => {
         <Image
           src={imgSrc}
           alt="Background Image"
-          layout="fill"
+          fill
           objectFit="cover"
+          objectPosition="top 30%"
           onError={handleImageError}
         />
       )}

@@ -23,7 +23,6 @@ const openYouTubeVideo = (videoId) => {
 
 function YouTubeByQueryRow({ SectionTitle, query }) {
   const { videos, isLoading, error } = useYoutubeSearch(query);
-
   const validVideos =
     videos?.filter(
       (video) =>
@@ -46,7 +45,7 @@ function YouTubeByQueryRow({ SectionTitle, query }) {
       <Heading size="6" mb="4">
         {SectionTitle}
       </Heading>
-      <Box ml="6">
+      <Box ml={{ initial: '1', xs: '4' }}>
         <ScrollArrowWrapper itemWidth={300} gap={12}>
           <Flex gap="3">
             {validVideos.map((video) => (
