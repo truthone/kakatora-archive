@@ -6,7 +6,7 @@ import FilmoDetail from '../../../components/FilmoDetail'
 export default function FilmoDetailPage({ params }) {
   const { id } = params;
   return (
-    <Container p="4">
+    <Container>
       <FilmoDetail id={id} />
     </Container>
   )

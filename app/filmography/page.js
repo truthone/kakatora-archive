@@ -37,7 +37,7 @@ export default function FilmographyPage() {
   };
   
   return (
-    <Container p="4">
+    <Container p={{ initial: '4', xs: '8' }}>
       <FilmoFilter onFilterChange={handleFilterChange} />
       <FilmoSection data={filteredData} />
     </Container>
