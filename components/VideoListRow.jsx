@@ -10,7 +10,7 @@ const openYouTubeVideo = (videoId) => {
   window.open(youtubeUrl, '_blank');
 };
 
-export default function VideoList({ videos }) {
+function VideoListRow({ videos }) {
   return (
     <Box ml={{ initial: '1', xs: '4' }}>
       <ScrollArrowWrapper itemWidth={300} gap={12}>
@@ -57,3 +57,5 @@ export default function VideoList({ videos }) {
     </Box>
   );
 }
+
+export default VideoListRow;
