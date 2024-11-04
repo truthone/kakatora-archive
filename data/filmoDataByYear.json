@@ -11,12 +11,24 @@
           "note": "조연",
           "imgUrl": "/images/chung-gye-cheon-ui-gae.jpg",
           "ott_subscribe": [
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2008,
           "playlistId": ""

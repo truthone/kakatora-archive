@@ -9,6 +9,7 @@ import {
   Separator,
   Tabs,
   Section,
+  Button,
 } from '@radix-ui/themes';
 import styled from 'styled-components';
 import filmoDataByYear from '../data/filmoDataByYear.json';
@@ -101,9 +102,20 @@ function FilmoDetail({ id }) {
                     gap="2"
                     mb="4"
                   >
-                    {filmo.ott_subscribe?.map((ottName) => (
-                      <OttLogo key={ottName} ott={ottName} />
-                    ))}
+                    {filmo.ott_subscribe?.map((ott, index) =>
+                      ott.link ? (
+                        <a
+                          key={index}
+                          href={ott.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <OttLogo ott={ott.platform} />
+                        </a>
+                      ) : (
+                        <OttLogo key={index} ott={ott.platform} />
+                      )
+                    )}
                   </Flex>
                 </Tabs.Content>
                 <Tabs.Content value="purchase">
@@ -115,9 +127,20 @@ function FilmoDetail({ id }) {
                     gap="2"
                     mb="4"
                   >
-                    {filmo.ott_purchase?.map((ottName) => (
-                      <OttLogo key={ottName} ott={ottName} />
-                    ))}
+                    {filmo.ott_purchase?.map((ott, index) =>
+                      ott.link ? (
+                        <a
+                          key={index}
+                          href={ott.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <OttLogo ott={ott.platform} />
+                        </a>
+                      ) : (
+                        <OttLogo key={index} ott={ott.platform} />
+                      )
+                    )}
                   </Flex>
                 </Tabs.Content>
               </Box>
