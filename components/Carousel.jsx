@@ -54,7 +54,7 @@ const CarouselItem = styled.div`
   @media (min-width: 520px) {
     opacity: 1;
     transition: none;
-    flex: 0 0 auto;
+    flex: 0 0 25%;
   }
 `;
 
@@ -139,9 +139,9 @@ const Carousel = ({ data, prefix }) => {
         position="prev"
         onClick={prevSlide}
         disabled={isFirstSlide}
-        variant="soft"
+        variant="ghost"
       >
-        <ChevronLeftIcon width="20" height="20" />
+        <ChevronLeftIcon width="40" height="40" />
       </CarouselButton>
       <CarouselContent ref={carouselRef} direction="row" gap="10px">
         {imagesObj?.map((content, index) => (
@@ -181,8 +181,9 @@ const Carousel = ({ data, prefix }) => {
         position="next"
         onClick={nextSlide}
         disabled={isLastSlide}
+        variant="ghost"
       >
-        <ChevronRightIcon width="20" height="20" />
+        <ChevronRightIcon width="40" height="40" />
       </CarouselButton>
     </CarouselContainer>
   );

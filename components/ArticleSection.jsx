@@ -1,70 +1,83 @@
-// ArticleSection.js
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Box, Card, Inset, Text, Link, Flex, AspectRatio, Heading, Section } from '@radix-ui/themes';
+import {
+  Box,
+  Card,
+  Inset,
+  Text,
+  Link,
+  Flex,
+  AspectRatio,
+  Heading,
+  Section,
+} from '@radix-ui/themes';
 import Image from 'next/image';
-import articleData from '../data/articleData.json';  // 로컬 JSON 파일을 가져옴
+import articleData from '../data/articleData.json';
 
 const ArticleSection = () => {
-    const [contents, setContent] = useState([]);
+  const [contents, setContent] = useState([]);
 
-    useEffect(() => {
-        setContent(articleData);  // 로컬 JSON 데이터를 상태에 설정
-    }, []);
+  useEffect(() => {
+    setContent(articleData);
+  }, []);
 
-    return (
-        <Section>
-            <Heading size="6" mb="4">
-                관련 포스트
-            </Heading>
-            <Flex
-                my="4"
-                p="0"
-                direction="column"
-                wrap="wrap"
-                gap="3"
-                width="100%"
-                justify="center"
-            >
-                {contents.map((content, id) => (
-                    <Box key={id} width={{ initial: '100%', xs: '280px' }}>
-                        <Card
-                            key={id}
-                        >
-                            <Inset clip="padding-box" side="top" pb="current">
-                                <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
-                                    <Image
-                                        src={content.imgUrl}
-                                        alt={`${content.title}`}
-                                        fill
-                                        sizes={'100vw'}
-                                        style={{
-                                            objectFit: 'cover',
-                                        }}
-                                    />
-                                </AspectRatio>
-                            </Inset>
-                            <Flex p="2" direction="column" wrap="wrap">
-                                <Text weight="bold" size="4" mb="3">
-                                    {content.title}
-                                </Text>
-                                <Text weight="light" size="2" style={{
-                                    overflow: 'hidden',
-                                    display: '-webkit-box',
-                                    WebkitLineClamp: 2, // 두 줄까지만 보여주기
-                                    WebkitBoxOrient: 'vertical',
-                                    textOverflow: 'ellipsis'
-                                }}>
-                                    {content.desc}
-                                </Text>
-                            </Flex>
-                        </Card>
-                    </Box>
-                ))
-                }
-            </Flex >
-        </Section >
-    );
+  return (
+    <Section>
+      <Heading size="6" mb="4">
+        관련 포스트
+      </Heading>
+      <Flex
+        my="4"
+        p="0"
+        direction={{initial: 'column', xs: 'row'}}
+        wrap="wrap"
+        gap="3"
+        width="100%"
+        justify={{initial: 'center', xs: 'start'}}
+      >
+        {contents.map((content, id) => (
+          <Box key={id} width={{ initial: '100%', xs: '30%' }}>
+            <Card key={id} asChild>
+              <a href={content.link} target="_blank">
+                <Inset clip="padding-box" side="top" pb="current">
+                  <AspectRatio ratio={16 / 9} style={{ padding: '0' }}>
+                    <Image
+                      src={content.imgUrl}
+                      alt={`${content.title}`}
+                      fill
+                      sizes={'100vw'}
+                      style={{
+                        objectFit: 'cover',
+                        objectPosition: 'top 5%'
+                      }}
+                    />
+                  </AspectRatio>
+                </Inset>
+                <Flex p="2" direction="column" wrap="wrap">
+                  <Text weight="bold" size="4" mb="3">
+                    {content.title}
+                  </Text>
+                  <Text
+                    weight="light"
+                    size="2"
+                    style={{
+                      overflow: 'hidden',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {content.desc}
+                  </Text>
+                </Flex>
+              </a>
+            </Card>
+          </Box>
+        ))}
+      </Flex>
+    </Section>
+  );
 };
 
 // Styled Components (기존 코드와 동일)
