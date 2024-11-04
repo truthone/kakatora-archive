@@ -13,11 +13,11 @@
           "ott_subscribe": [
             {
               "platform": "wavve",
-              "link": "https://www.wavve.com"
+              "link": "https://www.wavve.com/player/movie?movieid=MV_CN01_KBS000011216&autoplay=y"
             },
             {
               "platform": "네이버시리즈",
-              "link": "https://series.naver.com"
+              "link": "https://serieson.naver.com/v2/mcode/45704"
             }
           ],
           "ott_purchase": [
@@ -55,11 +55,24 @@
           "note": "주연",
           "imgUrl": "/images/members-of-the-funeral.jpg",
           "ott_subscribe": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com/ko-KR/watch/m5NNYX5?utm_campaign=metadata&utm_source=google&utm_medium=search"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://serieson.naver.com/v2/movie/258917"
+            },
+            {
+              "platform": "Apple TV, Google Play 무비",
+              "link": ""
+            }
           ],
           "ott_purchase": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2009,
           "playlistId": ""
@@ -77,12 +90,24 @@
           "note": "주연",
           "imgUrl": "/images/one-night-stand.jpg",
           "ott_subscribe": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com/ko-KR/watch/mWzmwg5?utm_campaign=metadata&utm_source=google&utm_medium=search"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://click.kinolights.com/redirect?url=https%3A%2F%2Fserieson.naver.com%2Fv2%2Fmovie%2F544&source=kinolights&medium=organic&campaign=kinolights&content=title_provider"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2010,
           "playlistId": ""
@@ -94,12 +119,24 @@
           "note": "주연",
           "imgUrl": "/images/confession.jpg",
           "ott_subscribe": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://click.kinolights.com/redirect?url=https%3A%2F%2Fwatcha.com%2Fcontents%2Fm5DVg7O&source=kinolights&medium=organic&campaign=kinolights&content=title_provider"
+            },
+            {
+              "platform": "Apple TV",
+              "link": ""
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2010,
           "playlistId": ""
@@ -128,14 +165,32 @@
           "note": "주연",
           "imgUrl": "/images/ordinary-days.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://click.kinolights.com/redirect?url=https%3A%2F%2Fwww.tving.com%2Fcontents%2FM000368234&source=kinolights&medium=organic&campaign=kinolights&content=title_provider"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://click.kinolights.com/redirect?url=https%3A%2F%2Fwww.wavve.com%2Fplayer%2Fmovie%3Fmovieid%3DMV_CN01_KBS000011356&source=kinolights&medium=organic&campaign=kinolights&content=title_provider"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2011,
           "playlistId": ""
@@ -153,16 +208,40 @@
           "note": "주연",
           "imgUrl": "/images/ufo.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2012,
           "playlistId": ""
@@ -180,16 +259,40 @@
           "note": "주연",
           "imgUrl": "/images/sister.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2013,
           "playlistId": ""
@@ -201,10 +304,16 @@
           "note": "주연",
           "imgUrl": "/images/farewell.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2013,
           "playlistId": ""
@@ -219,10 +328,16 @@
           "note": "주연",
           "imgUrl": "/images/my-friend-still-alive.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2013,
           "playlistId": ""
@@ -235,10 +350,16 @@
           "note": "",
           "imgUrl": "/images/kkun-jil-gin-ki-bbeum.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2013,
           "playlistId": ""
@@ -251,12 +372,24 @@
           "note": "송승헌 아역",
           "imgUrl": "/images/when-man-love.jpg",
           "ott_subscribe": [
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2013,
           "playlistId": ""
@@ -274,14 +407,32 @@
           "note": "조연",
           "imgUrl": "/images/futureless-things.webp",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -293,10 +444,16 @@
           "note": "주연",
           "imgUrl": "/images/sabra.jpg",
           "ott_subscribe": [
-            "카카오TV"
+            {
+              "platform": "카카오TV",
+              "link": "https://tv.kakao.com"
+            }
           ],
           "ott_purchase": [
-            "카카오TV"
+            {
+              "platform": "카카오TV",
+              "link": "https://tv.kakao.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -308,14 +465,32 @@
           "note": "주연",
           "imgUrl": "/images/shuttlecock.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -327,12 +502,24 @@
           "note": "조연",
           "imgUrl": "/images/broken.jpg",
           "ott_subscribe": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -347,10 +534,16 @@
           "note": "",
           "imgUrl": "/images/golden-cross.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -363,10 +556,16 @@
           "note": "조연",
           "imgUrl": "/images/go-kyo-chu-seo-wang.jpg",
           "ott_subscribe": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -379,10 +578,16 @@
           "note": "",
           "imgUrl": "/images/ironman.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -395,10 +600,16 @@
           "note": "5부작 · 주연",
           "imgUrl": "/images/seum-seum-han.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -411,14 +622,32 @@
           "note": "조연",
           "imgUrl": "/images/pinocchio.jpg",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -441,10 +670,16 @@
           "note": "",
           "imgUrl": "/images/ssum-nam-ssum-nye.jpg",
           "ott_subscribe": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2014,
           "playlistId": ""
@@ -474,12 +709,24 @@
           "note": "",
           "imgUrl": "/images/lets-eat2.jpg",
           "ott_subscribe": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2015,
           "playlistId": ""
@@ -492,12 +739,24 @@
           "note": "주연",
           "imgUrl": "/images/ga-man-hi.jpg",
           "ott_subscribe": [
-            "wavve",
-            "유투브"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "wavve",
-            "유투브"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2015,
           "playlistId": ""
@@ -510,10 +769,16 @@
           "note": "조연",
           "imgUrl": "/images/producers.jpg",
           "ott_subscribe": [
-            "watcha"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            }
           ],
           "ott_purchase": [
-            "watcha"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            }
           ],
           "year": 2015,
           "playlistId": ""
@@ -526,10 +791,16 @@
           "note": "",
           "imgUrl": "/images/the-time-we-were-hot-in-love.jpg",
           "ott_subscribe": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2015,
           "playlistId": ""
@@ -557,16 +828,40 @@
           "note": "주연",
           "imgUrl": "/images/dae-gyul.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2016,
           "playlistId": ""
@@ -578,12 +873,24 @@
           "note": "더빙",
           "imgUrl": "/images/the-senior-class.jpg",
           "ott_subscribe": [
-            "netflix",
-            "네이버시리즈"
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "netflix",
-            "네이버시리즈"
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2016,
           "playlistId": ""
@@ -598,10 +905,16 @@
           "note": "주연",
           "imgUrl": "/images/dong-jeong-ub-neun.jpg",
           "ott_subscribe": [
-            "watcha"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            }
           ],
           "ott_purchase": [
-            "watcha"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            }
           ],
           "year": 2016,
           "playlistId": ""
@@ -617,10 +930,16 @@
           "note": "추석특집 파일럿",
           "imgUrl": "/images/seung-bu.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2016,
           "playlistId": ""
@@ -639,10 +958,16 @@
           "note": "4회, 5회, 6회 특별출연",
           "imgUrl": "/images/voice.jpg",
           "ott_subscribe": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "네이버시리즈"
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2017,
           "playlistId": ""
@@ -675,10 +1000,16 @@
           "note": "주연",
           "imgUrl": "/images/park-dae-ri.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2017,
           "playlistId": ""
@@ -694,16 +1025,40 @@
           "note": "with 신현준, 오대환, 최민용",
           "imgUrl": "/images/si-gol-gyung-chal.jpg",
           "ott_subscribe": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2017,
           "playlistId": ""
@@ -722,12 +1077,24 @@
           "note": "특별출연",
           "imgUrl": "/images/lets-eat3.jpg",
           "ott_subscribe": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2018,
           "playlistId": ""
@@ -740,10 +1107,16 @@
           "note": "조연",
           "imgUrl": "/images/top-management.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2018,
           "playlistId": ""
@@ -756,10 +1129,16 @@
           "note": "주연",
           "imgUrl": "/images/jin-jung-ha-seo-yo.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2018,
           "playlistId": ""
@@ -800,10 +1179,16 @@
           "note": "특별출연",
           "imgUrl": "/images/docter-prisoner.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2019,
           "playlistId": ""
@@ -818,10 +1203,16 @@
           "role": "게스트",
           "note": "with 김기범, 연제욱, 구성환",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "imgUrl": "/images/doo-bal-life.jpg",
           "year": 2019,
@@ -851,10 +1242,16 @@
           "note": "감독, 각본",
           "imgUrl": "/images/bloodshot-eyes.jpeg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2020,
           "playlistId": ""
@@ -883,7 +1280,8 @@
           "note": "감독, 각본, 주연",
           "imgUrl": "/images/the-mast.jpg",
           "year": 2021,
-          "playlistId": "PLWeRTK7abiXiV1ChOOtNqoZNDvmKELstF"
+          "playlistId": "PLWeRTK7abiXiV1ChOOtNqoZNDvmKELstF",
+          "desc": "항상 계획을 세우지만 매번 실패하는 은구의 마지막 계획은 멋진 죽음이다."
         }
       ],
       "musicals": [
@@ -906,10 +1304,16 @@
           "note": "주연",
           "imgUrl": "/images/grangtophia.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2021,
           "playlistId": ""
@@ -922,10 +1326,16 @@
           "note": "조연",
           "imgUrl": "/images/happiness.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2021,
           "playlistId": ""
@@ -941,14 +1351,32 @@
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2021,
           "playlistId": ""
@@ -966,10 +1394,16 @@
           "note": "주연",
           "imgUrl": "/images/season-two-ep-one.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2022,
           "playlistId": ""
@@ -985,14 +1419,32 @@
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2022,
           "playlistId": ""
@@ -1004,10 +1456,16 @@
           "note": "779회",
           "imgUrl": "/images/radiostar.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2022,
           "playlistId": ""
@@ -1019,10 +1477,16 @@
           "note": "64회",
           "imgUrl": "/images/midnight-horror-story.jpg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2022,
           "playlistId": ""
@@ -1034,10 +1498,16 @@
           "note": "16화",
           "imgUrl": "/images/shortburster.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2022,
           "playlistId": ""
@@ -1087,10 +1557,16 @@
           "note": "",
           "imgUrl": "/images/black-night.jpg",
           "ott_subscribe": [
-            "netflix"
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            }
           ],
           "ott_purchase": [
-            "netflix"
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            }
           ],
           "year": 2023,
           "playlistId": ""
@@ -1103,10 +1579,16 @@
           "note": "",
           "imgUrl": "/images/like-flowers-in-sand.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2023,
           "playlistId": ""
@@ -1119,10 +1601,16 @@
           "note": "광고 웹드라마",
           "imgUrl": "/images/sa-i-job-eun.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2023,
           "playlistId": ""
@@ -1138,14 +1626,32 @@
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2023,
           "playlistId": ""
@@ -1159,10 +1665,16 @@
           "note": "6화",
           "imgUrl": "/images/radiotheater.jpg",
           "ott_subscribe": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "tving"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2023,
           "playlistId": ""
@@ -1191,14 +1703,32 @@
           "note": "조연",
           "imgUrl": "/images/citizen-of-a-kind.webp",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1210,14 +1740,32 @@
           "note": "주연",
           "imgUrl": "/images/dauren-wedding.jpg",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1232,10 +1780,16 @@
           "note": "주연, 광고 웹드라마",
           "imgUrl": "/images/tichometry.jpg",
           "ott_subscribe": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "ott_purchase": [
-            "유투브"
+            {
+              "platform": "유투브",
+              "link": "https://www.youtube.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1250,12 +1804,24 @@
           "role": "고정",
           "imgUrl": "/images/the-must-try-restaurants2.jpg",
           "ott_subscribe": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "tving",
-            "네이버시리즈"
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1269,14 +1835,32 @@
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
           "ott_subscribe": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "ott_purchase": [
-            "watcha",
-            "wavve",
-            "네이버시리즈"
+            {
+              "platform": "watcha",
+              "link": "https://watcha.com"
+            },
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "네이버시리즈",
+              "link": "https://series.naver.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1289,10 +1873,16 @@
           "role": "게스트, 5회",
           "imgUrl": "/images/kang-sim-jang.jpeg",
           "ott_subscribe": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "ott_purchase": [
-            "wavve"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
@@ -1305,14 +1895,32 @@
           "role": "게스트, 104회",
           "imgUrl": "/images/da-si-gal-ji-do.webp",
           "ott_subscribe": [
-            "wavve",
-            "netflix",
-            "tving"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            },
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "ott_purchase": [
-            "wavve",
-            "netflix",
-            "tving"
+            {
+              "platform": "wavve",
+              "link": "https://www.wavve.com"
+            },
+            {
+              "platform": "netflix",
+              "link": "https://www.netflix.com"
+            },
+            {
+              "platform": "tving",
+              "link": "https://www.tving.com"
+            }
           ],
           "year": 2024,
           "playlistId": ""
