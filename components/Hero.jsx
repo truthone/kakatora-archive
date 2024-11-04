@@ -17,6 +17,30 @@ import {
 } from '@radix-ui/react-icons';
 import heroImg from '../img/hero.jpg';
 import Image from 'next/image';
+import styled, { keyframes } from 'styled-components';
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimationBox = styled(Box)`
+  animation: ${fadeInUp} 1s ease forwards;
+  animation-delay: 0.5s; // Optional delay for a staggered effect
+  opacity: 0; // Start hidden, animation will bring it in
+`;
+
+const AnimationBox2 = styled(Box)`
+  animation: ${fadeInUp} 1s ease forwards;
+  animation-delay: 1s; // Optional delay for a staggered effect
+  opacity: 0; // Start hidden, animation will bring it in
+`;
 
 function Hero({ movie }) {
   const router = useRouter();
@@ -69,12 +93,16 @@ function Hero({ movie }) {
         left={{ initial: '20px', md: '50px' }}
         right={{ initial: '20px', md: 'auto' }}
         maxWidth={{ initial: 'auto', md: '500px' }}
-        style={{zIndex: '1'}}
+        style={{ zIndex: '1' }}
       >
-        <Heading size={{ initial: '7', md: '9' }} mb="1">
-          {movie.title}
-        </Heading>
-        <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
+        <AnimationBox>
+          <Heading size={{ initial: '7', md: '9' }} mb="1">
+            {movie.title}
+          </Heading>
+        </AnimationBox>
+        <AnimationBox2>
+          <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
+        </AnimationBox2>
         <Flex gap="2" direction="row" wrap="wrap" mt="5">
           <Button
             size={{ initial: '2', xs: '3' }}
