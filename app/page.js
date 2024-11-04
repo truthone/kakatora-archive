@@ -12,18 +12,14 @@ export default async function Home() {
     'PLWeRTK7abiXjPBf9GgjJ_ma67JlJ5ldfQ',
     'PLWeRTK7abiXhLn7gnXxzPk2W5SppS5ZmC'
   ];
-
-  const youtubeDataPromises = playlistIds.map(id => getYouTubeVideos(id));
-  const youtubeData = await Promise.all(youtubeDataPromises);
-
   return (
     <>
       <Hero movie={moviesData.featuredMovie} />
       <Container ml="3">
         <Section size="1">
-          <YouTubeRow SectionTitle="다우렌의 결혼" videos={youtubeData[0]} />
-          <YouTubeRow SectionTitle="재밌는거 몰아보기" videos={youtubeData[1]} />
-          <YouTubeRow SectionTitle="드라마 몰아보기" videos={youtubeData[2]} />
+          <YouTubeRow SectionTitle="다우렌의 결혼" playlistId={playlistIds[0]} />
+          <YouTubeRow SectionTitle="재밌는거 몰아보기" playlistId={playlistIds[1]} />
+          <YouTubeRow SectionTitle="드라마 몰아보기" playlistId={playlistIds[2]} />
         </Section>
         <Separator orientation="horizontal" size="4" />
         <FilmoByCategory />
