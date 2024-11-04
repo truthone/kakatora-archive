@@ -9,7 +9,7 @@ import {
   Separator,
   Tabs,
   Section,
-  Button,
+  Blockquote,
 } from '@radix-ui/themes';
 import styled from 'styled-components';
 import filmoDataByYear from '../data/filmoDataByYear.json';
@@ -37,7 +37,6 @@ function FilmoDetail({ id }) {
     ])
     .find((item) => item.id === id);
   if (!filmo) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
-
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>
@@ -61,22 +60,27 @@ function FilmoDetail({ id }) {
             </AspectRatio>
           </Box>
           <Box style={{ flexBasis: '60%' }}>
-            <Heading size={{ xs: '9', initial: '6' }} mb="2">
-              {filmo?.title}
+            <Heading size={{ md: '9', initial: '8' }} mb="3">
+              <Flex>
+                {filmo?.title}&nbsp;{filmo?.year}
+              </Flex>
             </Heading>
-            <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
-              역할: {filmo?.note}
-              {filmo.role && filmo.note && <>,</>}
-              {filmo?.role}
-            </Text>
-            {filmo.broadcaster && (
-              <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
-                방송사: {filmo?.broadcaster}
+            <Separator size="4" my="2" />
+            <Flex gap="3" align="center">
+              <Text as="p" my="2" size={{ sm: '7', initial: '5' }}>
+                {filmo?.role}
               </Text>
-            )}
-            <Text as="p" mb="2" size={{ sm: '6', initial: '2' }}>
-              연도: {filmo?.year}
+              <Separator size="2" orientation="vertical" />
+              <Text as="p" my="2" size={{ sm: '7', initial: '5' }}>
+                {filmo?.note}
+              </Text>
+            </Flex>
+            <Text as="p" my="2" size={{ sm: '6', initial: '3' }}>
+              {filmo?.broadcaster}
             </Text>
+            <Blockquote as="p" my="2" size={{ sm: '6', initial: '3' }}>
+              {filmo?.desc}
+            </Blockquote>
           </Box>
         </Flex>
       </BlurContainer>
@@ -89,8 +93,8 @@ function FilmoDetail({ id }) {
             </Heading>
             <Tabs.Root defaultValue="subscribe">
               <Tabs.List size="2">
-                <Tabs.Trigger value="subscribe">구독</Tabs.Trigger>
-                <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger>
+                <Tabs.Trigger value="subscribe">구독•구매•대여</Tabs.Trigger>
+                {/* <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger> */}
               </Tabs.List>
               <Box pt="3">
                 <Tabs.Content value="subscribe">
@@ -102,23 +106,27 @@ function FilmoDetail({ id }) {
                     gap="2"
                     mb="4"
                   >
-                    {filmo.ott_subscribe?.map((ott, index) =>
-                      ott.link ? (
-                        <a
-                          key={index}
-                          href={ott.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <OttLogo ott={ott.platform} />
-                        </a>
-                      ) : (
-                        <OttLogo key={index} ott={ott.platform} />
+                    {filmo.ott_subscribe ? (
+                      filmo.ott_subscribe?.map((ott, index) =>
+                        ott.link ? (
+                          <a
+                            key={index}
+                            href={ott.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <OttLogo ott={ott.platform} />
+                          </a>
+                        ) : (
+                          <OttLogo key={index} ott={ott.platform} />
+                        )
                       )
+                    ) : (
+                      <Text weight="light"> 시청 가능한 곳이 없어요..😭 </Text>
                     )}
                   </Flex>
                 </Tabs.Content>
-                <Tabs.Content value="purchase">
+                {/* <Tabs.Content value="purchase">
                   <Flex
                     display="box"
                     justify="start"
@@ -127,22 +135,26 @@ function FilmoDetail({ id }) {
                     gap="2"
                     mb="4"
                   >
-                    {filmo.ott_purchase?.map((ott, index) =>
-                      ott.link ? (
-                        <a
-                          key={index}
-                          href={ott.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <OttLogo ott={ott.platform} />
-                        </a>
-                      ) : (
-                        <OttLogo key={index} ott={ott.platform} />
+                    {filmo.ott_purchase ? (
+                      filmo.ott_purchase?.map((ott, index) =>
+                        ott.link ? (
+                          <a
+                            key={index}
+                            href={ott.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <OttLogo ott={ott.platform} />
+                          </a>
+                        ) : (
+                          <OttLogo key={index} ott={ott.platform} />
+                        )
                       )
+                    ) : (
+                      <Text weight="light"> 시청 가능한 곳이 없어요..😭 </Text>
                     )}
                   </Flex>
-                </Tabs.Content>
+                </Tabs.Content> */}
               </Box>
             </Tabs.Root>
             <Separator size="4" my="4" />
