@@ -33,7 +33,7 @@ function YouTubeRow({ SectionTitle, playlistId }) {
           (video) =>
             video?.snippet &&
             video?.snippet?.resourceId?.videoId &&
-            video?.snippet?.thumbnails?.high?.url &&
+            video?.snippet?.thumbnails?.standard?.url &&
             video?.snippet?.title
         ) || [];
 
@@ -67,7 +67,7 @@ function YouTubeRow({ SectionTitle, playlistId }) {
               >
                 <AspectRatio ratio={16 / 9}>
                   <Image
-                    src={video.snippet.thumbnails.high.url}
+                    src={video.snippet.thumbnails.standard.url}
                     alt={video.snippet.title}
                     fill
                     sizes={'30vw'}
