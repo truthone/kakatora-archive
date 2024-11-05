@@ -42,13 +42,17 @@ function FilmoDetail({ id }) {
       <BlurContainer>
         <BlurBackgroundComponent imageUrl={filmo.imgUrl} />
         <Flex
-          direction="row"
+          direction={{ initial: 'column', xs: 'row' }}
           gap="4"
           justify="start"
           position="relative"
-          p={{ initial: '4', xs: '8' }}
+          p={{ initial: '5', xs: '8' }}
         >
-          <Box style={{ flexBasis: '50%', maxWidth: '300px', zIndex: '1' }}>
+          <Box
+            my="0"
+            mx="auto"
+            style={{ flexBasis: '40%', maxWidth: '300px', zIndex: '1' }}
+          >
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
@@ -61,9 +65,10 @@ function FilmoDetail({ id }) {
           </Box>
           <Box style={{ flexBasis: '60%' }}>
             <Heading size={{ md: '9', initial: '8' }} mb="3">
-              <Flex>
-                {filmo?.title}&nbsp;{filmo?.year}
-              </Flex>
+              {filmo?.title}
+            </Heading>
+            <Heading size={{ md: '7', initial: '5' }} mb="3">
+              {filmo?.year}
             </Heading>
             <Separator size="4" my="2" />
             <Flex gap="3" align="center">
@@ -84,8 +89,7 @@ function FilmoDetail({ id }) {
           </Box>
         </Flex>
       </BlurContainer>
-      {/* <Separator size="4" my="4" /> */}
-      <Box p={{ initial: '4', xs: '8' }}>
+      <Box p={{ initial: '5', xs: '8' }}>
         {filmo.id.split('_')[0] !== 'musical' && (
           <Section size="1">
             <Heading size="6" mb="4">
@@ -163,7 +167,7 @@ function FilmoDetail({ id }) {
         <ArticleSection />
         <Separator size="4" my="4" />
       </Box>
-      <Box pl={{ initial: '4', xs: '8' }}>
+      <Box pl={{ initial: '5', xs: '8' }}>
         <YoutubeRow SectionTitle={'관련 영상'} playlistId={filmo.playlistId} />
       </Box>
     </Section>
