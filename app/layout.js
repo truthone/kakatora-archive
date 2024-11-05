@@ -6,6 +6,7 @@ import './global.css';
 import StyledComponentsRegistry from '../lib/registry';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
@@ -40,7 +41,10 @@ export default function RootLayout({ children }) {
                 m={{ initial: '1', xs: '3' }}
               >
                 <Header />
-                <Box minHeight="75vh">{children}</Box>
+                <Box minHeight="75vh">
+                  {children}
+                  <SpeedInsights />
+                </Box>
                 <Footer />
               </Theme>
             </StyledComponentsRegistry>
