@@ -10,6 +10,7 @@ import {
   AspectRatio,
   Heading,
   Section,
+  Grid
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import articleData from '../data/articleData.json';
@@ -26,17 +27,19 @@ const ArticleSection = () => {
       <Heading size="6" mb="4">
         관련 포스트
       </Heading>
-      <Flex
+      <Grid
+       
         my="4"
         p="0"
-        direction={{initial: 'column', xs: 'row'}}
+        columns={{initial: "1", xs: '2'}}
+        // direction={{initial: 'column', xs: 'row'}}
         wrap="wrap"
-        gap="3"
+        gap="6"
         width="100%"
         justify={{initial: 'center', xs: 'start'}}
       >
         {contents.map((content, id) => (
-          <Box key={id} width={{ initial: '100%', xs: '30%' }}>
+          <Box key={id} width={{ initial: '100%' }}>
             <Card key={id} asChild>
               <a href={content.link} target="_blank">
                 <Inset clip="padding-box" side="top" pb="current">
@@ -47,8 +50,7 @@ const ArticleSection = () => {
                       fill
                       sizes={'100vw'}
                       style={{
-                        objectFit: 'cover',
-                        objectPosition: 'top 5%'
+                        objectFit: 'cover'
                       }}
                     />
                   </AspectRatio>
@@ -75,7 +77,7 @@ const ArticleSection = () => {
             </Card>
           </Box>
         ))}
-      </Flex>
+      </Grid>
     </Section>
   );
 };

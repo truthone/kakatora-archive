@@ -95,11 +95,12 @@ export default function GridImageItem({ filename, episode, index, title }) {
           direction="column"
           align="center"
           width="50vw"
-          maxWidth="fit-content"
+          height="fit-content"
           style={{
             cursor: 'pointer',
             justifyContent: 'space-around',
-            height: 'fit-content',
+
+            maxWidth: 'fit-content',
           }}
           className="item"
           variant="surface"
@@ -153,8 +154,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
             loading={dialogImageLoading}
             width={{ xl: '70vw', initial: '50vw' }}
             height="30vh"
-            maxWidth="1200px"
-            maxHeight="500px"
+            style={{ maxWidth: '1200px', maxHeight: '500px' }}
           >
             <Box
               style={{
@@ -180,8 +180,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
                   setDialogImageLoading(false);
                 }}
                 onContextMenu={(e) => {
-                  e.stopPropagation(); 
-                  return true; 
+                  e.stopPropagation();
+                  return true;
                 }}
               />
             </Box>
