@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 body {
   margin: 0px;
 }
@@ -23,6 +39,8 @@ body {
   --cursor-slider-thumb: grab !important;
   --cursor-slider-thumb-active: grabbing !important;
   --cursor-switch: pointer !important;
+  --default-font-family: 'S-CoreDream-3Light' !important;
+  --heading-font-family: 'GmarketSansMedium' !important;
 }
 
 .gradient-from-bottom:after {

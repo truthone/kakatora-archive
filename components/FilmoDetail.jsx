@@ -11,7 +11,7 @@ import {
   Section,
   Blockquote,
 } from '@radix-ui/themes';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import filmoDataByYear from '../data/filmoDataByYear.json';
 import OttLogo from './OttLogo';
 import BlurBackgroundComponent from '../components/BlurBackgroundComponent';
@@ -24,6 +24,29 @@ const BlurContainer = styled(Box)`
   overflow: hidden;
   height: auto;
   width: 100%;
+`;
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const AnimationBox = styled(Box)`
+  animation: ${fadeInUp} 1s ease forwards;
+  animation-delay: 0.3s; // Optional delay for a staggered effect
+  opacity: 0; // Start hidden, animation will bring it in
+`;
+
+const AnimationBox2 = styled(Box)`
+  animation: ${fadeInUp} 1s ease forwards;
+  animation-delay: 0.5s; // Optional delay for a staggered effect
+  opacity: 0; // Start hidden, animation will bring it in
 `;
 
 function FilmoDetail({ id }) {
@@ -48,44 +71,62 @@ function FilmoDetail({ id }) {
           position="relative"
           p={{ initial: '5', xs: '8' }}
         >
-          <Box
-            my="0"
-            mx="auto"
-            style={{ flexBasis: '40%', maxWidth: '300px', zIndex: '1' }}
-          >
-            <AspectRatio ratio={2 / 3}>
-              <Image
-                fill
-                src={filmo.imgUrl}
-                alt={filmo.title}
-                style={{ objectFit: 'cover' }}
-                sizes={'(max-width: 768px) 100vw, 30vw'}
-              />
-            </AspectRatio>
-          </Box>
+          <AnimationBox asChild>
+            <Box
+              my="0"
+              mx="auto"
+              width="100%"
+              style={{ flexBasis: '40%', maxWidth: '300px', zIndex: '1' }}
+            >
+              <AspectRatio ratio={2 / 3}>
+                <Image
+                  fill
+                  src={filmo.imgUrl}
+                  alt={filmo.title}
+                  style={{ objectFit: 'cover' }}
+                  sizes={'(max-width: 768px) 100vw, 30vw'}
+                  priority
+                />
+              </AspectRatio>
+            </Box>
+          </AnimationBox>
           <Box style={{ flexBasis: '60%' }}>
-            <Heading size={{ md: '9', initial: '8' }} mb="3">
-              {filmo?.title}
-            </Heading>
-            <Heading size={{ md: '7', initial: '5' }} mb="3">
-              {filmo?.year}
-            </Heading>
+            <AnimationBox>
+              <Heading size={{ md: '9', initial: '8' }} mb="3">
+                {filmo?.title}
+              </Heading>
+              <Heading size={{ md: '7', initial: '5' }} mb="3">
+                {filmo?.year}
+              </Heading>
+            </AnimationBox>
             <Separator size="4" my="2" />
-            <Flex gap="3" align="center">
-              <Text as="p" my="2" size={{ sm: '7', initial: '5' }}>
-                {filmo?.role}
+            <AnimationBox2>
+              <Flex gap="3" align="center">
+                <Text
+                  as="p"
+                  my="2"
+                  size={{ md: '7', initial: '6' }}
+                  style={{ maxWidth: '70%' }}
+                >
+                  {filmo?.role}
+                </Text>
+                <Separator size="2" orientation="vertical" />
+                <Text
+                  as="p"
+                  my="2"
+                  size={{ md: '7', initial: '6' }}
+                  
+                >
+                  {filmo?.note}
+                </Text>
+              </Flex>
+              <Text as="p" my="2" size={{ md: '6', initial: '3' }}>
+                {filmo?.broadcaster}
               </Text>
-              <Separator size="2" orientation="vertical" />
-              <Text as="p" my="2" size={{ sm: '7', initial: '5' }}>
-                {filmo?.note}
-              </Text>
-            </Flex>
-            <Text as="p" my="2" size={{ sm: '6', initial: '3' }}>
-              {filmo?.broadcaster}
-            </Text>
-            <Blockquote as="p" my="2" size={{ sm: '6', initial: '3' }}>
-              {filmo?.desc}
-            </Blockquote>
+              <Blockquote as="p" my="2" size={{ sm: '5', initial: '3' }}>
+                {filmo?.desc}
+              </Blockquote>
+            </AnimationBox2>
           </Box>
         </Flex>
       </BlurContainer>
@@ -97,7 +138,9 @@ function FilmoDetail({ id }) {
             </Heading>
             <Tabs.Root defaultValue="subscribe">
               <Tabs.List size="2">
-                <Tabs.Trigger value="subscribe">구독•구매•대여</Tabs.Trigger>
+                <Tabs.Trigger value="subscribe">
+                  <Heading size="3">구독•구매•대여</Heading>
+                </Tabs.Trigger>
                 {/* <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger> */}
               </Tabs.List>
               <Box pt="3">
