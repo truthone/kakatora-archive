@@ -1,4 +1,4 @@
-import { AspectRatio } from '@radix-ui/themes';
+import { Badge, Button } from '@radix-ui/themes';
 import React from 'react';
 import icon_netflix from '../img/icon_netflix.webp';
 import icon_wave from '../img/icon_wave.webp';
@@ -10,34 +10,74 @@ import { Box, Text } from '@radix-ui/themes';
 import Image from 'next/image';
 
 const ottLogos = {
-  netflix: { src: icon_netflix },
-  watcha: { src: icon_watcha },
-  wavve: { src: icon_wave },
-  tving: { src: icon_tving },
-  네이버시리즈: { src: icon_naver },
-  유투브: { src: icon_youtube },
+  넷플릭스: { src: icon_netflix, link: 'https://www.netflix.com/kr' },
+  왓챠: { src: icon_watcha, link: 'https://watcha.com/search?query=' },
+  웨이브: { src: icon_wave, link: 'https://www.wavve.com/search?searchWord=' },
+  티빙: { src: icon_tving, link: 'https://www.tving.com/search?keyword=' },
+  네이버시리즈: {
+    src: icon_naver,
+    link: `https://serieson.naver.com/v3/search?query=`,
+  },
+  유튜브: {
+    src: icon_youtube,
+    link: 'https://www.youtube.com/results?search_query=',
+  },
+  카카오TV: { link: 'https://tv.kakao.com/search/cliplinks?q=' },
 };
 
-const OttLogo = ({ ott }) => {
+const OttLogo = ({ ott, query }) => {
   const logo = ottLogos[ott];
 
-  if (!logo) return <Text>{ott}</Text>;
+  if (!logo || (!logo.src && !logo.link))
+    return (
+      <Button variant="ghost" m="1">
+        <Badge radius="full" variant="solid">
+          <Text size="3" m="2">
+            {ott}
+          </Text>
+        </Badge>
+      </Button>
+    );
+  if (!logo.src && logo.link)
+    return (
+      <Button variant="ghost" m="1">
+        <Badge radius="full" variant="solid" asChild>
+          <a
+            href={`${logo.link}${query}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Text size="3" m="2">
+              {ott}
+            </Text>
+          </a>
+        </Badge>
+      </Button>
+    );
 
   return (
-    <Box
-      position="relative"
-      width={{ initial: '48px', sm: '60px' }}
-      height={{ initial: '48px', sm: '60px' }}
-    >
-      <Image
-        sizes={'(max-width: 768px) 100vw, 30vw'}
-        fill
-        quality={100}
-        style={{ objectFit: 'cover' }}
-        src={logo.src}
-        alt={ott}
-      />
-    </Box>
+    <Button variant="ghost" m="1">
+      <Box
+        position="relative"
+        width={{ initial: '48px', sm: '60px' }}
+        height={{ initial: '48px', sm: '60px' }}
+      >
+        <a
+          href={`${logo.link}${query}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            sizes={'(max-width: 768px) 100vw, 30vw'}
+            fill
+            quality={100}
+            style={{ objectFit: 'cover' }}
+            src={logo.src}
+            alt={ott}
+          />
+        </a>
+      </Box>
+    </Button>
   );
 };
 

@@ -139,7 +139,7 @@ function FilmoDetail({ id }) {
             <Tabs.Root defaultValue="subscribe">
               <Tabs.List size="2">
                 <Tabs.Trigger value="subscribe">
-                  <Heading size="3">구독•구매•대여</Heading>
+                  <Heading size="3">구독•구매•대여 등</Heading>
                 </Tabs.Trigger>
                 {/* <Tabs.Trigger value="purchase">구매 또는 대여</Tabs.Trigger> */}
               </Tabs.List>
@@ -155,18 +155,7 @@ function FilmoDetail({ id }) {
                   >
                     {filmo.ott_subscribe ? (
                       filmo.ott_subscribe?.map((ott, index) =>
-                        ott.link ? (
-                          <a
-                            key={index}
-                            href={ott.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <OttLogo ott={ott.platform} />
-                          </a>
-                        ) : (
-                          <OttLogo key={index} ott={ott.platform} />
-                        )
+                        <OttLogo key={index} ott={ott} query={`${filmo.title}`}/>
                       )
                     ) : (
                       <Text weight="light"> 시청 가능한 곳이 없어요..😭 </Text>
