@@ -97,12 +97,12 @@ function FilmoFilterByOTT() {
   };
 
   const otts = [
-    'tving',
-    'watcha',
-    'wavve',
-    'netflix',
+    '티빙',
+    '왓챠',
+    '웨이브',
+    '넷플릭스',
     '네이버시리즈',
-    '유투브',
+    '유튜브',
     '카카오TV',
   ];
 
