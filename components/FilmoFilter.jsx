@@ -63,7 +63,8 @@ export default function FilmoFilter({ onFilterChange }) {
     };
 
     const mappedCategories = selectedCategories.map((cat) => categoryMap[cat]);
-    onFilterChange(selectedYear, mappedCategories);
+    const isDescending = selectedYear === '모든 연도';
+    onFilterChange(selectedYear, mappedCategories, isDescending);
   }, [selectedYear, selectedCategories]);
 
   return (
