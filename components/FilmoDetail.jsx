@@ -84,7 +84,7 @@ function FilmoDetail({ id }) {
                   src={filmo.imgUrl}
                   alt={filmo.title}
                   style={{ objectFit: 'cover' }}
-                  sizes={'(max-width: 768px) 100vw, 30vw'}
+                  sizes={'(max-width: 768px) 100vw, 50vw'}
                   priority
                 />
               </AspectRatio>

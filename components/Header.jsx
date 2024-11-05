@@ -14,6 +14,7 @@ function Header() {
     { text: '필모그래피', path: '/filmography' },
     { text: '사이트별 출연작', path: '/filmo-by-ott' },
     { text: '나혼산 짤 모음집', path: '/liveAlone/captures' },
+    { text: `24테베랜드`, path: '/liveAlone/captures' },
   ];
 
   const handleNavigate = (path) => {
@@ -34,7 +35,7 @@ function Header() {
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">
           <Heading
-            size="5"
+            size={{initial: '5', md: '7' }}
             onClick={() => router.push(`/`)}
             style={{ cursor: 'pointer' }}
           >
@@ -49,7 +50,7 @@ function Header() {
                 onClick={() => handleNavigate(item.path)}
                 size="2"
               >
-                {item.text}
+                <Heading size="3">{item.text}</Heading>
               </Button>
             ))}
           </Flex>
