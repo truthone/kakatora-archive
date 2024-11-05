@@ -20,7 +20,6 @@ const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-
   @keyframes overlayShow {
     from {
       opacity: 0;
@@ -43,7 +42,6 @@ const Content = styled(Dialog.Content)`
   min-height: 50px;
   padding: 50px 20px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-
   @keyframes contentShow {
     from {
       opacity: 0;
@@ -68,7 +66,6 @@ const CloseButton = styled(Button)`
   border: none;
   background-color: transparent;
   z-index: 100;
-
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
@@ -95,12 +92,11 @@ export default function GridImageItem({ filename, episode, index, title }) {
           direction="column"
           align="center"
           width="50vw"
-          height="fit-content"
+          maxwidth="fit-content"
           style={{
             cursor: 'pointer',
             justifyContent: 'space-around',
-
-            maxWidth: 'fit-content',
+            height: 'fit-content',
           }}
           className="item"
           variant="surface"
@@ -114,7 +110,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 fill
                 sizes={'(max-width: 768px) 100vw, 50vw'}
                 quality={100}
-                onLoadingComplete={(img) => {
+                onLoadingComplete={() => {
                   setGridImageLoading(false);
                 }}
               />
@@ -154,7 +150,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
             loading={dialogImageLoading}
             width={{ xl: '70vw', initial: '50vw' }}
             height="30vh"
-            style={{ maxWidth: '1200px', maxHeight: '500px' }}
+            maxwidth="1200px"
+            maxheight="500px"
           >
             <Box
               style={{
@@ -180,8 +177,8 @@ export default function GridImageItem({ filename, episode, index, title }) {
                   setDialogImageLoading(false);
                 }}
                 onContextMenu={(e) => {
-                  e.stopPropagation();
-                  return true;
+                  e.stopPropagation(); 
+                  return true; 
                 }}
               />
             </Box>
