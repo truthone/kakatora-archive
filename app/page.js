@@ -4,7 +4,6 @@ import moviesData from '../data/moviesData.json';
 import { Container, Separator, Section } from '@radix-ui/themes';
 import YouTubeRow from '../components/YoutubeRow';
 import FilmoByCategory from '../components/FilmoByCategory';
-import { getYouTubeVideos } from '../lib/getYouTubeVideos';
 
 export default async function Home() {
   const playlistIds = [

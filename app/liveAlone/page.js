@@ -18,7 +18,7 @@ export default function LiveAloneEpisodeDetailPage() {
   return (
     <Container>
       <FilmoDetail id={DETAIL_ID} />
-      <Section p={{ initial: '4', xs: '8' }}>
+      <Section p={{ initial: '5', xs: '8' }}>
         {
           liveAloneDetailData?.map((yearData, index) => (
             
