@@ -17,6 +17,7 @@ import '@radix-ui/themes/styles.css';
 import filmoData from '../data/filmoDataByYear.json';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { getChoseong } from 'es-hangul';
 
 function FilmoFilterByOTT() {
   const [filteredData, setFilteredData] = useState([]);
@@ -35,6 +36,14 @@ function FilmoFilterByOTT() {
     filterData();
   }, [selectedOtts, searchTerm]);
 
+  const searchWord = '라면';
+  const userInput = 'ㄹㅁ';
+
+  const result = getChoseong(searchWord); // ㄹㅁ
+
+  if (result === userInput) {
+    // 일치한다면 if문이 실행
+  }
   const filterData = () => {
     let allWorks = filmoData.filmo_data_by_year.flatMap((yearData) => [
       ...(yearData.movies || []),
@@ -42,8 +51,14 @@ function FilmoFilterByOTT() {
       ...(yearData.tv_appearances || []),
     ]);
 
-    let filtered = allWorks.filter(
-      (work) =>
+    const normalizedSearchTerm = searchTerm.replace(/\s+/g, '').toLowerCase(); // 검색어에서 공백 제거
+    const searchChoseong = getChoseong(normalizedSearchTerm); // 검색어의 초성 추출
+
+    let filtered = allWorks.filter((work) => {
+      const normalizedTitle = work.title.replace(/\s+/g, '').toLowerCase(); // 제목에서 공백 제거
+      const titleChoseong = getChoseong(normalizedTitle); // 제목의 초성 추출
+
+      return (
         (selectedOtts.length === 0 ||
           (work.ott_subscribe &&
             work.ott_subscribe.some((ott) =>
@@ -53,9 +68,11 @@ function FilmoFilterByOTT() {
                   selectedOtt.toLowerCase().includes(ott.toLowerCase())
               )
             ))) &&
-        (searchTerm === '' ||
-          work.title.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
+        (normalizedSearchTerm === '' ||
+          normalizedTitle.includes(normalizedSearchTerm) ||
+          titleChoseong.includes(searchChoseong)) // 제목과 초성 모두 포함 검색
+      );
+    });
 
     setFilteredData(filtered);
   };
