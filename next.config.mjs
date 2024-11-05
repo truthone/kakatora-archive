@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'image.cine21.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.namu.wiki',
+        port: '',
+      }
     ],
   },
 };
