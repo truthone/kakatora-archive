@@ -6,11 +6,14 @@ function FilmoSection({ data }) {
   const [isClickable, setIsClickable] = useState(false);
 
   useEffect(() => {
+    // 데이터가 변경될 때마다 클릭 방지 설정
+    setIsClickable(false); // 클릭 불가 상태로 초기화
     const timer = setTimeout(() => {
-      setIsClickable(true);
+      setIsClickable(true); // 2초 후 클릭 가능
     }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+
+    return () => clearTimeout(timer); // 타이머 정리
+  }, [data]); // data가 변경될 때마다 useEffect 실행
 
   return (
     <Section size="1">
