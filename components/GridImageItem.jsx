@@ -51,6 +51,7 @@ const Content = styled(Dialog.Content)`
     }
   }
 `;
+
 const CloseButton = styled(Button)`
   position: absolute;
   top: 10px;
@@ -77,11 +78,19 @@ export default function GridImageItem({ filename, episode, index, title }) {
   const containerRef = useRef(null);
   const [dialogImageLoading, setDialogImageLoading] = useState(true);
   const [gridImageLoading, setGridImageLoading] = useState(true);
+  const dialogImageRef = useRef(null);
 
-  function handleImgHeight(img) {
-    const { naturalWidth, naturalHeight } = img;
-    setNaturalWidth(naturalWidth);
-    setNaturalHeight(naturalHeight);
+  function handleDialogImageLoad() {
+    if (dialogImageRef.current) {
+      const { naturalWidth, naturalHeight } = dialogImageRef.current;
+      setNaturalWidth(naturalWidth);
+      setNaturalHeight(naturalHeight);
+      setDialogImageLoading(false); // 로드가 완료되면 loading을 false로 설정
+    }
+  }
+
+  function handleGridImageLoad() {
+    setGridImageLoading(false); // 그리드 이미지 로드 완료 시 loading을 false로 설정
   }
 
   return (
@@ -110,9 +119,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 fill
                 sizes={'(max-width: 768px) 100vw, 50vw'}
                 quality={100}
-                onLoadingComplete={() => {
-                  setGridImageLoading(false);
-                }}
+                onLoad={handleGridImageLoad} // 이미지 로드 완료 시 호출
               />
             </AspectRatio>
           </Skeleton>
@@ -164,6 +171,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
               }}
             >
               <Image
+                ref={dialogImageRef}
                 src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{
@@ -172,13 +180,10 @@ export default function GridImageItem({ filename, episode, index, title }) {
                 fill
                 quality={100}
                 sizes={'(max-width:768px) 70vw, 100vw'}
-                onLoadingComplete={(img) => {
-                  handleImgHeight(img);
-                  setDialogImageLoading(false);
-                }}
+                onLoad={handleDialogImageLoad} // 이미지 로드 완료 시 호출
                 onContextMenu={(e) => {
-                  e.stopPropagation(); 
-                  return true; 
+                  e.stopPropagation();
+                  return true;
                 }}
               />
             </Box>
