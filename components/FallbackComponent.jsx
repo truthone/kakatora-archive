@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Text } from '@radix-ui/themes';
+import { Box,Text } from '@radix-ui/themes';
 const FallbackComponent = ({ message, toggleMark }) => {
   return (
     <Fallback>
-      <Image
-        src={'/fallback.avif'}
-        alt="비어있어요"
-        fill
-        sizes={'30vw'}
-        style={{ display: toggleMark ? 'block' : 'none', objectFit: 'contain' }}
-      />
+      <Box width="100%" height="80%" position="relative">
+        <Image
+          src={'/fallback.avif'}
+          alt="비어있어요"
+          fill
+          sizes={'30vw'}
+          style={{
+            display: toggleMark ? 'block' : 'none',
+            objectFit: 'contain',
+          }}
+        />
+      </Box>
       <Text>{message}</Text>
     </Fallback>
   );
