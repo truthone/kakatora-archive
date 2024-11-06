@@ -42,8 +42,7 @@ const CarouselContent = styled(Flex)`
 const CarouselItem = styled.div`
   flex: 0 0 100%;
   opacity: ${(props) => (props.index === 0 ? 1 : 0.7)};
-  transition: ${(props) =>
-    props.isFirstRender ? 'none' : 'opacity 0.5s ease-in-out'};
+  transition: ${(props) => (props.$isFirstRender ? 'none' : 'opacity 0.5s ease-in-out')};
 
   ${(props) =>
     props.active &&
@@ -147,9 +146,9 @@ const Carousel = ({ data, prefix }) => {
         {imagesObj?.map((content, index) => (
           <CarouselItem
             key={index}
-            active={index === currentIndex}
+            active={(index === currentIndex).toString()}
             index={index}
-            isFirstRender={isFirstRender}
+            $isFirstRender={isFirstRender} // Transient prop으로 변경
           >
             <Card
               style={{
