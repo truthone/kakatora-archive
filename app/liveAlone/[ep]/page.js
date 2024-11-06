@@ -21,6 +21,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
   const [imageError, setImageError] = useState(false);
 
+  // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
     .find((episode) => episode.ep == ep);
