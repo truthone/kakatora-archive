@@ -4,7 +4,7 @@ import { Box,Text } from '@radix-ui/themes';
 const FallbackComponent = ({ message, toggleMark }) => {
   return (
     <Fallback>
-      <Box width="100%" height="80%" position="relative">
+      <Box width="100%" height="80%" maxHeight="300px" position="relative">
         <Image
           src={'/fallback.avif'}
           alt="비어있어요"

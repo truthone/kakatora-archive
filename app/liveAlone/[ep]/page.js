@@ -16,6 +16,7 @@ import EpisodeSection from '../../../components/EpisodeSection';
 import ImageFallback from '../../../components/ImageFallback';
 import Carousel from '../../../components/Carousel';
 import YouTubeRow from '../../../components/YoutubeRow';
+import FallbackComponent from '../../../components/FallbackComponent';
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
@@ -26,7 +27,15 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
     .flatMap((year) => year.episode)
     .find((episode) => episode.ep == ep);
 
-  if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
+  if (!data)
+    return (
+      <Flex p="4" justify="center" align="center" width="auto" height="90vh">
+        <FallbackComponent
+          message={'콘텐츠를 찾을 수 없습니다.'}
+          toggleMark={true}
+        />
+      </Flex>
+    );
 
   return (
     <Container p="4" className="filmo-detail">
