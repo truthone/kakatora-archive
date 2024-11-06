@@ -18,6 +18,7 @@ import BlurBackgroundComponent from '../components/BlurBackgroundComponent';
 import Image from 'next/image';
 import YoutubeRow from './YoutubeRow';
 import ArticleSection from './ArticleSection';
+import FallbackComponent from './FallbackComponent';
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -59,7 +60,15 @@ function FilmoDetail({ id }) {
       ...(year.tv_appearances || []),
     ])
     .find((item) => item.id === id);
-  if (!filmo) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
+  if (!filmo)
+    return (
+      <Flex p="4" justify="center" align="center" width="auto" height="90vh">
+        <FallbackComponent
+          message={'콘텐츠를 찾을 수 없습니다.'}
+          toggleMark={true}
+        />
+      </Flex>
+    );
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>
@@ -111,12 +120,7 @@ function FilmoDetail({ id }) {
                   {filmo?.role}
                 </Text>
                 <Separator size="2" orientation="vertical" />
-                <Text
-                  as="p"
-                  my="2"
-                  size={{ md: '7', initial: '6' }}
-                  
-                >
+                <Text as="p" my="2" size={{ md: '7', initial: '6' }}>
                   {filmo?.note}
                 </Text>
               </Flex>
@@ -154,9 +158,13 @@ function FilmoDetail({ id }) {
                     mb="4"
                   >
                     {filmo.ott_subscribe ? (
-                      filmo.ott_subscribe?.map((ott, index) =>
-                        <OttLogo key={index} ott={ott} query={`${filmo.title}`}/>
-                      )
+                      filmo.ott_subscribe?.map((ott, index) => (
+                        <OttLogo
+                          key={index}
+                          ott={ott}
+                          query={`${filmo.title}`}
+                        />
+                      ))
                     ) : (
                       <Text weight="light"> 시청 가능한 곳이 없어요..😭 </Text>
                     )}

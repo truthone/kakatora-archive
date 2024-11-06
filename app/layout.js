@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
                 m={{ initial: '1', xs: '3' }}
               >
                 <Header />
-                <Box minHeight="75vh">
+                <Box minHeight="90vh">
                   {children}
                   <SpeedInsights />
                 </Box>

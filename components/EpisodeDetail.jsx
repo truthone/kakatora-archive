@@ -12,7 +12,9 @@ import {
 } from '@radix-ui/themes';
 import liveAloneDetailData from '../data/liveAloneDetailData.json';
 import Image from 'next/image';
+import ImageWithFallback from './ImageWithFallback';
 import EpisodeSection from './EpisodeSection';
+import FallbackComponent from '../components/FallbackComponent'
 
 export default function EpisodeDetail() {
   const { ep } = useParams();
@@ -21,7 +23,15 @@ export default function EpisodeDetail() {
     .flatMap((year) => year.episode)
     .find((episode) => episode.ep == ep);
 
-  if (!data) return <Box p="4">콘텐츠를 찾을 수 없습니다.</Box>;
+  if (!data)
+    return (
+      <Flex p="4" justify="center" align="center" width="auto" height="90vh">
+        <FallbackComponent
+          message={'콘텐츠를 찾을 수 없습니다.'}
+          toggleMark={true}
+        />
+      </Flex>
+    );
 
   return (
     <Box
@@ -32,13 +42,13 @@ export default function EpisodeDetail() {
       <Flex direction="row" gap="4">
         <Box style={{ flexBasis: '30%', maxWidth: '200px' }}>
           <AspectRatio ratio={3 / 2}>
-            <Image
+            <ImageWithFallback
               src={data.imgUrl}
               alt={data.note}
               style={{ objectFit: 'cover' }}
               sizes={'100vw'}
               fill
-              priority 
+              priority
             />
           </AspectRatio>
         </Box>
