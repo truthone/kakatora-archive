@@ -38,6 +38,7 @@ export default function EpisodeDetail() {
               style={{ objectFit: 'cover' }}
               sizes={'100vw'}
               fill
+              priority 
             />
           </AspectRatio>
         </Box>
