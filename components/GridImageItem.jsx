@@ -144,7 +144,10 @@ export default function GridImageItem({ filename, episode, index, title }) {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Overlay />
-        <Content ref={containerRef} aria-describedby={undefined}>
+        <Content ref={containerRef} aria-describedby={'이미지 전체크기'}>
+          <Dialog.Description asChild>
+            <VisuallyHidden.Root>''</VisuallyHidden.Root>
+          </Dialog.Description>
           <VisuallyHidden.Root asChild>
             <Dialog.Title></Dialog.Title>
           </VisuallyHidden.Root>
