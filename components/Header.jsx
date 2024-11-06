@@ -35,7 +35,7 @@ function Header() {
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">
           <Heading
-            size={{initial: '5', md: '7' }}
+            size={{ initial: '5', md: '7' }}
             onClick={() => router.push(`/`)}
             style={{ cursor: 'pointer' }}
           >
@@ -69,7 +69,7 @@ function Header() {
 
       <Dialog.Root open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
         <Dialog.Content
-          aria-describedby={undefined}
+          aria-describedby={'메뉴'}
           style={{
             position: 'fixed',
             top: 0,
@@ -81,6 +81,9 @@ function Header() {
             borderRadius: '10px 0 0 10px',
           }}
         >
+          <Dialog.Description asChild>
+            <VisuallyHidden.Root>''</VisuallyHidden.Root>
+          </Dialog.Description>
           <VisuallyHidden.Root asChild>
             <Dialog.Title></Dialog.Title>
           </VisuallyHidden.Root>
