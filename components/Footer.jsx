@@ -8,7 +8,7 @@ function Footer() {
         <Text size="2" color="gray">
           &copy; 2024 HBD ju-seung
         </Text>
-        <Flex gap="4" wrap="wrap" justify="center" align="center">
+        {/* <Flex gap="4" wrap="wrap" justify="center" align="center">
           <Text size="1" color="gray">CONTACT: </Text>
           <Link
             size="1"
@@ -28,7 +28,7 @@ function Footer() {
           >
             Mail
           </Link>
-        </Flex>
+        </Flex> */}
       </Flex>
     </Section>
   );
