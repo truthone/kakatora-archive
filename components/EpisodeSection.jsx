@@ -5,13 +5,12 @@ import imageList from '../data/imageList.json';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
 
-const INITIAL_IMAGE_COUNT = 8; // 초기 로드할 이미지 개수
-const LOAD_MORE_COUNT = 8; // 더보기 버튼 클릭 시 추가 로드할 이미지 개수
+const INITIAL_IMAGE_COUNT = 8; 
+const LOAD_MORE_COUNT = 8; 
 
 const EpisodeImageGridList = ({ images }) => {
   const [visibleCount, setVisibleCount] = useState(INITIAL_IMAGE_COUNT);
 
-  // 더보기 클릭 시 현재 보이는 이미지 개수를 LOAD_MORE_COUNT만큼 증가시킴
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + LOAD_MORE_COUNT);
   };
@@ -58,14 +57,7 @@ const EpisodeSection = ({ year, episodesData }) => {
   const isArray = Array.isArray(episodesData);
   const episodesArray = isArray ? episodesData : [episodesData].filter(Boolean);
 
-  const filteredEpisodes = year
-    ? episodesArray.filter(
-        (episode) => episode && episode.year === parseInt(year)
-      )
-    : episodesArray;
-  console.log('filteredEpisodes');
-  console.log(filteredEpisodes);
-  if (filteredEpisodes.length === 0) {
+  if (episodesArray.length === 0) {
     return (
       <Box>
         {year
@@ -74,28 +66,14 @@ const EpisodeSection = ({ year, episodesData }) => {
       </Box>
     );
   }
-
-  const allImages = [];
-
-  if (year) {
-    //한개의 에피소드에 대한 이미지만 뽑을때
-    filteredEpisodes.flatMap((data) => {
-      const imagesObj = imageList[data.ep] || [];
-      return imagesObj.map((obj) => ({
-        ...obj,
-        episode: episode,
-      }));
-    });
-  } else {
-    //해당 연도의 여러개 에피소드
-    filteredEpisodes.flatMap((dataByYear) => {
-      const imagesObj = imageList[dataByYear.ep] || [];
-      return imagesObj.map((obj) => ({
-        ...obj,
-        episode: episode,
-      }));
-    });
-  }
+  
+  const allImages = episodesArray.flatMap((data) => {
+    const imagesObj = imageList[data.ep] || [];
+    return imagesObj.map((obj) => ({
+      ...obj,
+      episode: data,
+    }));
+  });
 
   return (
     <Section size="1">
