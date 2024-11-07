@@ -1,8 +1,9 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { Button, Flex, Grid, Box, Section } from '@radix-ui/themes';
+import React, { useState } from 'react';
+import { Button, Flex, Grid, Section, Separator } from '@radix-ui/themes';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
+import { useFetchImages } from '../hooks/useFetchImages';
 
 const INITIAL_IMAGE_COUNT = 8;
 const LOAD_MORE_COUNT = 8;
@@ -23,8 +24,9 @@ const EpisodeImageGridList = ({ images }) => {
             gap="3"
             border=""
           >
-            {images.slice(0, visibleCount).map((obj, index) =>
-              obj.url ? (
+            {images
+              .slice(0, visibleCount) // url이 존재하는 항목만 남기기
+              .map((obj, index) => (
                 <GridImageItem
                   key={index}
                   url={obj.url}
@@ -32,8 +34,7 @@ const EpisodeImageGridList = ({ images }) => {
                   index={index}
                   title={obj.title}
                 />
-              ) : null 
-            )}
+              ))}
           </Grid>
           {visibleCount < images.length && (
             <Button
@@ -54,61 +55,16 @@ const EpisodeImageGridList = ({ images }) => {
   );
 };
 
-const EpisodeSection = ({ year, episodesData }) => {
-  const [allImages, setAllImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Google Sheets API에서 이미지 데이터 가져오기
-    const fetchImagesFromSheet = async () => {
-      try {
-        const response = await fetch('/api/fetchImages'); // App Router API 경로
-        if (!response.ok) throw new Error('Failed to fetch images');
-
-        const data = await response.json();
-
-        // 데이터 확인을 위한 콘솔 로그 추가
-        console.log('Fetched data:', data);
-
-        // 필요한 형식으로 데이터 매핑
-        const images = data.map((obj) => ({
-          episode: obj.Episode,
-          title: obj.Title,
-          filename: obj.Filename,
-          url: obj.Url,
-        }));
-
-        setAllImages(images);
-      } catch (error) {
-        console.error('Failed to fetch images:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchImagesFromSheet();
-  }, [year, episodesData]);
-
-  if (isLoading) {
-    return <ContentFallback />;
-  }
-
-  if (allImages.length === 0) {
-    return (
-      <Box>
-        {year
-          ? `${year}년도의 에피소드를 찾을 수 없습니다.`
-          : '에피소드를 찾을 수 없습니다.'}
-      </Box>
-    );
-  }
-
+const EpisodeSection = ({ episodesData }) => {
+  const { images: allImages, error, loading } = useFetchImages(episodesData.ep);
   return (
+    <>
+    <Separator size="4" />
     <Section size="1">
       <Flex direction="column" gap="4">
-        <EpisodeImageGridList images={allImages} />
+          <EpisodeImageGridList images={allImages} />
       </Flex>
-    </Section>
+    </Section></>
   );
 };
 
