@@ -72,7 +72,7 @@ const CloseButton = styled(Button)`
   }
 `;
 
-export default function GridImageItem({ filename, episode, index, title }) {
+export default function GridImageItem({ url, episode, index, title }) {
   const [naturalWidth, setNaturalWidth] = useState(null);
   const [naturalHeight, setNaturalHeight] = useState(null);
   const containerRef = useRef(null);
@@ -113,7 +113,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
           <Skeleton loading={gridImageLoading}>
             <AspectRatio ratio={1 / 1}>
               <Image
-                src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
+                src={url}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 fill
@@ -175,7 +175,7 @@ export default function GridImageItem({ filename, episode, index, title }) {
             >
               <Image
                 ref={dialogImageRef}
-                src={`/images/tv-liveAlone/${episode.ep}/${filename}`}
+                src={url}
                 alt={`Episode ${episode.ep} - Image ${index + 1}`}
                 style={{
                   objectFit: 'contain',
