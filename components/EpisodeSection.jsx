@@ -23,15 +23,17 @@ const EpisodeImageGridList = ({ images }) => {
             gap="3"
             border=""
           >
-            {images.slice(0, visibleCount).map((obj, index) => (
-              <GridImageItem
-                key={index}
-                url={obj.url}
-                episode={obj.episode}
-                index={index}
-                title={obj.title}
-              />
-            ))}
+            {images.slice(0, visibleCount).map((obj, index) =>
+              obj.url ? (
+                <GridImageItem
+                  key={index}
+                  url={obj.url}
+                  episode={obj.episode}
+                  index={index}
+                  title={obj.title}
+                />
+              ) : null 
+            )}
           </Grid>
           {visibleCount < images.length && (
             <Button
@@ -62,7 +64,7 @@ const EpisodeSection = ({ year, episodesData }) => {
       try {
         const response = await fetch('/api/fetchImages'); // App Router API 경로
         if (!response.ok) throw new Error('Failed to fetch images');
-        
+
         const data = await response.json();
 
         // 데이터 확인을 위한 콘솔 로그 추가
