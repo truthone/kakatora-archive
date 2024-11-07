@@ -121,7 +121,7 @@ export default function GridImageItem({ url, episode, index, title }) {
             <AspectRatio ratio={1 / 1}>
               <Image
                 src={url}
-                alt={`Episode ${episode.ep} - Image ${index + 1}`}
+                alt={`Episode ${episode} - Image ${index + 1}`}
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 fill
                 sizes={'(max-width: 768px) 100vw, 50vw'}
@@ -184,7 +184,7 @@ export default function GridImageItem({ url, episode, index, title }) {
               <Image
                 ref={dialogImageRef}
                 src={url}
-                alt={`Episode ${episode.ep} - Image ${index + 1}`}
+                alt={`Episode ${episode} - Image ${index + 1}`}
                 style={{
                   objectFit: 'contain',
                 }}

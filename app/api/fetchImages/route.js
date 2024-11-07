@@ -1,7 +1,19 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 
-export async function GET() {
+let blockUntil = null; // 5분 차단 시간을 설정할 변수
+
+export async function GET(request) {
+  const episode = request.nextUrl.searchParams.get('episode');
+ 
+  // 차단 시간 설정 (현재 시간이 blockUntil보다 작으면 차단)
+  if (blockUntil && new Date() < blockUntil) {
+    return NextResponse.json(
+      { error: 'API temporarily blocked due to previous error' },
+      { status: 429 } // Too Many Requests
+    );
+  }
+
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -22,17 +34,27 @@ export async function GET() {
       return NextResponse.json({ message: 'No data found' }, { status: 404 });
     }
 
-    // 첫 번째 행은 헤더이므로 제외하고 데이터 변환
-    const imagesData = rows.slice(1).map((row) => ({
-      Episode: row[0],
-      Title: row[1],
-      Filename: row[2],
-      Url: row[3],
+    // 첫 번째 행은 헤더이므로 제외하고 데이터 매핑
+    let imagesData = rows.slice(1).map((row) => ({
+      episode: row[0],
+      title: row[1],
+      filename: row[2],
+      url: row[3],
     }));
 
+    // episode 파라미터가 있는 경우 필터링
+    if (episode) {
+      imagesData = imagesData.filter((item) => item.episode === episode);
+    }
     return NextResponse.json(imagesData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
+
+    // 400,500번대 에러일 경우 5분 동안 API 차단
+    if (error.response && error.response.status >= 400 && error.response.status < 600) {
+      blockUntil = new Date(new Date().getTime() + 5 * 60 * 1000); // 5분 동안 차단
+    }
+
     return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   }
 }
