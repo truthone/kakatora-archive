@@ -77,16 +77,18 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           </Box>
         </Flex>
       </Section>
-      <Separator orientation="horizontal" size="4" />
-      <Section>
-        <Heading size="6" mb="4">
-          나혼산 코어
-        </Heading>
-        <Carousel data={data} prefix={`/images/tv-liveAlone/${data.ep}/`} />
-      </Section>
+
+      {data ? (
+        <Section>
+          <Heading size="6" mb="4">
+            나혼산 코어
+          </Heading>
+          <Separator orientation="horizontal" size="4" />
+          <Carousel data={data} prefix={`/images/tv-liveAlone/${data.ep}/`} />
+        </Section>
+      ) : null}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
-      <Separator orientation="horizontal" size="4" />
       <EpisodeSection year={data.year} episodesData={data} />
     </Container>
   );

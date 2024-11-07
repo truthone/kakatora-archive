@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Button, Flex, Grid, Section, Separator } from '@radix-ui/themes';
+import { Button, Flex, Grid, Section, Separator, Text } from '@radix-ui/themes';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
 import { useFetchImages } from '../hooks/useFetchImages';
@@ -37,15 +37,18 @@ const EpisodeImageGridList = ({ images }) => {
               ))}
           </Grid>
           {visibleCount < images.length && (
-            <Button
-              onClick={handleLoadMore}
-              variant="ghost"
-              width="30vw"
-              my="3"
-              mx="auto"
-            >
-              더보기
-            </Button>
+            <Flex justify="center">
+              <Button
+                onClick={handleLoadMore}
+                variant="ghost"
+                radius="full"
+                size="4"
+                my="7"
+                mx="auto"
+              >
+                <Text size="7" mx="4">더보기</Text>
+              </Button>
+            </Flex>
           )}
         </>
       ) : (
@@ -59,12 +62,13 @@ const EpisodeSection = ({ episodesData }) => {
   const { images: allImages, error, loading } = useFetchImages(episodesData.ep);
   return (
     <>
-    <Separator size="4" />
-    <Section size="1">
-      <Flex direction="column" gap="4">
+      <Separator size="4" />
+      <Section size="1">
+        <Flex direction="column" gap="4">
           <EpisodeImageGridList images={allImages} />
-      </Flex>
-    </Section></>
+        </Flex>
+      </Section>
+    </>
   );
 };
 
