@@ -1,12 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Flex, Grid, Box, Section } from '@radix-ui/themes';
-import imageList from '../data/imageList.json';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
 
-const INITIAL_IMAGE_COUNT = 8; 
-const LOAD_MORE_COUNT = 8; 
+const INITIAL_IMAGE_COUNT = 8;
+const LOAD_MORE_COUNT = 8;
 
 const EpisodeImageGridList = ({ images }) => {
   const [visibleCount, setVisibleCount] = useState(INITIAL_IMAGE_COUNT);
@@ -27,7 +26,7 @@ const EpisodeImageGridList = ({ images }) => {
             {images.slice(0, visibleCount).map((obj, index) => (
               <GridImageItem
                 key={index}
-                filename={obj.filename}
+                url={obj.url}
                 episode={obj.episode}
                 index={index}
                 title={obj.title}
@@ -54,10 +53,45 @@ const EpisodeImageGridList = ({ images }) => {
 };
 
 const EpisodeSection = ({ year, episodesData }) => {
-  const isArray = Array.isArray(episodesData);
-  const episodesArray = isArray ? episodesData : [episodesData].filter(Boolean);
+  const [allImages, setAllImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (episodesArray.length === 0) {
+  useEffect(() => {
+    // Google Sheets API에서 이미지 데이터 가져오기
+    const fetchImagesFromSheet = async () => {
+      try {
+        const response = await fetch('/api/fetchImages'); // App Router API 경로
+        if (!response.ok) throw new Error('Failed to fetch images');
+        
+        const data = await response.json();
+
+        // 데이터 확인을 위한 콘솔 로그 추가
+        console.log('Fetched data:', data);
+
+        // 필요한 형식으로 데이터 매핑
+        const images = data.map((obj) => ({
+          episode: obj.Episode,
+          title: obj.Title,
+          filename: obj.Filename,
+          url: obj.Url,
+        }));
+
+        setAllImages(images);
+      } catch (error) {
+        console.error('Failed to fetch images:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchImagesFromSheet();
+  }, [year, episodesData]);
+
+  if (isLoading) {
+    return <ContentFallback />;
+  }
+
+  if (allImages.length === 0) {
     return (
       <Box>
         {year
@@ -66,14 +100,6 @@ const EpisodeSection = ({ year, episodesData }) => {
       </Box>
     );
   }
-  
-  const allImages = episodesArray.flatMap((data) => {
-    const imagesObj = imageList[data.ep] || [];
-    return imagesObj.map((obj) => ({
-      ...obj,
-      episode: data,
-    }));
-  });
 
   return (
     <Section size="1">
