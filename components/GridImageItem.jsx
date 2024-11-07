@@ -79,6 +79,11 @@ export default function GridImageItem({ url, episode, index, title }) {
   const [dialogImageLoading, setDialogImageLoading] = useState(true);
   const [gridImageLoading, setGridImageLoading] = useState(true);
   const dialogImageRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleError = () => {
+    setIsVisible(false); // 에러 발생 시 이미지 숨기기
+  };
 
   function handleDialogImageLoad() {
     if (dialogImageRef.current) {
@@ -93,6 +98,8 @@ export default function GridImageItem({ url, episode, index, title }) {
     setGridImageLoading(false); // 그리드 이미지 로드 완료 시 loading을 false로 설정
   }
 
+  if (!isVisible) return null;
+  
   return (
     <Dialog.Root onContextMenu={(e) => e.stopPropagation()}>
       <Dialog.Trigger asChild>
@@ -119,6 +126,7 @@ export default function GridImageItem({ url, episode, index, title }) {
                 fill
                 sizes={'(max-width: 768px) 100vw, 50vw'}
                 quality={100}
+                onError={handleError}
                 onLoad={handleGridImageLoad} // 이미지 로드 완료 시 호출
               />
             </AspectRatio>
@@ -183,6 +191,7 @@ export default function GridImageItem({ url, episode, index, title }) {
                 fill
                 quality={100}
                 sizes={'(max-width:768px) 70vw, 100vw'}
+                onError={handleError}
                 onLoad={handleDialogImageLoad} // 이미지 로드 완료 시 호출
                 onContextMenu={(e) => {
                   e.stopPropagation();
