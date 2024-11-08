@@ -23,6 +23,7 @@ export async function GET(request) {
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
 
+    
     console.log(process.env.GOOGLE_PRIVATE_KEY.replace(/\\\n/g, '\n'))
 
     const sheets = google.sheets({ version: 'v4', auth });

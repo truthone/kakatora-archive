@@ -14,7 +14,7 @@ import liveAloneDetailData from '../../../data/liveAloneDetailData.json';
 import Image from 'next/image';
 import EpisodeSection from '../../../components/EpisodeSection';
 import ImageFallback from '../../../components/ImageFallback';
-import Carousel from '../../../components/Carousel';
+import CoreCarouselSection from '../../../components/CoreCarouselSection';
 import YouTubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
 
@@ -78,15 +78,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         </Flex>
       </Section>
 
-      {data ? (
-        <Section>
-          <Heading size="6" mb="4">
-            나혼산 코어
-          </Heading>
-          <Separator orientation="horizontal" size="4" />
-          <Carousel data={data} prefix={`/images/tv-liveAlone/${data.ep}/`} />
-        </Section>
-      ) : null}
+      {data ? <CoreCarouselSection  title={'나혼산 코어'} data={data}/> : null}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
       <EpisodeSection year={data.year} episodesData={data} />
