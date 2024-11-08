@@ -13,44 +13,43 @@ import {
 import Image from 'next/image';
 import ScrollArrowWrapper from './ScrollArrowWrapper';
 import { decode } from 'html-entities';
-import { getYouTubeVideos } from '../lib/getYouTubeVideos';
 
 const openYouTubeVideo = (videoId) => {
   const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
   window.open(youtubeUrl, '_blank');
 };
 
-function YouTubeRow({ SectionTitle, playlistId }) {
+function YoutubeRow({ sectionTitle, playlistId }) {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     async function fetchVideos() {
-      const response = await getYouTubeVideos(playlistId);
-
-      // 유효한 비디오 필터링
-      const validVideos =
-        response.filter(
-          (video) =>
-            video?.snippet &&
-            video?.snippet?.resourceId?.videoId &&
-            video?.snippet?.thumbnails?.standard?.url &&
-            video?.snippet?.title
-        ) || [];
-
-      setVideos(validVideos);
+      try {
+        const response = await fetch(
+          `/api/fetchYoutubeVideos?playlistId=${playlistId}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setVideos(data); // YouTube API의 결과에서 items 사용
+        } else {
+          console.error('Failed to fetch videos:', response.status);
+        }
+      } catch (error) {
+        console.error('유튜브 영상 가져오기 오류:', error);
+      }
     }
 
     fetchVideos();
   }, [playlistId]);
 
-  if (videos.length === 0) {
-    return null; // 비디오가 없을 경우 아무 것도 렌더링하지 않음
+  if (!videos.length) {
+    return null;
   }
 
   return (
     <Section size="1">
       <Heading size="6" mb="4">
-        {SectionTitle}
+        {sectionTitle}
       </Heading>
       <Box ml={{ initial: '1', xs: '4' }}>
         <ScrollArrowWrapper itemWidth={300} gap={12}>
@@ -67,7 +66,7 @@ function YouTubeRow({ SectionTitle, playlistId }) {
               >
                 <AspectRatio ratio={16 / 9}>
                   <Image
-                    src={video.snippet.thumbnails.standard.url}
+                    src={video.snippet.thumbnails.high.url}
                     alt={video.snippet.title}
                     fill
                     sizes={'30vw'}
@@ -101,4 +100,4 @@ function YouTubeRow({ SectionTitle, playlistId }) {
   );
 }
 
-export default YouTubeRow;
+export default YoutubeRow;

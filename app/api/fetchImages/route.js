@@ -5,7 +5,12 @@ let blockUntil = null; // 5분 차단 시간을 설정할 변수
 
 export async function GET(request) {
   const episode = request.nextUrl.searchParams.get('episode');
- 
+  
+  // 환경 변수 체크
+  if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
+    return NextResponse.json({ error: 'Environment variables are not properly configured' }, { status: 500 });
+  }
+
   // 차단 시간 설정 (현재 시간이 blockUntil보다 작으면 차단)
   if (blockUntil && new Date() < blockUntil) {
     return NextResponse.json(
@@ -18,11 +23,10 @@ export async function GET(request) {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\\n/g, '\n')
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\\n/g, '\n'),
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
-
 
     const sheets = google.sheets({ version: 'v4', auth });
     const response = await sheets.spreadsheets.values.get({
@@ -45,14 +49,14 @@ export async function GET(request) {
 
     // episode 파라미터가 있는 경우 필터링
     if (episode) {
-      imagesData = imagesData.filter((item) => item.episode === episode);
+      imagesData = imagesData.filter((item) => String(item.episode) === String(episode));
     }
     return NextResponse.json(imagesData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 
-    // 400,500번대 에러일 경우 5분 동안 API 차단
-    if (error.response && error.response.status >= 400 && error.response.status < 600) {
+    // 에러 객체의 구조 확인 및 상태 코드 사용
+    if (error.code && error.code >= 400 && error.code < 600) {
       blockUntil = new Date(new Date().getTime() + 5 * 60 * 1000); // 5분 동안 차단
     }
 

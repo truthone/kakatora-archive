@@ -16,9 +16,9 @@ export default async function Home() {
       <Hero movie={moviesData.featuredMovie} />
       <Container ml="3">
         <Section size="1">
-          <YouTubeRow SectionTitle="다우렌의 결혼" playlistId={playlistIds[0]} />
-          <YouTubeRow SectionTitle="재밌는거 몰아보기" playlistId={playlistIds[1]} />
-          <YouTubeRow SectionTitle="드라마 몰아보기" playlistId={playlistIds[2]} />
+          <YouTubeRow sectionTitle="다우렌의 결혼" playlistId={playlistIds[0]} />
+          <YouTubeRow sectionTitle="재밌는거 몰아보기" playlistId={playlistIds[1]} />
+          <YouTubeRow sectionTitle="드라마 몰아보기" playlistId={playlistIds[2]} />
         </Section>
         <Separator orientation="horizontal" size="4" />
         <FilmoByCategory />
