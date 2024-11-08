@@ -10,7 +10,7 @@ const CarouselContainer = styled(Section)`
   position: relative;
   width: 100%;
   overflow: hidden;
-
+  display: ${(props) => (props.$visibility ? 'block' : 'none')};
   @media (min-width: 520px) {
     overflow: visible;
   }
@@ -26,7 +26,7 @@ const CarouselContent = styled(Flex)`
     scroll-snap-align: center;
   }
 
-  &::webkitscrollbar {
+  &::webkit-scrollbar {
     display: none;
   }
 
@@ -88,6 +88,7 @@ const Carousel = ({ data, prefix }) => {
   const imagesObj = imageList[data.ep] || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const [visibility, setVisibility] = useState(true);
   const carouselRef = useRef(null);
 
   const nextSlide = () => {
@@ -127,13 +128,13 @@ const Carousel = ({ data, prefix }) => {
     return () => {
       carouselNode.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [visibility]);
 
   const isFirstSlide = currentIndex === 0;
   const isLastSlide = currentIndex === imagesObj.length - 1;
 
   return (
-    <CarouselContainer size="1">
+    <CarouselContainer size="1" $visibility={visibility}>
       <CarouselButton
         position="prev"
         onClick={prevSlide}
@@ -148,7 +149,7 @@ const Carousel = ({ data, prefix }) => {
             key={index}
             $active={(index === currentIndex).toString()}
             $index={index}
-            $isFirstRender={isFirstRender} // Transient prop으로 변경
+            $isFirstRender={isFirstRender}
           >
             <Card
               style={{
@@ -161,7 +162,7 @@ const Carousel = ({ data, prefix }) => {
             >
               <AspectRatio ratio={2 / 3} style={{ padding: '0' }}>
                 <Image
-                  src={`${prefix}${content.filename}`}
+                  src={content.url}
                   alt={content.title}
                   fill
                   sizes={'(max-width: 768px) 100vw, 30vw'}
@@ -170,6 +171,11 @@ const Carousel = ({ data, prefix }) => {
                     borderTopRightRadius: 'var(--radius-2)',
                     objectFit: 'cover',
                   }}
+                  onError={() => {
+                    console.log('error');
+                    setVisibility(false);
+                  }}
+                  onLoad={() => setVisibility(true)}
                 />
               </AspectRatio>
             </Card>
