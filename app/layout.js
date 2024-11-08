@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
   return (
