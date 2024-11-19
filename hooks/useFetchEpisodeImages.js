@@ -9,7 +9,7 @@ export const useFetchImages = (episode) => {
     const fetchImagesFromSheet = async () => {
       try {
         setLoading(true);
-        const url = episode ? `/api/fetchImages?episode=${episode}` : '/api/fetchImages';
+        const url = episode ? `/api/fetchEpisodeImages?episode=${episode}` : '/api/fetchEpisodeImages';
         
         const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch images');
