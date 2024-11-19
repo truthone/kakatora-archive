@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
-export const useFetchImages = (episode) => {
+const useFetchEpisodeImages = (episode) => {
   const [images, setImages] = useState([]);
+  const [mainImage, setMainImage] = useState(null); // is_main 데이터 저장
+  const [carouselImages, setCarouselImages] = useState([]); // is_carousel 데이터 저장
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -10,29 +12,41 @@ export const useFetchImages = (episode) => {
       try {
         setLoading(true);
         const url = episode ? `/api/fetchEpisodeImages?episode=${episode}` : '/api/fetchEpisodeImages';
-        
         const response = await fetch(url);
+
         if (!response.ok) throw new Error('Failed to fetch images');
 
         const data = await response.json();
-        const images = data.map((obj) => ({
+
+        // 데이터를 처리해 상태 업데이트
+        const mappedImages = data.map((obj) => ({
           episode: obj.episode,
           title: obj.title,
           filename: obj.filename,
           url: obj.url,
+          is_main: obj.is_main,
+          is_carousel: obj.is_carousel,
         }));
 
-        setImages(images); // 성공적으로 데이터를 받아오면 images 상태 업데이트
+        // is_main과 is_carousel 데이터를 분리
+        const main = mappedImages.find((item) => item.is_main) || null;
+        const carousel = mappedImages.filter((item) => item.is_carousel);
+
+        setImages(mappedImages);
+        setMainImage(main);
+        setCarouselImages(carousel);
         setError(null);
       } catch (error) {
-        setError(error); // 에러 발생 시 error 상태 업데이트
+        setError(error);
       } finally {
-        setLoading(false); // 로딩 상태 해제
+        setLoading(false);
       }
     };
 
     fetchImagesFromSheet();
   }, [episode]);
 
-  return { images, error, loading };
+  return { images, mainImage, carouselImages, error, loading };
 };
+
+export default useFetchEpisodeImages;

@@ -12,11 +12,13 @@ import FilmoDetail from '../../components/FilmoDetail';
 import useStickyHeader from '../../hooks/useStickyHeader';
 import StickyHead from '../../components/StickyHead';
 import FallbackComponent from '../../components/FallbackComponent';
+import useFetchEpisodeImages  from '../../hooks/useFetchEpisodeImages';
 
 export default function LiveAloneEpisodeDetailPage() {
   const DETAIL_ID = 'tv_2024_2';
   const data = liveAloneDetailData.flatMap((year) => year.episode);
   const [headerRef, isSticky] = useStickyHeader();
+  const { mainImage } = useFetchEpisodeImages();
 
   if (!data)
     return (
@@ -38,7 +40,7 @@ export default function LiveAloneEpisodeDetailPage() {
               {yearData?.year}
             </StickyHead>
             {yearData?.episode && yearData.episode.length > 0 && (
-              <EpisodeRow title="" contents={yearData?.episode} />
+              <EpisodeRow title="" contents={yearData?.episode} mainImage = {mainImage} />
             )}
           </Box>
         ))}

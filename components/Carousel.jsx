@@ -3,11 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Card, AspectRatio, IconButton, Section, Flex } from '@radix-ui/themes';
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
-import imageList from '../data/liveAloneStylingImageList.json';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
-const Carousel = ({ data, onImagesLoaded }) => {
-  const imagesObj = imageList[data.ep] || [];
+const Carousel = ({carouselImages }) => {
+  const [imagesObj, setImagesObj] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [visibility, setVisibility] = useState(true);
@@ -37,18 +36,14 @@ const Carousel = ({ data, onImagesLoaded }) => {
   useEffect(() => {
     const carouselNode = carouselRef.current;
     if (!carouselNode) return;
-    if (loadedImagesCount > 0) {
-      onImagesLoaded(true);
-    } else {
-      onImagesLoaded(false);
-    }
+    setImagesObj(carouselImages);
 
     carouselNode.addEventListener('scroll', handleScroll);
 
     return () => {
       carouselNode.removeEventListener('scroll', handleScroll);
     };
-  }, [visibility, loadedImagesCount, onImagesLoaded]);
+  }, [visibility, caruseolImages]);
 
   const handleScroll = () => {
     const slideWidth = carouselNode.offsetWidth;

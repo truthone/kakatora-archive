@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import { Button, Flex, Grid, Section, Separator, Text } from '@radix-ui/themes';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
-import { useFetchEpisodeImages } from '../hooks/useFetchEpisodeImages';
 
 const INITIAL_IMAGE_COUNT = 8;
 const LOAD_MORE_COUNT = 8;
 
-const EpisodeImageGridList = ({ images }) => {
+const EpisodeImageGridList = ({ images = [] }) => {
   const [visibleCount, setVisibleCount] = useState(INITIAL_IMAGE_COUNT);
 
   const handleLoadMore = () => {
@@ -58,14 +57,13 @@ const EpisodeImageGridList = ({ images }) => {
   );
 };
 
-const EpisodeSection = ({ episodesData }) => {
-  const { images: allImages, error, loading } = useFetchEpisodeImages(episodesData.ep);
+const EpisodeSection = ({ images }) => {
   return (
     <>
       <Separator size="4" />
       <Section size="1">
         <Flex direction="column" gap="4">
-          <EpisodeImageGridList images={allImages} />
+          <EpisodeImageGridList images={images} />
         </Flex>
       </Section>
     </>
