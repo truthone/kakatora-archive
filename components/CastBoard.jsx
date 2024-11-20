@@ -159,7 +159,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/SEOK.jpg'}
+                src={'/tebas/NAM.jpg'}
                 alt={'S'}
                 style={{
                   objectFit: 'cover',
@@ -181,7 +181,7 @@ const CastBoard = () => {
                 paddingBottom: '5px',
               }}
             >
-              이석준
+              김남희
             </Name>
           </Box>
           <AnimationBox2>
@@ -198,7 +198,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/JU.jpg'}
+                src={'/tebas/KANG.jpg'}
                 alt={'마페'}
                 style={{
                   objectFit: 'cover',
@@ -219,7 +219,7 @@ const CastBoard = () => {
                 paddingBottom: '5px',
               }}
             >
-              이주승
+              강승호
             </Name>
           </Box>
           <AnimationBox2>
@@ -229,7 +229,13 @@ const CastBoard = () => {
           </AnimationBox2>
         </AnimationBox>
       </Flex>
-      <Flex  style={{alignItems: 'center', justifyContent:'center', alignContent: 'center'}}>
+      <Flex
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          alignContent: 'center',
+        }}
+      >
         <TypingEffect
           style={{
             fontFamily: 'GowunBatang-Regular',
@@ -238,7 +244,7 @@ const CastBoard = () => {
             textAlign: 'center',
           }}
         >
-             세상에 알려진 나, 오이디푸스가 이렇게 왔노라.
+          세상에 알려진 나, 오이디푸스가 이렇게 왔노라.
         </TypingEffect>
       </Flex>
     </Flex>
