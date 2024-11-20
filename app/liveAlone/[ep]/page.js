@@ -26,7 +26,6 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
     useFetchEpisodeImages({ episode: ep });
   const [imageError, setImageError] = useState(false);
 
-  console.log(...mainImage);
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
@@ -56,7 +55,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           >
             <Skeleton loading={loading}>
               <AspectRatio ratio={3 / 2}>
-                {mainImage ? (
+                {mainImage.length > 0 ? (
                   <Image
                     src={mainImage[0].url}
                     alt={data.note}
