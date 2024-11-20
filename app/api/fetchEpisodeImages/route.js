@@ -5,7 +5,9 @@ let blockUntil = null;
 
 export async function GET(request) {
   const episode = request.nextUrl.searchParams.get('episode');
+  const isMain = request.nextUrl.searchParams.get('isMain'); 
 
+  console.log(episode)
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json({ error: 'Environment variables are not properly configured' }, { status: 500 });
   }
@@ -44,13 +46,25 @@ export async function GET(request) {
       is_main: row[5] === 'TRUE', // Boolean 변환
       is_carousel: row[6] === 'TRUE'
     }));
+    let filteredData = [];
 
     // episode 파라미터가 있는 경우 필터링
     if (episode) {
-      imagesData = imagesData.filter((item) => String(item.episode_id) === String(episode));
+      filteredData = imagesData.filter((item) => String(item.episode_id) === String(episode));
+    }
+    else if (episode && isMain === 'true') {
+      filteredData = filteredData.filter(
+        (item) => item.is_main === 'TRUE' || item.is_main === true
+      );
+    }
+    else {
+      filteredData = imagesData.filter(
+        (item) => item.is_main === 'TRUE' || item.is_main === true
+      );
     }
 
-    return NextResponse.json(imagesData);
+    console.log(filteredData)
+    return NextResponse.json(filteredData);
 
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);

@@ -9,6 +9,7 @@ import {
   Container,
   Section,
   Separator,
+  Skeleton,
 } from '@radix-ui/themes';
 import liveAloneDetailData from '../../../data/liveAloneDetailData.json';
 import Image from 'next/image';
@@ -17,13 +18,15 @@ import ImageFallback from '../../../components/ImageFallback';
 import CoreCarouselSection from '../../../components/CoreCarouselSection';
 import YouTubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
-import useFetchEpisodeImages  from '../../../hooks/useFetchEpisodeImages';
+import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
-  const { images, mainImage, carouselImages, error, loading } = useFetchEpisodeImages(ep);
+  const { images, mainImage, carouselImages, error, loading } =
+    useFetchEpisodeImages({ episode: ep });
   const [imageError, setImageError] = useState(false);
-  console.log(carouselImages)
+
+  console.log(...mainImage);
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
@@ -51,20 +54,22 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
               maxHeight: '400px',
             }}
           >
-            <AspectRatio ratio={3 / 2}>
-              {!imageError && mainImage ? (
-                <Image
-                  src={mainImage.url}
-                  alt={data.note}
-                  style={{ objectFit: 'cover' }}
-                  fill
-                  sizes={'100vw'}
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <ImageFallback />
-              )}
-            </AspectRatio>
+            <Skeleton loading={loading}>
+              <AspectRatio ratio={3 / 2}>
+                {mainImage ? (
+                  <Image
+                    src={mainImage[0].url}
+                    alt={data.note}
+                    style={{ objectFit: 'cover' }}
+                    fill
+                    sizes={'100vw'}
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <ImageFallback />
+                )}
+              </AspectRatio>
+            </Skeleton>
           </Box>
           <Box style={{ flex: '1 2 40%', minWidth: '200px' }}>
             <Heading size="6" mb="2">
@@ -80,10 +85,15 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         </Flex>
       </Section>
 
-      {carouselImages.length >= 1 ? <CoreCarouselSection  title={'나혼산 코어'} carouselImages={carouselImages}/> : null}
+      {carouselImages.length >= 1 ? (
+        <CoreCarouselSection
+          title={'나혼산 코어'}
+          carouselImages={carouselImages}
+        />
+      ) : null}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
-      {images ? <EpisodeSection images={images}/> : null}
+      {images ? <EpisodeSection images={images} /> : null}
     </Container>
   );
 }

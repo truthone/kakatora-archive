@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-const useFetchEpisodeImages = (episode) => {
+const useFetchEpisodeImages = ({ episode, isMain= false }) => {
   const [images, setImages] = useState([]);
-  const [mainImage, setMainImage] = useState(null); // is_main 데이터 저장
-  const [carouselImages, setCarouselImages] = useState([]); // is_carousel 데이터 저장
+  const [mainImage, setMainImage] = useState([]);
+  const [carouselImages, setCarouselImages] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -11,9 +11,22 @@ const useFetchEpisodeImages = (episode) => {
     const fetchImagesFromSheet = async () => {
       try {
         setLoading(true);
-        const url = episode
-          ? `/api/fetchEpisodeImages?episode=${episode}`
-          : '/api/fetchEpisodeImages';
+        let url = '/api/fetchEpisodeImages';
+        const params = new URLSearchParams();
+
+        if (episode) {
+          params.append('episode', episode);
+        }
+        if (isMain) {
+          params.append('isMain', isMain);
+        }
+
+        if (params.toString()) {
+          url += `?${params.toString()}`;
+        }
+
+        console.log('API 호출 URL:', url); // 디버깅을 위해 추가
+
         const response = await fetch(url);
 
         if (!response.ok) throw new Error('Failed to fetch images');
@@ -23,23 +36,33 @@ const useFetchEpisodeImages = (episode) => {
         // 데이터를 처리해 상태 업데이트
         const mappedImages = data.map((obj) => ({
           id: obj.id,
-          episode: obj.episode_id,
+          episode_id: obj.episode_id,
           title: obj.title,
           filename: obj.filename,
           url: obj.url,
           is_main: obj.is_main,
           is_carousel: obj.is_carousel,
         }));
-
         // is_main과 is_carousel 데이터를 분리
-        const main = mappedImages.find((item) => item.is_main) || null;
-        const carousel = mappedImages.filter((item) => item.is_carousel);
+        const main = mappedImages.filter(
+          (item) =>
+            item.is_main === 'TRUE' || item.is_main === true || item.is_main === 'true'
+        ) || null;
+
+        const carousel = mappedImages.filter(
+          (item) =>
+            item.is_carousel === 'TRUE' || item.is_carousel === true || item.is_carousel === 'true'
+        );
+
+        
+console.log(main)
 
         setImages(mappedImages);
         setMainImage(main);
         setCarouselImages(carousel);
         setError(null);
       } catch (error) {
+        console.error('데이터 가져오기 오류:', error);
         setError(error);
       } finally {
         setLoading(false);
@@ -47,9 +70,9 @@ const useFetchEpisodeImages = (episode) => {
     };
 
     fetchImagesFromSheet();
-  }, [episode]);
+  }, [episode, isMain]);
 
   return { images, mainImage, carouselImages, error, loading };
-}
+};
 
 export default useFetchEpisodeImages;

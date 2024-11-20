@@ -18,8 +18,8 @@ export default function LiveAloneEpisodeDetailPage() {
   const DETAIL_ID = 'tv_2024_2';
   const data = liveAloneDetailData.flatMap((year) => year.episode);
   const [headerRef, isSticky] = useStickyHeader();
-  const { mainImage } = useFetchEpisodeImages();
-
+  const { mainImage } = useFetchEpisodeImages({isMain: 'true'});
+  
   if (!data)
     return (
       <Flex p="4" justify="center" align="center" width="auto" height="90vh">
@@ -40,7 +40,7 @@ export default function LiveAloneEpisodeDetailPage() {
               {yearData?.year}
             </StickyHead>
             {yearData?.episode && yearData.episode.length > 0 && (
-              <EpisodeRow title="" contents={yearData?.episode} mainImage = {mainImage} />
+              <EpisodeRow title="" contents={yearData?.episode} mainImages = {mainImage} />
             )}
           </Box>
         ))}
