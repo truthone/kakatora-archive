@@ -52,18 +52,20 @@ export async function GET(request) {
     if (episode) {
       filteredData = imagesData.filter((item) => String(item.episode_id) === String(episode));
     }
-    else if (episode && isMain === 'true') {
+    else if (episode && isMain) {
       filteredData = filteredData.filter(
         (item) => item.is_main === 'TRUE' || item.is_main === true
       );
     }
-    else {
+    else if (!episode && isMain) {
       filteredData = imagesData.filter(
         (item) => item.is_main === 'TRUE' || item.is_main === true
       );
     }
+    else if (!episode && !isMain) {
+      return NextResponse.json(imagesData);
+    }
 
-    console.log(filteredData)
     return NextResponse.json(filteredData);
 
   } catch (error) {
