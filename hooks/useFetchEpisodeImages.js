@@ -6,12 +6,14 @@ const useFetchEpisodeImages = (episode) => {
   const [carouselImages, setCarouselImages] = useState([]); // is_carousel 데이터 저장
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchImagesFromSheet = async () => {
       try {
         setLoading(true);
-        const url = episode ? `/api/fetchEpisodeImages?episode=${episode}` : '/api/fetchEpisodeImages';
+        const url = episode
+          ? `/api/fetchEpisodeImages?episode=${episode}`
+          : '/api/fetchEpisodeImages';
         const response = await fetch(url);
 
         if (!response.ok) throw new Error('Failed to fetch images');
@@ -20,7 +22,8 @@ const useFetchEpisodeImages = (episode) => {
 
         // 데이터를 처리해 상태 업데이트
         const mappedImages = data.map((obj) => ({
-          episode: obj.episode,
+          id: obj.id,
+          episode: obj.episode_id,
           title: obj.title,
           filename: obj.filename,
           url: obj.url,
@@ -47,6 +50,6 @@ const useFetchEpisodeImages = (episode) => {
   }, [episode]);
 
   return { images, mainImage, carouselImages, error, loading };
-};
+}
 
 export default useFetchEpisodeImages;

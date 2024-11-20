@@ -17,13 +17,13 @@ import ImageFallback from '../../../components/ImageFallback';
 import CoreCarouselSection from '../../../components/CoreCarouselSection';
 import YouTubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
-import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
+import useFetchEpisodeImages  from '../../../hooks/useFetchEpisodeImages';
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
   const { images, mainImage, carouselImages, error, loading } = useFetchEpisodeImages(ep);
   const [imageError, setImageError] = useState(false);
-
+  console.log(carouselImages)
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
@@ -52,9 +52,9 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
             }}
           >
             <AspectRatio ratio={3 / 2}>
-              {!imageError ? (
+              {!imageError && mainImage ? (
                 <Image
-                  src={mainImage}
+                  src={mainImage.url}
                   alt={data.note}
                   style={{ objectFit: 'cover' }}
                   fill
@@ -80,7 +80,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         </Flex>
       </Section>
 
-      {carouselImages ? <CoreCarouselSection  title={'나혼산 코어'} carouselImages={carouselImages}/> : null}
+      {carouselImages.length >= 1 ? <CoreCarouselSection  title={'나혼산 코어'} carouselImages={carouselImages}/> : null}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
       {images ? <EpisodeSection images={images}/> : null}

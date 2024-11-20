@@ -5,18 +5,42 @@ import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 
-const Carousel = ({carouselImages }) => {
-  const [imagesObj, setImagesObj] = useState({});
+const Carousel = ({ carouselImages }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [visibility, setVisibility] = useState(true);
   const [loadedImagesCount, setLoadedImagesCount] = useState(0);
   const carouselRef = useRef(null);
 
+  const handleScroll = () => {
+    const carouselNode = carouselRef.current;
+    if (!carouselNode) return;
+
+    const slideWidth = carouselNode.offsetWidth;
+    const scrollLeft = carouselNode.scrollLeft;
+    const index = Math.round(scrollLeft / slideWidth);
+    setCurrentIndex(index);
+    setIsFirstRender(false);
+  };
+
+  useEffect(() => {
+    const carouselNode = carouselRef.current;
+    if (!carouselNode) return;
+
+    carouselNode.addEventListener('scroll', handleScroll);
+
+    return () => {
+      carouselNode.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // 한 번만 실행되도록 빈 배열
+
   const nextSlide = () => {
+    if (!carouselRef.current) return;
     setIsFirstRender(false);
     setCurrentIndex((prevIndex) =>
-      prevIndex === imagesObj.length - 1 ? imagesObj.length - 1 : prevIndex + 1
+      prevIndex === carouselImages.length - 1
+        ? carouselImages.length - 1
+        : prevIndex + 1
     );
     carouselRef.current.scrollBy({
       left: carouselRef.current.offsetWidth,
@@ -25,6 +49,7 @@ const Carousel = ({carouselImages }) => {
   };
 
   const prevSlide = () => {
+    if (!carouselRef.current) return;
     setIsFirstRender(false);
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
     carouselRef.current.scrollBy({
@@ -33,40 +58,23 @@ const Carousel = ({carouselImages }) => {
     });
   };
 
-  useEffect(() => {
-    const carouselNode = carouselRef.current;
-    if (!carouselNode) return;
-    setImagesObj(carouselImages);
-
-    carouselNode.addEventListener('scroll', handleScroll);
-
-    return () => {
-      carouselNode.removeEventListener('scroll', handleScroll);
-    };
-  }, [visibility, caruseolImages]);
-
-  const handleScroll = () => {
-    const slideWidth = carouselNode.offsetWidth;
-    const scrollLeft = carouselNode.scrollLeft;
-    const index = Math.round(scrollLeft / slideWidth);
-    setCurrentIndex(index);
-    setIsFirstRender(false);
-  };
-
   const handleImageLoad = () => {
     setLoadedImagesCount((prevCount) => prevCount + 1);
     setVisibility(true);
   };
 
   const handleImageError = () => {
-    setLoadedImagesCount((prevCount) => Math.max(0, prevCount - 1));
-    if (loadedImagesCount <= 1) {
-      setVisibility(false);
-    }
+    setLoadedImagesCount((prevCount) => {
+      const newCount = Math.max(0, prevCount - 1);
+      if (newCount <= 1) {
+        setVisibility(false);
+      }
+      return newCount;
+    });
   };
 
   const isFirstSlide = currentIndex === 0;
-  const isLastSlide = currentIndex === imagesObj.length - 1;
+  const isLastSlide = currentIndex === carouselImages.length - 1;
 
   return (
     <CarouselContainer size="1" $visibility={visibility}>
@@ -79,7 +87,7 @@ const Carousel = ({carouselImages }) => {
         <ChevronLeftIcon width="40" height="40" />
       </CarouselButton>
       <CarouselContent ref={carouselRef} direction="row" gap="10px">
-        {imagesObj?.map((content, index) => (
+        {carouselImages.map((content, index) => (
           <CarouselItem
             key={index}
             $active={(index === currentIndex).toString()}

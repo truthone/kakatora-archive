@@ -47,10 +47,11 @@ export async function GET(request) {
 
     // episode 파라미터가 있는 경우 필터링
     if (episode) {
-      imagesData = imagesData.filter((item) => String(item.episode) === String(episode));
+      imagesData = imagesData.filter((item) => String(item.episode_id) === String(episode));
     }
 
     return NextResponse.json(imagesData);
+
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 
