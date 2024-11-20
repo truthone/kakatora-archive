@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -30,6 +30,14 @@ const AnimationBox = styled(Box)`
   flex: 1;
 `;
 
+const AnimationBox2 = styled(Box)`
+  display: block;
+  animation: ${fadeInUp} 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  flex: 1;
+`;
+
 const Name = styled(Text)`
   font-family: GowunBatang-Regular;
   @media (max-width: 768px) {
@@ -53,7 +61,7 @@ const SName = styled(Text)`
   }
 `;
 
-const MaritinName = styled(Text)`
+const MartinName = styled(Text)`
   font-weight: bold;
   font-weight: thin;
   margin-top: 10px;
@@ -66,7 +74,56 @@ const MaritinName = styled(Text)`
   }
 `;
 
+// 타이핑 애니메이션
+const typing = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+// 커서 깜박임 애니메이션
+const blink = keyframes`
+  50% {
+    border-color: transparent;
+  }
+`;
+
+// 스타일 정의
+const TypingEffect = styled.div`
+  display: inline-block;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  overflow: hidden; /* 텍스트 잘라내기 */
+  border-right: 2px solid black; /* 커서 */
+  animation:
+    ${typing} 3s steps(30, end) forwards,
+    ${blink} 0.5s step-end infinite;
+`;
 const CastBoard = () => {
+  const [text, setText] = useState(''); // 표시할 텍스트 상태
+  const fullText = '이것은 타이핑 애니메이션입니다!'; // 전체 텍스트
+
+  useEffect(() => {
+    let currentIndex = 0;
+
+    // 한 글자씩 추가하는 타이머
+    const interval = setInterval(() => {
+      setText((prev) => prev + fullText[currentIndex]); // 글자 추가
+      currentIndex++;
+
+      // 텍스트가 모두 표시되면 타이머 종료
+      if (currentIndex === fullText.length) {
+        clearInterval(interval);
+      }
+    }, 100); // 100ms 간격으로 한 글자씩 추가
+
+    return () => clearInterval(interval); // 컴포넌트 언마운트 시 타이머 정리
+  }, []);
+
   return (
     <Flex
       m={{ initial: '10px', sm: '80px', xs: '100px' }}
@@ -127,10 +184,11 @@ const CastBoard = () => {
               이석준
             </Name>
           </Box>
-
-          <SName as="div" align="center" width="100%" weight="bold">
-            S
-          </SName>
+          <AnimationBox2>
+            <SName as="div" align="center" width="100%" weight="bold">
+              S
+            </SName>
+          </AnimationBox2>
         </AnimationBox>
         <AnimationBox
           maxWidth="300px" // 최대 크기 제한
@@ -164,16 +222,25 @@ const CastBoard = () => {
               이주승
             </Name>
           </Box>
-
-          <MaritinName as="div" align="center" width="100%" weight="bold">
-            마르틴 산토스&페데리코
-          </MaritinName>
+          <AnimationBox2>
+            <MartinName as="div" align="center" width="100%" weight="bold">
+              마르틴 산토스&페데리코
+            </MartinName>
+          </AnimationBox2>
         </AnimationBox>
       </Flex>
-      <Text style={{fontFamily: 'GowunBatang-Regular', textAlign: 'center', marginTop: '80px', color:'black'}}>
-        세상에 알려진 나 <br/>
-        오이디푸스가 이렇게 왔노라
-      </Text>
+      <Flex  style={{alignItems: 'center', justifyContent:'center', alignContent: 'center'}}>
+        <TypingEffect
+          style={{
+            fontFamily: 'GowunBatang-Regular',
+            marginTop: '80px',
+            color: 'black',
+            textAlign: 'center',
+          }}
+        >
+             세상에 알려진 나, 오이디푸스가 이렇게 왔노라.
+        </TypingEffect>
+      </Flex>
     </Flex>
   );
 };
