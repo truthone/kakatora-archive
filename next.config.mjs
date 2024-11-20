@@ -24,6 +24,15 @@ const nextConfig = {
       }
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path((?!24tebas-land|images).*)',
+        destination: '/24tebas-land',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

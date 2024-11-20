@@ -10,7 +10,7 @@ export default function TebasLand({}) {
       <Box width="auto" height="80vh" position="relative">
         <Image
           fill
-          src={`https://i.namu.wiki/i/UtlPpyEnoH59LCwCcPgmi4VoHuMBXDOM3EJDnoH5xLGS_DQwyf3HTmBLRzMbKwPY_bTY-ynLe_hKZZzqTCo5hQ.webp`}
+          src={'/images/24tebas_poster.jpg'}
           alt={'테베랜드'}
           style={{
             objectFit: 'contain',
