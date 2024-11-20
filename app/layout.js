@@ -1,3 +1,4 @@
+'use client';
 import { Suspense } from 'react';
 import { Theme, Box } from '@radix-ui/themes';
 import ReactGAWrapper from '../components/ReactGAWrapper';
@@ -6,11 +7,14 @@ import './global.css';
 import StyledComponentsRegistry from '../lib/registry';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { usePathname } from 'next/navigation';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const hide = pathname === '/24tebas-land';
   return (
     <html lang="ko">
       <head>
@@ -40,12 +44,12 @@ export default function RootLayout({ children }) {
                 p={{ sm: '2', lg: '9' }}
                 m={{ initial: '1', xs: '3' }}
               >
-                <Header />
+                {!hide && <Header />}
                 <Box minHeight="90vh">
                   {children}
                   <SpeedInsights />
                 </Box>
-                <Footer />
+                {!hide && <Footer />}
               </Theme>
             </StyledComponentsRegistry>
           </ReactGAWrapper>

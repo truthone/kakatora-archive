@@ -27,7 +27,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path((?!24tebas-land|images).*)',
+        source: '/:path((?!24tebas-land|images|tebas).*)',
         destination: '/24tebas-land',
         permanent: true,
       },
