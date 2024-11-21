@@ -81,6 +81,7 @@ const typing = keyframes`
   }
   to {
     width: 100%;
+    max-width: fit-content;
   }
 `;
 
@@ -94,36 +95,18 @@ const blink = keyframes`
 // 스타일 정의
 const TypingEffect = styled.div`
   display: inline-block;
-  font-family: monospace;
   font-size: 12px;
+   @media (min-width: 769px) {
+    font-size: 20px;
+  }
   white-space: nowrap; /* 줄바꿈 방지 */
   overflow: hidden; /* 텍스트 잘라내기 */
   border-right: 2px solid black; /* 커서 */
   animation:
     ${typing} 3s steps(30, end) forwards,
-    ${blink} 0.5s step-end infinite;
+    ${blink} 0.8s step-end infinite;
 `;
 const CastBoard = () => {
-  const [text, setText] = useState(''); // 표시할 텍스트 상태
-  const fullText = '이것은 타이핑 애니메이션입니다!'; // 전체 텍스트
-
-  useEffect(() => {
-    let currentIndex = 0;
-
-    // 한 글자씩 추가하는 타이머
-    const interval = setInterval(() => {
-      setText((prev) => prev + fullText[currentIndex]); // 글자 추가
-      currentIndex++;
-
-      // 텍스트가 모두 표시되면 타이머 종료
-      if (currentIndex === fullText.length) {
-        clearInterval(interval);
-      }
-    }, 100); // 100ms 간격으로 한 글자씩 추가
-
-    return () => clearInterval(interval); // 컴포넌트 언마운트 시 타이머 정리
-  }, []);
-
   return (
     <Flex
       m={{ initial: '10px', sm: '80px', xs: '100px' }}
@@ -134,11 +117,12 @@ const CastBoard = () => {
       maxWidth="600px"
       height="fit-content"
       style={{
-        justifyContent: 'start',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         backgroundImage: `url('/tebas/paper.png')`,
         backgroundRepeat: `no-repeat`,
         backgroundSize: 'contain',
-        aspectRatio: '9/16',
+        aspectRatio: '3/4',
         boxSizing: 'border-box',
       }}
     >
@@ -229,24 +213,15 @@ const CastBoard = () => {
           </AnimationBox2>
         </AnimationBox>
       </Flex>
-      <Flex
+      <TypingEffect
         style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          alignContent: 'center',
+          fontFamily: 'GowunBatang-Regular',
+          marginTop: '80px',
+          color: 'black',
         }}
       >
-        <TypingEffect
-          style={{
-            fontFamily: 'GowunBatang-Regular',
-            marginTop: '80px',
-            color: 'black',
-            textAlign: 'center',
-          }}
-        >
-          세상에 알려진 나, 오이디푸스가 이렇게 왔노라.
-        </TypingEffect>
-      </Flex>
+        세상에 알려진 나, 오이디푸스가 이렇게 왔노라.
+      </TypingEffect>
     </Flex>
   );
 };

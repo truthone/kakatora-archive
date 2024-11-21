@@ -15,24 +15,32 @@ export default function TebasLand({}) {
     background-size: cover;
     width: 100%;
     height: auto;
-    justify-content: center;
     /* 반응형 스타일 */
     @media (max-width: 768px) {
       aspect-ratio: 9 / 16; /* 모바일 비율 */
       background-position: top;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-position: center top 90%;
+      justify-content: flex-start;
     }
 
     @media (min-width: 769px) {
-      aspect-ratio: 16 / 9; /* 데스크탑 비율 */
-      background-position: center top 50%;
+      aspect-ratio: 16 / 9;
+      width: 100vw;
+      background-position: center top 90%;
+      flex-direction: row;
+    justify-content: center;
     }
   `;
 
   return (
-    <Container p={{ initial: '0', md: '0' }} height="80vh" position="relative">
-      <BgBox >
+    <Flex direction="column" height="inherit" justify="start">
+      <BgBox>
         <CastBoard />
       </BgBox>
-    </Container>
+    </Flex>
   );
 }
