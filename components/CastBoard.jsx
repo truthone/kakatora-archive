@@ -143,7 +143,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/HEE.jpg'}
+                src={'/tebas/HUI.jpg'}
                 alt={'S'}
                 style={{
                   objectFit: 'cover',
