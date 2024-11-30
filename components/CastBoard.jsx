@@ -143,7 +143,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/HUI.jpg'}
+                src={'/tebas/SEOK.jpg'}
                 alt={'S'}
                 style={{
                   objectFit: 'cover',
@@ -165,7 +165,7 @@ const CastBoard = () => {
                 paddingBottom: '5px',
               }}
             >
-              정희태
+              이석준
             </Name>
           </Box>
           <AnimationBox2>
