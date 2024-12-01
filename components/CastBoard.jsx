@@ -1,4 +1,4 @@
-2'use client';
+'use client';
 import React, { useState, useEffect } from 'react';
 import {
   Box,
@@ -96,7 +96,7 @@ const blink = keyframes`
 const TypingEffect = styled.div`
   display: inline-block;
   font-size: 12px;
-   @media (min-width: 769px) {
+  @media (min-width: 769px) {
     font-size: 20px;
   }
   white-space: nowrap; /* 줄바꿈 방지 */
