@@ -105,18 +105,28 @@ function FilmoDetail({ id }) {
                 {filmo?.title}
               </Heading>
               <Flex>
-                <Heading size={{ md: '7', initial: '5' }} mb="3">
+                <Heading size={{ md: '6', initial: '3' }} >
                   {filmo?.year}
                 </Heading>
-                •
-                <Heading size={{ md: '7', initial: '5' }} mb="3">
-                  {filmo?.type}
-                </Heading>
+
+                {filmo?.type && <Text>•</Text>}
+                {filmo?.type && (
+                  <Heading size={{ md: '6', initial: '3' }}>
+                    {filmo?.type}
+                  </Heading>
+                )}
+
+                {filmo?.note && <Text>•</Text>}
+                {filmo?.note && (
+                  <Heading size={{ md: '6', initial: '3' }}>
+                    {filmo?.note}
+                  </Heading>
+                )}
               </Flex>
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>
-              <Flex gap="3" align="center">
+              <Flex align="center">
                 <Text
                   as="p"
                   my="2"
@@ -125,10 +135,14 @@ function FilmoDetail({ id }) {
                 >
                   {filmo?.role}
                 </Text>
-                <Separator size="2" orientation="vertical" />
-                <Text as="p" my="2" size={{ md: '7', initial: '5' }}>
-                  {filmo?.roleName}
-                </Text>
+                {
+                  filmo?.role && filmo?.roleName && (<Separator size="2" orientation="vertical" mx="12px"/>)
+                }
+                {
+                  filmo?.roleName && (<Text as="p" my="2" size={{ md: '7', initial: '5' }}>
+                    {filmo?.roleName}
+                  </Text>)
+                }
               </Flex>
               <Text as="p" my="2" size={{ md: '6', initial: '2' }}>
                 {filmo?.broadcaster}
