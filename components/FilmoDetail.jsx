@@ -78,14 +78,14 @@ function FilmoDetail({ id }) {
           gap="4"
           justify="start"
           position="relative"
-          p={{ initial: '5', xs: '8' }}
+          p={{ initial: '7', xs: '8' }}
         >
           <AnimationBox asChild>
             <Box
               my="0"
               mx="auto"
               width="100%"
-              style={{ flexBasis: '40%', maxWidth: '300px', zIndex: '1' }}
+              style={{ flexBasis: '40%', maxWidth: '350px', zIndex: '1' }}
             >
               <AspectRatio ratio={2 / 3}>
                 <Image
@@ -104,9 +104,15 @@ function FilmoDetail({ id }) {
               <Heading size={{ md: '9', initial: '8' }} mb="3">
                 {filmo?.title}
               </Heading>
-              <Heading size={{ md: '7', initial: '5' }} mb="3">
-                {filmo?.year}
-              </Heading>
+              <Flex>
+                <Heading size={{ md: '7', initial: '5' }} mb="3">
+                  {filmo?.year}
+                </Heading>
+                •
+                <Heading size={{ md: '7', initial: '5' }} mb="3">
+                  {filmo?.type}
+                </Heading>
+              </Flex>
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>
@@ -114,20 +120,20 @@ function FilmoDetail({ id }) {
                 <Text
                   as="p"
                   my="2"
-                  size={{ md: '7', initial: '6' }}
+                  size={{ md: '7', initial: '5' }}
                   style={{ maxWidth: '70%' }}
                 >
                   {filmo?.role}
                 </Text>
                 <Separator size="2" orientation="vertical" />
-                <Text as="p" my="2" size={{ md: '7', initial: '6' }}>
-                  {filmo?.note}
+                <Text as="p" my="2" size={{ md: '7', initial: '5' }}>
+                  {filmo?.roleName}
                 </Text>
               </Flex>
-              <Text as="p" my="2" size={{ md: '6', initial: '3' }}>
+              <Text as="p" my="2" size={{ md: '6', initial: '2' }}>
                 {filmo?.broadcaster}
               </Text>
-              <Blockquote as="p" my="2" size={{ sm: '5', initial: '3' }}>
+              <Blockquote as="p" my="2" size={{ sm: '5', initial: '2' }}>
                 {filmo?.desc}
               </Blockquote>
             </AnimationBox2>
