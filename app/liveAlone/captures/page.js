@@ -17,6 +17,8 @@ export default function LiveAloneAllCapturesPage() {
         />
       </Flex>
     );
+  
+  
 
   return (
     <Container p="4">
@@ -24,7 +26,7 @@ export default function LiveAloneAllCapturesPage() {
         <Heading as="h1" m="2">
           나혼산 짤 모음
         </Heading>
-        <EpisodeSection images={images} />
+        <EpisodeSection images={images} laoding={loading} />
       </Section>
     </Container>
   );
