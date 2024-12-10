@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Flex, Grid, Section, Separator, Text } from '@radix-ui/themes';
 import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
+import SpriteAnimation from './SpriteAnimation';
 
 const INITIAL_IMAGE_COUNT = 8;
 const LOAD_MORE_COUNT = 8;
@@ -57,7 +58,8 @@ const EpisodeImageGridList = ({ images = [] }) => {
   );
 };
 
-const EpisodeSection = ({ images }) => {
+const EpisodeSection = ({ images, loading }) => {
+  if(loading) return <SpriteAnimation />
   return (
     <>
       <Separator size="4" />
