@@ -5,7 +5,15 @@ let blockUntil = null;
 
 export async function GET(request) {
   const episode = request.nextUrl.searchParams.get('episode');
-  const isMain = request.nextUrl.searchParams.get('isMain'); 
+  const isMain = request.nextUrl.searchParams.get('isMain');
+  const limit = parseInt(request.nextUrl.searchParams.get('limit')) || 4; // 기본값 4
+  const offset = parseInt(request.nextUrl.searchParams.get('offset')) || 0; // 기본값 0
+
+  
+  // 범위 계산: 예를 들어, A2:D100은 데이터 전체를 의미함
+  const startRow = parseInt(offset) + 2; // 2행부터 데이터 시작 (헤더 제외)
+  const endRow = startRow + parseInt(limit) - 1; // limit 만큼의 행 가져오기
+  const range = `imageList!A${startRow}:G${endRow}`; // 필요한 데이터 범위 지정
 
   console.log(episode)
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
@@ -28,7 +36,7 @@ export async function GET(request) {
     const sheets = google.sheets({ version: 'v4', auth });
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'imageList!A:G', // 필요한 범위
+      range: range
     });
 
     const rows = response.data.values;
