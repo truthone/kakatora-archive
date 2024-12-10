@@ -6,7 +6,7 @@ import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 
 export default function LiveAloneAllCapturesPage() {
-  const { images, error, loading } = useFetchEpisodeImages({});
+  const { images, error, loading, fetchMore } = useFetchEpisodeImages({});
 
   if (error)
     return (
@@ -26,7 +26,7 @@ export default function LiveAloneAllCapturesPage() {
         <Heading as="h1" m="2">
           나혼산 짤 모음
         </Heading>
-        <EpisodeSection images={images} laoding={loading} />
+        <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore}/>
       </Section>
     </Container>
   );
