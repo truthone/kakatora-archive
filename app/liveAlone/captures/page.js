@@ -6,7 +6,7 @@ import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 
 export default function LiveAloneAllCapturesPage() {
-  const { images, error, loading, fetchMore } = useFetchEpisodeImages({});
+  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({});
 
   if (error)
     return (
