@@ -5,23 +5,22 @@ let blockUntil = null;
 
 export async function GET(request) {
   const episode = request.nextUrl.searchParams.get('episode');
-  const isMain = request.nextUrl.searchParams.get('isMain');
-  const limit = parseInt(request.nextUrl.searchParams.get('limit')) || 4; // 기본값 4
-  const offset = parseInt(request.nextUrl.searchParams.get('offset')) || 0; // 기본값 0
+  const isMain = request.nextUrl.searchParams.get('isMain') === 'true'; // Boolean 변환
+  const limit = parseInt(request.nextUrl.searchParams.get('limit')) || 4;
+  const offset = parseInt(request.nextUrl.searchParams.get('offset')) || 0;
 
-  
-  // 범위 계산: 예를 들어, A2:D100은 데이터 전체를 의미함
-  const startRow = parseInt(offset) + 2; // 2행부터 데이터 시작 (헤더 제외)
-  const endRow = startRow + parseInt(limit) - 1; // limit 만큼의 행 가져오기
-  const range = `imageList!A${startRow}:G${endRow}`; // 필요한 데이터 범위 지정
-
-  console.log(episode)
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
-    return NextResponse.json({ error: 'Environment variables are not properly configured' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Environment variables are not properly configured' },
+      { status: 500 }
+    );
   }
 
   if (blockUntil && new Date() < blockUntil) {
-    return NextResponse.json({ error: 'API temporarily blocked due to previous error' }, { status: 429 });
+    return NextResponse.json(
+      { error: 'API temporarily blocked due to previous error' },
+      { status: 429 }
+    );
   }
 
   try {
@@ -34,9 +33,16 @@ export async function GET(request) {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
+
+    // 데이터 범위 계산
+    const startRow = offset + 2;
+    const endRow = startRow + limit - 1;
+    const range = `imageList!A${startRow}:G${endRow}`;
+
+    // Google Sheets API 호출
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: range
+      range,
     });
 
     const rows = response.data.values;
@@ -44,38 +50,40 @@ export async function GET(request) {
       return NextResponse.json({ message: 'No data found' }, { status: 404 });
     }
 
-    // 첫 번째 행은 헤더이므로 제외
-    let imagesData = rows.slice(1).map((row) => ({
+    // 데이터 변환
+    const imagesData = rows.map((row) => ({
       id: row[0],
       episode_id: row[1],
       title: row[2],
       filename: row[3],
       url: row[4],
-      is_main: row[5] === 'TRUE', // Boolean 변환
-      is_carousel: row[6] === 'TRUE'
+      is_main: row[5] === 'TRUE',
+      is_carousel: row[6] === 'TRUE',
     }));
-    let filteredData = [];
 
-    // episode 파라미터가 있는 경우 필터링
-    if (episode) {
-      filteredData = imagesData.filter((item) => String(item.episode_id) === String(episode));
-    }
-    else if (episode && isMain) {
-      filteredData = filteredData.filter(
-        (item) => item.is_main === 'TRUE' || item.is_main === true
-      );
-    }
-    else if (!episode && isMain) {
-      filteredData = imagesData.filter(
-        (item) => item.is_main === 'TRUE' || item.is_main === true
-      );
-    }
-    else if (!episode && !isMain) {
-      return NextResponse.json(imagesData);
-    }
+    // 데이터 필터링
+    const filteredData = imagesData.filter((item) => {
+      if (episode && !isMain) {
+        // 1. 에피소드 파라미터가 있고 isMain이 없는 경우
+        return String(item.episode_id) === String(episode);
+      }
+      
+      if (!episode && isMain) {
+        // 2. 에피소드 파라미터가 없고 isMain이 있는 경우
+        return item.is_main === true;
+      }
+    
+      if (episode && isMain) {
+        // 3. 에피소드와 isMain이 모두 있는 경우
+        return String(item.episode_id) === String(episode) && item.is_main === true;
+      }
+    
+      // 4. 모든 조건이 없는 경우 기본값 (전체 반환)
+      return true;
+    });
+    
 
-    return NextResponse.json(filteredData);
-
+    return NextResponse.json(filteredData.length > 0 ? filteredData : imagesData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 
