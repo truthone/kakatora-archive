@@ -4,10 +4,15 @@ import { google } from 'googleapis';
 let blockUntil = null;
 
 export async function GET(request) {
-  const episode = request.nextUrl.searchParams.get('episode');
-  const isMain = request.nextUrl.searchParams.get('isMain') === 'true'; // Boolean 변환
-  const limit = parseInt(request.nextUrl.searchParams.get('limit')) || 4;
-  const offset = parseInt(request.nextUrl.searchParams.get('offset')) || 0;
+  const params = Object.fromEntries(request.nextUrl.searchParams.entries());
+  const { episode, isMain, isCarousel, limit, offset } = params;
+
+  // 타입 변환 처리
+  const parsedEpisode = episode;
+  const parsedIsMain = isMain === 'true';
+  const parsedIsCarousel = isCarousel === 'true';
+  const parsedLimit = parseInt(limit, 10);
+  const parsedOffset = parseInt(offset, 10);
 
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
@@ -33,11 +38,13 @@ export async function GET(request) {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
-
+    const sheetName = 'imageList';
     // 데이터 범위 계산
-    const startRow = offset + 2;
+    const startCol = 'A';
+    const endCol = 'G';
+    const startRow = parsedOffset + 2;
     const endRow = startRow + limit - 1;
-    const range = `imageList!A${startRow}:G${endRow}`;
+    const range = `${sheetName}!${startCol}${startRow}:${endCol}${endRow}`;
 
     // Google Sheets API 호출
     const response = await sheets.spreadsheets.values.get({
@@ -57,25 +64,25 @@ export async function GET(request) {
       title: row[2],
       filename: row[3],
       url: row[4],
-      is_main: row[5] === 'TRUE',
-      is_carousel: row[6] === 'TRUE',
+      is_main: row[5] === 'true',
+      is_carousel: row[6] === 'true',
     }));
 
     // 데이터 필터링
     const filteredData = imagesData.filter((item) => {
-      if (episode && !isMain) {
+      if (parsedEpisode && !parsedIsMain) {
         // 1. 에피소드 파라미터가 있고 isMain이 없는 경우
-        return String(item.episode_id) === String(episode);
+        return String(item.episode_id) === String(parsedEpisode);
       }
       
-      if (!episode && isMain) {
+      if (!parsedEpisode && parsedIsMain) {
         // 2. 에피소드 파라미터가 없고 isMain이 있는 경우
         return item.is_main === true;
       }
     
-      if (episode && isMain) {
+      if (parsedEpisode && parsedIsMain) {
         // 3. 에피소드와 isMain이 모두 있는 경우
-        return String(item.episode_id) === String(episode) && item.is_main === true;
+        return String(item.episode_id) === String(parsedEpisode) && item.is_main === true;
       }
     
       // 4. 모든 조건이 없는 경우 기본값 (전체 반환)
