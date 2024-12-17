@@ -1,14 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Flex, Button, Heading, Dialog, Box, Text } from '@radix-ui/themes';
-import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
+import { HamburgerMenuIcon, CaretLeftIcon } from '@radix-ui/react-icons';
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const menuItems = [
     { text: '필모그래피', path: '/filmography' },
@@ -34,6 +35,21 @@ function Header() {
     >
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">
+        <Flex justify="center" align="center" display={{ md: 'none' }}>
+        {
+          pathname !== "/" && 
+          ( 
+            <Button
+              variant="ghost"
+              size="4"
+              style={{ cursor: 'pointer' }}
+              onClick={() => router.back()}
+            >
+              <CaretLeftIcon style={{ transform: 'scale(2.0)' }} />
+            </Button>
+          )
+        }
+          </Flex>
           <Heading
             size={{ initial: '5', md: '7' }}
             onClick={() => router.push(`/`)}

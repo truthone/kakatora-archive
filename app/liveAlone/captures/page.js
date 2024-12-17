@@ -6,6 +6,7 @@ import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 import ImageFallback from '../../../components/ImageFallback';
 import ImageWithFallback from '../../../components/ImageWithFallback';
+import { ShuffleIcon } from '@radix-ui/react-icons';
 
 export default function LiveAloneAllCapturesPage() {
   const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({ limit: 8, shuffle: true });
@@ -26,7 +27,7 @@ export default function LiveAloneAllCapturesPage() {
       <Section size="1">
         <ImageWithFallback />
         <Heading as="h1" m="2">
-          나혼산 짤 모음 🔀
+          나혼산 짤 모음 <Box><ShuffleIcon/></Box>
         </Heading>
         {loading ? <ImageFallback /> : <EpisodeSection images={images} loading={loading} fetchMore={fetchMore} hasMore={hasMore} />}
       </Section>
