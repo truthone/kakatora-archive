@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo } from 'react';
-import { Flex, Section, Heading, Container } from '@radix-ui/themes';
+import { Flex, Section, Heading, Container,Box } from '@radix-ui/themes';
 import EpisodeSection from '../../../components/EpisodeSection';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
@@ -25,9 +25,9 @@ export default function LiveAloneAllCapturesPage() {
   return (
     <Container p="4">
       <Section size="1">
-        <ImageWithFallback />
+        <ImageWithFallback />\
         <Heading as="h1" m="2">
-          나혼산 짤 모음 <Box><ShuffleIcon/></Box>
+          나혼산 짤 모음 
         </Heading>
         {loading ? <ImageFallback /> : <EpisodeSection images={images} loading={loading} fetchMore={fetchMore} hasMore={hasMore} />}
       </Section>
