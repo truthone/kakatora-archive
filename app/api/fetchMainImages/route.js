@@ -5,12 +5,10 @@ let blockUntil = null;
 
 export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
-  const { episode, limit, offset } = params;
+  const { episode } = params;
 
   // 타입 변환 처리
   const parsedEpisode = episode;
-  const parsedLimit = parseInt(limit, 10);
-  const parsedOffset = parseInt(offset, 10);
 
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
@@ -36,13 +34,11 @@ export async function GET(request) {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const sheetName = 'liveAlone_capture_images';
+    const sheetName = 'liveAlone_main_images';
     // 데이터 범위 계산
     const startCol = 'A';
-    const endCol = 'G';
-    const startRow = parsedOffset + 2;
-    const endRow = startRow + parsedLimit - 1;
-    const range = `${sheetName}!${startCol}${startRow}:${endCol}${endRow}`;
+    const endCol = 'E';
+    const range = `${sheetName}!${startCol}:${endCol}`;
 
     // Google Sheets API 호출
     const response = await sheets.spreadsheets.values.get({
@@ -62,15 +58,14 @@ export async function GET(request) {
       title: row[2],
       filename: row[3],
       url: row[4],
-      is_main: row[5] === 'true',
-      is_carousel: row[6] === 'true',
     }));
 
     // 데이터 필터링
     const filteredData = imagesData.filter((item) => {
       if (parsedEpisode) {
-        return String(item.episode_id) === String(parsedEpisode) && !item.is_main && !item.isCarousel;
+        return String(item.episode_id) === String(parsedEpisode);
       }
+
       return true;
     });
     

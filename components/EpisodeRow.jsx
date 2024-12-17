@@ -35,7 +35,7 @@ function EpisodeRow({ title, contents, mainImages }) {
       >
         {contents.map((content, id) => {
           // 각 content에 맞는 이미지를 찾아서 사용
-          const image = mainImages.find(
+          const image = mainImages?.find(
             (item) => String(item.episode_id) === String(content.ep)
           );
 
