@@ -6,6 +6,7 @@ import './global.css';
 import StyledComponentsRegistry from '../lib/registry';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import TopButton  from '../components/TopButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
                   {children}
                   <SpeedInsights />
                 </Box>
+                <TopButton />
                 <Footer />
               </Theme>
             </StyledComponentsRegistry>
