@@ -38,9 +38,7 @@ export async function GET(request) {
 
     const startCol = 'A';
     const endCol = 'G';
-    const startRow = offset + 2;
-    const endRow = startRow + limit - 1;
-    const range = `${sheetName}!${startCol}${startRow}:${endCol}${endRow}`;
+    const range = `${sheetName}!${startCol}:${endCol}`;
 
     // Google Sheets API 호출
     const response = await sheets.spreadsheets.values.get({
@@ -65,15 +63,17 @@ export async function GET(request) {
     }));
 
     // 데이터 필터링
-    const filteredData = imagesData.filter((item) => {
-      if (episode) {
-        console.log( String(item.episode_id) === String(episode) )
-        return String(item.episode_id) === String(episode);
-      }
-    });
-    
-    console.log(`필터링데이터 ${filteredData.length}`)
-    return NextResponse.json(filteredData.length > 0 ? filteredData : imagesData);
+    let filteredData = imagesData;
+    if (episode) {
+      filteredData = imagesData.filter((item) => String(item.episode_id) === String(episode));
+    }
+    console.log(imagesData.length)
+    // 서버 측 페이징 처리
+  const start = offset ? parseInt(offset, 10) : 0;
+  const end = limit ? start + parseInt(limit, 10) : filteredData.length;
+  const paginatedData = filteredData.slice(start, end);
+
+  return NextResponse.json(paginatedData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 
