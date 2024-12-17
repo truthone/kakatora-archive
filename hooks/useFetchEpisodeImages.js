@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetchEpisodeImages = ({ episode,limit=4 }) => {
+const useFetchEpisodeImages = ({ episode, limit = 8, shuffle = false }) => {
   const [images, setImages] = useState([]); // 전체 이미지 목록
   const [error, setError] = useState(null); // 에러 상태
   const [loading, setLoading] = useState(false); // 로딩 상태
@@ -16,6 +16,7 @@ const useFetchEpisodeImages = ({ episode,limit=4 }) => {
       if (limit) params.append('limit', limit);
       if (offset !== undefined) params.append('offset', offset);
       if (episode) params.append('episode', episode);
+      if (shuffle) params.append('shuffle', 'true'); // 셔플 옵션 추가
       if (params.toString()) url += `?${params.toString()}`;
 
       const response = await fetch(url);
@@ -45,7 +46,7 @@ const useFetchEpisodeImages = ({ episode,limit=4 }) => {
 
       setError(null);
     } catch (error) {
-      setError(error);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -57,7 +58,7 @@ const useFetchEpisodeImages = ({ episode,limit=4 }) => {
     setImages([]); // 기존 데이터 초기화
     setHasMore(true); // 추가 데이터 여부 초기화
     fetchImagesFromSheet(0); // 첫 페이지 데이터 가져오기
-  }, [episode, limit]);
+  }, [episode, limit, shuffle]);
 
   // 다음 페이지 데이터 로드
   const fetchMore = () => {

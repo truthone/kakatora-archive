@@ -38,7 +38,7 @@ export async function GET(request) {
     // 데이터 범위 계산
     const startCol = 'A';
     const endCol = 'E';
-    const range = `${sheetName}!${startCol}:${endCol}`;
+    const range = `${sheetName}!${startCol}2:${endCol}`;
 
     // Google Sheets API 호출
     const response = await sheets.spreadsheets.values.get({

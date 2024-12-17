@@ -1,13 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Flex, Section, Heading, Container } from '@radix-ui/themes';
 import EpisodeSection from '../../../components/EpisodeSection';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 import ImageFallback from '../../../components/ImageFallback';
+import ImageWithFallback from '../../../components/ImageWithFallback';
 
 export default function LiveAloneAllCapturesPage() {
-  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({limit: 8});
+  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({ limit: 8, shuffle: true });
 
   if (error)
     return (
@@ -18,16 +19,15 @@ export default function LiveAloneAllCapturesPage() {
         />
       </Flex>
     );
-  
-  
 
   return (
     <Container p="4">
       <Section size="1">
+        <ImageWithFallback />
         <Heading as="h1" m="2">
           나혼산 짤 모음
         </Heading>
-        {images? <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore} /> : <ImageFallback/>}
+        {loading ? <ImageFallback /> : <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore} />}
       </Section>
     </Container>
   );

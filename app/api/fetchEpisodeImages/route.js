@@ -1,11 +1,14 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
+import { shuffleArray } from "../../../utils/shuffleArray";
 
 let blockUntil = null;
+let cachedData = null; // 캐싱된 데이터
+let lastFetchTime = null;
 
 export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
-  const { episode, limit, offset } = params;
+  const { episode, limit=8, offset=0, shuffle='false' } = params;
 
   console.log(`params offset: ${params.offset}`)
 
@@ -38,13 +41,17 @@ export async function GET(request) {
 
     const startCol = 'A';
     const endCol = 'G';
-    const range = `${sheetName}!${startCol}:${endCol}`;
+    const range = `${sheetName}!${startCol}2:${endCol}`;
 
-    // Google Sheets API 호출
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range,
-    });
+    const now = Date.now();
+
+
+ // 데이터 캐싱: 10분마다 새로 가져오기
+    if (!cachedData || now - lastFetchTime > 10 * 60 * 1000) {
+      const response = await sheets.spreadsheets.values.get({
+        spreadsheetId: process.env.GOOGLE_SHEET_ID,
+        range,
+      });
 
     const rows = response.data.values;
     if (!rows || rows.length === 0) {
@@ -52,7 +59,7 @@ export async function GET(request) {
     }
 
     // 데이터 변환
-    const imagesData = rows.map((row) => ({
+    cachedData = rows.map((row) => ({
       id: row[0],
       episode_id: row[1],
       title: row[2],
@@ -61,13 +68,19 @@ export async function GET(request) {
       is_main: row[5] === 'true',
       is_carousel: row[6] === 'true',
     }));
+    lastFetchTime = now;
+    console.log('Data refreshed and cached');
+  }
 
     // 데이터 필터링
-    let filteredData = imagesData;
-    if (episode) {
-      filteredData = imagesData.filter((item) => String(item.episode_id) === String(episode));
+    let filteredData = episode
+    ? cachedData.filter((item) => String(item.episode_id) === String(episode))
+    : cachedData;
+
+    if (shuffle === 'true') {
+      filteredData = shuffleArray(filteredData);
     }
-    console.log(imagesData.length)
+
     // 서버 측 페이징 처리
   const start = offset ? parseInt(offset, 10) : 0;
   const end = limit ? start + parseInt(limit, 10) : filteredData.length;
