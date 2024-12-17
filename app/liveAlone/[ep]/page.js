@@ -53,7 +53,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
               maxHeight: '400px',
             }}
           >
-            <Skeleton loading={loading}>
+            <Skeleton loading={loading} minWidth="300px" minHeight="200px">
               <AspectRatio ratio={3 / 2}>
                 {mainImages?.length > 0 ? (
                   <Image

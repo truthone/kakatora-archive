@@ -20,6 +20,7 @@ export default function LiveAloneAllCapturesPage() {
       </Flex>
     );
 
+      console.log(`hasMore ${hasMore}`)
   return (
     <Container p="4">
       <Section size="1">
@@ -27,7 +28,7 @@ export default function LiveAloneAllCapturesPage() {
         <Heading as="h1" m="2">
           나혼산 짤 모음
         </Heading>
-        {loading ? <ImageFallback /> : <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore} />}
+        {loading ? <ImageFallback /> : <EpisodeSection images={images} loading={loading} fetchMore={fetchMore} hasMore={hasMore} />}
       </Section>
     </Container>
   );
