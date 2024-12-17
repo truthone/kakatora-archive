@@ -26,7 +26,7 @@ export default function LiveAloneAllCapturesPage() {
       <Section size="1">
         <ImageWithFallback />
         <Heading as="h1" m="2">
-          나혼산 짤 모음
+          나혼산 짤 모음 🔀
         </Heading>
         {loading ? <ImageFallback /> : <EpisodeSection images={images} loading={loading} fetchMore={fetchMore} hasMore={hasMore} />}
       </Section>

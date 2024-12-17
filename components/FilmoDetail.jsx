@@ -85,7 +85,7 @@ function FilmoDetail({ id }) {
               my="0"
               mx="auto"
               width="100%"
-              style={{ flexBasis: '40%', maxWidth: '350px', zIndex: '1' }}
+              style={{ flexBasis: '40%', maxWidth: '300px', zIndex: '1' }}
             >
               <AspectRatio ratio={2 / 3}>
                 <Image
