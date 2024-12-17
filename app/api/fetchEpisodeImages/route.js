@@ -7,11 +7,9 @@ export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
   const { episode, limit, offset } = params;
 
-  // 타입 변환 처리
-  const parsedEpisode = episode;
-  const parsedLimit = parseInt(limit, 10);
-  const parsedOffset = parseInt(offset, 10);
+  console.log(`params offset: ${params.offset}`)
 
+  // 타입 변환 처리
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
       { error: 'Environment variables are not properly configured' },
@@ -30,18 +28,18 @@ export async function GET(request) {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\\\n/g, '\n'),
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
     const sheetName = 'liveAlone_capture_images';
-    // 데이터 범위 계산
+
     const startCol = 'A';
     const endCol = 'G';
-    const startRow = parsedOffset + 2;
-    const endRow = startRow + parsedLimit - 1;
+    const startRow = offset + 2;
+    const endRow = startRow + limit - 1;
     const range = `${sheetName}!${startCol}${startRow}:${endCol}${endRow}`;
 
     // Google Sheets API 호출
@@ -68,13 +66,13 @@ export async function GET(request) {
 
     // 데이터 필터링
     const filteredData = imagesData.filter((item) => {
-      if (parsedEpisode) {
-        return String(item.episode_id) === String(parsedEpisode) && !item.is_main && !item.isCarousel;
+      if (episode) {
+        console.log( String(item.episode_id) === String(episode) )
+        return String(item.episode_id) === String(episode);
       }
-      return true;
     });
     
-
+    console.log(`필터링데이터 ${filteredData.length}`)
     return NextResponse.json(filteredData.length > 0 ? filteredData : imagesData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);

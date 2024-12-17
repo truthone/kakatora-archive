@@ -13,9 +13,8 @@ const useFetchEpisodeImages = ({ episode,limit }) => {
       const offset = currentPage * limit; // 현재 페이지에 따른 시작점
       let url = '/api/fetchEpisodeImages';
       const params = new URLSearchParams();
-
       if (limit) params.append('limit', limit);
-      if (offset) params.append('offset', offset);
+      if (offset !== undefined) params.append('offset', offset);
       if (episode) params.append('episode', episode);
       if (params.toString()) url += `?${params.toString()}`;
 

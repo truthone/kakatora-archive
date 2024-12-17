@@ -23,8 +23,8 @@ import useFetchMainImages from '../../../hooks/useFetchMainImages';
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
-  const { images, error, loading } = useFetchEpisodeImages({ episode: ep });
-  const { mainImages, error:mainImageError, loading:mainImageLoading } = useFetchEpisodeImages({ episode: ep });
+  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({ episode: ep, limit: 8 });
+  const { mainImages, error:mainImageError, loading:mainImageLoading } = useFetchMainImages({ episode: ep});
   const [imageError, setImageError] = useState(false);
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
@@ -92,7 +92,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
       ) : null} */}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
-      {images ? <EpisodeSection images={images} /> : null}
+      {images ? <EpisodeSection images={images} fetchMore={fetchMore} hasMore={hasMore} /> : null}
     </Container>
   );
 }
