@@ -4,9 +4,10 @@ import { Flex, Section, Heading, Container } from '@radix-ui/themes';
 import EpisodeSection from '../../../components/EpisodeSection';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
+import ImageFallback from '../../../components/ImageFallback';
 
 export default function LiveAloneAllCapturesPage() {
-  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({});
+  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({limit: 8});
 
   if (error)
     return (
@@ -26,7 +27,7 @@ export default function LiveAloneAllCapturesPage() {
         <Heading as="h1" m="2">
           나혼산 짤 모음
         </Heading>
-        <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore}/>
+        {images? <EpisodeSection images={images} laoding={loading} fetchMore={fetchMore} hasMore={hasMore} /> : <ImageFallback/>}
       </Section>
     </Container>
   );

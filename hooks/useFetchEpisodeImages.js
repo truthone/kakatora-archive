@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetchEpisodeImages = ({ episode,limit }) => {
+const useFetchEpisodeImages = ({ episode,limit=4 }) => {
   const [images, setImages] = useState([]); // 전체 이미지 목록
   const [error, setError] = useState(null); // 에러 상태
   const [loading, setLoading] = useState(false); // 로딩 상태
