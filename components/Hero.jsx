@@ -75,64 +75,75 @@ function Hero({ movie }) {
       height={{ initial: '70vh', md: '60vh' }}
       minHeight="500px"
     >
-      <Skeleton style={{ borderRadius: '0' }}>
-        <Image
-          src={heroImg}
-          alt={movie.title}
-          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-          fill
-          sizes={'(max-width: 600px) 150vw,120vw'}
-          priority={true}
-          quality={100}
-        />
-      </Skeleton>
-      <Box
-        position="absolute"
-        bottom={{ initial: '10px', md: '70px' }}
-        left={{ initial: '20px', md: '50px' }}
-        right={{ initial: '20px', md: 'auto' }}
-        maxWidth={{ initial: 'auto', md: '500px' }}
-        style={{ zIndex: '1' }}
-      >
-        <AnimationBox>
-          <Heading size={{ initial: '7', md: '9' }} mb="1">
-            {movie.title}
-          </Heading>
-        </AnimationBox>
-        <AnimationBox2>
-          <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
-        </AnimationBox2>
-        <Flex gap="2" direction="row" wrap="wrap" mt="5">
-          <Button
-            size={{ initial: '2', xs: '3' }}
-            variant="solid"
-            style={{ cursor: 'pointer' }}
-            onClick={handleInstagramClick}
-          >
-            <InstagramLogoIcon />
-            인스타그램
-          </Button>
-          <Button
-            size={{ initial: '2', xs: '3' }}
-            variant="solid"
-            style={{ cursor: 'pointer' }}
-            onClick={handleCafeClick}
-          >
-            <HeartFilledIcon />
-            공식 카페
-          </Button>
-          <Button
-            size={{ initial: '2', xs: '3' }}
-            variant="solid"
-            style={{ cursor: 'pointer' }}
-            onClick={handleTwitterClick}
-          >
-            <TwitterLogoIcon />
-            공식 카페 트위터
-          </Button>
-        </Flex>
-      </Box>
+    <Skeleton style={{ borderRadius: '0' }}>
+      <Image
+        src={heroImg}
+        alt={movie.title}
+        style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+        fill
+        sizes={'(max-width: 600px) 150vw,120vw'}
+        priority={true}
+        quality={100}
+      />
+    </Skeleton>
+    <Box
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))',
+        zIndex: 1, // 이미지보다 위에 표시
+      }}
+    />
+    <Box
+      position="absolute"
+      bottom={{ initial: '10px', md: '70px' }}
+      left={{ initial: '20px', md: '50px' }}
+      right={{ initial: '20px', md: 'auto' }}
+      maxWidth={{ initial: 'auto', md: '500px' }}
+      style={{ zIndex: '1'}}
+    >
+      <AnimationBox>
+        <Heading size={{ initial: '7', md: '9' }} mb="1">
+          {movie.title}
+        </Heading>
+      </AnimationBox>
+      <AnimationBox2>
+        <Text size={{ initial: '3', md: '4' }}>{movie.description}</Text>
+      </AnimationBox2>
+      <Flex gap="2" direction="row" wrap="wrap" mt="5">
+        <Button
+          size={{ initial: '2', xs: '3' }}
+          variant="solid"
+          style={{ cursor: 'pointer' }}
+          onClick={handleInstagramClick}
+        >
+          <InstagramLogoIcon />
+          인스타그램
+        </Button>
+        <Button
+          size={{ initial: '2', xs: '3' }}
+          variant="solid"
+          style={{ cursor: 'pointer' }}
+          onClick={handleCafeClick}
+        >
+          <HeartFilledIcon />
+          공식 카페
+        </Button>
+        <Button
+          size={{ initial: '2', xs: '3' }}
+          variant="solid"
+          style={{ cursor: 'pointer' }}
+          onClick={handleTwitterClick}
+        >
+          <TwitterLogoIcon />
+          공식 카페 트위터
+        </Button>
+      </Flex>
     </Box>
+  </Box>
   );
 }
 
