@@ -20,11 +20,14 @@ import YouTubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 import useFetchMainImages from '../../../hooks/useFetchMainImages';
+import useFetchCarouselImages from '../../../hooks/useFetchCarouselImages';
+
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
   const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({ episode: ep, limit: 8 });
   const { mainImages, error:mainImageError, loading:mainImageLoading } = useFetchMainImages({ episode: ep});
+  const { carouselImages, error:carouselImageError, loading:carouselImageLoading } = useFetchCarouselImages({ episode: ep});
   const [imageError, setImageError] = useState(false);
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
@@ -53,7 +56,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
               maxHeight: '400px',
             }}
           >
-            <Skeleton loading={loading} minWidth="300px" minHeight="200px">
+            <Skeleton loading={mainImageLoading} minWidth="300px" minHeight="200px">
               <AspectRatio ratio={3 / 2}>
                 {mainImages?.length > 0 ? (
                   <Image
@@ -84,12 +87,12 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         </Flex>
       </Section>
 
-      {/* {carouselImages.length >= 1 ? (
+      {carouselImages?.length > 0 ? (
         <CoreCarouselSection
           title={'나혼산 코어'}
           carouselImages={carouselImages}
         />
-      ) : null} */}
+      ) : null}
       <Separator orientation="horizontal" size="4" />
       <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
       {images ? <EpisodeSection images={images} fetchMore={fetchMore} hasMore={hasMore} /> : null}
