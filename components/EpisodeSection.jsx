@@ -6,7 +6,7 @@ import GridImageItem from './GridImageItem';
 import ContentFallback from './ContentFallback';
 import SpriteAnimation from './SpriteAnimation';
 
-const EpisodeImageGridList = ({ images = [], fetchMore, hasMore, loading }) => {
+const EpisodeImageGridList = ({ images = [], fetchMore, hasMore, loading, linkToggle = false }) => {
   return (
     <Flex direction="column" gap="3">
       {images.length !== 0 ? (
@@ -20,9 +20,10 @@ const EpisodeImageGridList = ({ images = [], fetchMore, hasMore, loading }) => {
               <GridImageItem
                 key={index}
                 url={obj.url}
-                episode={obj.episode_id}
+                episodeId={obj.episode_id}
                 index={index}
                 title={obj.title}
+                linkToggle={linkToggle}
               />
             ))}
           </Grid>
@@ -50,7 +51,7 @@ const EpisodeImageGridList = ({ images = [], fetchMore, hasMore, loading }) => {
 };
 
 
-const EpisodeSection = ({ images, loading, fetchMore, hasMore }) => {
+const EpisodeSection = ({ images, loading, fetchMore, hasMore, linkToggle }) => {
   if (loading && images.length === 0) return <SpriteAnimation />; // 첫 로딩
 
   return (
@@ -63,6 +64,7 @@ const EpisodeSection = ({ images, loading, fetchMore, hasMore }) => {
             fetchMore={fetchMore}
             hasMore={hasMore}
             loading={loading}
+            linkToggle={linkToggle}
           />
         </Flex>
       </Section>
