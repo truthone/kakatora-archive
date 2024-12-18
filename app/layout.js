@@ -33,7 +33,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Suspense fallback={<div><SpriteAnimation/></div>}>
-        <SpriteAnimation/>
           <ReactGAWrapper GA_MEASUREMENT_ID={GA_MEASUREMENT_ID}>
             <StyledComponentsRegistry>
               <Theme

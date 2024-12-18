@@ -74,7 +74,6 @@ function Hero({ movie }) {
       width="100%"
       height={{ initial: '70vh', md: '60vh' }}
       minHeight="500px"
-      className="gradient-from-bottom"
     >
       <Skeleton style={{ borderRadius: '0' }}>
         <Image

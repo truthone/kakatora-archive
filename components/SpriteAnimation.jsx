@@ -64,32 +64,34 @@ const jelloMotion= keyframes`
 `
 
 const trackingMotion = keyframes`
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
+0% {
+  letter-spacing: -0.5em;
+  opacity: 0;
+}
+40% {
+  opacity: 0.6;
+}
+100% {
+  opacity: 1;
+}
 `;
 
 // 스타일 정의
 const SpriteLogo = styled.div`
-  width: 300px;
-  height: 300px;
-  transform: scale(0.4);
-  background: url('/one.png') no-repeat center/center;
-  animation: ${jelloMotion} 2s 2s infinite;
+  width: 200px;
+  height: 200px;
+  background: url('/one.png') no-repeat center;
+
+  background-size: contain;
+  animation: ${jelloMotion} 2s 1s infinite;
   transform-origin: center;
 `;
 
 const SpriteText = styled.div`
   font-size: 24px;
+  margin-top: 20px;
   font-family: 'GmarketSansMedium';
-  animation: ${trackingMotion} 0.7s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+  animation: ${trackingMotion} 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 
 `;
 const SpriteAnimation = () => {
