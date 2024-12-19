@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import {
   Heading,
@@ -12,8 +11,7 @@ import SpriteAnimation from './SpriteAnimation';
 const ArticleSection = ({ filmoId }) => {
   const { articles, loading, error } = useFetchArticles({ filmoId });
 
-  if (loading) return <SpriteAnimation $logoWidth={'100%'} $logoHeight={''}
-    $logoVisible={true} $textVisible={true} $textSize={'1px'} message={'loading'} />;
+  if (loading) return <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/>;
 
   return (
     articles.length > 0 ? (

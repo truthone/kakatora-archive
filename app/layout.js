@@ -6,7 +6,7 @@ import './global.css';
 import StyledComponentsRegistry from '../lib/registry';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import TopButton  from '../components/TopButton';
+import TopButton from '../components/TopButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import SpriteAnimation from '../components/SpriteAnimation';
 
@@ -32,7 +32,23 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Suspense fallback={<div><SpriteAnimation/></div>}>
+        <Suspense
+          fallback={
+            <Flex
+              width="100%"
+              height="100vh"
+              direction="column"
+              justify="center"
+              align="center"
+              style={{ backgroundColor: 'black' }}
+            >
+              <SpriteAnimation
+                message="LEE JU SEUNG ARCHIVE"
+                $textMove={true}
+              />
+            </Flex>
+          }
+        >
           <ReactGAWrapper GA_MEASUREMENT_ID={GA_MEASUREMENT_ID}>
             <StyledComponentsRegistry>
               <Theme
