@@ -16,7 +16,7 @@ const ArticleCard = ({ article,key }) => {
         }}
       >
           <Inset clip="padding-box" side="top" pb="current">
-            <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
+            <AspectRatio ratio={16 / 9} style={{ padding: '0' }}>
               <ImageWithFallback
                 src={og.image ? og.image : undefined }
                 alt={og.title || 'Article Image'}

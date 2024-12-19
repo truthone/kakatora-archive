@@ -25,7 +25,7 @@ export async function GET(request) {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\\\n/g, '\n'),
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
@@ -59,17 +59,13 @@ export async function GET(request) {
       writer: row[9]
     }));
 
-    console.log(`route !! ${filmoId}`)
-
     const filteredData = articlesData.filter((item) => {
       if (filmoId) {
-        console.log(`fk!!! ${item.fk}`)
         return String(item.fk) === String(filmoId);
       }
       return true;
     });
-
-    return NextResponse.json(filteredData.length > 0 ? filteredData : articlesData);
+    return NextResponse.json(filteredData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 
