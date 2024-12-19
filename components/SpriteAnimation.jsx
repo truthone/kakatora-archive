@@ -79,8 +79,8 @@ const trackingMotion = keyframes`
 // 스타일 정의
 const SpriteLogo = styled.div`
   display: ${(props) => (props.$logoVisible ? 'block' : 'none')};
-  width: ${(props) => props.$logoWidth || '200px'};
-  height: ${(props) => props.$logoHeight || '200px'};
+  width: ${(props) => props.$logoWidth};
+  height: ${(props) => props.$logoHeight};
   background: url('/one.png') no-repeat center;
   background-size: contain;
   ${(props) =>
@@ -96,8 +96,9 @@ const SpriteLogo = styled.div`
 
 const SpriteText = styled.div`
   display: ${(props) => (props.$textVisible ? 'block' : 'none')};
-  font-size: ${(props) => props.$textSize || '24px'};
+  font-size: ${(props) => props.$textSize || 'clamp(14px, 3vw, 48px)'};
   margin-top: 20px;
+  text-align: center;
   font-family: 'GmarketSansMedium';
    ${(props) =>
     props.$textMove
@@ -108,7 +109,8 @@ const SpriteText = styled.div`
           animation: none;
         `}
 `;
-const SpriteAnimation = ({ logoWidth, logoHeight, logoVisible = true, textVisible = true, message="loading", textSize, textMove = false, logoMove = true }) => {
+const SpriteAnimation = ({ logoWidth="200px", logoHeight="200px", logoVisible = true, textVisible = true, message="loading", textSize, textMove = false, logoMove = true }) => {
+  
   return (
     <Flex justify="center" align="center" direction="column" style={{ backgroundColor: 'black', borderRadius: '20px'}} p="3">
       <SpriteLogo $logoWidth={logoWidth} $logoHeight={logoHeight} $logoVisible={logoVisible} $logoMove={logoMove} />
