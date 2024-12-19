@@ -7,9 +7,6 @@ export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
   const { filmoId } = params;
 
-  // 타입 변환 처리
-  const parsedEpisode = episode;
-
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
       { error: 'Environment variables are not properly configured' },

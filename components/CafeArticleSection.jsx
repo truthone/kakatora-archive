@@ -8,9 +8,9 @@ import useFetchCafeArticles from '../hooks/useFetchCafeArticles';
 
 const CafeArticleSection = ({ filmoId }) => {
   const { articles, loading, error } = useFetchCafeArticles({ filmoId });
-  const fallbackTexts = ["이","주","승","승","장","구","❤️","🩷","🧡","💛","💚","💙","🤍","🩶","🖤","🤎","💜","🩵","💖","💗","💓","💝","❤️‍🔥","💕","💘"];
+  const fallbackTexts = ["❤️", "🩷", "🧡", "💛", "💚", "💙", "🤍", "🩶", "🖤", "🤎", "💜", "🩵", "💖", "💗", "💓", "💝", "❤️‍🔥", "💕", "💘"];
   return (
-    articles.length >= 0 ? (
+    articles.length > 0 ? (
       <Section>
         <Heading size="6" mb="4">
           관련 카페글
@@ -28,14 +28,15 @@ const CafeArticleSection = ({ filmoId }) => {
           >
             {
               articles.map((article, index) => (
-                <Box maxWidth="640px" key={index} 
-                onClick={()=>{
-                  window.open(
-                    `${article.link}`,
-                    '_blank',
-                    'noopener,noreferrer'
-                  );
-                }}>
+                <Box maxWidth="640px" key={index}
+                  onClick={() => {
+                    window.open(
+                      `${article.link}`,
+                      '_blank',
+                      'noopener,noreferrer'
+                    );
+                  }}
+                >
                   <Card>
                     <Flex gap="3" align="center">
                       <Avatar

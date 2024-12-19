@@ -227,7 +227,7 @@ function FilmoDetail({ id }) {
         )}
         <ArticleSection filmoId={id} />
         <Separator size="4" my="4" />
-        <CafeArticleSection />
+        <CafeArticleSection filmoId={id}/>
       </Box>
       <Box pl={{ initial: '5', xs: '8' }}>
         <YoutubeRow SectionTitle={'관련 영상'} playlistId={filmo.playlistId} />
