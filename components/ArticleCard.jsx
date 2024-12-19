@@ -1,17 +1,24 @@
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { Box, Card, Inset, AspectRatio, Flex, Text } from '@radix-ui/themes';
 
-const ArticleCard = ({ article }) => {
-  const { og, title, description } = article;
+import { Box, Card, Inset, AspectRatio, Flex, Text, Link } from '@radix-ui/themes';
+import { decode } from 'html-entities';
+import ImageWithFallback from '../components/ImageWithFallback'
+
+const ArticleCard = ({ article,key }) => {
+  const { og, title, link } = article;
   return (
-    <Box width={{ initial: '100%' }}>
-      <Card asChild>
-        <a href={og.url} target="_blank">
+      <Card style={{ cursor: 'pointer' }} width={{ initial: '100%' }} key={key}
+        onClick={()=> {
+          window.open(
+            `${link}`,
+            '_blank',
+            'noopener,noreferrer'
+          );
+        }}
+      >
           <Inset clip="padding-box" side="top" pb="current">
-            <AspectRatio ratio={16 / 9} style={{ padding: '0' }}>
-              <Image
-                src={og.image || '/fallback.jpg'}
+            <AspectRatio ratio={3 / 2} style={{ padding: '0' }}>
+              <ImageWithFallback
+                src={og.image ? og.image : undefined }
                 alt={og.title || 'Article Image'}
                 fill
                 sizes={'100vw'}
@@ -21,7 +28,7 @@ const ArticleCard = ({ article }) => {
           </Inset>
           <Flex p="2" direction="column" wrap="wrap">
             <Text weight="bold" size="4" mb="3">
-              {og.title || title}
+              {decode(og.title || title)}
             </Text>
             <Text
               weight="light"
@@ -34,12 +41,10 @@ const ArticleCard = ({ article }) => {
                 textOverflow: 'ellipsis',
               }}
             >
-              {og.description || description}
+              {decode(og.description)}
             </Text>
           </Flex>
-        </a>
       </Card>
-    </Box>
   );
 };
 

@@ -59,8 +59,11 @@ export async function GET(request) {
       writer: row[9]
     }));
 
+    console.log(`route !! ${filmoId}`)
+
     const filteredData = articlesData.filter((item) => {
       if (filmoId) {
+        console.log(`fk!!! ${item.fk}`)
         return String(item.fk) === String(filmoId);
       }
       return true;

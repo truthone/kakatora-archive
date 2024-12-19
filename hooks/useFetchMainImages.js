@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetchMainImages = ({ episode}={}) => {
+const useFetchMainImages = ({ episode }={}) => {
   const [mainImages, setMainImages] = useState([]); // 메인 이미지
   const [error, setError] = useState(null); // 에러 상태
   const [loading, setLoading] = useState(false); // 로딩 상태
