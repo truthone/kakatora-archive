@@ -19,6 +19,7 @@ import Image from 'next/image';
 import YoutubeRow from './YoutubeRow';
 import ArticleSection from './ArticleSection';
 import FallbackComponent from './FallbackComponent';
+import CafeArticleSection from './CafeArticleSection';
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -226,6 +227,7 @@ function FilmoDetail({ id }) {
         )}
         <ArticleSection filmoId={id} />
         <Separator size="4" my="4" />
+        <CafeArticleSection />
       </Box>
       <Box pl={{ initial: '5', xs: '8' }}>
         <YoutubeRow SectionTitle={'관련 영상'} playlistId={filmo.playlistId} />
