@@ -4,8 +4,8 @@ const { GoogleAuth } = require('google-auth-library');
 const sheetsCredentials = require('./credentials.json'); // 서비스 계정 JSON 파일
 // const youtubeToken = require('./youtube_token.json'); // YouTube OAuth JSON 파일
 
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID; // Google 스프레드시트 ID
-const FILMO_SHEET_NAME = 'filmoDataByYear2'; // 필모그래피 데이터가 있는 시트 이름
+const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID; // Google 스프레드시트 ID
+const FILMO_SHEET_NAME = 'filmo'; // 필모그래피 데이터가 있는 시트 이름
 const PLAYLIST_SHEET_NAME = 'youtube_playlists'; // 결과를 저장할 시트 이름
 
 async function processFilmography() {
@@ -34,7 +34,7 @@ async function processFilmography() {
         const filmographyRows = await filmographySheet.getRows();
         console.log(`"${FILMO_SHEET_NAME}" 시트에서 ${filmographyRows.length}개의 행을 읽었습니다.`);
 
-        const mappedData = rows.map((row) =>
+        const mappedData = filmographyRows.map((row) =>
         headers.reduce((obj, header, index) => {
           obj[header] = row._rawData[index]; // 헤더와 데이터를 매핑
           return obj;
@@ -45,15 +45,12 @@ async function processFilmography() {
         let playlistsSheet = doc.sheetsByTitle[PLAYLIST_SHEET_NAME];
         if (!playlistsSheet) {
             playlistsSheet = await doc.addSheet({ title: PLAYLIST_SHEET_NAME });
-            await playlistsSheet.setHeaderRow(['title', 'playlistId', 'Status']);
+            await playlistsSheet.setHeaderRow(['fk','title', 'playlistId']);
         }
 
         // **2. YouTube 인증**
         console.log('YouTube API 인증 시작...');
         const oauth2Client = new google.auth.OAuth2(
-            process.env.YES_CLIENT_ID,
-            process.env.YES_CLIENT_SECRET,
-            procee.env.REDIRECT_URI
         );
 
         const TOKEN_PATH = '../youtube_token.json';
@@ -65,7 +62,7 @@ async function processFilmography() {
             console.log('YouTube 인증 토큰이 없습니다. 새로 인증을 수행하세요.');
             const authUrl = oauth2Client.generateAuthUrl({
                 access_type: 'offline',
-                prompt: 'consent', 
+                // prompt: 'consent', 
                 scope: ['https://www.googleapis.com/auth/youtube.force-ssl'],
             });
             console.log(`다음 URL에서 인증을 완료하세요: ${authUrl}`);
@@ -90,6 +87,7 @@ async function processFilmography() {
             console.log(row.title)
             const title = row.title;
             const year = row.year;
+            const id = row.id;
             const videoArray = row.videoArray? JSON.parse(row.videoArray) : [];
             console.log(`"${title}" (${year}) - 비디오 ID: ${videoArray.join(', ')}`);
 
@@ -100,8 +98,8 @@ async function processFilmography() {
                     part: 'snippet,status',
                     requestBody: {
                         snippet: {
-                            title: `${title} (${year})`,
-                            description: `${title} 관련 영상 모음`,
+                            title: `${year}-${title}`,
+                            description: `${title} 관련 영상`,
                         },
                         status: { privacyStatus: 'unlisted' }, // 일부공유
                     },
@@ -145,6 +143,7 @@ async function processFilmography() {
             await playlistsSheet.addRow({
                 title: title,
                 playlistId: playlistId,
+                fk: id,
                 Status: 'Success',
             });
         }
