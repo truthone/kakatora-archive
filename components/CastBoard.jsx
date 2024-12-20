@@ -143,7 +143,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/SEOK.jpg'}
+                src={'/tebas/HUI.jpg'}
                 alt={'S'}
                 style={{
                   objectFit: 'cover',
@@ -156,8 +156,8 @@ const CastBoard = () => {
               size={{ initial: '1', xs: '6' }}
               as="div"
               align="center"
-              zIndex="1"
               style={{
+                zIndex: '1',
                 position: 'absolute',
                 bottom: '5px',
                 width: '100%',
@@ -165,7 +165,7 @@ const CastBoard = () => {
                 paddingBottom: '5px',
               }}
             >
-              이석준
+              정희태
             </Name>
           </Box>
           <AnimationBox2>
@@ -182,7 +182,7 @@ const CastBoard = () => {
             <AspectRatio ratio={2 / 3}>
               <Image
                 fill
-                src={'/tebas/KANG.jpg'}
+                src={'/tebas/JU.jpg'}
                 alt={'마페'}
                 style={{
                   objectFit: 'cover',
@@ -194,8 +194,8 @@ const CastBoard = () => {
             <Name
               as="div"
               align="center"
-              zIndex="1"
               style={{
+                zIndex: '1',
                 position: 'absolute',
                 bottom: '5px',
                 width: '100%',
@@ -203,7 +203,7 @@ const CastBoard = () => {
                 paddingBottom: '5px',
               }}
             >
-              강승호
+              이주승
             </Name>
           </Box>
           <AnimationBox2>

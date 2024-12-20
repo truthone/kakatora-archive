@@ -2,6 +2,17 @@
   {
     "year": 2024,
     "episode": [
+     {
+        "id": "240906-562",
+        "date": "11월 07일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "예식장 투어&성수동 뉴홈",
+        "imgUrl": "/images/tv-liveAlone/570/main.png",
+        "ep": 570,
+        "year": 2024
+      },
       {
         "id": "240906-562",
         "date": "9월 13일",

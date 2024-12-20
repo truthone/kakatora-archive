@@ -12,6 +12,7 @@ import {
   Skeleton,
   Button,
   Card,
+  Link
 } from '@radix-ui/themes';
 import Image from 'next/image';
 
@@ -72,7 +73,7 @@ const CloseButton = styled(Button)`
   }
 `;
 
-export default function GridImageItem({ url, episode, index, title }) {
+export default function GridImageItem({ url, index, title, linkToggle = false, episodeId }) {
   const [naturalWidth, setNaturalWidth] = useState(null);
   const [naturalHeight, setNaturalHeight] = useState(null);
   const containerRef = useRef(null);
@@ -121,7 +122,7 @@ export default function GridImageItem({ url, episode, index, title }) {
             <AspectRatio ratio={1 / 1}>
               <Image
                 src={url}
-                alt={`Episode ${episode} - Image ${index + 1}`}
+                alt={`Episode ${episodeId} - Image ${index + 1}`}
                 style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                 fill
                 sizes={'(max-width: 768px) 100vw, 50vw'}
@@ -168,8 +169,8 @@ export default function GridImageItem({ url, episode, index, title }) {
             loading={dialogImageLoading}
             width={{ xl: '70vw', initial: '50vw' }}
             height="30vh"
-            maxwidth="1200px"
-            maxheight="500px"
+            maxWidth="1200px"
+            maxHeight="500px"
           >
             <Box
               style={{
@@ -184,7 +185,7 @@ export default function GridImageItem({ url, episode, index, title }) {
               <Image
                 ref={dialogImageRef}
                 src={url}
-                alt={`Episode ${episode} - Image ${index + 1}`}
+                alt={`Episode ${episodeId} - Image ${index + 1}`}
                 style={{
                   objectFit: 'contain',
                 }}
@@ -200,6 +201,10 @@ export default function GridImageItem({ url, episode, index, title }) {
               />
             </Box>
           </Skeleton>
+          {
+            linkToggle ? <Link  href={`/liveAlone/${episodeId}`} underline="hover" style={{width:'100%', display:'inline-block',textAlign:'center'}}>
+              <Text color="gray" weight="light" style={{fontSize: '0.8rem', fontStyle: "italic"}}>나 혼자 산다 {episodeId}회</Text></Link>:null
+          }
         </Content>
       </Dialog.Portal>
     </Dialog.Root>

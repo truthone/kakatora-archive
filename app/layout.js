@@ -1,14 +1,15 @@
 'use client';
 import { Suspense } from 'react';
-import { Theme, Box } from '@radix-ui/themes';
+import { Theme, Box, Flex } from '@radix-ui/themes';
 import ReactGAWrapper from '../components/ReactGAWrapper';
 import '@radix-ui/themes/styles.css';
 import './global.css';
 import StyledComponentsRegistry from '../lib/registry';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { usePathname } from 'next/navigation';
+import TopButton from '../components/TopButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import SpriteAnimation from '../components/SpriteAnimation';
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
@@ -34,7 +35,23 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <Flex
+              width="100%"
+              height="100vh"
+              direction="column"
+              justify="center"
+              align="center"
+              style={{ backgroundColor: 'black' }}
+            >
+              <SpriteAnimation
+                message="LEE JU SEUNG ARCHIVE"
+                $textMove={true}
+              />
+            </Flex>
+          }
+        >
           <ReactGAWrapper GA_MEASUREMENT_ID={GA_MEASUREMENT_ID}>
             <StyledComponentsRegistry>
               <Theme
@@ -49,7 +66,8 @@ export default function RootLayout({ children }) {
                   {children}
                   <SpeedInsights />
                 </Box>
-                {!hide && <Footer />}
+                <TopButton />
+                <Footer />
               </Theme>
             </StyledComponentsRegistry>
           </ReactGAWrapper>

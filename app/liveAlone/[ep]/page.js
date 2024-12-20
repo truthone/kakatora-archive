@@ -19,13 +19,18 @@ import CoreCarouselSection from '../../../components/CoreCarouselSection';
 import YouTubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
+import useFetchMainImages from '../../../hooks/useFetchMainImages';
+import useFetchCarouselImages from '../../../hooks/useFetchCarouselImages';
+import SpriteAnimation from '../../../components/SpriteAnimation'
+import useFetchLiveAloneYoutubePlaylist from '../../../hooks/useFetchLiveAloneYoutubePlaylist'
+
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
   const { ep } = params;
-  const { images, mainImage, carouselImages, error, loading } =
-    useFetchEpisodeImages({ episode: ep });
+  const { images, error, loading, fetchMore, hasMore } = useFetchEpisodeImages({ episode: ep, limit: 8 });
+  const { mainImages, error:mainImageError, loading:mainImageLoading } = useFetchMainImages({ episode: ep});
+  const { carouselImages, error:carouselImageError, loading:carouselImageLoading } = useFetchCarouselImages({ episode: ep});
   const [imageError, setImageError] = useState(false);
-
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
@@ -41,6 +46,8 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
       </Flex>
     );
 
+  const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
+
   return (
     <Container p="4" className="filmo-detail">
       <Section size="1">
@@ -53,11 +60,11 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
               maxHeight: '400px',
             }}
           >
-            <Skeleton loading={loading}>
+            <Skeleton loading={mainImageLoading} minWidth="300px" minHeight="200px">
               <AspectRatio ratio={3 / 2}>
-                {mainImage.length > 0 ? (
+                {mainImages?.length > 0 ? (
                   <Image
-                    src={mainImage[0].url}
+                    src={mainImages[0].url}
                     alt={data.note}
                     style={{ objectFit: 'cover' }}
                     fill
@@ -83,16 +90,22 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           </Box>
         </Flex>
       </Section>
-
-      {carouselImages.length >= 1 ? (
+      {
+        youtubeLoading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
+        (
+          <Box pl={{ initial: '5', xs: '8' }}>
+          <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} />
+        </Box>
+        )
+      }
+      {carouselImages?.length > 0 ? (
         <CoreCarouselSection
           title={'나혼산 코어'}
           carouselImages={carouselImages}
         />
       ) : null}
       <Separator orientation="horizontal" size="4" />
-      <YouTubeRow SectionTitle={'관련 영상'} playlistId={data.playlistId} />
-      {images ? <EpisodeSection images={images} /> : null}
+      {images ? <EpisodeSection images={images} fetchMore={fetchMore} hasMore={hasMore} /> : null}
     </Container>
   );
 }

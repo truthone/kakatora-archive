@@ -1,18 +1,15 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { shuffleArray } from "../../../utils/shuffleArray";
 
 let blockUntil = null;
-let cachedData = null; // 캐싱된 데이터
-let lastFetchTime = null;
 
 export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
-  const { episode, limit=8, offset=0, shuffle='false' } = params;
-
-  console.log(`params offset: ${params.offset}`)
+  const { episode } = params;
 
   // 타입 변환 처리
+  const parsedEpisode = episode;
+
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
       { error: 'Environment variables are not properly configured' },
@@ -37,21 +34,17 @@ export async function GET(request) {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const sheetName = 'liveAlone_capture_images';
-
+    const sheetName = 'liveAlone_main_images';
+    // 데이터 범위 계산
     const startCol = 'A';
-    const endCol = 'G';
+    const endCol = 'E';
     const range = `${sheetName}!${startCol}2:${endCol}`;
 
-    const now = Date.now();
-
-
- // 데이터 캐싱: 10분마다 새로 가져오기
-    if (!cachedData || now - lastFetchTime > 10 * 60 * 1000) {
-      const response = await sheets.spreadsheets.values.get({
-        spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        range,
-      });
+    // Google Sheets API 호출
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range,
+    });
 
     const rows = response.data.values;
     if (!rows || rows.length === 0) {
@@ -59,34 +52,25 @@ export async function GET(request) {
     }
 
     // 데이터 변환
-    cachedData = rows.map((row) => ({
+    const imagesData = rows.map((row) => ({
       id: row[0],
       episode_id: row[1],
       title: row[2],
       filename: row[3],
       url: row[4],
-      is_main: row[5] === 'true',
-      is_carousel: row[6] === 'true',
     }));
-    lastFetchTime = now;
-    console.log('Data refreshed and cached');
-  }
 
     // 데이터 필터링
-    let filteredData = episode
-    ? cachedData.filter((item) => String(item.episode_id) === String(episode))
-    : cachedData;
+    const filteredData = imagesData.filter((item) => {
+      if (parsedEpisode) {
+        return String(item.episode_id) === String(parsedEpisode);
+      }
 
-    if (shuffle === 'true') {
-      filteredData = shuffleArray(filteredData);
-    }
+      return true;
+    });
+    
 
-    // 서버 측 페이징 처리
-  const start = offset ? parseInt(offset, 10) : 0;
-  const end = limit ? start + parseInt(limit, 10) : filteredData.length;
-  const paginatedData = filteredData.slice(start, end);
-
-  return NextResponse.json(paginatedData);
+    return NextResponse.json(filteredData.length > 0 ? filteredData : imagesData);
   } catch (error) {
     console.error('Error fetching data from Google Sheets:', error);
 

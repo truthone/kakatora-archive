@@ -19,6 +19,9 @@ import Image from 'next/image';
 import YoutubeRow from './YoutubeRow';
 import ArticleSection from './ArticleSection';
 import FallbackComponent from './FallbackComponent';
+import CafeArticleSection from './CafeArticleSection';
+import useFetchYoutubePlaylist from '../hooks/useFetchYoutubePlaylist';
+import SpriteAnimation from './SpriteAnimation'
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -69,6 +72,9 @@ function FilmoDetail({ id }) {
         />
       </Flex>
     );
+
+  const { playlist, loading, error } = useFetchYoutubePlaylist({ id });
+  console.log(playlist)
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>
@@ -78,7 +84,7 @@ function FilmoDetail({ id }) {
           gap="4"
           justify="start"
           position="relative"
-          p={{ initial: '5', xs: '8' }}
+          p={{ initial: '7', xs: '8' }}
         >
           <AnimationBox asChild>
             <Box
@@ -104,30 +110,50 @@ function FilmoDetail({ id }) {
               <Heading size={{ md: '9', initial: '8' }} mb="3">
                 {filmo?.title}
               </Heading>
-              <Heading size={{ md: '7', initial: '5' }} mb="3">
-                {filmo?.year}
-              </Heading>
+              <Flex>
+                <Heading size={{ md: '6', initial: '3' }} >
+                  {filmo?.year}
+                </Heading>
+
+                {filmo?.type && <Text>•</Text>}
+                {filmo?.type && (
+                  <Heading size={{ md: '6', initial: '3' }}>
+                    {filmo?.type}
+                  </Heading>
+                )}
+
+                {filmo?.note && <Text>•</Text>}
+                {filmo?.note && (
+                  <Heading size={{ md: '6', initial: '3' }}>
+                    {filmo?.note}
+                  </Heading>
+                )}
+              </Flex>
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>
-              <Flex gap="3" align="center">
+              <Flex align="center">
                 <Text
                   as="p"
                   my="2"
-                  size={{ md: '7', initial: '6' }}
+                  size={{ md: '7', initial: '5' }}
                   style={{ maxWidth: '70%' }}
                 >
                   {filmo?.role}
                 </Text>
-                <Separator size="2" orientation="vertical" />
-                <Text as="p" my="2" size={{ md: '7', initial: '6' }}>
-                  {filmo?.note}
-                </Text>
+                {
+                  filmo?.role && filmo?.roleName && (<Separator size="2" orientation="vertical" mx="12px"/>)
+                }
+                {
+                  filmo?.roleName && (<Text as="p" my="2" size={{ md: '7', initial: '5' }}>
+                    {filmo?.roleName}
+                  </Text>)
+                }
               </Flex>
-              <Text as="p" my="2" size={{ md: '6', initial: '3' }}>
+              <Text as="p" my="2" size={{ md: '6', initial: '2' }}>
                 {filmo?.broadcaster}
               </Text>
-              <Blockquote as="p" my="2" size={{ sm: '5', initial: '3' }}>
+              <Blockquote as="p" my="2" size={{ sm: '5', initial: '2' }}>
                 {filmo?.desc}
               </Blockquote>
             </AnimationBox2>
@@ -204,11 +230,16 @@ function FilmoDetail({ id }) {
             <Separator size="4" my="4" />
           </Section>
         )}
-        {/*<ArticleSection />
-        <Separator size="4" my="4" />*/}
-      </Box>
-      <Box pl={{ initial: '5', xs: '8' }}>
-        <YoutubeRow SectionTitle={'관련 영상'} playlistId={filmo.playlistId} />
+        {
+        loading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
+        (
+          <Box pl={{ initial: '5', xs: '8' }}>
+          {playlist ? <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} /> : null}
+        </Box>
+        )
+      }
+        <ArticleSection filmoId={id} />
+        <CafeArticleSection filmoId={id}/>
       </Box>
     </Section>
   );
