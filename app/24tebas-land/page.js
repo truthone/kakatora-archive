@@ -1,12 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import filmoDataByYear from '../../data/filmoDataByYear.json';
-import FilmoSection from '../../components/FilmoSection';
-import FilmoFilter from '../../components/FilmoFilter';
-import { Container, Flex } from '@radix-ui/themes';
-import Image from 'next/image';
+import { Flex } from '@radix-ui/themes';
 import CastBoard from '../../components/CastBoard';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export default function TebasLand({}) {
   const BgBox = styled(Flex)`
