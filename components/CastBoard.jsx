@@ -194,8 +194,8 @@ const CastBoard = () => {
             <Name
               as="div"
               align="center"
-              zIndex="1"
               style={{
+                zIndex: '1',
                 position: 'absolute',
                 bottom: '5px',
                 width: '100%',
