@@ -156,8 +156,8 @@ const CastBoard = () => {
               size={{ initial: '1', xs: '6' }}
               as="div"
               align="center"
-              zIndex="1"
               style={{
+                zIndex: '1',
                 position: 'absolute',
                 bottom: '5px',
                 width: '100%',
