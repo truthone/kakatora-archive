@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import TopButton from '../components/TopButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import SpriteAnimation from '../components/SpriteAnimation';
+import { usePathname } from 'next/navigation';
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 

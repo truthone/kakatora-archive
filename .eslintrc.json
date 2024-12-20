@@ -15,5 +15,10 @@
     "es6": true,
     "browser": true,
     "node": true
+  },
+  "languageOptions": {
+    "globals": {
+      "AudioWorkletGlobalScope": "readonly" // 공백 제거
+    }
   }
 }
