@@ -476,7 +476,13 @@
                   "imgUrl": "/images/social-phobia.webp",
                   "year": 2015,
                   "playlistId": "",
-                  "type": "영화"
+                  "type": "영화",
+"ott_subscribe": [
+                      "유튜브"
+                  ],
+                  "ott_purchase": [
+                      "유튜브"
+                  ],
               }
           ],
           "dramas": [
