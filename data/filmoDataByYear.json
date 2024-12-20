@@ -1379,6 +1379,18 @@
                   "playlistId": "",
                   "type": "예능/TV 출연"
               }
+          ],
+          "musicals": [
+              {
+                  "id": "musical_2024_1",
+                  "title": "테베랜드",
+                  "roleName": "마르틴 · 페데리코",
+                  "role": "",
+                  "imgUrl": "/images/tebas-land2024.jpg",
+                  "year": 2024,
+                  "playlistId": "",
+                  "type": "연극"
+              }
           ]
       }
   ]
