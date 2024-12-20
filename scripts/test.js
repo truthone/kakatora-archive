@@ -5,7 +5,7 @@ const sheetsCredentials = require('./credentials.json'); // 서비스 계정 JSO
 // const youtubeToken = require('./youtube_token.json'); // YouTube OAuth JSON 파일
 
 const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID; // Google 스프레드시트 ID
-const FILMO_SHEET_NAME = 'filmo'; // 필모그래피 데이터가 있는 시트 이름
+const FILMO_SHEET_NAME = 'filmo_data_for_make'; // 필모그래피 데이터가 있는 시트 이름
 const PLAYLIST_SHEET_NAME = 'youtube_playlists'; // 결과를 저장할 시트 이름
 
 async function processFilmography() {
@@ -17,7 +17,7 @@ async function processFilmography() {
             scopes: ['https://www.googleapis.com/auth/spreadsheets'],
         });
 
-        const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+        const doc = new GoogleSpreadsheet('184jTvaA6K-fkFW8I6kafrdRSJO3Jmkbi23ejTHngor8');
         doc.auth = await sheetsAuth.getClient(); // 인증 클라이언트 설정
         await doc.loadInfo();
 
@@ -51,6 +51,8 @@ async function processFilmography() {
         // **2. YouTube 인증**
         console.log('YouTube API 인증 시작...');
         const oauth2Client = new google.auth.OAuth2(
+
+            
         );
 
         const TOKEN_PATH = '../youtube_token.json';
@@ -62,7 +64,7 @@ async function processFilmography() {
             console.log('YouTube 인증 토큰이 없습니다. 새로 인증을 수행하세요.');
             const authUrl = oauth2Client.generateAuthUrl({
                 access_type: 'offline',
-                // prompt: 'consent', 
+                prompt: 'consent', 
                 scope: ['https://www.googleapis.com/auth/youtube.force-ssl'],
             });
             console.log(`다음 URL에서 인증을 완료하세요: ${authUrl}`);

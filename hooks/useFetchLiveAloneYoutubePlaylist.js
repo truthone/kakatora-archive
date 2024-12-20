@@ -21,14 +21,14 @@ const useFetchLiveAloneYoutubePlaylist = ({ episode }={}) => {
       const res = await response.json();
 
       // 데이터를 처리해 상태 업데이트
-      const mappedData = res.map((obj) => ({
-        id: obj.id,
-        fk: obj.fk,
-        title: obj.title,
-        playlistId: obj.playlistId
-      }));
+      // const mappedData = res.map((obj) => ({
+      //   id: obj.id,
+      //   fk: obj.fk,
+      //   title: obj.title,
+      //   playlistId: obj.playlistId
+      // }));
 
-      setPlaylist(mappedData);
+      setPlaylist(res);
 
       setError(null);
     } catch (error) {

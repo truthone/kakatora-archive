@@ -21,6 +21,7 @@ import ArticleSection from './ArticleSection';
 import FallbackComponent from './FallbackComponent';
 import CafeArticleSection from './CafeArticleSection';
 import useFetchYoutubePlaylist from '../hooks/useFetchYoutubePlaylist';
+import SpriteAnimation from './SpriteAnimation'
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -72,7 +73,8 @@ function FilmoDetail({ id }) {
       </Flex>
     );
 
-  const { playlist, loading, error } = useFetchYoutubePlaylist({ filmoId });
+  const { playlist, loading, error } = useFetchYoutubePlaylist({ id });
+  console.log(playlist)
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>
@@ -228,18 +230,17 @@ function FilmoDetail({ id }) {
             <Separator size="4" my="4" />
           </Section>
         )}
-        <ArticleSection filmoId={id} />
-        <Separator size="4" my="4" />
-        <CafeArticleSection filmoId={id}/>
-      </Box>
-      {
+        {
         loading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
         (
           <Box pl={{ initial: '5', xs: '8' }}>
-          <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} />
+          {playlist ? <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} /> : null}
         </Box>
         )
       }
+        <ArticleSection filmoId={id} />
+        <CafeArticleSection filmoId={id}/>
+      </Box>
     </Section>
   );
 }

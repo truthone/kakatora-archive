@@ -5,7 +5,7 @@ let blockUntil = null;
 
 export async function GET(request) {
   const params = Object.fromEntries(request.nextUrl.searchParams.entries());
-  const { ep } = params;
+  const { filmoId } = params;
 
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
     return NextResponse.json(
@@ -31,7 +31,7 @@ export async function GET(request) {
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const sheetName = 'liveAlone_youtube_playlists';
+    const sheetName = 'youtube_playlists';
     // 데이터 범위 계산
     const startCol = 'A';
     const endCol = 'D';
@@ -57,8 +57,8 @@ export async function GET(request) {
     }));
 
     const filteredData = data.filter((item) => {
-      if (ep) {
-        return String(item.fk) === String(ep);
+      if (filmoId) {
+        return String(item.fk) === String(filmoId);
       }
       return true;
     });

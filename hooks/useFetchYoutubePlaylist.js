@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetchYoutubePlaylist = ({ filmoId }={}) => {
+const useFetchYoutubePlaylist = ({ id }={}) => {
   const [playlist, setPlaylist] = useState([]); 
   const [error, setError] = useState(null); 
   const [loading, setLoading] = useState(false); 
@@ -11,7 +11,7 @@ const useFetchYoutubePlaylist = ({ filmoId }={}) => {
       let url = '/api/fetchYoutubePlaylist';
       const params = new URLSearchParams();
 
-      if (filmoId) params.append('filmoId', filmoId);
+      if (id) params.append('filmoId', id);
       if (params.toString()) url += `?${params.toString()}`;
 
       const response = await fetch(url);
@@ -21,14 +21,14 @@ const useFetchYoutubePlaylist = ({ filmoId }={}) => {
       const res = await response.json();
 
       // 데이터를 처리해 상태 업데이트
-      const mappedData = res.map((obj) => ({
-        id: obj.id,
-        fk: obj.fk,
-        title: obj.title,
-        playlistId: obj.playlistId
-      }));
+      // const mappedData = res.map((obj) => ({
+      //   id: obj.id,
+      //   fk: obj.fk,
+      //   title: obj.title,
+      //   playlistId: obj.playlistId
+      // }));
 
-      setPlaylist(mappedData);
+      setPlaylist(res);
 
       setError(null);
     } catch (error) {
@@ -42,7 +42,7 @@ const useFetchYoutubePlaylist = ({ filmoId }={}) => {
   useEffect(() => {
     setPlaylist([]);
     fetchData();
-  }, [filmoId]);
+  }, [id]);
 
   return { playlist, loading, error };
 };

@@ -21,6 +21,8 @@ import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 import useFetchMainImages from '../../../hooks/useFetchMainImages';
 import useFetchCarouselImages from '../../../hooks/useFetchCarouselImages';
+import SpriteAnimation from '../../../components/SpriteAnimation'
+import useFetchLiveAloneYoutubePlaylist from '../../../hooks/useFetchLiveAloneYoutubePlaylist'
 
 
 export default function LiveAloneEpisodeDetailPage({ params }) {
