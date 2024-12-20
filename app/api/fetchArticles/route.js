@@ -33,7 +33,7 @@ export async function GET(request) {
     const sheets = google.sheets({ version: 'v4', auth });
     const sheetName = 'article';
     const startCol = 'A';
-    const endCol = 'J';
+    const endCol = 'K';
     const range = `${sheetName}!${startCol}2:${endCol}`;
 
     const response = await sheets.spreadsheets.values.get({
@@ -56,7 +56,8 @@ export async function GET(request) {
       imageUrl: row[6],
       era: row[7],
       publisher: row[8],
-      writer: row[9]
+      writer: row[9],
+      description: row[10]
     }));
 
     const filteredData = articlesData.filter((item) => {
