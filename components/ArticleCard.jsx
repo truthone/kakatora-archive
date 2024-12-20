@@ -24,7 +24,7 @@ const ArticleCard = ({ article,key }) => {
                 alt={title || 'Article Image'}
                 fill
                 sizes={'100vw'}
-                style={{ objectFit: 'cover' , objectPosition: '50% calc(20%)'}}
+                style={{ objectFit: 'cover' , objectPosition: '50% calc(10%)'}}
               />
                 ) : <ImageWithFallback/>
               }
@@ -43,6 +43,7 @@ const ArticleCard = ({ article,key }) => {
                 WebkitLineClamp: 2,
                 WebkitBoxOrient: 'vertical',
                 textOverflow: 'ellipsis',
+                wordBreak: 'keep-all'
               }}
             >
               {decode(description)}

@@ -82,7 +82,6 @@ const Carousel = ({ carouselImages }) => {
         position="prev"
         onClick={prevSlide}
         disabled={isFirstSlide}
-        variant="ghost"
       >
         <ChevronLeftIcon width="40" height="40" />
       </CarouselButton>
@@ -95,6 +94,7 @@ const Carousel = ({ carouselImages }) => {
             $isFirstRender={isFirstRender}
           >
             <Card
+              variant='surface'
               style={{
                 maxWidth: '350px',
                 width: '100%',
@@ -126,7 +126,6 @@ const Carousel = ({ carouselImages }) => {
         position="next"
         onClick={nextSlide}
         disabled={isLastSlide}
-        variant="ghost"
       >
         <ChevronRightIcon width="40" height="40" />
       </CarouselButton>
