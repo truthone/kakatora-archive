@@ -49,7 +49,7 @@ function YoutubeRow({ sectionTitle, playlistId }) {
   return (
     <Section size="1">
       <Heading size="6" mb="4">
-        {sectionTitle}
+        {sectionTitle || '관련 영상'}
       </Heading>
       <Box ml={{ initial: '1', xs: '4' }}>
         <ScrollArrowWrapper itemWidth={300} gap={12}>
