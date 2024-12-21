@@ -46,7 +46,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
       </Flex>
     );
 
-  const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
+  // const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
 
   return (
     <Container p="4" className="filmo-detail">
