@@ -407,7 +407,8 @@
           "ott_purchase": ["왓챠","웨이브"],
           "year": 2015,
           "playlistId": "",
-          "type": "드라마"
+          "type": "드라마",
+          "note": "sbs 사이트에서 무료 시청 가능"
         },
         {
           "id": "drama_2015_5",
@@ -436,8 +437,7 @@
           "ott_purchase": ["티빙", "왓챠", "웨이브"],
           "year": 2016,
           "playlistId": "",
-          "type": "영화",
-          "note": "sbs 사이트에서 무료 시청 가능"
+          "type": "영화"
         },
         {
           "id": "movie_2016_2",
