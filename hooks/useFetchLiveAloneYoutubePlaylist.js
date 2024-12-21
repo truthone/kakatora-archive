@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetchLiveAloneYoutubePlaylist = ({ episode }={}) => {
+const useFetchLiveAloneYoutubePlaylist = ({ ep }={}) => {
   const [playlist, setPlaylist] = useState([]); 
   const [error, setError] = useState(null); 
   const [loading, setLoading] = useState(false); 
@@ -11,7 +11,7 @@ const useFetchLiveAloneYoutubePlaylist = ({ episode }={}) => {
       let url = '/api/fetchLiveAloneYoutubePlaylist';
       const params = new URLSearchParams();
 
-      if (episode) params.append('episode', episode);
+      if (ep) params.append('episode', ep);
       if (params.toString()) url += `?${params.toString()}`;
 
       const response = await fetch(url);
@@ -42,7 +42,7 @@ const useFetchLiveAloneYoutubePlaylist = ({ episode }={}) => {
   useEffect(() => {
     setPlaylist([]);
     fetchData();
-  }, [episode]);
+  }, [ep]);
 
   return { playlist, loading, error };
 };
