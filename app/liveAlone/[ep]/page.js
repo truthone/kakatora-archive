@@ -90,14 +90,6 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           </Box>
         </Flex>
       </Section>
-      {
-        youtubeLoading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
-        (
-          <Box pl={{ initial: '5', xs: '8' }}>
-          <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} />
-        </Box>
-        )
-      }
       {carouselImages?.length > 0 ? (
         <CoreCarouselSection
           title={'나혼산 코어'}
