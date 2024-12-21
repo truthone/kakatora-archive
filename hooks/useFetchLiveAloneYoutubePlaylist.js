@@ -11,7 +11,7 @@ const useFetchLiveAloneYoutubePlaylist = ({ ep }={}) => {
       let url = '/api/fetchLiveAloneYoutubePlaylist';
       const params = new URLSearchParams();
 
-      if (ep) params.append('episode', ep);
+      if (ep) params.append('ep', ep);
       if (params.toString()) url += `?${params.toString()}`;
 
       const response = await fetch(url);
