@@ -23,7 +23,7 @@ const ArticleSection = ({ filmoId }) => {
           <Grid
             my="4"
             p="0"
-            columns={{ initial: "1", xs: '2' }}
+            columns={{ initial: "1", xs: '2', m: '4' }}
             // direction={{initial: 'column', xs: 'row'}}
             wrap="wrap"
             gap="6"

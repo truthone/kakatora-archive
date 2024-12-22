@@ -233,7 +233,7 @@ function FilmoDetail({ id }) {
         {
         loading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
         (
-          <Box pl={{ initial: '5', xs: '8' }}>
+          <Box>
           {playlist ? <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} /> : null}
         </Box>
         )
