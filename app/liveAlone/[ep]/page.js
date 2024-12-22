@@ -16,7 +16,7 @@ import Image from 'next/image';
 import EpisodeSection from '../../../components/EpisodeSection';
 import ImageFallback from '../../../components/ImageFallback';
 import CoreCarouselSection from '../../../components/CoreCarouselSection';
-import YouTubeRow from '../../../components/YoutubeRow';
+import YoutubeRow from '../../../components/YoutubeRow';
 import FallbackComponent from '../../../components/FallbackComponent';
 import useFetchEpisodeImages from '../../../hooks/useFetchEpisodeImages';
 import useFetchMainImages from '../../../hooks/useFetchMainImages';
@@ -46,7 +46,7 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
       </Flex>
     );
 
-  // const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
+  const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
 
   return (
     <Container p="4" className="filmo-detail">
@@ -90,6 +90,14 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
           </Box>
         </Flex>
       </Section>
+      {
+        youtubeLoading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="관련 영상 loading"/> : 
+        (
+          <Box>
+          {playlist ? <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} /> : null}
+        </Box>
+        )
+      }
       {carouselImages?.length > 0 ? (
         <CoreCarouselSection
           title={'나혼산 코어'}
