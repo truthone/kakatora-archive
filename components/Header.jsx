@@ -14,6 +14,7 @@ function Header() {
   const menuItems = [
     { text: '필모그래피', path: '/filmography' },
     { text: '사이트별 출연작', path: '/filmo-by-ott' },
+    { text: '나혼산 에피소드', path: '/liveAlone/' },
     { text: '나혼산 짤 모음집', path: '/liveAlone/captures' },
     { text: `24테베랜드`, path: '/24tebas-land' },
   ];
