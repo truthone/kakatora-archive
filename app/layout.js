@@ -11,6 +11,7 @@ import TopButton from '../components/TopButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import SpriteAnimation from '../components/SpriteAnimation';
 import { usePathname } from 'next/navigation';
+import { Analytics } from '@vercel/analytics'
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
                 {!hide && <Header />}
                 <Box minHeight="90vh">
                   {children}
+                  <Analytics />
                   <SpeedInsights />
                 </Box>
                 <TopButton />
