@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Flex } from '@radix-ui/themes';
 import CastBoard from '../../components/CastBoard';
 import styled from 'styled-components';
+import useFetchTebasSchedule from '../../hooks/useFetchTebasSchedule';
 
 export default function TebasLand({}) {
   const BgBox = styled(Flex)`
@@ -31,7 +32,6 @@ export default function TebasLand({}) {
     justify-content: center;
     }
   `;
-
   return (
     <Flex direction="column" height="inherit" justify="start">
       <BgBox>

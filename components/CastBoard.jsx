@@ -10,6 +10,7 @@ import {
 } from '@radix-ui/themes';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
+import useFetchTebasSchedule from '../hooks/useFetchTebasSchedule';
 
 const fadeInUp = keyframes`
   from {
@@ -106,7 +107,11 @@ const TypingEffect = styled.div`
     ${typing} 3s steps(30, end) forwards,
     ${blink} 0.8s step-end infinite;
 `;
+
+
 const CastBoard = () => {
+    const { schedule, loading, error } = useFetchTebasSchedule();
+    console.log(schedule)
   return (
     <Flex
       m={{ initial: '10px', sm: '80px', xs: '100px' }}
