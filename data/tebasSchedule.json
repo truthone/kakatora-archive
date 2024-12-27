@@ -1,0 +1,858 @@
+[
+  {
+    "date": "2024-11-20",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-11-21",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-11-22",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-11-23",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-11-23",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-11-24",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-11-25",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2024-11-26",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-11-27",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-11-28",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-11-29",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "정택운",
+    "note": "마티네"
+  },
+  {
+    "date": "2024-11-29",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-11-30",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "이석준",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-11-30",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "길은성",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-01",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-02",
+    "day": "월",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": "중구민 월요극장"
+  },
+  {
+    "date": "2024-12-03",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-04",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-05",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-06",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": "마티네"
+  },
+  {
+    "date": "2024-12-06",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-07",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-07",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-08",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-09",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2024-12-10",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-11",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-12",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-13",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": "마티네"
+  },
+  {
+    "date": "2024-12-13",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-14",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "길은성",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-14",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "김남희",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-15",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-16",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2024-12-17",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-18",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-19",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-20",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": "마티네"
+  },
+  {
+    "date": "2024-12-20",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-21",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-21",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-22",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-23",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2024-12-24",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2024-12-25",
+    "day": "수",
+    "time": "15:00",
+    "akaS": "정희태",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-25",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-26",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-27",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": "마티네"
+  },
+  {
+    "date": "2024-12-27",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-28",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2024-12-28",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2024-12-29",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2024-12-30",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2024-12-31",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-01",
+    "day": "수",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-02",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-03",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-01-03",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-04",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-04",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-05",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-06",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-01-07",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-08",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-09",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-10",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-01-10",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-11",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-11",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "길은성",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-12",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-13",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-01-14",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-15",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-16",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-17",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-01-17",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-18",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-18",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "정희태",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-19",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-20",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-01-21",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "김남희",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-22",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-23",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "이주승",
+    "note": null
+  },
+  {
+    "date": "2025-01-24",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-01-24",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-25",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-01-25",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "정희태",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-26",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-01-27",
+    "day": "월",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-01-28",
+    "day": "화",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-01-29",
+    "day": "수",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-01-30",
+    "day": "목",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": "설연휴"
+  },
+  {
+    "date": "2025-01-30",
+    "day": "목",
+    "time": "18:30",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": "설연휴"
+  },
+  {
+    "date": "2025-01-31",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "이주승",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-01-31",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-02-01",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "정희태",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-02-01",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-02-02",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "길은성",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-02-03",
+    "day": "월",
+    "time": null,
+    "akaS": null,
+    "martin": null,
+    "note": "공연없음"
+  },
+  {
+    "date": "2025-02-04",
+    "day": "화",
+    "time": "19:30",
+    "akaS": "정희태",
+    "martin": "강승호",
+    "note": null
+  },
+  {
+    "date": "2025-02-05",
+    "day": "수",
+    "time": "19:30",
+    "akaS": "길은성",
+    "martin": "손우현",
+    "note": null
+  },
+  {
+    "date": "2025-02-06",
+    "day": "목",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "정택운",
+    "note": null
+  },
+  {
+    "date": "2025-02-07",
+    "day": "금",
+    "time": "15:00",
+    "akaS": "김남희",
+    "martin": "손우현",
+    "note": "마티네"
+  },
+  {
+    "date": "2025-02-07",
+    "day": "금",
+    "time": "19:30",
+    "akaS": "이석준",
+    "martin": "손우현",
+    "note": "막공"
+  },
+  {
+    "date": "2025-02-08",
+    "day": "토",
+    "time": "14:00",
+    "akaS": "길은성",
+    "martin": "이주승",
+    "note": "막공"
+  },
+  {
+    "date": "2025-02-08",
+    "day": "토",
+    "time": "18:30",
+    "akaS": "김남희",
+    "martin": "강승호",
+    "note": "막공"
+  },
+  {
+    "date": "2025-02-09",
+    "day": "일",
+    "time": "15:00",
+    "akaS": "정희태",
+    "martin": "정택운",
+    "note": "막공"
+  }
+]
