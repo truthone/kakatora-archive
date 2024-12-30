@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import { Flex } from '@radix-ui/themes';
+import { Flex, Container, Theme } from '@radix-ui/themes';
 import CastBoard from '../../components/CastBoard';
+import ScheduleBoard from '../../components/ScheduleBoard';
 import styled from 'styled-components';
 import useFetchTebasSchedule from '../../hooks/useFetchTebasSchedule';
 
@@ -33,10 +34,15 @@ export default function TebasLand({}) {
     }
   `;
   return (
-    <Flex direction="column" height="inherit" justify="start">
-      <BgBox>
-        <CastBoard />
-      </BgBox>
-    </Flex>
+    <Theme accentColor="indigo">
+      <Flex direction="column" height="inherit" justify="start">
+        <BgBox>
+          <CastBoard />
+        </BgBox>
+        <Container mt="9">
+          <ScheduleBoard />
+        </Container>
+      </Flex>
+    </Theme>
   );
 }
