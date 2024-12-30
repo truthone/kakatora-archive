@@ -10,7 +10,7 @@ const useFetchTebasSchedule = () => {
   // 스케줄 필터링 함수
   const filterNowSchedule = useCallback((data) => {
     if (data.length > 0) {
-      const now = new Date('2025-01-27T16:31:00');
+      const now = new Date();
   
       // 스케줄 데이터를 Date 객체로 변환
       const parsedSchedule = data.map((item, index, array) => {
