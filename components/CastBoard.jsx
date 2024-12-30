@@ -7,13 +7,15 @@ import {
   Text,
   AspectRatio,
   Separator,
+  Theme,
 } from '@radix-ui/themes';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 import useFetchTebasSchedule from '../hooks/useFetchTebasSchedule';
 
 const CastBoard = () => {
-  const { scheduleData, currentSchedule, loading, error } = useFetchTebasSchedule();
+  const { scheduleData, currentSchedule, loading, error } =
+    useFetchTebasSchedule();
   console.log(currentSchedule);
 
   const getSrcFromName = (name) => {
@@ -46,7 +48,7 @@ const CastBoard = () => {
       m={{ initial: '10px', sm: '80px', xs: '100px' }}
       position="relative"
       direction="column"
-      p={{ initial: '50px', sm: '80px', xs: '100px' }}
+      p={{ initial: '30px 50px', sm: '50px 80px', xs: '100px' }}
       width="100%"
       maxWidth="600px"
       height="fit-content"
@@ -60,13 +62,22 @@ const CastBoard = () => {
         boxSizing: 'border-box',
       }}
     >
-      <Heading
-        align="center"
-        size={{ initial: '1', xs: '3' }}
-        style={{ color: '#2b3b3f', fontFamily: 'GowunBatang-Regular', fontWeight: '500' }}
-      >
-        {currentSchedule.date},{currentSchedule.day} {currentSchedule.time}
-      </Heading>
+      <Flex justify="flex-start" align="flex-start" width="100%">
+        <Heading
+          align="center"
+          size={{ initial: '1', xs: '3' }}
+          mb="0.5rem"
+          style={{
+            color: 'rgba(43,59,63,0.68)',
+            fontFamily: 'GowunBatang-Regular',
+            fontWeight: '500',
+            fontStyle: 'italic'
+          }}
+        >
+          {currentSchedule?.date},{currentSchedule?.day}{' '}
+          {currentSchedule?.note !== '공연없음' && currentSchedule?.time}
+        </Heading>
+      </Flex>
       <Heading
         align="center"
         size={{ initial: '5', xs: '8' }}
@@ -74,8 +85,7 @@ const CastBoard = () => {
       >
         TODAY'S CAST
       </Heading>
-      <Separator size="4" my={{ initial: '2', xs: '4' }
-    } />
+      <Separator size="4" my={{ initial: '2', xs: '4' }} />
       {currentSchedule?.note === '공연없음' ? (
         <Flex
           width="100%"

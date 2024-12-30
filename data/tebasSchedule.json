@@ -418,7 +418,7 @@
   {
     "date": "2024-12-30",
     "day": "월",
-    "time": "23:59",
+    "time": null,
     "akaS": null,
     "martin": null,
     "note": "공연없음"
