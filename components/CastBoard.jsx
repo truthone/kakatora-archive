@@ -13,8 +13,7 @@ import Image from 'next/image';
 import useFetchTebasSchedule from '../hooks/useFetchTebasSchedule';
 
 const CastBoard = () => {
-  const { scheduleData, currentSchedule, loading, error } =
-    useFetchTebasSchedule();
+  const { scheduleData, currentSchedule, loading, error } = useFetchTebasSchedule();
   console.log(currentSchedule);
 
   const getSrcFromName = (name) => {
@@ -63,12 +62,20 @@ const CastBoard = () => {
     >
       <Heading
         align="center"
+        size={{ initial: '1', xs: '3' }}
+        style={{ color: '#2b3b3f', fontFamily: 'GowunBatang-Regular', fontWeight: '500' }}
+      >
+        {currentSchedule.date},{currentSchedule.day} {currentSchedule.time}
+      </Heading>
+      <Heading
+        align="center"
         size={{ initial: '5', xs: '8' }}
         style={{ color: 'rgba(175,25,27,255)', fontFamily: 'SBAggroB' }}
       >
         TODAY'S CAST
       </Heading>
-      <Separator size="4" my={{ initial: '2', xs: '4' }} />
+      <Separator size="4" my={{ initial: '2', xs: '4' }
+    } />
       {currentSchedule?.note === '공연없음' ? (
         <Flex
           width="100%"
