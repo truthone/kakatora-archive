@@ -12,12 +12,13 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import SpriteAnimation from '../components/SpriteAnimation';
 import { usePathname } from 'next/navigation';
 import { Analytics } from '@vercel/analytics/react'
+import HeaderOfTebas from '../components/HeaderOfTebas';
 
 const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const hide = pathname === '/24tebas-land';
+  const isTebasLand = pathname === '/24tebas-land'; // 경로 체크
   return (
     <html lang="ko">
       <head>
@@ -63,7 +64,7 @@ export default function RootLayout({ children }) {
                 p={{ sm: '2', lg: '9' }}
                 m={{ initial: '1', xs: '3' }}
               >
-                {!hide && <Header />}
+                {isTebasLand ? <HeaderOfTebas /> : <Header />}
                 <Box minHeight="90vh">
                   {children}
                   <Analytics />

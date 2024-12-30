@@ -81,6 +81,7 @@ const ScheduleBoard = () => {
           </Text>
           <Button
             variant="ghost"
+            style={{ color: 'rgba(175,25,27,255)' }}
             onClick={() => setShowPastSchedules(!showPastSchedules)}
           >
             {showPastSchedules ? '▲' : '▼'}
@@ -130,6 +131,7 @@ const ScheduleBoard = () => {
           </Text>
           <Button
             variant="ghost"
+            style={{ color: 'rgba(175,25,27,255)' }}
             onClick={() => setShowUpcomingSchedules(!showUpcomingSchedules)}
           >
             {showUpcomingSchedules ? '▲' : '▼'}

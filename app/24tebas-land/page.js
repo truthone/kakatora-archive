@@ -4,7 +4,6 @@ import { Flex, Container, Theme } from '@radix-ui/themes';
 import CastBoard from '../../components/CastBoard';
 import ScheduleBoard from '../../components/ScheduleBoard';
 import styled from 'styled-components';
-import useFetchTebasSchedule from '../../hooks/useFetchTebasSchedule';
 
 export default function TebasLand({}) {
   const BgBox = styled(Flex)`
@@ -34,12 +33,12 @@ export default function TebasLand({}) {
     }
   `;
   return (
-    <Theme accentColor="indigo">
+    <Theme accentColor='indigo'>
       <Flex direction="column" height="inherit" justify="start">
-        <BgBox>
+        <BgBox id="cast-board">
           <CastBoard />
         </BgBox>
-        <Container mt="9">
+        <Container mt="9" id="schedule">
           <ScheduleBoard />
         </Container>
       </Flex>

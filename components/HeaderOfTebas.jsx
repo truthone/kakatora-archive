@@ -1,30 +1,30 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
-import { Flex, Button, Heading, Dialog, Box, Text } from '@radix-ui/themes';
+import { Flex, Button, Heading, Dialog, Box, Text, Theme } from '@radix-ui/themes';
 import { HamburgerMenuIcon, CaretLeftIcon } from '@radix-ui/react-icons';
 
 function HeaderOfTebas() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
 
+  // 메뉴 아이템과 id 정의
   const menuItems = [
-    { text: '필모그래피', path: '/filmography' },
-    { text: '사이트별 출연작', path: '/filmo-by-ott' },
-    { text: '나혼산 에피소드', path: '/liveAlone/' },
-    { text: '나혼산 짤 모음집', path: '/liveAlone/captures' },
-    { text: `24테베랜드`, path: '/24tebas-land' },
+    { text: '오늘의 캐스트', id: 'cast-board' },
+    { text: `전체 스케줄`, id: 'schedule' },
   ];
 
-  const handleNavigate = (path) => {
-    router.push(path);
+  // 섹션으로 스크롤
+  const handleScrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     setIsSidebarOpen(false);
   };
 
   return (
+    <Theme accentColor="indigo">
     <Box
       style={{
         position: 'sticky',
@@ -36,27 +36,22 @@ function HeaderOfTebas() {
     >
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">
-        <Flex justify="center" align="center" display={{ md: 'none' }}>
-        {
-          pathname !== "/" && 
-          ( 
+          <Flex justify="center" align="center" display={{ md: 'none' }}>
             <Button
               variant="ghost"
               size="4"
               style={{ cursor: 'pointer' }}
-              onClick={() => router.back()}
+              onClick={() => window.history.back()}
             >
               <CaretLeftIcon style={{ transform: 'scale(2.0)' }} />
             </Button>
-          )
-        }
           </Flex>
           <Heading
             size={{ initial: '5', md: '7' }}
-            onClick={() => router.push(`/`)}
+            onClick={() => handleScrollTo('top')}
             style={{ cursor: 'pointer' }}
           >
-            JU.CHIVE
+            테베랜드
           </Heading>
           <Flex gap="6" display={{ initial: 'none', md: 'flex' }}>
             {menuItems.map((item, index) => (
@@ -64,7 +59,7 @@ function HeaderOfTebas() {
                 key={index}
                 variant="ghost"
                 style={{ cursor: 'pointer' }}
-                onClick={() => handleNavigate(item.path)}
+                onClick={() => handleScrollTo(item.id)}
                 size="2"
               >
                 <Heading size="3">{item.text}</Heading>
@@ -109,7 +104,7 @@ function HeaderOfTebas() {
               <Button
                 key={index}
                 variant="ghost"
-                onClick={() => handleNavigate(item.path)}
+                onClick={() => handleScrollTo(item.id)}
                 size="3"
                 style={{ justifyContent: 'flex-start', cursor: 'pointer' }}
               >
@@ -120,6 +115,7 @@ function HeaderOfTebas() {
         </Dialog.Content>
       </Dialog.Root>
     </Box>
+            </Theme>
   );
 }
 
