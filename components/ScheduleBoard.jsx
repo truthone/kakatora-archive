@@ -98,6 +98,11 @@ const ScheduleBoard = () => {
         justifyContent: 'flex-start',
         alignItems: 'center',
         boxSizing: 'border-box',
+        position: 'sticky',
+        top: 0,
+        backgroundColor: 'var(--gray-1)',
+        borderBottom: '1px solid var(--gray-6)',
+        zIndex: 1000,
       }}
     >
       <Heading
@@ -112,11 +117,7 @@ const ScheduleBoard = () => {
       {/* 필터 그룹 */}
       <Box
         style={{
-          position: 'sticky',
-          top: 0,
-          backgroundColor: 'var(--gray-1)',
-          borderBottom: '1px solid var(--gray-6)',
-          zIndex: 1000,
+
         }}
       >
         <FilterGroup
