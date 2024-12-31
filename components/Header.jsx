@@ -32,7 +32,7 @@ function Header() {
         backgroundColor: 'var(--gray-1)',
         borderBottom: '1px solid var(--gray-6)',
         zIndex: 1000,
-      }}
+      }} 
     >
       <Box style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
         <Flex justify="between" align="center" py="4">

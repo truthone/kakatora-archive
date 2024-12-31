@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
             <StyledComponentsRegistry>
               <Theme
                 appearance="dark"
-                accentColor="crimson"
+                accentColor={isTebasLand ? "indigo" : "crimson"}
                 radius="large"
                 p={{ sm: '2', lg: '9' }}
                 m={{ initial: '1', xs: '3' }}

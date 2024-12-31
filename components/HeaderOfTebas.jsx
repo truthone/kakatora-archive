@@ -24,7 +24,7 @@ function HeaderOfTebas() {
   };
 
   return (
-    <Theme accentColor="indigo">
+    // <Theme accentColor="indigo">
     <Box
       style={{
         position: 'sticky',
@@ -115,7 +115,7 @@ function HeaderOfTebas() {
         </Dialog.Content>
       </Dialog.Root>
     </Box>
-            </Theme>
+  // </Theme>
   );
 }
 
