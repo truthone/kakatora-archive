@@ -170,7 +170,7 @@ const ScheduleBoard = () => {
           <Table.Root
             variant="surface"
           >
-            <ScrollArea scrollbars="vertical" style={{ maxHeight: '450px' }}>
+            <ScrollArea scrollbars="vertical" width="100%" style={{ maxHeight: '450px' }}>
               <Table.Header
                 align="center"
                 style={{
