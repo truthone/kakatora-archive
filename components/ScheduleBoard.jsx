@@ -154,7 +154,7 @@ const ScheduleBoard = () => {
         style={{ backgroundColor: 'var(--gray-3)', 
           borderRadius: '10px', }}
       >
-        <Flex justify="space-between" align="center" mb="2" py="4"width="fit-content">
+        <Flex justify="space-between" align="center" mb="2" py="4"width="100%">
           <Text size="4" mr="2">
             지난 스케줄
           </Text>
@@ -168,7 +168,7 @@ const ScheduleBoard = () => {
         </Flex>
         {showPastSchedules && (
           <Table.Root
-            variant="surface"
+            variant="surface"width="fit-content"
           >
             <ScrollArea scrollbars="vertical" style={{ maxHeight: '450px' }}>
               <Table.Header
