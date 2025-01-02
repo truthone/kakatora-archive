@@ -101,7 +101,7 @@ const ScheduleBoard = () => {
         p="3"
         mb="6"
         style={{
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
           alignItems: 'center',
           boxSizing: 'border-box',
           position: 'sticky',
@@ -146,9 +146,9 @@ const ScheduleBoard = () => {
 
       <Flex
         direction="column"
-        width="100%"
         my="4"
-        
+        mx="auto"
+        width="fit-content"
         px="2"
         py="3"
         style={{ backgroundColor: 'var(--gray-3)', 
@@ -184,7 +184,7 @@ const ScheduleBoard = () => {
                   <Table.ColumnHeaderCell>날짜</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>시간</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>S</Table.ColumnHeaderCell>
-                  <Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell minWidth="80px">
                     마르틴
                     <br />&<br />
                     페데리코
