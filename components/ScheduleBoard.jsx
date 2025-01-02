@@ -4,7 +4,6 @@ import {
   Flex,
   Heading,
   Text,
-  Separator,
   Table,
   Button,
   Box,
@@ -92,20 +91,24 @@ const ScheduleBoard = () => {
 
   return (
     <Flex
-      m={{ initial: '20px', sm: '80px', xs: '100px' }}
-      direction="column"
+      m={{ initial: '5px', sm: '80px', xs: '100px' }}
+      direction={{initial: 'column', md:'row'}}
+      width="100%"
       maxWidth="1000px"
+
+      mx="auto"
     >
       <Flex
         direction="column"
         p="3"
         mb="6"
+        width={{initial: '100%', md:'fit-content'}}
         style={{
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           alignItems: 'center',
           boxSizing: 'border-box',
           position: 'sticky',
-          top: '60px',
+          top: '59px',
           backgroundColor: 'var(--gray-1)',
           borderBottom: '1px solid var(--gray-6)',
           zIndex: 100,
@@ -118,7 +121,6 @@ const ScheduleBoard = () => {
         >
           SCHEDULE
         </Heading>
-        <Separator size="4" my={{ initial: '2', xs: '4' }} />
 
         {/* 필터 그룹 */}
         <Box style={{}}>
@@ -143,7 +145,7 @@ const ScheduleBoard = () => {
         </Box>
       </Flex>
       {/* 지난 스케줄 */}
-
+      <Box>
       <Flex
         direction="column"
         my="4"
@@ -286,6 +288,7 @@ const ScheduleBoard = () => {
           </Table.Root>
         )}
       </Flex>
+      </Box>
     </Flex>
   );
 };

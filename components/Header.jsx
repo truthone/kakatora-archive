@@ -44,7 +44,13 @@ function Header() {
               variant="ghost"
               size="4"
               style={{ cursor: 'pointer' }}
-              onClick={() => router.back()}
+              onClick={() => {
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push('/');
+                }
+              }}
             >
               <CaretLeftIcon style={{ transform: 'scale(2.0)' }} />
             </Button>

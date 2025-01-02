@@ -8,6 +8,7 @@ import {
   AspectRatio,
   Separator,
   Theme,
+  Skeleton,
 } from '@radix-ui/themes';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
@@ -37,7 +38,7 @@ const CastBoard = () => {
       case '강승호':
         return 'KANG';
       default:
-        return 'UNKNOWN'; // 매치되지 않는 경우
+        return null; // 매치되지 않는 경우
     }
   };
   const S_SRC = getSrcFromName(currentSchedule?.akaS);
@@ -116,6 +117,7 @@ const CastBoard = () => {
             direction="column"
           >
             <Box my="0" width="100%" position="relative">
+              <Skeleton loading={(S_SRC === null ? true: false)}>
               <AspectRatio ratio={2 / 3}>
                 <Image
                   fill
@@ -128,6 +130,7 @@ const CastBoard = () => {
                   sizes={'(max-width: 768px) 45vw, 20vw'}
                 />
               </AspectRatio>
+              </Skeleton>
               <Name
                 size={{ initial: '1', xs: '6' }}
                 as="div"
@@ -155,6 +158,7 @@ const CastBoard = () => {
             direction="column"
           >
             <Box my="0" width="100%" position="relative">
+                <Skeleton loading={MARTIN_SRC === null ? true : false}>
               <AspectRatio ratio={2 / 3}>
                 <Image
                   fill
@@ -167,6 +171,7 @@ const CastBoard = () => {
                   sizes={'(max-width: 768px) 45vw, 20vw'}
                 />
               </AspectRatio>
+              </Skeleton>
               <Name
                 as="div"
                 align="center"
