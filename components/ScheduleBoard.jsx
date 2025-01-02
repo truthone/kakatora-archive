@@ -227,7 +227,7 @@ const ScheduleBoard = () => {
           borderRadius: '10px',
         }}
       >
-        <Flex justify="space-between" align="center" mb="2" py="4">
+        <Flex justify="space-between" align="center" mb="2" py="4" width="100%">
           <Text size="4" mr="2">
             다가오는 스케줄
           </Text>
@@ -241,7 +241,7 @@ const ScheduleBoard = () => {
           </Button>
         </Flex>
         {showUpcomingSchedules && (
-          <Table.Root variant="surface">
+          <Table.Root variant="surface" style={{width:"fit-content",margin: "0 auto"}}>
             <ScrollArea scrollbars="vertical" style={{ maxHeight: '450px' }}>
               <Table.Header
                 align="center"
@@ -256,7 +256,7 @@ const ScheduleBoard = () => {
                   <Table.ColumnHeaderCell>날짜</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>시간</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>S</Table.ColumnHeaderCell>
-                  <Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell style={{minWidth:'80px'}}>
                     마르틴
                     <br />&<br />
                     페데리코
