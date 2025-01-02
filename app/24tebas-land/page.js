@@ -12,7 +12,7 @@ export default function TebasLand({}) {
         <BgBox id="cast-board">
           <CastBoard />
         </BgBox>
-        <Container mt="9" id="schedule">
+        <Container  mt="2" id="schedule">
           <ScheduleBoard />
         </Container>
       </Flex>
