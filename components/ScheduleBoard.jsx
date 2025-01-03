@@ -194,10 +194,10 @@ const ScheduleBoard = () => {
                   top: '0',
                 }}
               >
-                <Table.Row align="center">
-                  <Table.ColumnHeaderCell>날짜</Table.ColumnHeaderCell>
+                <Table.Row align="center" >
+                  <Table.ColumnHeaderCell p="1" >날짜</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell>시간</Table.ColumnHeaderCell>
-                  <Table.ColumnHeaderCell>S</Table.ColumnHeaderCell>
+                  <Table.ColumnHeaderCell minWidth="80px">S</Table.ColumnHeaderCell>
                   <Table.ColumnHeaderCell minWidth="80px">
                     마르틴
                     <br />&<br />
