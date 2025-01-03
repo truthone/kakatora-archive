@@ -12,7 +12,7 @@ export default function TebasLand({}) {
         <BgBox id="cast-board">
           <CastBoard />
         </BgBox>
-        <Box  mt="2" id="schedule" m="0 auto">
+        <Box  mt="2" id="schedule" justify="center">
           <ScheduleBoard />
         </Box>
       </Flex>
@@ -40,7 +40,8 @@ height: auto;
 
 @media (min-width: 769px) {
   aspect-ratio: 16 / 9;
-  width: 100vw;
+  margin: 0 auto;
+  width: 100%;
   background-position: center top 90%;
   flex-direction: row;
 justify-content: center;

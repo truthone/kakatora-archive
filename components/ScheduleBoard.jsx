@@ -93,28 +93,26 @@ const ScheduleBoard = () => {
     <Flex
       m={{ initial: '5px', sm: '80px', xs: '100px' }}
       direction={{initial: 'column', md:'row'}}
+      style={{justifyContent:"space-evenly", }}
       width="100%"
       maxWidth="1000px"
-
-      mx="auto"
     >
       <Flex
         direction="column"
         p="3"
         mb="6"
+        height="fit-content"
         width={{initial: '100%', md:'fit-content'}}
         style={{
           justifyContent: 'flex-start',
           alignItems: 'center',
           boxSizing: 'border-box',
-          position: 'sticky',
-          top: '59px',
+
           backgroundColor: 'var(--gray-1)',
-          borderBottom: '1px solid var(--gray-6)',
-          zIndex: 100,
         }}
       >
         <Heading
+          my="4"
           align="center"
           size={{ initial: '5', xs: '8' }}
           style={{ color: 'rgba(175,25,27,255)', fontFamily: 'SBAggroB' }}
@@ -149,14 +147,13 @@ const ScheduleBoard = () => {
       <Flex
         direction="column"
         my="4"
-        
         width="100%"
         px="2"
         py="3"
         style={{ backgroundColor: 'var(--gray-3)', 
           borderRadius: '10px', }}
       >
-        <Flex justify="space-between" align="center" mb="2" py="4"width="100%">
+        <Flex justify="space-between" align="center" mb="2" py="4"width="100%" >
           <Text size="4" mr="2">
             지난 스케줄
           </Text>
@@ -169,10 +166,12 @@ const ScheduleBoard = () => {
           </Button>
         </Flex>
         {showPastSchedules && (
-          <Table.Root
-            variant="surface"width="fit-content"style={{margin:"0 auto"}}
+        <ScrollArea scrollbars="vertical" 
+          style={{ maxHeight: '450px' , display:'table'}}
           >
-            <ScrollArea scrollbars="vertical" style={{ maxHeight: '450px' }}>
+          <Table.Root
+            variant="surface"width="fit-content"style={{margin:"0 auto", position:"relative"}}
+          >
               <Table.Header
                 align="center"
                 style={{
@@ -193,7 +192,9 @@ const ScheduleBoard = () => {
                   </Table.ColumnHeaderCell>
                 </Table.Row>
               </Table.Header>
+              
               <Table.Body align="center">
+
                 {filteredPastSchedules.map((s) => (
                   <Table.Row key={s.date + s.time} align="center">
                     <Table.RowHeaderCell>
@@ -210,10 +211,11 @@ const ScheduleBoard = () => {
                     <Table.Cell>{s.akaS}</Table.Cell>
                     <Table.Cell>{s.martin}</Table.Cell>
                   </Table.Row>
-                ))}
+                ))
+                } 
               </Table.Body>
-            </ScrollArea>
           </Table.Root>
+          </ScrollArea>
         )}
       </Flex>
 
