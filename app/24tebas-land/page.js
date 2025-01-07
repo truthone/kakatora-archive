@@ -5,7 +5,7 @@ import CastBoard from '../../components/CastBoard';
 import ScheduleBoard from '../../components/ScheduleBoard';
 import styled from 'styled-components';
 
-export default function TebasLand({}) {
+export default function TebasLandPage() {
   return (
     <Box>
       <Theme accentColor="indigo">
