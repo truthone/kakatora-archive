@@ -76,7 +76,7 @@ const CastBoard = () => {
           }}
         >
           {currentSchedule?.date},{currentSchedule?.day}{' '}
-          {currentSchedule?.note !== '공연없음' && currentSchedule?.time}
+          {currentSchedule?.note !== '공연없음' && currentSchedule?.time}{' '}{currentSchedule?.note}
         </Heading>
       </Flex>
       <Heading
