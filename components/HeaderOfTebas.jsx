@@ -22,6 +22,14 @@ function HeaderOfTebas() {
     }
     setIsSidebarOpen(false);
   };
+// LeftIcon 클릭 시 히스토리가 없으면 홈으로 라우팅
+  const handleBackNavigation = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      router.push('/');
+    }
+  };
 
   return (
     // <Theme accentColor="indigo">
@@ -48,7 +56,7 @@ function HeaderOfTebas() {
           </Flex>
           <Heading
             size={{ initial: '5', md: '7' }}
-            onClick={() => handleScrollTo('top')}
+            onClick={handleBackNavigation}
             style={{ cursor: 'pointer' }}
           >
             테베랜드
