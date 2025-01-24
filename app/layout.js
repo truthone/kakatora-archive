@@ -18,7 +18,7 @@ const GA_MEASUREMENT_ID = process.env.GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const isTebasLand = pathname === '/24tebas-land'; // 경로 체크
+  const isTebasLand = pathname.startsWith('/24tebas-land'); 
   return (
     <html lang="ko">
       <head>

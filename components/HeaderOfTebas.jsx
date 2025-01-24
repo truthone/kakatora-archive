@@ -4,22 +4,29 @@ import React, { useState } from 'react';
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import { Flex, Button, Heading, Dialog, Box, Text, Theme } from '@radix-ui/themes';
 import { HamburgerMenuIcon, CaretLeftIcon } from '@radix-ui/react-icons';
+import { useRouter } from 'next/navigation';
 
 function HeaderOfTebas() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const router = useRouter();
 
   // 메뉴 아이템과 id 정의
   const menuItems = [
     { text: '오늘의 캐스트', id: 'cast-board' },
     { text: `전체 스케줄`, id: 'schedule' },
+    { text: `컨텐츠`, path: '/24tebas-land/media' },
+    { text: `정산표`, path: '/24tebas-land/playbill' },
   ];
 
   // 섹션으로 스크롤
-  const handleScrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const handleNavigate = (item) => {
+    if (item.id) {
+      const element = document.getElementById(item.id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else if(item.path) router.push(item.path);
+    
     setIsSidebarOpen(false);
   };
 // LeftIcon 클릭 시 히스토리가 없으면 홈으로 라우팅
@@ -67,7 +74,7 @@ function HeaderOfTebas() {
                 key={index}
                 variant="ghost"
                 style={{ cursor: 'pointer' }}
-                onClick={() => handleScrollTo(item.id)}
+                onClick={() => handleNavigate(item)}
                 size="2"
               >
                 <Heading size="3">{item.text}</Heading>
@@ -112,7 +119,7 @@ function HeaderOfTebas() {
               <Button
                 key={index}
                 variant="ghost"
-                onClick={() => handleScrollTo(item.id)}
+                onClick={() => handleNavigate(item)}
                 size="3"
                 style={{ justifyContent: 'flex-start', cursor: 'pointer' }}
               >
