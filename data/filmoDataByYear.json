@@ -583,7 +583,8 @@
           "ott_purchase": ["유튜브"],
           "year": 2018,
           "playlistId": "",
-          "type": "드라마"
+          "type": "드라마",
+          "note":"3화까지 무료. 유튜브 프리미엄"
         },
         {
           "id": "drama_2018_3",
