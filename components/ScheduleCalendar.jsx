@@ -7,8 +7,6 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import styled from 'styled-components';
 
-const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
-
 export default function AudienceRecordPage() {
   const startYear = 2024;
   const startMonth = 10; // 11월 (0부터 시작)
@@ -17,6 +15,13 @@ export default function AudienceRecordPage() {
 
   const [currentDate, setCurrentDate] = useState(new Date(startYear, startMonth, 1));
 
+  const { scheduleData, loading } = useFetchTebasSchedule();
+
+  const performanceDates = scheduleData
+    .filter((item) => item.note !== '공연없음')
+    .map((item) => item.date);
+
+  console.log(performanceDates)
   const handlePrevMonth = () => {
     setCurrentDate((prevDate) => {
       const prevMonth = new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1);
@@ -35,13 +40,25 @@ export default function AudienceRecordPage() {
     });
   };
 
-    // 🔥 요일별 색상 적용 함수
-    const tileClassName = ({ date }) => {
-      const day = date.getDay(); // 0: 일요일, 6: 토요일
-      if (day === 0) return 'sunday'; // 일요일
-      if (day === 6) return 'saturday'; // 토요일
-      return null;
-    };
+    // // 🔥 요일별 색상 적용 함수
+    // const tileClassName = ({ date }) => {
+    //   const day = date.getDay(); // 0: 일요일, 6: 토요일
+    //   if (day === 0) return 'sunday'; // 일요일
+    //   if (day === 6) return 'saturday'; // 토요일
+    //   const dateString = date.toISOString().split('T')[0]; // "YYYY-MM-DD" 형식 변환
+
+    //   return performanceDates.includes(dateString) ? 'performance-day' : null;
+    // };
+
+// 🎭 공연 날짜에 스타일 적용 (performanceDates 활용)
+const tileClassName = ({ date }) => {
+  const dateString = date.toISOString().split('T')[0]; // "YYYY-MM-DD" 형식 변환
+
+  return performanceDates.includes(dateString) ? 'performance-day' : null;
+};
+
+
+
 
 return (
   <CalendarContainer>
@@ -124,5 +141,13 @@ const StyledCalendar = styled(Calendar)`
   .react-calendar__tile--active {
     background: gray;
     color: black;
+  }
+
+    /* 🎭 공연이 있는 날짜 스타일 (강조) */
+  .performance-day {
+    background: #ffcc00 !important;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 50%;
   }
 `;
