@@ -3,63 +3,126 @@
 import React, { useState } from 'react';
 import { Box, Grid, Text, Button, Flex } from '@radix-ui/themes';
 import useFetchTebasSchedule from '../hooks/useFetchTebasSchedule';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import styled from 'styled-components';
 
 const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
 
 export default function AudienceRecordPage() {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const { scheduleData } = useFetchTebasSchedule();
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
+  const startYear = 2024;
+  const startMonth = 10; // 11월 (0부터 시작)
+  const endYear = 2025;
+  const endMonth = 1; // 2월 (0부터 시작)
 
-  // 해당 월의 첫날과 마지막 날 구하기
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
-  const firstDayIndex = firstDay.getDay(); // 첫날 요일 (0: 일요일 ~ 6: 토요일)
-  const daysInMonth = lastDay.getDate(); // 해당 월의 총 일수
+  const [currentDate, setCurrentDate] = useState(new Date(startYear, startMonth, 1));
 
-  // 공연이 있는 날짜 리스트 추출
-  const availableDates = new Set(scheduleData.map(s => s.date));
+  const handlePrevMonth = () => {
+    setCurrentDate((prevDate) => {
+      const prevMonth = new Date(prevDate.getFullYear(), prevDate.getMonth() - 1, 1);
+      return prevMonth.getFullYear() === startYear && prevMonth.getMonth() < startMonth
+        ? prevDate
+        : prevMonth;
+    });
+  };
 
-  return (
-    <Box>
-      <Text size="5" align="center" weight="bold">
-        {year}년 {month + 1}월
-      </Text>
-      <Grid columns="7" gap="2" justify="start" width="500px">
-        {daysOfWeek.map(day => (
-          <Box key={day} align="center">
-            <Text weight="bold">{day}</Text>
-          </Box>
-        ))}
-      </Grid>
-      <Grid columns="7" gap="2" justify="center">
-        {/* 첫째 날 전의 빈 칸 채우기 */}
-        {Array(firstDayIndex).fill(null).map((_, i) => (
-          <Box key={`empty-${i}`} />
-        ))}
-        {/* 날짜 렌더링 */}
-        {Array.from({ length: daysInMonth }, (_, i) => i + 1).map(day => {
-          const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-          const isAvailable = availableDates.has(dateString);
-          return (
-            <Box key={dateString} align="center" width="100%">
-              <Button
-                variant={isAvailable ? 'solid' : 'soft'}
-                color={isAvailable ? 'indigo' : 'gray'}
-                disabled={!isAvailable}
-                onClick={() => setSelectedDate(dateString)}s
-              >
-                {day}
-              </Button>
-            </Box>
-          );
-        })}
-      </Grid>
-      {selectedDate && (
-        <Text align="center" mt="4">선택한 날짜: {selectedDate}</Text>
-      )}
-    </Box>
-  );
+  const handleNextMonth = () => {
+    setCurrentDate((prevDate) => {
+      const nextMonth = new Date(prevDate.getFullYear(), prevDate.getMonth() + 1, 1);
+      return nextMonth.getFullYear() === endYear && nextMonth.getMonth() > endMonth
+        ? prevDate
+        : nextMonth;
+    });
+  };
+
+    // 🔥 요일별 색상 적용 함수
+    const tileClassName = ({ date }) => {
+      const day = date.getDay(); // 0: 일요일, 6: 토요일
+      if (day === 0) return 'sunday'; // 일요일
+      if (day === 6) return 'saturday'; // 토요일
+      return null;
+    };
+
+return (
+  <CalendarContainer>
+  {/* 현재 월 표시 */}
+  <Text size="5" weight="bold" color="white">
+    {currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월
+  </Text>
+
+  <Flex gap="2" mt="2">
+    <Button onClick={handlePrevMonth} disabled={currentDate.getFullYear() === startYear && currentDate.getMonth() === startMonth}>
+      이전 달
+    </Button>
+    <Button onClick={handleNextMonth} disabled={currentDate.getFullYear() === endYear && currentDate.getMonth() === endMonth}>
+      다음 달
+    </Button>
+  </Flex>
+
+  <StyledCalendar
+    key={currentDate} // 강제 리렌더링
+    value={currentDate}
+    onActiveStartDateChange={({ activeStartDate }) => setCurrentDate(activeStartDate)}
+    minDate={new Date(startYear, startMonth, 1)}
+    maxDate={new Date(endYear, endMonth, 28)}
+    locale="ko-KR"
+    calendarType="gregory" 
+    showNavigation={false} // 기본 네비게이션 제거
+    showNeighboringMonth={false}
+    tileClassName={tileClassName}
+  />
+</CalendarContainer>
+);
 }
+
+
+// 🔹 스타일 적용 (다크 모드 & 정확한 요일별 색상)
+const CalendarContainer = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+`;
+
+const StyledCalendar = styled(Calendar)`
+  width: 100%;
+  max-width: 350px;
+  background: black;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: white;
+
+  /* 헤더 네비게이션 스타일 */
+  .react-calendar__navigation {
+    background: black;
+    color: white;
+  }
+
+  /* 요일 스타일 */
+  .react-calendar__month-view__weekdays {
+    text-transform: uppercase;
+    color: gray;
+  }
+
+  /* 날짜 기본 스타일 */
+  .react-calendar__tile {
+    color: white;
+  }
+
+  /* ✅ 일요일만 빨간색 */
+  .sunday {
+    color: #f77 !important;
+  }
+
+  /* ✅ 토요일만 파란색 */
+  .saturday {
+    color: #77f !important;
+  }
+
+  /* 선택된 날짜 */
+  .react-calendar__tile--active {
+    background: gray;
+    color: black;
+  }
+`;
