@@ -1,35 +1,8 @@
 [
   {
-    "year": 2025,
-    "episode": [
-      {
-        "id": "250124-580",
-        "date": "1월 24일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "누가 주인인가 with 코코",
-        "imgUrl": "/images/tv-liveAlone/580/main.png",
-        "ep": 580,
-        "year": 2025
-      },
-      {
-        "id": "250117-579",
-        "date": "1월 17일",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "role": "고정",
-        "note": "패널 참석",
-        "imgUrl": "/images/tv-liveAlone/579/main.png",
-        "ep": 579,
-        "year": 2025
-      }
-    ]
-  },
-  {
     "year": 2024,
     "episode": [
-      {
+{
         "id": "241107-570",
         "date": "11월 07일",
         "broadcaster": "MBC",
@@ -156,6 +129,17 @@
         "year": 2023
       },
       {
+        "id": "230908-511",
+        "date": "9월 8일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 511,
+        "year": 2023
+      },
+      {
         "id": "230901-510",
         "date": "9월 1일",
         "broadcaster": "MBC",
@@ -208,6 +192,28 @@
         "note": "이사 with 구성환",
         "imgUrl": "/images/tv-liveAlone/490/490-6.png",
         "ep": 490,
+        "year": 2023
+      },
+      {
+        "id": "230407-489",
+        "date": "4월 7일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 489,
+        "year": 2023
+      },
+      {
+        "id": "230324-487",
+        "date": "3월 24일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 487,
         "year": 2023
       },
       {
