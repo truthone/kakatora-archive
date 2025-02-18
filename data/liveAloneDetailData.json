@@ -3,6 +3,17 @@
     "year": 2025,
     "episode": [
       {
+        "id": "250221-584",
+        "date": "2월 21일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "키X주승X카니 이사편",
+        "imgUrl": "",
+        "ep": 584,
+        "year": 2025
+      },
+      {
         "id": "250124-580",
         "date": "1월 24일",
         "broadcaster": "MBC",
@@ -156,6 +167,17 @@
         "year": 2023
       },
       {
+        "id": "230908-511",
+        "date": "9월 8일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 511,
+        "year": 2023
+      },
+      {
         "id": "230901-510",
         "date": "9월 1일",
         "broadcaster": "MBC",
@@ -208,6 +230,28 @@
         "note": "이사 with 구성환",
         "imgUrl": "/images/tv-liveAlone/490/490-6.png",
         "ep": 490,
+        "year": 2023
+      },
+      {
+        "id": "230317-489",
+        "date": "4월 7일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 489,
+        "year": 2023
+      },
+      {
+        "id": "230324-487",
+        "date": "3월 24일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 489,
         "year": 2023
       },
       {
