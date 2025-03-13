@@ -9,8 +9,6 @@
           "roleName": "",
           "role": "단역",
           "imgUrl": "/images/dating-on-earth.jpg",
-          "ott_subscribe": [""],
-          "ott_purchase": [""],
           "year": 2006,
           "playlistId": "",
           "type": "영화"
@@ -26,8 +24,7 @@
           "role": "조연",
           "imgUrl": "/images/robot.png",
           "custom_link": [{"ott": "유튜브","link":"https://youtu.be/uAZcCk8x2XM?si=PDtGkITf902w7y9N"}],
-          "ott_subscribe": [""],
-          "ott_purchase": [""],
+      
           "year": 2007,
           "playlistId": "",
           "type": "영화"

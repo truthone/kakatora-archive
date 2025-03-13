@@ -185,8 +185,8 @@ function FilmoDetail({ id }) {
                   >
                     {filmo.custom_link ? (
                       <OttLogo
-                      ott={custom_link.ott}
-                      link={custom_link.link}
+                      ott={custom_link[0].ott}
+                      link={custom_link[0].link}
                     />
                     ) : (
                       filmo.ott_subscribe ? (
