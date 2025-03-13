@@ -1,6 +1,39 @@
 {
   "filmo_data_by_year": [
     {
+      "id": "year_2006",
+      "year": 2006,
+      "movies":[{
+        "id": "movie_2006_1",
+          "title": "지구에서 연애중",
+          "roleName": "",
+          "role": "단역",
+          "imgUrl": "/images/dating-on-earth.jpg",
+          "ott_subscribe": [""],
+          "ott_purchase": [""],
+          "year": 2006,
+          "playlistId": "",
+          "type": "영화"
+      }]
+    },
+    {
+      "id": "year_2007",
+      "year": 2007,
+      "movies":[{
+        "id": "movie_2007_1",
+          "title": "로보트",
+          "roleName": "",
+          "role": "조연",
+          "imgUrl": "/images/robot.png",
+          "custom_link": [{"ott": "유튜브","link":"https://youtu.be/uAZcCk8x2XM?si=PDtGkITf902w7y9N"}],
+          "ott_subscribe": [""],
+          "ott_purchase": [""],
+          "year": 2007,
+          "playlistId": "",
+          "type": "영화"
+      }]
+    },
+    {
       "id": "year_2008",
       "year": 2008,
       "movies": [
@@ -583,8 +616,7 @@
           "ott_purchase": ["유튜브"],
           "year": 2018,
           "playlistId": "",
-          "type": "드라마",
-          "note":"3화까지 무료. 유튜브 프리미엄"
+          "type": "드라마"
         },
         {
           "id": "drama_2018_3",

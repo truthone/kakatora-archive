@@ -13,6 +13,7 @@ export default function FilmoFilter({ onFilterChange }) {
 
   const years = [
     '모든 연도',
+    2006,
     2007,
     2008,
     2009,
