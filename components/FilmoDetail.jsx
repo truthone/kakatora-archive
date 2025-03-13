@@ -194,7 +194,6 @@ function FilmoDetail({ id }) {
                           <OttLogo
                             key={index}
                             ott={ott}
-                            link={link}
                             query={`${filmo.title}`}
                           />
                         ))
