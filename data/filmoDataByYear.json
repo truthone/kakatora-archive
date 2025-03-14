@@ -1158,6 +1158,20 @@
           "ott": "유튜브 채널",
           "link": "https://www.youtube.com/@%EB%BD%91%ED%8B%B0%EC%8A%88/featured"
         }
+      },
+      {
+        "id": "tv_2025_2",
+        "date": "",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "roleName": "고정",
+        "imgUrl": "/images/live-alone.jpg",
+        "url": "/liveAlone",
+        "ott_subscribe": ["왓챠", "웨이브"],
+        "ott_purchase": ["왓챠", "웨이브"],
+        "year": 2025,
+        "playlistId": "",
+        "type": "예능/TV 출연"
       }]
     }
   ]
