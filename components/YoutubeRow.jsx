@@ -13,6 +13,7 @@ import {
 import Image from 'next/image';
 import ScrollArrowWrapper from './ScrollArrowWrapper';
 import { decode } from 'html-entities';
+import SpriteAnimation from './SpriteAnimation';
 
 const openYouTubeVideo = (videoId) => {
   const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
@@ -21,6 +22,7 @@ const openYouTubeVideo = (videoId) => {
 
 function YoutubeRow({ sectionTitle, playlistId }) {
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
     async function fetchVideos() {
@@ -36,6 +38,8 @@ function YoutubeRow({ sectionTitle, playlistId }) {
         }
       } catch (error) {
         console.error('유튜브 영상 가져오기 오류:', error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -46,7 +50,14 @@ function YoutubeRow({ sectionTitle, playlistId }) {
     return null;
   }
 
-  return (
+  return loading ? (
+    <SpriteAnimation
+      logoWidth="100px"
+      logoHeight="100px"
+      textVisible={true}
+      message="loading"
+    />
+  ) : (
     <Section size="1">
       <Heading size="6" mb="4">
         {sectionTitle || '관련 영상'}

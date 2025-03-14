@@ -25,8 +25,47 @@ const ottLogos = {
   카카오TV: { link: 'https://tv.kakao.com/search/cliplinks?q=' },
 };
 
-const OttLogo = ({ ott, query }) => {
+const OttLogo = ({ ott, query, link }) => {
   const logo = ottLogos[ott];
+
+  // 커스텀 직링일때.
+
+  if (link) {
+    return (
+      <Button variant="ghost" m="1">
+        {!logo ? (
+          <Badge radius="full" variant="solid" asChild>
+            <a
+              href={`${link}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Text size="3" m="2">
+                {ott}
+              </Text>
+            </a>
+          </Badge>
+        ) : (
+          <Box
+            position="relative"
+            width={{ initial: '48px', sm: '60px' }}
+            height={{ initial: '48px', sm: '60px' }}
+          >
+            <a href={`${link}`} target="_blank" rel="noopener noreferrer">
+              <Image
+                sizes={'(max-width: 768px) 100vw, 30vw'}
+                fill
+                quality={100}
+                style={{ objectFit: 'cover' }}
+                src={logo.src}
+                alt={ott}
+              />
+            </a>
+          </Box>
+        )}
+      </Button>
+    );
+  }
 
   if (!logo || (!logo.src && !logo.link))
     return (
@@ -38,6 +77,7 @@ const OttLogo = ({ ott, query }) => {
         </Badge>
       </Button>
     );
+
   if (!logo.src && logo.link)
     return (
       <Button variant="ghost" m="1">

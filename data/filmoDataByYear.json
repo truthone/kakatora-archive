@@ -1,6 +1,43 @@
 {
   "filmo_data_by_year": [
     {
+      "id": "year_2006",
+      "year": 2006,
+      "movies": [
+        {
+          "id": "movie_2006_1",
+          "title": "지구에서 연애중",
+          "roleName": "",
+          "role": "단역",
+          "imgUrl": "/images/dating-on-earth.jpg",
+          "year": 2006,
+          "playlistId": "",
+          "type": "영화"
+        }
+      ]
+    },
+    {
+      "id": "year_2007",
+      "year": 2007,
+      "movies": [
+        {
+          "id": "movie_2007_1",
+          "title": "로보트",
+          "roleName": "",
+          "role": "조연",
+          "imgUrl": "/images/robot.png",
+          "custom_link": {
+            "ott": "유튜브",
+            "link": "https://youtu.be/uAZcCk8x2XM?si=PDtGkITf902w7y9N"
+          },
+
+          "year": 2007,
+          "playlistId": "",
+          "type": "영화"
+        }
+      ]
+    },
+    {
       "id": "year_2008",
       "year": 2008,
       "movies": [
@@ -117,7 +154,7 @@
           "role": "주연",
           "imgUrl": "/images/ufo.jpg",
           "ott_subscribe": ["티빙", "왓챠", "웨이브"],
-          "ott_purchase": ["티빙", "왓챠", "웨이브" ],
+          "ott_purchase": ["티빙", "왓챠", "웨이브"],
           "year": 2012,
           "playlistId": "",
           "type": "영화"
@@ -205,8 +242,8 @@
           "roleName": "지용",
           "role": "조연",
           "imgUrl": "/images/futureless-things.webp",
-          "ott_subscribe": ["티빙", "왓챠","웨이브"],
-          "ott_purchase": ["티빙", "왓챠","웨이브" ],
+          "ott_subscribe": ["티빙", "왓챠", "웨이브"],
+          "ott_purchase": ["티빙", "왓챠", "웨이브"],
           "year": 2014,
           "playlistId": "",
           "type": "영화"
@@ -241,8 +278,8 @@
           "roleName": "조두식",
           "role": "조연",
           "imgUrl": "/images/broken.jpg",
-          "ott_subscribe": ["왓챠","넷플릭스","티빙"],
-          "ott_purchase": ["왓챠","넷플릭스","티빙"],
+          "ott_subscribe": ["왓챠", "넷플릭스", "티빙"],
+          "ott_purchase": ["왓챠", "넷플릭스", "티빙"],
           "year": 2014,
           "playlistId": "",
           "type": "영화"
@@ -309,8 +346,8 @@
           "roleName": "안찬수",
           "role": "조연",
           "imgUrl": "/images/pinocchio.jpg",
-          "ott_subscribe": ["왓챠", "웨이브" ],
-          "ott_purchase": ["왓챠", "웨이브" ],
+          "ott_subscribe": ["왓챠", "웨이브"],
+          "ott_purchase": ["왓챠", "웨이브"],
           "year": 2014,
           "playlistId": "",
           "type": "드라마"
@@ -390,8 +427,8 @@
           "roleName": "FD",
           "role": "조연",
           "imgUrl": "/images/producers.jpg",
-          "ott_subscribe": ["왓챠","웨이브"],
-          "ott_purchase": ["왓챠","웨이브"],
+          "ott_subscribe": ["왓챠", "웨이브"],
+          "ott_purchase": ["왓챠", "웨이브"],
           "year": 2015,
           "playlistId": "",
           "type": "드라마"
@@ -403,8 +440,8 @@
           "roleName": "오대복",
           "role": "",
           "imgUrl": "/images/the-time-we-were-hot-in-love.jpg",
-          "ott_subscribe": ["왓챠","웨이브"],
-          "ott_purchase": ["왓챠","웨이브"],
+          "ott_subscribe": ["왓챠", "웨이브"],
+          "ott_purchase": ["왓챠", "웨이브"],
           "year": 2015,
           "playlistId": "",
           "type": "드라마",
@@ -460,7 +497,7 @@
           "roleName": "차준호",
           "role": "주연",
           "imgUrl": "/images/dong-jeong-ub-neun.jpg",
-          "ott_subscribe": ["왓챠","유튜브"],
+          "ott_subscribe": ["왓챠", "유튜브"],
           "ott_purchase": ["왓챠"],
           "year": 2016,
           "playlistId": "",
@@ -583,8 +620,7 @@
           "ott_purchase": ["유튜브"],
           "year": 2018,
           "playlistId": "",
-          "type": "드라마",
-          "note":"3화까지 무료. 유튜브 프리미엄"
+          "type": "드라마"
         },
         {
           "id": "drama_2018_3",
@@ -636,8 +672,8 @@
           "roleName": "김석우",
           "role": "특별출연",
           "imgUrl": "/images/docter-prisoner.jpg",
-          "ott_subscribe": ["웨이브","왓챠"],
-          "ott_purchase": ["웨이브","왓챠"],
+          "ott_subscribe": ["웨이브", "왓챠"],
+          "ott_purchase": ["웨이브", "왓챠"],
           "year": 2019,
           "playlistId": "",
           "type": "드라마"
@@ -903,7 +939,7 @@
           "roleName": "조석희",
           "role": "",
           "imgUrl": "/images/like-flowers-in-sand.jpg",
-          "ott_subscribe": ["티빙","넷플릭스"],
+          "ott_subscribe": ["티빙", "넷플릭스"],
           "ott_purchase": ["티빙"],
           "year": 2023,
           "playlistId": "",
@@ -932,7 +968,7 @@
           "imgUrl": "/images/live-alone.jpg",
           "url": "/liveAlone",
           "ott_subscribe": ["왓챠", "웨이브"],
-          "ott_purchase": ["왓챠", "웨이브" ],
+          "ott_purchase": ["왓챠", "웨이브"],
           "year": 2023,
           "playlistId": "",
           "type": "예능/TV 출연"
@@ -986,7 +1022,7 @@
           "roleName": "승주",
           "role": "주연",
           "imgUrl": "/images/dauren-wedding.jpg",
-          "ott_subscribe": ["왓챠", "웨이브","티빙"],
+          "ott_subscribe": ["왓챠", "웨이브", "티빙"],
           "ott_purchase": ["왓챠", "웨이브"],
           "year": 2024,
           "playlistId": "",
@@ -1076,6 +1112,67 @@
           "type": "연극"
         }
       ]
+    },
+
+    {
+      "id": "year_2025",
+      "year": 2025,
+      "movies": [
+        {
+          "id": "movie_2025_1",
+          "title": "그 시절, 우리가 좋아했던 소녀",
+          "roleName": "과선배",
+          "role": "우정출연",
+          "imgUrl": "/images/you-are-the-apple-of-my-eyes.jpg",
+          "note":"극장 상영중",
+          "year": 2025,
+          "playlistId": "",
+          "type": "영화"
+        }
+      ],
+      "dramas": [{
+        "id": "drama_2025_1",
+        "broadcaster": "SBS",
+        "title": "우리 영화",
+        "roleName": "",
+        "role": "출연예정",
+        "note": "25년 6월 13일 금/토 10시 방영 예정",
+        "imgUrl": "/images/our-movie.jpg",
+        "year": 2025,
+        "playlistId": "",
+        "type": "드라마"
+      }],
+      "musicals": [],
+      "tv_appearances": [{
+        "id": "tv_2025_1",
+        "date": "1월 12일 ~ ",
+        "note": "매주 목 오후 8시 / 일 오후 12시 업로드",
+        "broadcaster": "유튜브 채널",
+        "title": "뽑아쓰는 휴지",
+        "roleName": "고정",
+        "imgUrl": "/images/bbob-tissue.jpg",
+        "year": 2025,
+        "playlistId": "",
+        "type": "유튜브 출연",
+        "custom_link": {
+          "ott": "공식 채널",
+          "link": "https://www.youtube.com/@%EB%BD%91%ED%8B%B0%EC%8A%88/featured"
+        }
+      },
+      {
+        "id": "tv_2025_2",
+        "date": "",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "roleName": "고정",
+        "imgUrl": "/images/live-alone.jpg",
+        "url": "/liveAlone",
+        "ott_subscribe": ["왓챠", "웨이브"],
+        "ott_purchase": ["왓챠", "웨이브"],
+        "year": 2025,
+        "playlistId": "",
+        "type": "예능/TV 출연"
+      }]
     }
   ]
 }
