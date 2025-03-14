@@ -21,7 +21,6 @@ import ArticleSection from './ArticleSection';
 import FallbackComponent from './FallbackComponent';
 import CafeArticleSection from './CafeArticleSection';
 import useFetchYoutubePlaylist from '../hooks/useFetchYoutubePlaylist';
-import SpriteAnimation from './SpriteAnimation';
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -122,11 +121,11 @@ function FilmoDetail({ id }) {
                   </Heading>
                 )}
               </Flex>
-                {filmo?.note && (
-                  <Heading size={{ md: '6', initial: '3' }}>
-                    {filmo?.note}
-                  </Heading>
-                )}
+              {filmo?.note && (
+                <Heading size={{ md: '6', initial: '3' }}>
+                  {filmo?.note}
+                </Heading>
+              )}
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>
@@ -183,22 +182,20 @@ function FilmoDetail({ id }) {
                   >
                     {filmo.custom_link ? (
                       <OttLogo
-                      ott={filmo.custom_link.ott}
-                      link={filmo.custom_link.link}
-                    />
+                        ott={filmo.custom_link.ott}
+                        link={filmo.custom_link.link}
+                      />
+                    ) : filmo.ott_subscribe ? (
+                      filmo.ott_subscribe.map((ott, index) => (
+                        <OttLogo
+                          key={index}
+                          ott={ott}
+                          query={`${filmo.title}`}
+                        />
+                      ))
                     ) : (
-                      filmo.ott_subscribe ? (
-                        filmo.ott_subscribe.map((ott, index) => (
-                          <OttLogo
-                            key={index}
-                            ott={ott}
-                            query={`${filmo.title}`}
-                          />
-                        ))
-                      ) : (
-                        <Text weight="light">시청 가능한 곳이 없어요..😭</Text>
-                      )
-                    ) }
+                      <Text weight="light">시청 가능한 곳이 없어요..😭</Text>
+                    )}
                   </Flex>
                 </Tabs.Content>
                 {/* <Tabs.Content value="purchase">
@@ -235,20 +232,20 @@ function FilmoDetail({ id }) {
             <Separator size="4" my="4" />
           </Section>
         )}
-        {loading ? (
-          <SpriteAnimation
-            logoWidth="100px"
-            logoHeight="100px"
-            textVisible={true}
-            message="loading"
-          />
-        ) : (
-          <Box>
-            {playlist ? (
-              <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} />
-            ) : null}
-          </Box>
-        )}
+        <Box>
+          {playlist
+            ? playlist.map((id) => {
+              console.log(id)
+                return (
+                  <YoutubeRow
+                    key={id}
+                    SectionTitle={'관련 영상'}
+                    playlistId={id}
+                  />
+                );
+              })
+            : null}
+        </Box>
         <ArticleSection filmoId={id} />
         <CafeArticleSection filmoId={id} />
       </Box>

@@ -1,5 +1,26 @@
 import { useState, useEffect } from 'react';
 
+
+const parsePlaylist = (data) => {
+  try {
+    if (!data) return []; // 데이터가 없을 경우 빈 배열 반환
+
+    // 이미 배열이면 그대로 반환
+    if (Array.isArray(data)) return data;
+
+    // JSON 형태로 저장된 배열이라면 JSON.parse() 시도
+    if (typeof data === "string" && data.startsWith("[")) {
+      return JSON.parse(data);
+    }
+
+    // 단일 문자열이면 배열로 변환
+    return [data];
+  } catch (error) {
+    console.error("JSON 변환 오류:", error);
+    return [data]; // 오류 발생 시 원본 데이터를 배열로 감싸서 반환
+  }
+};
+
 const useFetchYoutubePlaylist = ({ id }={}) => {
   const [playlist, setPlaylist] = useState([]); 
   const [error, setError] = useState(null); 
@@ -19,16 +40,10 @@ const useFetchYoutubePlaylist = ({ id }={}) => {
       if (!response.ok) throw new Error('Failed to fetch images');
 
       const res = await response.json();
+      const result = parsePlaylist(res);
 
-      // 데이터를 처리해 상태 업데이트
-      // const mappedData = res.map((obj) => ({
-      //   id: obj.id,
-      //   fk: obj.fk,
-      //   title: obj.title,
-      //   playlistId: obj.playlistId
-      // }));
 
-      setPlaylist(res);
+      setPlaylist(result);
 
       setError(null);
     } catch (error) {
