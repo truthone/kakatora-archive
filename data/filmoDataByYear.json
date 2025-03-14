@@ -1153,9 +1153,9 @@
         "imgUrl": "/images/bbob-tissue.jpg",
         "year": 2025,
         "playlistId": "",
-        "type": "TV / 예능 출연",
+        "type": "유튜브 출연",
         "custom_link": {
-          "ott": "유튜브 채널",
+          "ott": "공식 채널",
           "link": "https://www.youtube.com/@%EB%BD%91%ED%8B%B0%EC%8A%88/featured"
         }
       },
