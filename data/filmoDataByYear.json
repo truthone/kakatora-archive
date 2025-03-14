@@ -23,7 +23,7 @@
           "roleName": "",
           "role": "조연",
           "imgUrl": "/images/robot.png",
-          "custom_link": [{"ott": "유튜브","link":"https://youtu.be/uAZcCk8x2XM?si=PDtGkITf902w7y9N"}],
+          "custom_link": {"ott": "유튜브","link":"https://youtu.be/uAZcCk8x2XM?si=PDtGkITf902w7y9N"},
       
           "year": 2007,
           "playlistId": "",
