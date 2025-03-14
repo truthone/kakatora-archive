@@ -121,14 +121,12 @@ function FilmoDetail({ id }) {
                     {filmo?.type}
                   </Heading>
                 )}
-
-                {filmo?.note && <Text>•</Text>}
+              </Flex>
                 {filmo?.note && (
                   <Heading size={{ md: '6', initial: '3' }}>
                     {filmo?.note}
                   </Heading>
                 )}
-              </Flex>
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>

@@ -33,7 +33,7 @@ const OttLogo = ({ ott, query, link }) => {
   if (link) {
     return (
       <Button variant="ghost" m="1">
-        {logo ? (
+        {!logo ? (
           <Badge radius="full" variant="solid" asChild>
             <a
               href={`${link}`}
