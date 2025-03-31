@@ -15,7 +15,7 @@ import FallbackComponent from '../../components/FallbackComponent';
 import useFetchMainImages  from '../../hooks/useFetchMainImages';
 
 export default function LiveAloneEpisodeDetailPage() {
-  const DETAIL_ID = 'tv_2024_2';
+  const DETAIL_ID = 'tv_2025_2';
   const data = liveAloneDetailData.flatMap((year) => year.episode);
   const [headerRef, isSticky] = useStickyHeader();
   const { mainImages } = useFetchMainImages();
