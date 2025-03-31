@@ -3,6 +3,17 @@
     "year": 2025,
     "episode": [
       {
+        "id": "250328-589",
+        "date": "3월 28일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "봄이 오나 봄 with 코코 & 딥그린",
+        "imgUrl": "",
+        "ep": 589,
+        "year": 2025
+      },
+      {
         "id": "250221-584",
         "date": "2월 21일",
         "broadcaster": "MBC",
