@@ -32,6 +32,7 @@ export default function FilmoFilter({ onFilterChange }) {
     2022,
     2023,
     2024,
+    2025
   ];
   const categories = ['영화', '드라마', '연극', '예능'];
 
