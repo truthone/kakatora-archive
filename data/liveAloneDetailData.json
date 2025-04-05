@@ -3,6 +3,17 @@
     "year": 2025,
     "episode": [
       {
+        "id": "250404-590",
+        "date": "4월 04일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 590,
+        "year": 2025
+      },
+      {
         "id": "250328-589",
         "date": "3월 28일",
         "broadcaster": "MBC",
