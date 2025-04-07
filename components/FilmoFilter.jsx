@@ -13,6 +13,7 @@ export default function FilmoFilter({ onFilterChange }) {
 
   const years = [
     '모든 연도',
+    2006,
     2007,
     2008,
     2009,
@@ -31,6 +32,7 @@ export default function FilmoFilter({ onFilterChange }) {
     2022,
     2023,
     2024,
+    2025
   ];
   const categories = ['영화', '드라마', '연극', '예능'];
 

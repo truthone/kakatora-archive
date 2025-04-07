@@ -48,7 +48,8 @@ function TopButton() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    opacity: "0.8"
+                    opacity: "0.8",
+                    zIndex: "1000"
                   }}
                 >
                 <ArrowUpIcon />

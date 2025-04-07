@@ -21,7 +21,6 @@ import ArticleSection from './ArticleSection';
 import FallbackComponent from './FallbackComponent';
 import CafeArticleSection from './CafeArticleSection';
 import useFetchYoutubePlaylist from '../hooks/useFetchYoutubePlaylist';
-import SpriteAnimation from './SpriteAnimation'
 
 const BlurContainer = styled(Box)`
   position: relative;
@@ -74,7 +73,7 @@ function FilmoDetail({ id }) {
     );
 
   const { playlist, loading, error } = useFetchYoutubePlaylist({ id });
-  console.log(playlist)
+  console.log(playlist);
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>
@@ -111,7 +110,7 @@ function FilmoDetail({ id }) {
                 {filmo?.title}
               </Heading>
               <Flex>
-                <Heading size={{ md: '6', initial: '3' }} >
+                <Heading size={{ md: '6', initial: '3' }}>
                   {filmo?.year}
                 </Heading>
 
@@ -121,14 +120,12 @@ function FilmoDetail({ id }) {
                     {filmo?.type}
                   </Heading>
                 )}
-
-                {filmo?.note && <Text>•</Text>}
-                {filmo?.note && (
-                  <Heading size={{ md: '6', initial: '3' }}>
-                    {filmo?.note}
-                  </Heading>
-                )}
               </Flex>
+              {filmo?.note && (
+                <Heading size={{ md: '6', initial: '3' }}>
+                  {filmo?.note}
+                </Heading>
+              )}
             </AnimationBox>
             <Separator size="4" my="2" />
             <AnimationBox2>
@@ -141,14 +138,14 @@ function FilmoDetail({ id }) {
                 >
                   {filmo?.role}
                 </Text>
-                {
-                  filmo?.role && filmo?.roleName && (<Separator size="2" orientation="vertical" mx="12px"/>)
-                }
-                {
-                  filmo?.roleName && (<Text as="p" my="2" size={{ md: '7', initial: '5' }}>
+                {filmo?.role && filmo?.roleName && (
+                  <Separator size="2" orientation="vertical" mx="12px" />
+                )}
+                {filmo?.roleName && (
+                  <Text as="p" my="2" size={{ md: '7', initial: '5' }}>
                     {filmo?.roleName}
-                  </Text>)
-                }
+                  </Text>
+                )}
               </Flex>
               <Text as="p" my="2" size={{ md: '6', initial: '2' }}>
                 {filmo?.broadcaster}
@@ -183,8 +180,13 @@ function FilmoDetail({ id }) {
                     gap="2"
                     mb="4"
                   >
-                    {filmo.ott_subscribe ? (
-                      filmo.ott_subscribe?.map((ott, index) => (
+                    {filmo.custom_link ? (
+                      <OttLogo
+                        ott={filmo.custom_link.ott}
+                        link={filmo.custom_link.link}
+                      />
+                    ) : filmo.ott_subscribe ? (
+                      filmo.ott_subscribe.map((ott, index) => (
                         <OttLogo
                           key={index}
                           ott={ott}
@@ -192,7 +194,7 @@ function FilmoDetail({ id }) {
                         />
                       ))
                     ) : (
-                      <Text weight="light"> 시청 가능한 곳이 없어요..😭 </Text>
+                      <Text weight="light">시청 가능한 곳이 없어요..😭</Text>
                     )}
                   </Flex>
                 </Tabs.Content>
@@ -230,16 +232,22 @@ function FilmoDetail({ id }) {
             <Separator size="4" my="4" />
           </Section>
         )}
-        {
-        loading ? <SpriteAnimation logoWidth="100px" logoHeight="100px" textVisible={true} message="loading"/> : 
-        (
-          <Box>
-          {playlist ? <YoutubeRow SectionTitle={'관련 영상'} playlistId={playlist} /> : null}
+        <Box>
+          {playlist
+            ? playlist.map((id) => {
+              console.log(id)
+                return (
+                  <YoutubeRow
+                    key={id}
+                    SectionTitle={'관련 영상'}
+                    playlistId={id}
+                  />
+                );
+              })
+            : null}
         </Box>
-        )
-      }
         <ArticleSection filmoId={id} />
-        <CafeArticleSection filmoId={id}/>
+        <CafeArticleSection filmoId={id} />
       </Box>
     </Section>
   );

@@ -7,8 +7,8 @@ import FilmoByCategory from '../components/FilmoByCategory';
 
 export default async function Home() {
   const playlistIds = [
-    'PLWeRTK7abiXiV1ChOOtNqoZNDvmKELstF',
-    'PLWeRTK7abiXjPBf9GgjJ_ma67JlJ5ldfQ',
+    'PLS1vtSLNPVeD1OltHrPArmrjRdKWHxMQn',
+    'PLWeRTK7abiXjZCfS12Qrn3ZMT6aVvnLbE',
     'PLWeRTK7abiXhLn7gnXxzPk2W5SppS5ZmC'
   ];
   return (
@@ -16,8 +16,8 @@ export default async function Home() {
       <Hero movie={moviesData.featuredMovie} />
       <Container ml="3">
         <Section size="1">
-          <YouTubeRow sectionTitle="다우렌의 결혼" playlistId={playlistIds[0]} />
-          <YouTubeRow sectionTitle="재밌는거 몰아보기" playlistId={playlistIds[1]} />
+          <YouTubeRow sectionTitle="뽑티슈-이주승편" playlistId={playlistIds[0]} />
+          <YouTubeRow sectionTitle="코코 🐕 와 주승" playlistId={playlistIds[1]} />
           <YouTubeRow sectionTitle="드라마 몰아보기" playlistId={playlistIds[2]} />
         </Section>
         <Separator orientation="horizontal" size="4" />
