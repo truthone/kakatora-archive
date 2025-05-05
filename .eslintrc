@@ -1,19 +1,11 @@
 {
-  "extends": [
-    "next/core-web-vitals", // Next.js 권장 설정
-    "plugin:prettier/recommended" // Prettier와 ESLint 통합
-  ],
-  "plugins": ["prettier"], // Prettier 플러그인 활성화
+  "extends": "next/core-web-vitals",
   "rules": {
-    "prettier/prettier": "error" // Prettier 관련 규칙을 ESLint 오류로 처리
-  },
-  "parserOptions": {
-    "ecmaVersion": 2021, // 최신 ECMAScript 문법 지원
-    "sourceType": "module" // 모듈 방식 사용
-  },
-  "env": {
-    "es6": true,
-    "browser": true, // 브라우저 환경 지원
-    "node": true // Node.js 환경 지원
+
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "no-console": "off",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
   }
 }
