@@ -53,7 +53,9 @@ const AnimationBox2 = styled(Box)`
 `;
 
 function FilmoDetail({ id }) {
-  // filmoDataByYear에서 해당 id를 가진 작품 찾기
+
+  const { playlist, loading, error } = useFetchYoutubePlaylist({ id });
+
   const filmo = filmoDataByYear.filmo_data_by_year
     .flatMap((year) => [
       ...(year.movies || []),
@@ -62,6 +64,8 @@ function FilmoDetail({ id }) {
       ...(year.tv_appearances || []),
     ])
     .find((item) => item.id === id);
+
+
   if (!filmo)
     return (
       <Flex p="4" justify="center" align="center" width="auto" height="90vh">
@@ -72,8 +76,7 @@ function FilmoDetail({ id }) {
       </Flex>
     );
 
-  const { playlist, loading, error } = useFetchYoutubePlaylist({ id });
-  console.log(playlist);
+
   return (
     <Section p="0" className="filmo-detail">
       <BlurContainer>

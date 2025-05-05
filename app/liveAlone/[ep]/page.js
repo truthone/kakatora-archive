@@ -31,6 +31,10 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
   const { mainImages, error:mainImageError, loading:mainImageLoading } = useFetchMainImages({ episode: ep});
   const { carouselImages, error:carouselImageError, loading:carouselImageLoading } = useFetchCarouselImages({ episode: ep});
   const [imageError, setImageError] = useState(false);
+  
+  
+  const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
+  
   // 연도별 에피소드 데이터 묶기
   const data = liveAloneDetailData
     .flatMap((year) => year.episode)
@@ -45,8 +49,6 @@ export default function LiveAloneEpisodeDetailPage({ params }) {
         />
       </Flex>
     );
-
-  const { playlist, loading:youtubeLoading, error:youtubeError } = useFetchLiveAloneYoutubePlaylist({ ep });
 
   return (
     <Container p="4" className="filmo-detail">
