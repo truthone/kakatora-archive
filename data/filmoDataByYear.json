@@ -152,7 +152,7 @@
           "title": "U.F.O.",
           "roleName": "정순규",
           "role": "주연",
-          "imgUrl": "/images/ufo.jpg",
+          "imgUrl": "/images/ufo.webp",
           "ott_subscribe": ["티빙", "왓챠", "웨이브"],
           "ott_purchase": ["티빙", "왓챠", "웨이브"],
           "year": 2012,
@@ -453,10 +453,15 @@
           "title": "9초-영원의 시간",
           "roleName": "유찬",
           "role": "웹드라마 · 주연",
-          "imgUrl": "/images/eternal.jpg",
+          "imgUrl": "/images/9second.jpg",
           "year": 2015,
           "playlistId": "",
-          "type": "드라마"
+          "type": "드라마",
+          "custom_link": {
+            "ott": "네이버 TV",
+            "link": "https://tv.naver.com/9seconds?tab=playlist&playlistNo=50079"
+          },
+          "note": "경주 엑스포 홍보 웹드라마"
         }
       ]
     },
@@ -1124,55 +1129,59 @@
           "roleName": "과선배",
           "role": "우정출연",
           "imgUrl": "/images/you-are-the-apple-of-my-eyes.jpg",
-          "note":"극장 상영중",
+          "note": "극장 상영중",
           "year": 2025,
           "playlistId": "",
           "type": "영화"
         }
       ],
-      "dramas": [{
-        "id": "drama_2025_1",
-        "broadcaster": "SBS",
-        "title": "우리 영화",
-        "roleName": "",
-        "role": "출연예정",
-        "note": "25년 6월 13일 금/토 10시 방영 예정",
-        "imgUrl": "/images/our-movie.jpg",
-        "year": 2025,
-        "playlistId": "",
-        "type": "드라마"
-      }],
-      "musicals": [],
-      "tv_appearances": [{
-        "id": "tv_2025_1",
-        "date": "1월 12일 ~ ",
-        "note": "매주 목 오후 8시 / 일 오후 12시 업로드",
-        "broadcaster": "유튜브 채널",
-        "title": "뽑아쓰는 휴지",
-        "roleName": "고정",
-        "imgUrl": "/images/bbob-tissue.jpg",
-        "year": 2025,
-        "playlistId": "",
-        "type": "유튜브 출연",
-        "custom_link": {
-          "ott": "공식 채널",
-          "link": "https://www.youtube.com/@%EB%BD%91%ED%8B%B0%EC%8A%88/featured"
+      "dramas": [
+        {
+          "id": "drama_2025_1",
+          "broadcaster": "SBS",
+          "title": "우리 영화",
+          "roleName": "",
+          "role": "출연예정",
+          "note": "25년 6월 13일 금/토 10시 방영 예정",
+          "imgUrl": "/images/our-movie.jpg",
+          "year": 2025,
+          "playlistId": "",
+          "type": "드라마"
         }
-      },
-      {
-        "id": "tv_2025_2",
-        "date": "",
-        "broadcaster": "MBC",
-        "title": "나 혼자 산다",
-        "roleName": "고정",
-        "imgUrl": "/images/live-alone.jpg",
-        "url": "/liveAlone",
-        "ott_subscribe": ["왓챠", "웨이브"],
-        "ott_purchase": ["왓챠", "웨이브"],
-        "year": 2025,
-        "playlistId": "",
-        "type": "예능/TV 출연"
-      }]
+      ],
+      "musicals": [],
+      "tv_appearances": [
+        {
+          "id": "tv_2025_1",
+          "date": "1월 12일 ~ ",
+          "note": "매주 목 오후 8시 / 일 오후 12시 업로드",
+          "broadcaster": "유튜브 채널",
+          "title": "뽑아쓰는 휴지",
+          "roleName": "고정",
+          "imgUrl": "/images/bbob-tissue.jpg",
+          "year": 2025,
+          "playlistId": "",
+          "type": "유튜브 출연",
+          "custom_link": {
+            "ott": "공식 채널",
+            "link": "https://www.youtube.com/@%EB%BD%91%ED%8B%B0%EC%8A%88/featured"
+          }
+        },
+        {
+          "id": "tv_2025_2",
+          "date": "",
+          "broadcaster": "MBC",
+          "title": "나 혼자 산다",
+          "roleName": "고정",
+          "imgUrl": "/images/live-alone.jpg",
+          "url": "/liveAlone",
+          "ott_subscribe": ["왓챠", "웨이브"],
+          "ott_purchase": ["왓챠", "웨이브"],
+          "year": 2025,
+          "playlistId": "",
+          "type": "예능/TV 출연"
+        }
+      ]
     }
   ]
 }
