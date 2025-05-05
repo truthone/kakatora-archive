@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Heading } from '@radix-ui/themes';
+import { Heading } from '@radix-ui/themes';
 
 const StickyHeading = styled(Heading)`
   position: -webkit-sticky; /* Safari */
@@ -10,7 +10,7 @@ const StickyHeading = styled(Heading)`
   padding: 20px 0;
 `;
 
-function StickyHead({ forwardedRef, stickyState, children, top = 50 }) { // top의 기본값 설정
+function StickyHead({ forwardedRef, stickyState, children, top = 50 }) {
   return (
     <StickyHeading
       ref={forwardedRef}
@@ -20,13 +20,17 @@ function StickyHead({ forwardedRef, stickyState, children, top = 50 }) { // top�
       mb="4"
       wrap="balance"
       color="crimson"
-      style={{ top: `${top}px` }} // 객체 문법으로 style 적용
+      style={{ top: `${top}px` }}
     >
       {children}
     </StickyHeading>
   );
 }
 
-export default React.forwardRef((props, ref) => (
+const StickyHeadWrapper = React.forwardRef((props, ref) => (
   <StickyHead {...props} forwardedRef={ref} />
 ));
+
+StickyHeadWrapper.displayName = 'StickyHead';
+
+export default StickyHeadWrapper;
