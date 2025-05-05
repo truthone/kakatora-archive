@@ -1,6 +1,6 @@
 // prettier.config.js
 /** @type {import('prettier').Config} */
-export default {
+module.exports = {
   singleQuote: true,
   semi: true,
   printWidth: 100,
