@@ -665,7 +665,7 @@
           "role": "주연",
           "imgUrl": "/images/young-hwa-ru.jpg",
           "year": 2019,
-          "playlistId": "",
+          "playlistId": "국제음식영화제 상영",
           "type": "영화"
         }
       ],
@@ -755,7 +755,7 @@
           "year": 2021,
           "playlistId": "PLWeRTK7abiXiV1ChOOtNqoZNDvmKELstF",
           "type": "영화",
-          "note": "오프라인-한국영상자료원 열람 가능"
+          "note": "오프라인: 한국영상자료원에서 열람 가능"
         }
       ],
       "musicals": [
@@ -907,9 +907,10 @@
           "title": "파미르",
           "roleName": "성철",
           "role": "주연",
-          "imgUrl": "/images/parmir.jpg",
+          "imgUrl": "/images/parmir.jpeg",
           "year": 2023,
           "playlistId": "",
+          "note":"전주국제영화제 상영",
           "type": "영화"
         },
         {
@@ -920,7 +921,8 @@
           "imgUrl": "/images/the-guest.jpg",
           "year": 2023,
           "playlistId": "",
-          "type": "영화"
+          "type": "영화",
+          "note":"부산국제영화제 상영"
         }
       ],
       "dramas": [
@@ -1128,7 +1130,7 @@
           "title": "리타이어",
           "roleName": "희민",
           "role": "주연",
-          "imgUrl": "/images/retire.png",
+          "imgUrl": "/images/retire-crop.png",
           "note": "제 27회 한국종합예술종합학교 영상원 영화과 졸업엽화제 상영",
           "year": 2025,
           "playlistId": "",
