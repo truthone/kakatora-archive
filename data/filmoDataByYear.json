@@ -1124,15 +1124,28 @@
       "year": 2025,
       "movies": [
         {
+          "id": "movie_2025_2",
+          "title": "리타이어",
+          "roleName": "희민",
+          "role": "주연",
+          "imgUrl": "/images/retire.png",
+          "note": "제 27회 한국종합예술종합학교 영상원 영화과 졸업엽화제 상영",
+          "year": 2025,
+          "playlistId": "",
+          "type": "영화"
+        },
+        {
           "id": "movie_2025_1",
           "title": "그 시절, 우리가 좋아했던 소녀",
           "roleName": "과선배",
           "role": "우정출연",
           "imgUrl": "/images/you-are-the-apple-of-my-eyes.jpg",
-          "note": "극장 상영중",
+          "note": "",
           "year": 2025,
           "playlistId": "",
-          "type": "영화"
+          "type": "영화",
+          "ott_subscribe": ["", ""],
+          "ott_purchase": ["왓챠", "웨이브"]
         }
       ],
       "dramas": [
