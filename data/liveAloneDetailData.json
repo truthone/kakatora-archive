@@ -3,6 +3,49 @@
     "year": 2025,
     "episode": [
       {
+        "id": "251226-628",
+        "date": "12월 26일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "돌아온 주도인 & NEW 취미 미니카",
+        "imgUrl": "",
+        "ep": 628,
+        "year": 2025
+      },
+      {
+        "id": "251212-626",
+        "date": "12월 12일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석",
+        "imgUrl": "",
+        "ep": 626,
+        "year": 2025
+      },
+      {
+        "id": "251128-624",
+        "date": "11월 28일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "role": "고정",
+        "note": "패널 참석: 주승 없는 주승팀",
+        "imgUrl": "",
+        "ep": 624,
+        "year": 2025
+      },
+      {
+        "id": "251024-619~620",
+        "date": "10월 24일, 31일",
+        "broadcaster": "MBC",
+        "title": "나 혼자 산다",
+        "note": "나혼산 가을운동회 1&2",
+        "imgUrl": "",
+        "ep": "619~620",
+        "year": 2025
+      },
+      {
         "id": "250919-614",
         "date": "9월 19일",
         "broadcaster": "MBC",
